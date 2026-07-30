@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-07-30</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-07-30</h1>
+<h2>1. 今日推荐工具</h2>
+<h3>工具一：LobsterAI</h3>
+<ul><li>类型：效率工具 / 自动化</li><li>它是什么：网易有道开源的桌面级 AI Agent，基于 OpenClaw，可在真实桌面环境中调用工具，完成数据分析、幻灯片、文档、视频和网页研究等任务；支持通过微信、飞书、钉钉及 Telegram 从手机下达指令。</li><li>适合谁：需要跨应用处理研究、办公和内容生产任务的知识工作者，以及希望评估桌面 Agent 的自动化开发者。</li><li>核心价值：将 AI 从“生成答案”推进到“操作工具并交付成果”，尤其适合资料搜集、数据整理和文档制作等多步骤工作。项目近期仍有代码更新，具备实际试用价值。</li><li>使用建议：先从 GitHub 仓库阅读部署与权限说明，在隔离测试环境中配置；优先试运行“网页调研并生成文档”这类低风险任务。接入桌面、企业通信工具或敏感数据前，应检查权限范围、执行日志和数据外发策略。</li><li>链接：<a href="https://github.com/netease-youdao/LobsterAI">GitHub 项目</a></li></ul>
+<h3>工具二：ClaudeCodeExtension</h3>
+<ul><li>类型：编程插件 / Vibe Coding</li><li>它是什么：面向 Visual Studio 的开源 .NET 扩展，为 Claude Code、Codex、Cursor、OpenCode、Devin 等编码 Agent 提供统一交互界面，支持多行提示词以及图片、文件附件。</li><li>适合谁：主要使用 Visual Studio 和 .NET 技术栈，同时希望在 IDE 内调用多种编码 Agent 的开发者。</li><li>核心价值：减少 IDE、终端和不同 Agent 界面之间的切换，让需求说明、上下文文件与代码修改保持在同一工作流中。项目采用 MIT 许可证，并于 2026-07-29 更新。</li><li>使用建议：通过 Visual Studio Marketplace 安装扩展，先连接一个现有编码 Agent，在测试仓库中尝试“附加需求文件、生成修改方案、审查差异、运行测试”的完整流程；合并前仍需人工检查代码和依赖变更。</li><li>链接：<a href="https://github.com/dliedke/ClaudeCodeExtension">GitHub 项目</a>；<a href="https://marketplace.visualstudio.com/items?itemName=dliedke.ClaudeCodeExtension">Visual Studio Marketplace</a></li></ul>
+<h3>工具三：PARA Workspace</h3>
+<ul><li>类型：知识管理 / 自动化</li><li>它是什么：面向人与 AI Agent 协作的开源工作区框架，以 PARA 方法组织项目和知识，仓库包含工作区规则内核、CLI 工具及模板。</li><li>适合谁：同时使用 Claude Code、Codex 等 Agent 管理项目资料的个人开发者、研究人员和小型团队。</li><li>核心价值：通过固定目录、规则和模板向 Agent 提供稳定上下文，降低重复解释项目结构、目标和知识边界的成本。项目于 2026-07-30 仍在更新。</li><li>使用建议：先在非核心项目中根据仓库文档生成工作区，把一个真实项目的目标、资料和待办迁入，再让 Agent 执行检索、总结或任务拆解；正式采用前需注意该仓库当前未标明许可证。</li><li>链接：<a href="https://github.com/pageel/para-workspace">GitHub 项目</a>；<a href="https://www.paraworkspace.dev">官方网站</a></li></ul>
+<h2>2. AI大佬重要言论</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期资料未提供可核验的国内 AI 领域重要人物署名发言。</li><li>说了什么：暂无能够同时确认人物、原始上下文和发布时间的关键言论，不以公司产品描述代替个人观点。</li><li>为什么重要：避免将项目介绍、媒体转述或企业宣传材料错误归因于具体人物。</li><li>可能影响：暂不作人物观点层面的产业判断；可持续关注国内头部模型公司管理层对 Agent 商业化、开源策略及算力投入的正式公开发言。</li><li>来源/时间：本期可靠资料不足，待确认；截至 2026-07-30。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：现有资料包含 Anthropic、Google 和 GitHub 的机构级发布，但未提供可核验的个人署名关键言论。</li><li>说了什么：机构信号显示，Anthropic 强调 Claude Opus 5 对长时间运行 Agent、编码和专业工作的提升；Google 强调通过 Managed Agents、后台任务、远程 MCP 与 hooks 构建更可靠的生产级 Agent；GitHub 则认为 Agent 的工作流编排与工具体系通常比单纯追逐新模型更重要。以上均为机构观点或文章摘要，不作为“大佬个人言论”引用。</li><li>为什么重要：三组信息共同指向竞争重点从模型能力扩展到 Agent 的持续执行、工具调用、上下文管理和生产可靠性。</li><li>可能影响：开发团队选型时将更重视 Agent harness、权限控制、执行日志、成本效率和跨工具兼容性，而不只比较模型榜单。</li><li>来源/时间：<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic：Claude Opus 5</a>，2026-07-24；<a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/">Google：Gemini API Managed Agents</a>，2026-07-28；<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">GitHub：The harness is all you need (mostly)</a>，2026-07-27。个人级可靠言论仍待确认。</li></ul>
+<h2>3. 今日结论</h2>
+<ol><li>最值得立即试用的是能真正执行跨应用任务的桌面 Agent，但应先在隔离环境中验证权限、日志和失败恢复机制。</li><li>Vibe Coding 的效率差异正在从“使用哪个模型”转向“IDE 集成、上下文组织、工具调用和审查流程是否完整”；Visual Studio 用户可重点测试 ClaudeCodeExtension。</li><li>Agent 工作区与 harness 正成为新的基础设施层；团队应沉淀可复用的项目规则、目录结构、测试门禁和人工审批节点，避免仅依赖自然语言提示。</li></ol>
+  </main>
+</body>
+</html>
