@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-07-30</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-07-30</h1>
+<h2>1. 今日推荐工具</h2>
+<h3>工具一：LobsterAI</h3>
+<ul><li>类型：效率工具 / 自动化</li><li>它是什么：网易有道开源的桌面级 AI Agent，基于 OpenClaw，可执行数据分析、幻灯片与文档制作、视频处理和网页研究，并支持通过微信、飞书、钉钉及 Telegram 从手机下达任务。</li><li>适合谁：需要集中处理研究、办公文档和跨应用任务的知识工作者，以及希望在本地桌面验证 Agent 自动化流程的团队。</li><li>核心价值：它不只生成回答，还能调用真实桌面工具完成任务；移动端指令入口适合远程触发长耗时工作。项目近期仍有代码更新，值得试用，但正式接入敏感业务前应先检查数据发送范围、桌面权限与操作日志。</li><li>使用建议：进入 GitHub 仓库阅读 README，按系统要求安装并配置模型服务；先用公开资料测试“网页调研并生成汇报文档”等低风险任务，再逐步开放文件和桌面操作权限。</li><li>链接：<a href="https://github.com/netease-youdao/LobsterAI">GitHub：netease-youdao/LobsterAI</a></li></ul>
+<h3>工具二：ClaudeCodeExtension</h3>
+<ul><li>类型：编程插件 / Vibe Coding</li><li>它是什么：面向 Visual Studio 的开源 .NET 扩展，为 Claude Code、Codex、Cursor、OpenCode、Devin 等编码 Agent 提供统一交互界面，支持多行提示词以及图片、文件附件。</li><li>适合谁：主要使用 Visual Studio 和 .NET 技术栈，希望在 IDE 内调用多个编码 Agent 的开发者。</li><li>核心价值：减少在 IDE、终端和不同 Agent 客户端之间切换的成本，尤其适合把需求文档、报错截图和代码文件一起交给 Agent 分析。项目于 2026-07-29 仍有提交，采用 MIT 许可证，但当前社区规模较小，建议先在非核心仓库试用。</li><li>使用建议：从 Visual Studio Marketplace 安装扩展，连接已安装或已授权的编码 Agent；先测试“解释错误、生成补丁、运行测试、人工审查差异”的闭环，不要在未审查时直接执行高权限命令或提交代码。</li><li>链接：<a href="https://marketplace.visualstudio.com/items?itemName=dliedke.ClaudeCodeExtension">Visual Studio Marketplace</a>；<a href="https://github.com/dliedke/ClaudeCodeExtension">GitHub</a></li></ul>
+<h3>工具三：safari-browser-use</h3>
+<ul><li>类型：自动化 / 开发者工具 / Vibe Coding</li><li>它是什么：通过 Apple Events 控制现有 Safari 标签页的浏览器自动化工具，可供 Codex、Claude Code、GitHub Copilot 和 Cursor 调用，无需浏览器扩展、配套应用或 Node.js。</li><li>适合谁：使用 macOS 与 Safari，希望让编码 Agent 执行网页检索、页面操作或浏览器工作流的开发者。</li><li>核心价值：直接复用用户已经打开和登录的 Safari 会话，降低浏览器自动化的安装成本，适合快速搭建研究、测试和信息采集流程；同时也意味着它可能接触登录态和页面数据，必须控制授权边界。</li><li>使用建议：按仓库 README 配置 macOS 自动化权限，并从只读任务开始，例如提取当前页面信息或汇总多个标签页；涉及提交表单、发送消息、购买和删除操作时保留人工确认。</li><li>链接：<a href="https://github.com/vibevibe-labs/safari-browser-use">GitHub：vibevibe-labs/safari-browser-use</a></li></ul>
+<h2>2. AI大佬重要言论</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期提供的国内资料主要是网易有道开源项目的 GitHub 信息，未包含可核验的具名高管、研究者或行业领袖原始发言。</li><li>说了什么：暂无可确认的个人关键言论。</li><li>为什么重要：将产品描述或机构宣传改写为个人观点会造成错误归因，因此本期不作推断。</li><li>可能影响：暂不判断；后续应优先补充企业官网演讲、采访全文、公开信或本人社交账号原文。</li><li>来源/时间：<a href="https://github.com/netease-youdao/LobsterAI">网易有道 LobsterAI GitHub 仓库</a>，资料检索截至 2026-07-30。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：现有资料包含 OpenAI、Anthropic 和 GitHub 的机构文章与产品公告，但没有提供可直接归属于具体人物的原始引语。</li><li>说了什么：机构层面的关键信号是，Anthropic 称 Claude Opus 5 面向长时间运行的 Agent，并提升编码和专业工作能力；GitHub 则强调编码 Agent 的实际效果越来越依赖规划、工具、上下文和评审组成的工作框架，而非只追逐新模型或新工具。以上均非具名人物言论。</li><li>为什么重要：这些信息显示竞争重点正从单次代码生成，转向长任务执行、工具编排、上下文管理与可验证工作流，但不能据此虚构 CEO 或研究负责人的个人表态。</li><li>可能影响：企业评估编码 Agent 时，应同步测试任务成功率、Token 成本、权限控制和评审质量；开发团队需要优先建设测试、代码审查及操作审计机制。</li><li>来源/时间：<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic：Introducing Claude Opus 5</a>，2026-07-24；<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">GitHub：The harness is all you need (mostly)</a>，2026-07-27。</li></ul>
+<h2>3. 今日结论</h2>
+<ol><li>非开发者优先试用 LobsterAI，从公开资料研究和文档生成任务开始，验证桌面 Agent 是否能真正减少跨应用操作。</li><li>Visual Studio 用户可试用 ClaudeCodeExtension；macOS 用户可用 safari-browser-use 扩展编码 Agent 的网页操作能力，但两者都应坚持最小权限和人工确认。</li><li>今日最明确的行业信号不是“再换一个模型”，而是完善 Agent 工作框架：明确任务、限制权限、保留证据、运行测试并审查最终差异。</li></ol>
+  </main>
+</body>
+</html>
