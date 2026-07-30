@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-07-29</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 X 期</h1>
+<p>日期：2026-07-29 主题：智能体模型、AI安全工具与具身智能基础栈</p>
+<h2>1. 一句话摘要</h2>
+<p>本期核心变化是 AI 竞争继续从对话能力转向长时智能体、专业工作与安全执行，同时机器人研发开始补齐触觉感知、通用基础栈和系统安全。硬件新品、自动驾驶基础模型及融资并购方面暂无足够可靠的新资料。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：Anthropic 发布 Claude Opus 5，长时智能体成为模型竞争重点</h3>
+<ul><li>发生了什么：Anthropic 于 2026 年 7 月 24 日发布 <a href="https://www.anthropic.com/news/claude-opus-5">Claude Opus 5</a>，称其在长时间运行的智能体、编程及专业工作方面实现显著提升；此前已于 6 月 30 日发布 <a href="https://www.anthropic.com/news/claude-sonnet-5">Claude Sonnet 5</a>。具体 API 价格、上下文长度、速率限制及第三方基准数据在所给资料中不足，待确认。</li><li>为什么重要：头部模型的差异化指标正从单轮回答质量转向长任务稳定性、工具调用和工作流完成率，这将直接影响编程、科研与企业自动化应用的选型。</li><li>可能影响：智能体平台会更加重视任务恢复、权限隔离、成本监控和长上下文管理；若 Opus 5 的长任务优势得到独立测试验证，可能推动企业升级现有 Claude 工作流。</li><li>建议关注：跟踪 Opus 5 的 API 可用区域、定价和独立评测，并与 Sonnet 5及其他模型按“任务成功率、总耗时、总成本”进行真实业务测试，而非只比较静态榜单。</li></ul>
+<h3>事件二：AI安全从模型防护延伸至自动化渗透测试和代码审计</h3>
+<ul><li>发生了什么：<a href="https://github.com/usestrix/strix">Strix</a> 是 Apache-2.0 许可的开源 AI 渗透测试工具；截至 2026 年 7 月 29 日所给 GitHub 快照，其拥有 45,390 Stars、4,741 Forks，并于当日更新。Google DeepMind 同月披露面向网络安全场景的 <a href="https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/">Gemini 3.5 Flash Cyber</a>。OpenAI 则在 7 月 21 日发布了一则<a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">模型评估安全事件说明</a>。</li><li>为什么重要：安全能力正在同时进入模型层和工具层。AI既可扩大漏洞发现与代码审计覆盖率，也可能降低攻击自动化门槛，企业需要把模型权限和操作留痕纳入安全边界。</li><li>可能影响：自动化红队、代码安全审查和智能体运行时防护可能成为 AI 开发工具链的标准组件，但误报、越权扫描以及双重用途风险也会增加。</li><li>建议关注：仅在获授权环境中测试 Strix；验证漏洞证据、沙箱隔离和审计日志。GitHub 搜索结果不等同于官方热门榜单，另一个代码审计项目的完整指标未提供，不宜据此判断热度。</li></ul>
+<h3>事件三：具身智能补齐触觉、安全与跨机器人通用能力</h3>
+<ul><li>发生了什么：IEEE Spectrum 于 2026 年 7 月 28 日报道一种可同时感知空间压力与力信息的<a href="https://spectrum.ieee.org/robot-finger">彩色机器人触觉皮肤</a>；7 月 13 日介绍了面向通用机器人的<a href="https://spectrum.ieee.org/x-square-robot-embodied-ai-stack">具身智能基础栈</a>。GitHub 项目 <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">Awesome Embodied AI Safety</a> 汇集了感知、规划、交互、自动驾驶和视觉-语言-动作等方向的 500 余篇论文，并于 7 月 29 日更新。</li><li>为什么重要：机器人规模化落地不只依赖人形本体，还取决于触觉、多模态感知、规划控制迁移以及物理环境中的安全验证。基础栈能否跨任务、跨机型复用，是降低部署成本的关键。</li><li>可能影响：具身智能评测将从演示任务转向碰撞、误操作、对抗输入和长时运行测试；触觉传感器、数据采集系统和 VLA 模型可能形成协同迭代链条。</li><li>建议关注：优先考察真实环境任务成功率、故障恢复和跨本体迁移效果。所给资料未提供新的人形机器人整机、自动驾驶基础模型或机器人硬件量产发布，相关进展待确认。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：模型竞争进入长任务执行阶段</h3>
+<p>Opus 5、Sonnet 5及 OpenAI 的智能体科研内容表明，模型价值正从“生成答案”转向“持续完成工作”。下一阶段的关键指标将是端到端成功率、人工接管频率、权限安全和单位任务成本。</p>
+<h3>趋势二：物理 AI 安全开始前置</h3>
+<p>触觉感知、通用机器人栈与具身安全资料同步升温，说明安全不再只是部署后的附加模块，而要进入传感、认知、规划和控制全链路。自动驾驶与人形机器人将面临更严格的场景化验证要求。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目或动态 | 截至时间 | 可靠数据 | 信息边界 | |---|---:|---:|---| | <a href="https://github.com/usestrix/strix">Strix</a> | 2026-07-29 | 45,390 Stars；4,741 Forks；246 个开放议题 | GitHub 搜索快照，数据会动态变化 | | <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">Awesome Embodied AI Safety</a> | 2026-07-29 | 119 Stars；4 Forks；项目称收录 500 余篇论文 | 论文数量来自项目描述，未逐项核验 | | Google Genesis Mission | 2026-07 | <a href="https://cloud.google.com/blog/topics/public-sector/accelerating-frontiers-of-scientific-discovery-40-million-dollar-commitment-genesis-mission">承诺投入 4,000 万美元</a> | 属科研项目投入，不应等同于企业融资或并购 | | Claude Opus 5 | 2026-07-24 | 发布日期与定位可确认 | API价格、性能分数及上下文参数待确认 |</p>
+<p>本期暂无可靠的 AI 硬件出货量、机器人量产规模、自动驾驶基础模型性能对比及融资并购统计图表数据。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：Strix 开源 AI 渗透测试工具</p>
+<ul><li>背景：传统渗透测试依赖专业人员，测试周期长；AI智能体有机会自动执行部分漏洞发现与验证流程。</li><li>做法：Strix 以开源方式提供 AI 渗透测试能力，聚焦应用漏洞发现、修复建议、红队和安全自动化，并采用 Apache-2.0 许可证。</li><li>结果：截至 2026 年 7 月 29 日已获得 45,390 Stars 和 4,741 Forks，显示开发者关注度较高；但实际检出率、误报率及企业部署效果未见可靠数据，待确认。</li><li>可借鉴点：企业可先在隔离测试环境中接入此类工具，以已知漏洞集评估召回率和误报率，同时设置授权范围、人工复核、密钥隔离与全程日志。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：模型厂商披露的能力提升尚需独立评测；长时智能体可能出现错误累积、工具调用失控和任务状态漂移。机器人触觉与基础栈的实验效果也不等于量产可靠性。</li><li>合规风险：AI 渗透测试必须获得明确授权；机器人、自动驾驶与人形机器人还涉及功能安全、责任认定、生物识别和公共空间监管。</li><li>商业化风险：高性能模型的 API 成本与服务条款待确认；具身智能仍受数据采集、本体适配、维护成本和场景复用率约束。本期资料未发现可核验的新融资并购事件。</li><li>数据安全风险：智能体可能接触代码、凭证、业务数据和物理设备控制接口，应采用最小权限、沙箱、人工审批、日志审计及敏感数据脱敏机制。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>模型选型指标应转向真实长任务的成功率、成本、恢复能力和权限安全。</li><li>AI安全工具正在快速产品化，但自动化渗透测试必须限定授权边界并保留人工复核。</li><li>具身智能的竞争重点正从单一人形本体扩展至触觉、基础模型、跨本体软件栈和全链路安全。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>Claude Opus 5、Gemini 3.6 Flash及相关 API 的价格、上下文窗口与独立基准测试</li><li>人形机器人整机、触觉硬件和 VLA／世界模型的量产部署数据</li><li>自动驾驶或机器人基础模型新发布，以及 AI 硬件、融资并购的可核验公告</li></ul>
+  </main>
+</body>
+</html>
