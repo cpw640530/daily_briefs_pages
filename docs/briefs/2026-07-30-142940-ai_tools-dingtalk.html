@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-07-30</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-07-30</h1>
+<h2>1. 今日推荐工具</h2>
+<h3>工具一：Loadout</h3>
+<ul><li>类型：Vibe Coding / 开发者工具</li><li>它是什么：面向 AI 编程 Agent 的扩展包管理器，可统一发现、安装、更新、优化和回滚 Skills 与 MCP 工具，覆盖 Codex、Claude Code、Cursor 等环境。</li><li>适合谁：同时使用多个 AI 编程 Agent，希望复用并集中管理扩展配置的开发者和工程团队。</li><li>核心价值：减少不同 Agent 之间重复安装、手动同步和版本回退的成本。项目于 2026-07-14 创建，2026-07-30 仍有代码提交，更新较活跃；但目前仅 3 Stars，成熟度和供应链安全仍需自行验证。</li><li>使用建议：先通过 npm 项目页或 GitHub README 安装，在测试仓库中接入一个非敏感 Skill 或 MCP 服务；验证权限、配置变更和回滚功能后，再用于正式项目。安装第三方扩展前应审查源码、依赖和密钥权限。</li><li>链接：<a href="https://github.com/VirajMishra1/loadout">GitHub</a>｜<a href="https://www.npmjs.com/package/loadout-ai">npm</a></li></ul>
+<h3>工具二：dot-tasks</h3>
+<ul><li>类型：效率工具 / 自动化 / 项目管理</li><li>它是什么：一个面向人类与 AI Agent 的仓库原生任务工作流工具，将任务状态保存在项目的 <code>.tasks/</code> 目录中。</li><li>适合谁：使用 Claude Code、Codex、Cursor 等 Agent 处理多步骤开发任务，并希望任务计划、状态和代码一起进入版本控制的个人或小团队。</li><li>核心价值：让任务上下文随仓库保存，便于 Agent 接续工作、团队审查和历史追踪，降低长任务中的上下文丢失风险。项目采用 MIT 许可证，并于 2026-07-30 更新；目前仅 2 Stars，建议按早期工具对待。</li><li>使用建议：按照 README 在一个小型仓库中初始化 <code>.tasks/</code>，先测试“创建任务、交给 Agent 执行、人工审查、提交任务状态”这一闭环；确认不会记录密钥、客户数据或无关本地信息后，再扩大使用范围。</li><li>链接：<a href="https://github.com/Awni00/dot-tasks">GitHub</a></li></ul>
+<h3>工具三：GitHub Copilot App</h3>
+<ul><li>类型：Vibe Coding / 编程工具 / 自动化</li><li>它是什么：GitHub 提供的 AI 开发工作空间，可用于创建项目、调用 AI Agent、在 Canvas 中探索方案，并衔接 GitHub 开发流程。</li><li>适合谁：希望从需求构思快速进入原型、实现和评审，同时不想自行拼装模型 API、工具调用与仓库权限体系的开发者。</li><li>核心价值：重点不只是生成代码，而是提供覆盖原型、规划、实现和审查的 Agent 工作流。GitHub 在 2026-07-27 连续发布入门指南和实践文章，说明该工作流近期仍在重点推进。</li><li>使用建议：从非关键项目开始，在 Copilot App 中创建项目并让 Agent 先输出实现计划，再分阶段生成代码；每阶段检查差异、运行测试并完成人工评审，不要直接接受未经验证的大范围修改。</li><li>链接：<a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/">入门指南</a>｜<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">工作流实践</a></li></ul>
+<h2>2. AI大佬重要言论</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料未提供可核验的国内 AI 领域重要人物及其原始发言。</li><li>说了什么：本期可靠资料不足，待确认。</li><li>为什么重要：在缺少演讲全文、采访原文或本人账号内容的情况下，不宜将媒体概括改写为个人观点。</li><li>可能影响：暂不判断。</li><li>来源/时间：截至 2026-07-30，所给资料中无可溯源的国内人物言论。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料包含 OpenAI、Anthropic 和 GitHub 的公司新闻与产品文章，但未提供可明确归属于具体人物的原始发言。</li><li>说了什么：可确认的机构观点是，GitHub 强调 Agent 的工作流框架与工具编排往往比单纯追逐新模型更重要；Anthropic 则称 Claude Opus 5 主要提升长时间运行 Agent、编程和专业工作能力。上述内容属于机构发布，不应直接归于某位高管。</li><li>为什么重要：两项信息共同表明，AI 编程竞争正在从单次代码生成转向长任务执行、工具调用、评审和权限治理。</li><li>可能影响：企业选型将更关注 Agent 完成率、Token 效率、可审计性和现有研发流程集成，而不只比较模型榜单分数。</li><li>来源/时间：<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">GitHub Blog，2026-07-27</a>｜<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic Newsroom，2026-07-24</a></li></ul>
+<h2>3. 今日结论</h2>
+<ol><li>今日最值得试的是 Loadout：它直接解决多个 AI 编程 Agent 之间 Skills 与 MCP 配置分散的问题，但项目尚新，应先审查扩展权限和供应链风险。</li><li>Vibe Coding 的效率瓶颈正在从“模型能否写代码”转向“任务状态、工具编排、测试和审查能否形成稳定闭环”；dot-tasks 与 GitHub Copilot App 分别提供轻量和平台化路径。</li><li>本期资料没有可核验的国内外具体人物原始言论，不应补写或推测；机构信息显示，长时间运行 Agent 与开发工作流框架正成为近期竞争重点。</li></ol>
+  </main>
+</body>
+</html>
