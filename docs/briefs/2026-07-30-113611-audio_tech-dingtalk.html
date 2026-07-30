@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-07-30</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜第 1 期</h1>
+<p>日期：2026-07-30 主题：开源 DSP 与插件 / DAW 工作流 / MPE 与微分音工具 / 空间音频应用</p>
+<h2>1. 一句话摘要</h2>
+<p>本期可验证进展主要集中在开源音频工具：JUCE 插件原型开发、自动混音、跨格式微分音控制和 DAW 工作区定制持续活跃。音频 AI、生成式语音/音乐、编解码器、专业硬件及耳机声学方面缺少可靠一手资料，不宜据此判断产业格局变化。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：数字阿拉伯 Maqām 档案与开源 MIDI 插件发布</h3>
+<ul><li>发生了什么：Khyam Allami 于 2026-07-21 在贝鲁特展示数字阿拉伯 Maqām 档案；据 CDM 2026-07-22 报道，项目收录数百种调律系统、ajnās 与 maqāmāt，并提供免费开源 MIDI 插件，可按听感调整调律并对接主要软件调律格式。<a href="https://cdm.link/digital-arabic-maqam-archive-and-open-source-midi-plug-in/">来源：CDM</a></li><li>为什么重要：项目把非十二平均律知识转化为可进入 DAW 和软件乐器工作流的数据与工具，降低传统音乐体系数字化、教育和创作的门槛。</li><li>可能影响：微分音支持可能从单一合成器功能扩展为跨插件、跨 DAW 的基础能力，并为音乐生成模型提供更丰富的音高表达体系；具体兼容范围及 AI 训练授权待确认。</li><li>建议关注：核验源码许可证、档案内容授权、支持的调律格式、宿主兼容性，以及自动化参数和 MPE/MIDI 2.0 的适配情况。</li></ul>
+<h3>事件二：JUCE 开源项目探索实时 DSP 原型与自动混音</h3>
+<ul><li>发生了什么：<a href="https://github.com/nickpanaccione/Quill">Quill</a> 于 2026-07-08 创建、7月28日更新，定位为基于 JUCE 的实时 C++ DSP 原型 VST3/AU 插件，采用 AGPL-3.0；<a href="https://github.com/cj-vana/automix">automix</a> 于 2026-02-08 创建、7月28日更新，提供自动麦克风混音 AU 插件及 macOS 独立应用。</li><li>为什么重要：两类工具分别压缩“算法原型到宿主试听”的开发周期，以及会议、播客和现场扩声中的多麦克风电平管理成本，体现 DSP 工具向实时、可交互和场景化发展。</li><li>可能影响：若实时编译稳定性、音频线程安全和自动增益策略得到验证，此类项目可用于插件教学、算法验证及轻量专业音频生产；目前 Quill 仅有 1 个 Star，automix 的许可证和实际效果待确认。</li><li>建议关注：测试 CPU 占用、处理延迟、爆音与崩溃恢复、AU/VST3 宿主兼容性；企业使用 Quill 前应评估 AGPL-3.0 对源码披露和分发模式的影响。</li></ul>
+<h3>事件三：DAW 与软件乐器强化视觉管理和表达控制</h3>
+<ul><li>发生了什么：CDM 于 2026-07-29 报道，DeafMan 为 Ableton Live 提供主题库和颜色编辑器，可管理主题、调整颜色并为轨道分配颜色；7月23日报道的 Expressive E Noisy 2.6 扩充音色，并强化各合成模块的表达控制及 MIDI 到 MPE 转换。<a href="https://cdm.link/deafman-transforms-ableton-live-colors-themes/">来源：Ableton Live 工具</a>；<a href="https://cdm.link/expressive-e-noisy-2-6/">来源：Noisy 2.6</a></li><li>为什么重要：前者改善大型工程的视觉检索和轨道组织，后者降低传统 MIDI 控制器进入逐音符表达工作流的门槛，分别作用于 DAW 操作效率和演奏表现力。</li><li>可能影响：DAW 扩展工具可能进一步从“换肤”转向工作区管理；MPE 映射可能成为软合成器和控制器的常见能力。Noisy 2.6 的完整兼容矩阵、性能变化及商业条款待确认。</li><li>建议关注：评估主题工具在 Ableton Live 版本升级后的兼容性与可访问性；验证 MIDI 转 MPE 的通道分配、弯音范围、自动化记录和硬件控制器适配。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：开源音频工具向工作流基础设施延伸</h3>
+<p>本期项目不只提供单一音效，还覆盖 DSP 原型、自动混音、调律档案和跨格式控制。价值重心正从“生成一种声音”转向“缩短开发、组织与演奏链路”，但多数项目尚处早期，稳定性和维护持续性仍需验证。</p>
+<h3>趋势二：空间音频开始与视觉感知结合，但证据仍弱</h3>
+<p>一个新建 Python 项目尝试把目标检测、区域危险监测、语音提示和空间化警报结合，用于实时环境感知。这显示空间音频可服务无障碍与安全场景，但项目零 Star、无许可证，且缺少测试数据，不能视为成熟方案。</p>
+<h2>4. 数据 / 图表</h2>
+<p>基于所给 GitHub 搜索结果，统计口径为截至 2026-07-30、2026年以来有推送的公开仓库；搜索结果受关键词和 GitHub 索引影响，不代表完整市场规模。</p>
+<p>| 检索方向 | 结果数 | 可见代表项目 | 最近活动 | 证据限制 | |---|---:|---|---|---| | C++ 音频 DSP 插件 | 73 | Quill、automix | 2026-07-28 | 提供资料仅展开部分结果，无法比较整体活跃度 | | Python 空间音频与 Audio AI | 1 | <a href="https://github.com/SettyBhavithav/object-detection-with-sound-by-using-open-cv">目标检测与声音提示项目</a> | 2026-07-26 | 0 Star、无许可证，性能与“生产级”表述未经第三方验证 | | Python 音乐科技与音频工具 | 0 | 无 | 不适用 | 可能由关键词过窄导致，不等于该领域没有项目 |</p>
+<p>本期暂无可靠的音频模型能力、语音/音乐生成质量、编解码性能、空间/沉浸式音频链路、DSP 基准、专业音频硬件或耳机声学器件对比图表数据。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：数字阿拉伯 Maqām 档案进入软件音乐制作链路</p>
+<ul><li>背景：阿拉伯 Maqām 包含复杂调律、音阶片段与旋律规则，难以完全映射到十二平均律和传统 MIDI 工作流。</li><li>做法：把数百种调律系统、ajnās 和 maqāmāt 整理为免费数字档案，并通过开源 MIDI 插件连接主要软件调律格式，允许用户按听感微调。</li><li>结果：据 CDM 2026-07-22 报道，档案与插件已可使用；用户规模、DAW 覆盖率、稳定性和创作采用率尚无可靠数据。</li><li>可借鉴点：传统音乐知识数字化应同时建设结构化数据、可操作插件和跨软件交换层；面向 AI 应进一步明确训练授权、文化语境标注与结果审核机制。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：本期开源项目普遍缺少标准化延迟、CPU、音质和稳定性测试。空间音频项目未提供可验证的定位误差与端到端延迟；生成式语音/音乐、沉浸式音频、编解码器、DSP 芯片、插件及 DAW API 更新资料不足。</li><li>版权/合规风险：传统音乐档案、训练数据、生成内容和语音身份可能涉及版权、人格权及文化挪用争议。AGPL-3.0 项目进入闭源产品时存在合规要求，其他项目许可证需逐项核验。</li><li>商业化风险：低 Star、新建仓库和媒体报道不能证明用户需求、维护能力或付费意愿。专业音频硬件、耳机及声学器件、音乐科技公司投融资与经营动态本期缺少可靠来源，相关判断待确认。</li><li>数据安全风险：自动混音、视觉检测、语音提示等应用可能持续采集麦克风或摄像头数据；需明确本地处理、数据留存、模型调用、权限控制和日志脱敏策略。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>当前最明确的信号是开源工具正在打通 DSP 原型、自动混音、微分音调律、MPE 表达与 DAW 工作流。</li><li>空间音频与视觉 AI 的融合具有无障碍和安全应用潜力，但现有项目证据不足，暂不具备产业成熟度判断基础。</li><li>音频 AI、语音/音乐生成、编解码器、沉浸式音频、专业硬件、耳机声学及标准/API 方面本期资料不足，结论均待确认。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>Quill 与 automix 的版本发布、宿主兼容测试、实时性能及许可证变化。</li><li>微分音插件对 MPE、MIDI 2.0、MTS-ESP、Scala 等标准或格式的实际支持情况。</li><li>语音/音乐生成模型、空间与沉浸式音频标准、编解码器和 DAW/插件 API 的官方更新。</li><li>专业音频接口、DSP 硬件、监听耳机与声学器件新品的测量数据及量产信息。</li></ul>
+  </main>
+</body>
+</html>
