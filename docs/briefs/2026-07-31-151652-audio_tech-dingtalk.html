@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-07-31</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-07-31</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可信增量主要来自开源音频工具与音乐制作软件：微分音调律工具开始覆盖主流软件调律格式，JUCE 8 开源插件继续活跃；音频 AI、语音/音乐生成、空间音频、编解码器、专业硬件及标准组织暂无可核实的重要更新。</li><li>今日关键词：微分音调律、MIDI 插件、JUCE 8、AU/VST3、MPE、Ableton Live、开源 DSP。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：数字阿拉伯 Maqām 档案与开源 MIDI 调律插件发布 ★</h3>
+<ul><li>发生了什么：Khyam Allami 的长期研究项目公开数字阿拉伯 Maqām 档案，并提供免费开源 MIDI 插件，用于调用和编辑阿拉伯音乐调律。CDM 报道称，档案包含数百种调律系统、ajnās 与 maqāmāt。</li><li>涉及技术：微分音调律、MIDI 音高控制、软件调律格式转换、跨 DAW 调律工作流。</li><li>关键参数：调律系统数量为“数百种”；支持范围被描述为“主流软件调律格式”，具体格式清单、宿主兼容性、MPE 支持及音高精度资料未确认。</li><li>为什么重要：它把文化音乐学档案转化为可直接进入制作链路的工具，降低非十二平均律音乐在 DAW、软合成器和电子乐器中的应用门槛。</li><li>对产品研发的影响：合成器、MIDI 插件和 DAW 团队应重新检查调律表导入、实时音高映射、MPE/MIDI Pitch Bend 冲突及工程文件可移植性；下一步需观察插件格式、许可证和宿主兼容性测试结果。</li><li>来源/时间：<a href="https://cdm.link/digital-arabic-maqam-archive-and-open-source-midi-plug-in/">CDM｜Digital Arabic Maqām Archive and open-source MIDI plug-in now available</a>｜2026-07-22。</li></ul>
+<h3>事件二：Crypta 开源低音多频段处理插件开始快速迭代</h3>
+<ul><li>发生了什么：Basilica Audio 于 2026-07-13 创建 Crypta 项目，并于 2026-07-31 更新代码。项目定位为低音并行处理插件，可分离低频与高频，对低频压缩并对高频施加失真等处理。</li><li>涉及技术：分频、并行处理、动态压缩、失真、脉冲响应、JUCE 插件开发。</li><li>关键参数：C++、JUCE 8、AU/VST3、AGPL-3.0；截至资料快照有 1 个 Star、20 个未关闭问题，未提供可下载 Release，采样率、位深、内部过采样及处理时延资料未确认。</li><li>为什么重要：项目展示了以 JUCE 8 快速构建跨格式 DSP 插件的可复用路径，但目前成熟度和用户验证都很有限。</li><li>对产品研发的影响：可用于研究分频与并行失真链路，但 AGPL-3.0 对闭源产品集成存在明显许可约束；下一步应重点观察正式 Release、自动化测试、参数平滑、宿主兼容性及延迟补偿信息。</li><li>来源/时间：<a href="https://github.com/basilica-audio/Crypta">GitHub｜basilica-audio/Crypta</a>｜创建于 2026-07-13，最近推送于 2026-07-31。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：Crypta 将分频、低频压缩、高频失真及并行处理组合为低音专用链路；厂商宣称支持脉冲响应相关处理，具体实现资料未确认。</li><li>工程应用：适合贝斯、低音合成器和重型吉他音色塑形；研发重点包括分频相位、参数突变噪声、过采样成本和插件延迟补偿。</li><li>成熟度：早期开发阶段；无正式 Release，问题数量较多，不能据此认定已达到生产可用水平。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未出现新的音频编解码器、编码工具链或容器格式更新。</li><li>性能与兼容性：码率、复杂度、主观音质和终端解码支持均无可靠新增数据。</li><li>工程应用：暂不建议调整既有编解码路线；后续应等待标准组织、芯片厂商或主流实现发布可复现实测结果。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 出现一个将 YOLOv3/OpenCV 目标检测、空间质心跟踪、危险区域监控和空间音频提示结合的实验项目。</li><li>渲染链路或终端支持：仓库描述提及提示音与文本转语音，但未说明 HRTF、双耳渲染、扬声器布局、声源定位误差或端到端时延，所谓“生产级”属于开发者自述，无法独立验证。</li><li>工程应用：可作为视觉辅助声学提示的概念参考；下一步需验证定位映射、可听化设计、无障碍效果和实时性能。<a href="https://github.com/SettyBhavithav/object-detection-with-sound-by-using-open-cv">GitHub 项目</a>创建于 2026-07-26。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中仅有视觉检测驱动声音提示的多模态项目；没有可靠的语音生成、音乐生成、歌声合成、音频分离或基础音频模型更新。</li><li>能力与限制：项目使用 YOLOv3 DNN、OpenCV Haar Cascade、提示音与文本转语音；80 类实时检测为开发者描述，帧率、语音引擎、准确率及音频响应时延未确认。</li><li>工程应用：可能用于辅助导航和危险告警，但必须测试误报、漏报、提示音遮蔽和隐私合规；短期不能据此判断音频生成模型的产业进展。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中没有 AES67、Dante、Ravenna、AVB/TSN、WebRTC 音频或网络 MIDI 的可靠更新。</li><li>时延与互操作性：无新增测量或认证信息。</li><li>工程应用：继续采用既有协议版本和互操作测试矩阵；等待协议维护方或标准组织发布正式更新。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Expressive E Noisy 2.6。</li><li>类型：软件合成器；CDM 报道其扩大音色范围，并增加从传统 MIDI 输入到 MPE 表达控制的工作流。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：与 Osmose、Osmose CE 的协同被报道提及；操作系统、插件格式和 DAW 兼容清单资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：相较此前版本，2.6 强化各声音模块的表达控制并扩展音色；与竞品的定量差异没有可靠测试。下一步需观察 MIDI-to-MPE 映射精度、自动化行为和宿主兼容性。</li><li>来源/时间：<a href="https://cdm.link/expressive-e-noisy-2-6/">CDM｜In Expressive E’s Noisy 2.6 synth, expression everywhere, MIDI to MPE</a>｜2026-07-23。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：所给资料未提供 AES、ITU、ETSI 或 3GPP 在 2026-07-31 前后发布的可靠音频标准或论文更新；也没有可核实的新音频 API 版本。</li><li>发布机构：无。</li><li>核心结论：不能用既有标准或非官方项目替代本期标准动态。</li><li>对产品设计的影响：本期不触发标准基线变更；研发团队仍需分别跟踪 AES、ITU、ETSI、3GPP 的官方发布与勘误渠道。</li><li>原文链接：资料未提供。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：DeafMan 为 Ableton Live 构建主题库与交互式颜色编辑器。</li><li>背景：大型 Live 工程中，轨道、分组和功能区域的视觉识别会影响导航与操作效率。</li><li>技术方案：使用完整颜色主题库和交互式编辑器管理界面配色，并为轨道分配颜色；具体 API、脚本接口及支持的 Live 版本资料未确认。</li><li>结果：CDM 将其描述为从单一主题扩展到完整“视觉系统”；效率改善没有独立量化数据。</li><li>可借鉴点：DAW 和专业音频软件可把颜色体系纳入工作区状态与轨道语义设计，而不只作为外观选项；下一步需验证可访问性、色觉差异和升级兼容性。<a href="https://cdm.link/deafman-transforms-ableton-live-colors-themes/">来源</a>｜2026-07-29。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Crypta | JUCE 8；分频、压缩、失真、并行处理；AGPL-3.0 | 资料未确认 | AU、VST3 | 免费开源；商业集成成本未确认 | <a href="https://github.com/basilica-audio/Crypta">GitHub，2026-07-31 更新</a> | | Digital Arabic Maqām Archive/MIDI 插件 | 数百种调律系统、ajnās 与 maqāmāt；具体格式清单未确认 | 资料未确认 | MIDI；厂商宣称覆盖主流软件调律格式 | 免费 | <a href="https://cdm.link/digital-arabic-maqam-archive-and-open-source-midi-plug-in/">CDM，2026-07-22</a> | | Expressive E Noisy 2.6 | 扩展音色；MIDI-to-MPE；表达控制 | 资料未确认 | Osmose/Osmose CE 协同；其他平台未确认 | 资料未确认 | <a href="https://cdm.link/expressive-e-noisy-2-6/">CDM，2026-07-23</a> | | 视觉检测空间声音提示项目 | YOLOv3、Haar Cascade、空间质心跟踪、TTS | 资料未确认 | Python、OpenCV | 未标明许可证，使用成本未确认 | <a href="https://github.com/SettyBhavithav/object-detection-with-sound-by-using-open-cv">GitHub，2026-07-26</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开放调律档案正在与 MIDI/DAW 工具结合；MPE 继续从专用控制器扩展到软件映射；JUCE 8 仍是新开源插件的重要开发框架。资料中没有足够证据判断语音/音乐生成、沉浸式音频、编解码器、专业音频硬件、耳机或声学器件出现新一轮突破。</li><li>工程风险：早期开源仓库缺少 Release、时延数据、宿主测试和长期维护承诺；微分音调插件还可能遇到 Pitch Bend 通道分配、MPE 兼容和工程交换失真。</li><li>版权/合规风险：Crypta 采用 AGPL-3.0，闭源集成前必须完成许可证评估；调律档案需确认数据许可、署名和文化资料使用边界；AI 视觉告警还涉及摄像头隐私与误报责任。</li><li>商业化风险：开源工具的社区活跃度和付费转化尚未验证；MPE 与微分音调仍受终端、宿主和内容生态碎片化限制；缺少专业硬件、耳机及声学器件的价格与供应链资料，无法形成采购判断。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 Digital Arabic Maqām 插件的代码仓库、许可证、插件格式、调律格式清单及 DAW 兼容测试。</li><li>跟踪 Crypta 正式 Release、CPU 占用、过采样、相位响应、插件延迟补偿和 AGPL 商业使用边界。</li><li>核查 AES、ITU、ETSI、3GPP 官方渠道，以及语音/音乐生成、空间与沉浸式音频、编解码器、专业硬件、耳机/声学器件和音频 API 的正式发布。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Digital Arabic Maqām Archive and open-source MIDI plug-in now available｜2026-07-22｜https://cdm.link/digital-arabic-maqam-archive-and-open-source-midi-plug-in/</li><li>Expressive E/CDM Create Digital Music｜In Expressive E’s Noisy 2.6 synth, expression everywhere, MIDI to MPE｜2026-07-23｜https://cdm.link/expressive-e-noisy-2-6/</li><li>DeafMan/CDM Create Digital Music｜DeafMan transforms Ableton Live with custom colors, interactive editor｜2026-07-29｜https://cdm.link/deafman-transforms-ableton-live-colors-themes/</li><li>Basilica Audio｜Crypta｜创建于 2026-07-13，最近推送于 2026-07-31｜https://github.com/basilica-audio/Crypta</li><li>SettyBhavithav｜object-detection-with-sound-by-using-open-cv｜创建并最近推送于 2026-07-26｜https://github.com/SettyBhavithav/object-detection-with-sound-by-using-open-cv</li></ol>
+  </main>
+</body>
+</html>
