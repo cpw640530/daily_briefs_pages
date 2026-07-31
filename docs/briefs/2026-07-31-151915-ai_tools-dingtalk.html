@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-07-31</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-07-31</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天优先推荐面向办公自动化与研究任务的 LobsterAI；开发者可试用统一管理多种编码 Agent 的 agents-gui，以及帮助 Neovim 用户约束 AI 生成代码的 nvime，但后两者均为早期新项目，稳定性仍待验证。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：LobsterAI</h3>
+<ul><li>一句话介绍：网易有道开源的桌面级 AI Agent，可在真实桌面环境中执行数据分析、幻灯片制作、文档处理、视频制作和网页研究。</li><li>分类：效率工具 / 自动化</li><li>适合谁：研究人员、运营人员、咨询顾问、内容团队，以及需要远程触发桌面任务的个人用户。</li><li>典型场景：收集网页资料并整理报告、分析本地数据、生成演示文稿、处理办公文档，通过微信或飞书远程下达任务。</li><li>核心功能：基于 OpenClaw 执行桌面工具；覆盖数据、文档、幻灯片、视频与网络研究；支持微信、飞书、钉钉和 Telegram 等消息入口。</li><li>GitHub Stars：5,733</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-07-31 06:33 UTC（以仓库最近推送时间计）</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：跨平台桌面端；具体操作系统版本要求资料未确认</li><li>使用成本：源代码免费；模型 API、第三方服务及运行资源成本资料未确认</li><li>上手步骤：访问<a href="https://github.com/netease-youdao/LobsterAI">项目仓库</a>阅读安装说明，准备所需运行环境与模型凭据，先用非敏感文档测试单一任务，再按需连接微信、飞书、钉钉或 Telegram。</li><li>推荐理由：它是什么？一个能操作真实桌面工具的通用 AI Agent。为什么值得试？在本期资料中，其 Stars 最高、当天仍有代码推送，且直接覆盖研究和办公交付物，实际价值最明确。</li><li>局限与风险：桌面执行权限较高，不宜直接接触未备份文件或敏感账号；仓库有 771 个未关闭 Issue，部署前应重点检查权限、凭据存储和任务回滚机制。</li><li>官网/仓库链接：<a href="https://lobsterai.youdao.com">官网</a>｜<a href="https://github.com/netease-youdao/LobsterAI">GitHub</a></li></ul>
+<h3>工具二：agents-gui（新项目）</h3>
+<ul><li>一句话介绍：在 VS Code 中为 Claude Code、Gemini CLI、Codex 和 Cursor Agent 提供统一图形界面的扩展。</li><li>分类：编程插件 / Vibe Coding</li><li>适合谁：同时使用多个 AI 编码 CLI，希望减少终端切换成本的 VS Code 用户。</li><li>典型场景：在同一编辑器中调用和切换不同编码 Agent，对比执行结果，统一管理 AI 辅助开发会话。</li><li>核心功能：为 Claude Code、Gemini CLI、Codex、Cursor Agent 提供统一 GUI；更完整的会话、权限及配置能力资料未确认。</li><li>GitHub Stars：1</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-07-31 07:10 UTC（以仓库最近推送时间计）</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：VS Code；底层 AI CLI 的系统兼容性分别取决于对应工具</li><li>使用成本：扩展源代码免费；各 AI CLI 的订阅、API 和模型费用另计，具体价格资料未确认</li><li>上手步骤：访问<a href="https://github.com/trry-hub/agents-gui">项目仓库</a>，按 README 安装 VS Code 扩展，预先配置至少一种受支持的 AI CLI，再用测试仓库验证文件权限、命令执行和结果回写。</li><li>推荐理由：它是什么？多种 AI 编码 CLI 的统一 VS Code 前端。为什么值得试？项目在今日仍有推送，直接解决多 Agent 工作流入口分散的问题；因合格的千星候选不足而作为新项目补充，入选依据是活跃度和功能差异，不代表其增长速度已经得到验证。</li><li>局限与风险：仅 1 Star，成熟度、用户规模和长期维护能力尚未建立；对外部 CLI 依赖较强，执行命令前需检查授权范围和代码变更。</li><li>官网/仓库链接：<a href="https://github.com/trry-hub/agents-gui">GitHub</a></li></ul>
+<h3>工具三：nvime（新项目）</h3>
+<ul><li>一句话介绍：一款名为“No Vibe Coding In My Editor”的 Neovim 插件，定位是约束或反思未经审查的 Vibe Coding。</li><li>分类：编程插件 / Vibe Coding</li><li>适合谁：使用 Neovim、希望探索更克制的 AI 编程流程，或对 Vibe Coding 实验型插件感兴趣的开发者。</li><li>典型场景：在 Neovim 中试验对 AI 生成代码的约束机制，建立“生成后必须阅读、验证和测试”的开发习惯。</li><li>核心功能：资料仅确认其为 Neovim 的“No Vibe Coding”插件；具体拦截规则、工作流及配置能力资料未确认。</li><li>GitHub Stars：6</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-07-05 17:59 UTC（以仓库最近推送时间计）</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Neovim；具体 Neovim 版本与操作系统要求资料未确认</li><li>使用成本：仓库公开；授权条款与可能的外部服务成本资料未确认</li><li>上手步骤：访问<a href="https://github.com/mengsig/nvime">项目仓库</a>，先阅读 README 和源码确认实际行为，再通过现有 Neovim 插件管理器在隔离配置中安装，使用小型测试项目验证。</li><li>推荐理由：它是什么？一个反向切入 Vibe Coding 的实验型 Neovim 插件。为什么值得试？概念有趣，且截至 2026-07-05 仍有更新；因千星候选不足而作为新项目补充，但近期 Stars 增长速度无可靠数据，不应视为成熟生产工具。</li><li>局限与风险：仅 6 Stars、无已确认许可证，功能与维护连续性均存在较大不确定性；不建议直接部署到核心开发环境。</li><li>官网/仓库链接：<a href="https://github.com/mengsig/nvime">GitHub</a></li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | LobsterAI | 桌面办公、研究与内容自动化 | 5,733 | 高：2026-07-31 有推送 | 开源免费，模型及服务成本未确认 | 4.5/5 | | agents-gui（新项目） | 在 VS Code 统一调用多个编码 Agent | 1 | 高：2026-07-31 有推送 | 扩展开源免费，外部 AI 服务另计 | 3.0/5 | | nvime（新项目） | 探索受约束的 Neovim Vibe Coding 流程 | 6 | 中：2026-07-05 有推送 | 仓库公开，许可证未确认 | 2.5/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：资料未确认</li><li>说了什么：现有资料包含网易有道 LobsterAI 的项目发布与功能描述，但没有可归属于具体国内 AI 重要人物的原始言论。</li><li>为什么重要：将公司产品信息直接包装成人物观点会造成错误归因，因此本期不作推断。</li><li>可能影响：国内个人 AI Agent 正从对话界面延伸至桌面执行和企业消息入口，但该判断来自产品能力，不代表特定人物公开表态。</li><li>来源/时间：<a href="https://github.com/netease-youdao/LobsterAI">netease-youdao/LobsterAI</a>，仓库数据截至 2026-07-31</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：资料未确认</li><li>说了什么：Google、GitHub 和 Anthropic 的官方资料强调生产级 Agent、Agent 工作流及长时间运行能力，但给定材料没有提供可核验的具体人物原话。</li><li>为什么重要：多家公司同时将重点从单次模型回答转向 Agent 的执行框架、后台任务、工具连接、代码审查和生产可靠性。</li><li>可能影响：开发工具竞争将更多集中在 Agent harness、权限控制、MCP 集成、长任务执行和成本效率，而不只是基础模型能力。</li><li>来源/时间：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/">Google Managed Agents 更新</a>，2026-07-28；<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">GitHub Agent 工作流文章</a>，2026-07-27；<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic Claude Opus 5</a>，2026-07-24</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：需要在 VS Code 中集中使用 Claude Code、Codex 等 CLI，可在测试仓库试用 agents-gui；Neovim 用户若关注 Vibe Coding 约束机制，可隔离试用 nvime，但两者都不宜直接用于关键生产项目。</li><li>办公场景：优先试用 LobsterAI，从网页研究、数据整理或演示文稿生成等低风险任务开始，并限制桌面权限与敏感数据访问。</li><li>创作场景：LobsterAI 更适合将资料研究、文档、幻灯片和视频处理串成工作流；正式发布前仍需人工核查事实、版权、隐私和生成内容质量。</li></ul>
+  </main>
+</body>
+</html>
