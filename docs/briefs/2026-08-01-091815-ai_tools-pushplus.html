@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-08-01</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-08-01</h1>
+<h2>1. 今日推荐工具</h2>
+<h3>工具一：GitHub Copilot App</h3>
+<ul><li>类型：Vibe Coding / 编程 Agent</li><li>它是什么：GitHub 面向 Agent 化开发推出的应用，可通过会话、画布和 Pull Request 完成项目规划、代码生成、审查及迭代；最新工作流支持堆叠会话与堆叠 PR。</li><li>适合谁：需要并行处理功能开发、遗留系统改造和代码审查的个人开发者及工程团队。</li><li>核心价值：把大型改造拆成可独立审查的连续任务，降低单次变更规模；相比只调用模型 API，它还提供仓库上下文、权限策略和开发流程编排。</li><li>使用建议：先选一个低风险模块，让 Agent 依次完成“分析现状、制定计划、实现、测试、提交 PR”；每个会话只处理一个明确目标，并由人工检查测试结果与变更边界。</li><li>链接：<a href="https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/">堆叠会话与 PR 实践</a>；<a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/">入门指南</a></li></ul>
+<h3>工具二：Ori Agent</h3>
+<ul><li>类型：效率工具 / 自动化</li><li>它是什么：一个使用 Go 开发、围绕自主 Agent 工作区构建的本地优先 AI 生产力工具；项目于 2026 年 7 月 31 日仍有代码更新。</li><li>适合谁：重视数据本地化，希望探索多步骤自主任务、独立 Agent 工作区或本地自动化流程的技术用户。</li><li>核心价值：本地优先架构有利于控制工作数据和任务上下文，也适合验证“每项任务一个 Agent 工作区”的协作方式。</li><li>使用建议：从 GitHub 仓库的安装说明开始，只用脱敏资料测试单一任务；重点检查模型配置、文件访问范围和任务执行记录。该项目目前关注度低、许可证标注为 <code>NOASSERTION</code>，不建议未经安全和许可证审查直接用于生产环境。</li><li>链接：<a href="https://github.com/johnjallday/ori-agent">GitHub 仓库</a></li></ul>
+<h3>工具三：Fluxzero Agent Plugins</h3>
+<ul><li>类型：编程插件 / Vibe Coding / 自动化</li><li>它是什么：一组可用于 Codex、Claude Code、Cursor、GitHub Copilot 和 Gemini CLI 的跨平台 Agent 插件，采用 Apache-2.0 许可证；项目于 2026 年 7 月 31 日更新。</li><li>适合谁：同时使用多种 AI 编程工具，希望复用工作流或比较不同 Agent 执行效果的开发者。</li><li>核心价值：同一套插件覆盖多个主流编码 Agent，可减少更换编辑器或模型时重复配置工作流的成本。</li><li>使用建议：先根据仓库文档在一个测试项目中接入单一插件，使用相同任务分别测试 Codex、Claude Code 或 Cursor；记录完成率、Token 成本、测试通过率和人工返工时间。项目较新且暂无 Star，安装前应审查插件权限与执行脚本。</li><li>链接：<a href="https://github.com/fluxzero-io/fluxzero-agent-plugins">GitHub 仓库</a></li></ul>
+<h2>2. AI大佬重要言论</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料未提供国内 AI 重要人物的可核验原始发言。</li><li>说了什么：暂无可准确归属到具体人物的近期言论。</li><li>为什么重要：人物言论必须区分本人原话、公司公告与媒体转述；当前资料不足以完成交叉核验。</li><li>可能影响：暂不作判断，避免将产品发布或二手信息误写为个人观点。</li><li>来源/时间：截至 2026 年 8 月 1 日，本期资料无可用国内人物原始来源。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料包含 OpenAI、Anthropic 和 GitHub 的官方更新，但未提供可准确归属到具体人物的原始讲话或署名观点。</li><li>说了什么：可确认的公司级信号包括 OpenAI 于 2026 年 7 月 30 日发布 GPT-5.6 性价比进展，Anthropic 于 7 月 24 日发布面向长时运行 Agent 的 Claude Opus 5；这些属于官方产品信息，不能直接视为某位“大佬”的个人言论。</li><li>为什么重要：两项更新均指向 Agent 的长任务能力、编码能力与推理成本优化，但人物观点仍需采访、演讲或署名文章佐证。</li><li>可能影响：编码 Agent 的竞争重点将进一步从单轮生成转向长时运行、工具编排、成本控制和可审查交付。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI News</a>，2026 年 7 月 30 日；<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic：Claude Opus 5</a>，2026 年 7 月 24 日。</li></ul>
+<h2>3. 今日结论</h2>
+<ol><li>今日最值得实际验证的是 GitHub Copilot App 的“堆叠会话 + 小粒度 PR”工作流，它比单纯比较模型更直接影响交付效率与审查质量。</li><li>Vibe Coding 工具正在由单一编辑器能力转向跨 Agent 插件和可复用工作流，但 Ori Agent、Fluxzero 等新项目成熟度较低，应先在隔离测试项目中评估权限、稳定性和许可证风险。</li><li>近期产品信号集中在长时运行 Agent、编码能力和成本效率；本期资料不足以支持国内外具体人物言论归因，不应把公司公告改写成个人观点。</li></ol>
+  </main>
+</body>
+</html>
