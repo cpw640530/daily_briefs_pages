@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-01</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 X 期</h1>
+<p>日期：2026-08-01 主题：前沿模型效率竞争、智能体工程化与机器人基础模型</p>
+<h2>1. 一句话摘要</h2>
+<p>OpenAI、Anthropic将竞争重点进一步推向模型效率和长时智能体，Google DeepMind则把基础模型能力延伸至机器人全身控制与多机器人协作。对企业而言，近期更值得投入的是可评测、可审计的智能体与具身智能试点，而非仅比较模型榜单。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：OpenAI与Anthropic更新前沿模型，长时智能体成为竞争焦点</h3>
+<ul><li>发生了什么：OpenAI于2026年7月30日发布GPT-5.6相关产品信息，强调推进价格与性能边界，并于7月29日披露其效率工程；Anthropic于7月24日发布Claude Opus 5，称其面向长时间运行的智能体，并提升编码和专业工作能力。公开资料未提供完整API价格、上下文窗口及迁移规则，相关细节待确认。来源：<a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI GPT-5.6</a>、<a href="https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/">OpenAI效率说明</a>、<a href="https://www.anthropic.com/news/claude-opus-5">Claude Opus 5</a>。</li><li>为什么重要：模型竞争正从单次问答能力转向单位成本、长任务稳定性、工具调用和专业工作产出。企业选型需要同时评估任务完成率、延迟、人工接管率与总成本。</li><li>可能影响：编码、科研计算及复杂知识工作将成为首批受益场景；API调用结构和智能体基础设施可能需要随新模型调整。实际成本优势仍需第三方测试确认。</li><li>建议关注：等待完整API文档与定价；使用相同任务集对GPT-5.6、Opus 5和Sonnet 5开展盲测，记录失败恢复能力、输出一致性及每项任务成本。</li></ul>
+<h3>事件二：GitHub项目显示AI工具从“对话界面”走向运行时与安全编排</h3>
+<ul><li>发生了什么：GitHub检索结果显示，2026年7月创建的<a href="https://github.com/u2giants/ai-devops">ai-devops</a>提供Claude/Codex编排脚本、提示词、技能、Playwright模板及仓库接入工具；<a href="https://github.com/WATNYTMRZRMADOF/NestLabJarvis">NestLabJarvis</a>定位为本地优先的自主助手，整合Ollama、MCP、语音、工作进程和安全审批。两者均在2026年8月1日前后保持更新，但现有数据不足以证明其属于GitHub热门项目。</li><li>为什么重要：开发者关注点已经从调用单一模型，转向多智能体编排、浏览器验证、本地推理、权限审批和可复用技能，反映AI工具正在进入软件交付流程。</li><li>可能影响：MCP兼容、执行沙箱、人工审批与可观测性可能成为企业智能体平台的基础能力；同时会扩大凭据泄露、提示注入和自动化误操作风险。</li><li>建议关注：优先考察许可证、维护者持续性、测试覆盖和安全边界。<code>ai-devops</code>截至资料抓取时为0星、无许可证，尚不宜仅凭搜索排名用于生产决策；NestLabJarvis的完整指标待确认。</li></ul>
+<h3>事件三：机器人基础模型转向全身智能、运行时安全与触觉感知</h3>
+<ul><li>发生了什么：Google DeepMind于2026年7月发布Gemini Robotics 2及Gemini Robotics ER 2，分别强调机器人全身智能，以及视频理解、任务编排和多机器人协作。开源项目<a href="https://github.com/ros-claw/rosclaw">rosclaw</a>则尝试提供具身智能运行时，覆盖能力路由、沙箱安全、物理记忆和技能演化；截至2026年7月31日为175星、32个分叉。IEEE Spectrum还于7月28日报道一种利用彩色机器人皮肤实现高空间分辨率触觉感知的研究。来源：<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Gemini Robotics 2</a>、<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">Gemini Robotics ER 2</a>、<a href="https://spectrum.ieee.org/robot-finger">机器人手指触觉研究</a>。</li><li>为什么重要：具身智能的瓶颈不仅是模型推理，还包括跨本体控制、触觉反馈、实时干预、数据闭环和安全执行。基础模型正在与机器人中间件及传感硬件融合。</li><li>可能影响：人形机器人和通用机器人可能形成“基础模型、具身运行时、传感器与本体”的分层技术栈；汽车自动驾驶能否复用这些能力，现有资料不足，待确认。</li><li>建议关注：核验真实机器人任务成功率、跨本体迁移能力、端到端延迟、安全停机机制和失败案例，避免仅依据演示视频判断成熟度。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：智能体竞争进入系统工程阶段</h3>
+<p>模型能力仍是基础，但生产价值越来越取决于工具调用、状态管理、浏览器验证、权限控制和失败恢复。Claude/Codex编排、本地推理与MCP项目同时出现，说明智能体平台正向类似DevOps的可测试、可审计体系演进。</p>
+<h3>趋势二：具身智能形成软硬件闭环</h3>
+<p>Gemini Robotics 2、rosclaw和机器人触觉研究分别覆盖基础模型、运行时和传感器。下一阶段竞争将围绕真实数据获取、跨机器人迁移、安全约束及单位任务成本展开，人形外观本身不再是充分差异化因素。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目或发布 | 时间 | 类型 | 已披露信号 | 资料限制 | |---|---:|---|---|---| | GPT-5.6 | 2026-07-30 | 前沿模型/产品更新 | 强调价格性能边界 | API价格、上下文及基准明细待确认 | | Claude Opus 5 | 2026-07-24 | 前沿模型 | 面向长时智能体、编码及专业工作 | 独立评测与完整API参数待确认 | | Gemini Robotics 2 | 2026-07 | 机器人基础模型 | 强调全身智能 | 精确发布日期及量化指标待确认 | | rosclaw | 截至2026-07-31 | 开源具身运行时 | 175星、32个分叉、19个开放问题 | GitHub热度会动态变化 | | ai-devops | 截至2026-08-01 | AI开发工具 | 2026-07-05创建，0星、无许可证 | 项目成熟度较低，不能称为热门 |</p>
+<p>本期资料未提供可信的AI硬件出货量、自动驾驶基础模型指标，以及融资、并购金额或交易公告，因此不对相关市场规模和资本活动作推断。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：rosclaw具身智能运行时</p>
+<ul><li>背景：通用机器人需要把大模型决策映射到具体本体能力，同时处理实时安全、执行失败、物理环境状态和技能积累。</li><li>做法：项目宣称通过e-URDF、能力路由、安全沙箱、物理记忆、运行时干预及技能演化，将AI智能体接入ROS/ROS 2机器人系统。</li><li>结果：截至2026年7月31日，项目获得175星和32个分叉，并保持活跃更新；尚无资料证明其已实现大规模商业部署或达到工业安全认证要求。</li><li>可借鉴点：机器人智能体架构应将模型推理与硬实时控制隔离，并把能力声明、权限校验、人工接管、执行日志和回放机制纳入运行时。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：厂商披露以能力描述为主，缺少统一第三方评测；长时智能体仍可能出现错误累积、工具误用和状态漂移。机器人基础模型还受实时性、触觉泛化和跨本体迁移约束。</li><li>合规风险：智能体自动操作代码、浏览器或机器人可能触及责任归属、劳动安全及行业认证要求；军用地面机器人等场景还存在出口管制和伦理风险。</li><li>商业化风险：模型升级频繁，迁移成本和供应商锁定可能上升。人形机器人、自动驾驶、AI硬件及相关融资并购缺乏本期资料支持，产业化节奏待确认。</li><li>数据安全风险：MCP工具、代码代理和本地助手可能接触源代码、密钥及内部文档；机器人还会采集视频、语音和空间数据，需要最小权限、隔离执行与完整审计。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>前沿模型竞争已从参数和单项榜单转向长任务可靠性、专业产出及单位任务成本。</li><li>AI工具的关键价值正在迁移到编排、审批、验证和可观测性，低星新项目应先审查成熟度与许可证。</li><li>具身智能开始形成基础模型、运行时、传感器和机器人本体的完整栈，但商业部署、自动驾驶复用及硬件规模仍待可靠数据验证。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>GPT-5.6、Claude Opus 5和Sonnet 5的API价格、上下文窗口、速率限制及第三方实测。</li><li>Gemini Robotics 2的真实机器人基准、跨本体迁移效果，以及人形机器人量产和安全认证进展。</li><li>自动驾驶或机器人基础模型、AI芯片与传感硬件的新发布，以及经官方公告确认的融资并购交易。</li></ul>
+  </main>
+</body>
+</html>
