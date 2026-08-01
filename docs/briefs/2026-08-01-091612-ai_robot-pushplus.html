@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-01</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 1 期</h1>
+<p>日期：2026-08-01 主题：前沿模型效率竞争 / 机器人基础模型 / 企业级开源 AI 工具</p>
+<h2>1. 一句话摘要</h2>
+<p>前沿 AI 竞争正从单纯提升模型能力，转向“更低成本的智能、更长时间运行的智能体，以及可迁移到机器人本体的基础模型”。企业近期应重点验证模型价格性能、智能体稳定性与机器人系统安全，而非仅比较基准分数。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：OpenAI GPT-5.6 与 Anthropic Claude Opus 5 推动前沿模型效率竞争</h3>
+<ul><li>发生了什么：OpenAI 于 2026-07-30 发布 GPT-5.6 价格性能更新，并于 07-29 披露相关工程效率研究；Anthropic 于 07-24 发布 Claude Opus 5，强调长时间运行智能体、编程和专业工作能力。Claude Sonnet 5 已于 06-30 发布。<a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI</a>｜<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic</a></li><li>为什么重要：头部厂商的差异化指标已从模型绝对能力，扩展至单位成本、长任务可靠性和专业工作流完成率，直接影响企业 API 选型与智能体项目的经济性。</li><li>可能影响：多模型路由、按任务分级调用和长任务状态管理将成为 AI 应用的基础能力；旧模型的价格与产品定位可能进一步调整。</li><li>建议关注：核验 GPT-5.6 与 Opus 5 的 API 可用区域、价格、上下文窗口、速率限制及评测方法。现有资料未提供完整 API 参数和价格表，相关细节待确认。</li></ul>
+<h3>事件二：Gemini Robotics 2 将基础模型推进至全身控制和多机器人协作</h3>
+<ul><li>发生了什么：Google DeepMind 于 2026 年 7 月公布 Gemini Robotics 2，强调机器人全身智能；同时公布 Gemini Robotics ER 2，覆盖视频理解、任务编排和多机器人协作。<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Gemini Robotics 2</a>｜<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">Gemini Robotics ER 2</a></li><li>为什么重要：机器人基础模型的能力边界正从视觉语言理解和机械臂操作，扩展至全身动作、跨任务编排与多本体协同，为具身智能和人形机器人提供更统一的软件栈。</li><li>可能影响：机器人厂商的竞争重点可能由单机硬件参数转向数据闭环、基础模型适配、仿真训练和安全控制；自动驾驶也可能借鉴视频理解、世界建模与任务规划方法，但本期资料未显示相关量产落地。</li><li>建议关注：真实机器人成功率、跨本体迁移效果、推理硬件需求、安全约束和开放接口。人形机器人适配清单、商用客户及部署成本待确认。</li></ul>
+<h3>事件三：开源 AI 工具向私有文档处理和机器人运行时延伸</h3>
+<ul><li>发生了什么：截至 2026-08-01，Python 项目 <a href="https://github.com/jasoncheng7115/jt-doc-tools">jt-doc-tools</a> 提供可自托管的 PDF、Office、OCR 与 LLM 文档处理能力，共 198 Stars、49 Forks；<a href="https://github.com/ros-claw/rosclaw">rosclaw</a> 面向 Physical AI 和具身智能体运行时，覆盖 ROS/ROS 2、沙箱安全、能力路由、物理记忆和技能演化，共 175 Stars、32 Forks。</li><li>为什么重要：开源生态正在补齐模型之外的工程层，包括敏感文档本地处理，以及机器人智能体的运行、安全和技能管理，有助于降低企业原型验证门槛。</li><li>可能影响：企业 AI 工具将更多采用“本地数据处理＋外部或本地模型”的混合架构；机器人软件栈可能出现独立于本体厂商的智能体运行层。</li><li>建议关注：上述项目均较新，不能仅凭搜索排名或 Stars 判断成熟度。部署前应审查许可证、维护频率、依赖安全、测试覆盖率及 ROS 硬件兼容性。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：模型竞争进入价格性能与长任务阶段</h3>
+<p>GPT-5.6、Opus 5 和 Sonnet 5 的发布表明，能力上限不再是唯一指标。API 成本、工具调用成功率、长任务恢复能力和专业场景准确率，将更直接决定企业采购与模型迁移。</p>
+<h3>趋势二：具身智能开始形成“基础模型＋运行时＋传感器”技术栈</h3>
+<p>Gemini Robotics 2、rosclaw 及彩色触觉机器人皮肤分别对应决策模型、运行基础设施和感知硬件。下一阶段竞争将集中在数据闭环、跨本体迁移及物理安全验证。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目或产品 | 时间 | 类型 | 已披露信号 | 判断 | |---|---:|---|---:|---| | GPT-5.6 | 2026-07-30 | 前沿模型/API | 强调价格性能 | API 价格与参数待进一步核验 | | Claude Opus 5 | 2026-07-24 | 前沿模型 | 强调长时间智能体与专业工作 | 适合重点测试复杂任务稳定性 | | Gemini Robotics 2 | 2026-07 | 机器人基础模型 | 全身智能 | 商业部署和硬件适配范围待确认 | | jt-doc-tools | 2026-08-01 快照 | 开源 AI 工具 | 198 Stars、49 Forks | 私有文档处理具备早期关注度 | | rosclaw | 2026-08-01 快照 | 具身智能运行时 | 175 Stars、32 Forks | 概念完整，生产成熟度待验证 |</p>
+<p>注：GitHub 数据来自所给搜索结果快照，Stars 和 Forks 会动态变化；搜索结果未按增长率或 Stars 明确排序，因此不能直接视为 GitHub 全站热门榜。融资并购、AI 专用硬件新品及自动驾驶商业化方面，本期资料暂无可靠图表数据。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：rosclaw 具身智能体运行时</p>
+<ul><li>背景：机器人系统通常由感知、规划、控制和安全模块分别构建，智能体能力难以直接迁移到不同机器人本体。</li><li>做法：项目以 Python、ROS/ROS 2 为基础，引入 e-URDF、沙箱安全、能力路由、物理记忆、运行时干预和技能演化等模块。<a href="https://github.com/ros-claw/rosclaw">来源</a></li><li>结果：截至 2026-08-01，项目获得 175 Stars、32 Forks并保持更新；尚无资料证明其已达到规模化生产部署水平。</li><li>可借鉴点：机器人企业可将模型决策层、技能层和硬件控制层解耦，并从项目初期建立权限限制、动作审计、紧急停止和失败数据回流机制。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：长时间智能体可能出现错误累积、状态漂移和工具调用失败；机器人基础模型还面临仿真到现实差距、跨本体迁移和实时控制稳定性问题。</li><li>合规风险：文档 AI 涉及版权、个人信息与行业数据留存；人形机器人、自动驾驶及多机器人系统的责任认定和安全认证仍可能滞后于技术迭代。</li><li>商业化风险：前沿模型价格性能声明需要以真实业务负载复测；机器人基础模型的推理成本、硬件适配和维护投入可能削弱投资回报。融资并购动态因资料不足待确认。</li><li>数据安全风险：自托管工具仍可能通过模型 API、遥测、依赖包或日志泄露数据；机器人系统被越权调用时可能造成物理损害，需要网络与动作双重隔离。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>前沿模型采购应从基准分数比较转向单位任务成本、长任务成功率与可恢复性评估。</li><li>具身智能正在形成基础模型、运行时和新型传感器协同发展的完整技术栈，但规模化部署证据仍有限。</li><li>本期没有足够资料确认重大 AI 硬件发布、融资并购或自动驾驶基础模型更新，不宜据此作趋势定量判断。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>GPT-5.6、Claude Opus 5 与 Sonnet 5 的 API 定价、上下文窗口及同任务实测结果</li><li>Gemini Robotics 2 的人形机器人适配、真实任务成功率和推理硬件配置</li><li>AI 芯片与机器人硬件新品，以及具身智能、人形机器人和自动驾驶领域融资并购进展</li></ul>
+  </main>
+</body>
+</html>
