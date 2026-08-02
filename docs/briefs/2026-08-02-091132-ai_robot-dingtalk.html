@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-02</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 X 期</h1>
+<p>日期：2026-08-02 主题：智能体工程化 / 前沿模型迭代 / 机器人基础模型与具身智能</p>
+<h2>1. 一句话摘要</h2>
+<p>AI竞争正从单次模型能力转向“高性价比模型、长时智能体与可评测的物理智能”全栈交付。OpenAI、Anthropic和Google集中更新模型与API，开源生态则加速补齐智能体编排和机器人评测基础设施。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：前沿模型与智能体API进入生产化竞争</h3>
+<ul><li>发生了什么：OpenAI于2026年7月30日发布GPT-5.6相关产品更新，重点指向价格与性能边界；Anthropic于7月24日发布Claude Opus 5，强调长时智能体、编码及专业工作能力；Google于7月28日扩展Gemini API Managed Agents，引入Gemini 3.6 Flash及hooks等能力。具体价格、上下文长度和基准成绩因现有资料未完整披露，待确认。来源：<a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI</a>、<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic</a>、<a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/">Google</a></li><li>为什么重要：竞争指标已不只是模型最高分，而是单位成本、长任务稳定性、工具调用、后台执行和生产环境可控性。企业选型将更多取决于完整API和智能体运行时，而非单一模型。</li><li>可能影响：多模型路由、智能体可观测性和成本治理需求将上升；模型供应商会继续通过托管智能体能力提高开发者黏性。GPT-5.6、Opus 5及Gemini 3.6 Flash的横向实测结果仍待第三方验证。</li><li>建议关注：跟踪真实业务任务的成功率、端到端成本、任务中断恢复能力、工具调用错误率及数据保留政策，不宜仅依据厂商基准决定迁移。</li></ul>
+<h3>事件二：开源AI工具由聊天框转向长时任务执行系统</h3>
+<ul><li>发生了什么：字节跳动开源项目<a href="https://github.com/bytedance/deer-flow">deer-flow</a>定位为长时SuperAgent框架，集成沙箱、记忆、工具、技能、子智能体和消息网关。截至2026年8月2日所给GitHub快照，项目约有78,727个Star、10,742个Fork，并于当日持续推送代码。</li><li>为什么重要：高关注度表明开发者需求正从简单对话和单轮工作流，转向可持续数分钟至数小时的研究、编码及内容生产任务。MIT许可证也降低了企业试用和二次开发门槛。</li><li>可能影响：智能体框架的竞争焦点将转向运行隔离、权限治理、长期记忆、任务恢复和多智能体协作；模型层与执行框架层可能进一步解耦。</li><li>建议关注：78,727个Star不等同于生产采用率；项目仍有938个开放Issue，应重点评估版本稳定性、沙箱安全、依赖复杂度及真实任务完成率。GitHub检索结果只能证明活跃度与关注度，不能直接视为官方热门榜单。</li></ul>
+<h3>事件三：机器人基础模型开始补齐全身控制与统一评测</h3>
+<ul><li>发生了什么：Google DeepMind于2026年7月发布Gemini Robotics 2和Gemini Robotics ER 2，分别指向机器人全身智能，以及视频理解、任务编排和多机器人协作。新开源项目<a href="https://github.com/robocurve/inspect-robots">inspect-robots</a>尝试用统一框架评测不同LLM/VLA在机械臂、人形机器人及真实或仿真基准上的表现；截至8月2日约有107个Star、14个Fork。来源：<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Gemini Robotics 2</a>、<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">Gemini Robotics ER 2</a>、<a href="https://spectrum.ieee.org/x-square-robot-embodied-ai-stack">IEEE Spectrum</a></li><li>为什么重要：具身智能正从独立的感知、规划和控制模块，走向VLA、任务编排与全身控制结合的基础模型栈。统一评测有望降低不同机器人本体、模型和仿真环境之间的比较成本。</li><li>可能影响：人形机器人和通用机械臂厂商将更重视跨本体迁移、数据闭环和第三方评测；机器人基础模型可能形成类似大模型“模型、运行时、评测平台”的分层生态。</li><li>建议关注：验证模型在真实环境中的成功率、安全停止、长尾场景和跨本体泛化能力。现有资料未提供自动驾驶基础模型的新发布，也不足以确认量产部署规模。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：模型竞争转向系统级交付</h3>
+<p>OpenAI强调价格性能，Anthropic强化长时任务，Google扩展托管智能体。未来采购决策将更看重模型、工具、运行时、权限和可观测性的组合，而非单项榜单成绩。</p>
+<h3>趋势二：具身智能进入评测基础设施建设期</h3>
+<p>全身控制、多机器人协作和通用VLA受到关注，但行业仍缺少统一、可复现且覆盖真实环境的基准。评测工具可能先于大规模商业部署形成关键基础设施。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目或产品 | 类型 | 发布时间/创建时间 | 截至2026-08-02的可核数据 | 信息来源 | |---|---|---:|---:|---| | deer-flow | 长时智能体开源框架 | 2025-05-07创建 | 78,727 Star；10,742 Fork；938个开放Issue | <a href="https://github.com/bytedance/deer-flow">GitHub</a> | | inspect-robots | 物理AI开源评测框架 | 2026-06-26创建 | 107 Star；14 Fork；34个开放Issue | <a href="https://github.com/robocurve/inspect-robots">GitHub</a> | | Claude Opus 5 | 前沿大模型 | 2026-07-24发布 | 性能及价格完整数据待确认 | <a href="https://www.anthropic.com/news/claude-opus-5">Anthropic</a> | | GPT-5.6 | 前沿大模型 | 2026-07-30更新 | 性能及价格完整数据待确认 | <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI</a> | | Gemini API Managed Agents | 托管智能体API | 2026-07-28更新 | 新增Gemini 3.6 Flash、hooks等；详细限额待确认 | <a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/">Google</a> |</p>
+<p>本期资料未提供可交叉验证的AI硬件出货、自动驾驶部署、融资金额或并购交易数据，因此不绘制相关图表。Hugging Face信息源抓取失败，其同期动态待确认。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：deer-flow长时智能体框架</p>
+<ul><li>背景：普通聊天机器人难以稳定完成持续数分钟至数小时、涉及研究检索、编码和多工具调用的复杂任务。</li><li>做法：将沙箱、记忆、工具、技能、子智能体和消息网关整合到统一执行框架，并以MIT许可证开放源代码。</li><li>结果：截至2026年8月2日获得约78,727个Star和10,742个Fork，显示较高开发者关注度；实际企业部署量和任务成功率待确认。</li><li>可借鉴点：企业构建智能体时，应把执行隔离、状态持久化、失败恢复和权限控制作为核心架构，而不是只优化提示词或更换底层模型。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：长时智能体会累积规划、工具调用和记忆错误；机器人模型还面临仿真到现实差距、跨本体迁移及物理安全问题。</li><li>合规风险：智能体连接搜索、企业应用和外部MCP服务后，可能扩大授权边界；机器人及自动驾驶还涉及责任认定和区域监管差异。</li><li>商业化风险：厂商公布的性能提升未必能转化为端到端成本优势；GitHub Star不能代表付费需求。现有资料没有可靠融资、并购或收入数据。</li><li>数据安全风险：后台任务、长期记忆和远程工具可能持久化敏感数据；需核查数据驻留、日志保留、第三方连接器及模型训练使用政策。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>前沿模型的核心竞争正在从“能力最高”转向“成本、可靠性与智能体运行时”的综合交付。</li><li>开源智能体框架快速成熟，但关注度不等同于生产可用性，安全隔离和长任务成功率仍需实测。</li><li>具身智能开始形成基础模型与统一评测栈；人形机器人、自动驾驶、硬件及资本市场的量产和交易信号仍待更多可靠数据验证。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>GPT-5.6、Claude Opus 5与Gemini 3.6 Flash的API定价、上下文窗口及第三方任务实测</li><li>Gemini Robotics 2、VLA评测框架在人形机器人和机械臂真实环境中的复现结果</li><li>自动驾驶基础模型、机器人专用芯片与端侧AI硬件的新发布，以及具身智能领域融资并购数据</li></ul>
+  </main>
+</body>
+</html>
