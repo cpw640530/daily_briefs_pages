@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-08-02</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-08-02</h1>
+<h2>1. 今日推荐工具</h2>
+<h3>工具一：GitHub Copilot App</h3>
+<ul><li>类型：Vibe Coding / 开发者工具</li><li>它是什么：GitHub 推出的 Agent 化编程工作区，可用会话、画布和 Pull Request 组织从需求探索、代码实现到审查的完整流程；最新实践支持堆叠多个会话及 PR，分阶段改造代码库。</li><li>适合谁：需要维护遗留项目、并行处理多项开发任务，或希望把 AI 编程过程纳入 GitHub 审查流程的开发者与团队。</li><li>核心价值：重点不只是生成代码，而是提供任务规划、上下文管理、分支提交和代码审查所需的 Agent 工作流。对于大型任务，堆叠会话和 PR 比一次性生成大量改动更容易验证和回滚。</li><li>使用建议：从一个边界清晰的小任务开始，在 Copilot App 中创建项目和 Agent 会话；把需求拆成连续的小步骤，每一步单独生成并审查 PR。遗留系统改造可参考官方的 stacked sessions 实践，避免让 Agent 一次修改过多模块。</li><li>链接：<a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/">入门指南</a>；<a href="https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/">堆叠会话与 PR 实践</a></li></ul>
+<h3>工具二：AI Setup Sync</h3>
+<ul><li>类型：编程插件 / Vibe Coding / 自动化</li><li>它是什么：一款 VS Code 扩展，可从指定 GitHub 仓库自动同步 AI 编程配置文件和 MCP 配置，覆盖 Claude Code、GitHub Copilot、Cursor、Codex 等工具。</li><li>适合谁：同时使用多种 AI 编程 Agent、需要在多个项目或团队成员之间统一规则与 MCP 配置的开发者。</li><li>核心价值：减少逐项目复制提示词、Agent 指令和 MCP 配置的重复工作，也便于通过 Git 对团队 AI 开发规范进行版本管理。项目于 2026 年 8 月 1 日仍有代码更新，但 GitHub 星标较少，成熟度和安全性需要自行评估。</li><li>使用建议：先在 VS Code Marketplace 安装扩展，再建立一个专用 GitHub 配置仓库；仅同步不含密钥的规则与配置模板，并先在测试项目中验证文件覆盖、路径映射和不同 Agent 的兼容性。</li><li>链接：<a href="https://github.com/olekpuchka/ai-setup-sync">GitHub</a>；<a href="https://marketplace.visualstudio.com/items?itemName=olekpuchka.ai-setup-sync">VS Code Marketplace</a></li></ul>
+<h3>工具三：P-ai</h3>
+<ul><li>类型：效率工具 / 自动化 / AI Agent</li><li>它是什么：一款面向桌面的 AI 助理，项目定位包括长期任务、持久记忆、多 Agent 协作、工具审查、MCP 接入及高并发工作区自动化。</li><li>适合谁：希望在本地桌面环境持续运行 Agent，或需要试验长期任务、记忆机制和多工作区自动化的个人开发者及 AI 应用研究者。</li><li>核心价值：把一次性对话扩展为长期运行的任务工作区，并尝试将记忆、工具调用和多个 Agent 纳入同一桌面环境，适合探索资料整理、批处理和跨工具自动化。</li><li>使用建议：根据项目 README 在隔离环境中安装，先接入一个测试模型和少量非敏感资料，验证任务中断恢复、记忆准确性、工具权限及并发资源占用；在完成权限审查前，不要授予生产凭据或关键目录写权限。</li><li>链接：<a href="https://github.com/kawayiYokami/P-ai">GitHub</a></li></ul>
+<h2>2. AI大佬重要言论</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期提供的资料未包含国内 AI 领域重要人物可核验的原始发言。</li><li>说了什么：本期可靠资料不足，待确认。</li><li>为什么重要：人物言论需要能够追溯至演讲、采访、官方文章或本人账号；仅凭产品描述和二手摘要无法可靠归因。</li><li>可能影响：暂不作判断，避免把机构产品信息误写为个人观点。</li><li>来源/时间：截至 2026 年 8 月 2 日，本期资料无可用原始来源。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：所给 OpenAI、Anthropic 和 GitHub 资料主要是公司新闻、产品页面与工程文章，未提供可明确归属于具体人物的原始发言。</li><li>说了什么：可确认的机构观点是，GitHub 强调 Agent 效果越来越取决于工作流与执行框架；Anthropic 将 Claude Opus 5 定位于长时间运行的 Agent、编程及专业工作；OpenAI 则持续强调模型的智能效率与性价比。但这些信息不应改写成某位高管的个人言论。</li><li>为什么重要：近期竞争焦点正在从单次代码生成能力，转向 Agent 执行框架、长任务稳定性、成本效率和可审查的软件交付流程。</li><li>可能影响：开发团队选型时将更重视任务拆分、上下文管理、工具权限、评测体系和 PR 审查能力，而不只是模型榜单成绩。</li><li>来源/时间：<a href="https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/">GitHub《The harness is all you need (mostly)》</a>，2026-07-27；<a href="https://www.anthropic.com/news/claude-opus-5">Anthropic Claude Opus 5</a>，2026-07-24；<a href="https://openai.com/news/">OpenAI News</a>，2026-07-29 至 2026-07-31。</li></ul>
+<h2>3. 今日结论</h2>
+<ol><li>Vibe Coding 的效率瓶颈正在从“模型会不会写代码”转向“能否拆分任务、管理上下文并形成可审查的 PR”；有复杂开发任务的团队应优先试验 GitHub Copilot App 的堆叠会话工作流。</li><li>同时使用 Claude Code、Cursor、Codex 等工具时，可用 AI Setup Sync 集中管理项目规则和 MCP 模板，但必须将密钥排除在同步仓库之外，并先验证覆盖行为。</li><li>长期运行、多 Agent 和桌面自动化值得关注，但 P-ai 等早期项目仍需重点检查许可证、权限边界、记忆可靠性和资源占用，不宜直接接入生产环境。</li></ol>
+  </main>
+</body>
+</html>
