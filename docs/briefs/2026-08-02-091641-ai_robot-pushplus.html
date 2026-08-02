@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-02</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 X 期</h1>
+<p>日期：2026-08-02 主题：前沿模型效率竞争 / AI 工具可信度 / 机器人基础模型与评测</p>
+<h2>1. 一句话摘要</h2>
+<p>前沿 AI 的竞争重点正从单纯追求模型能力，转向价格性能、长时 Agent 和专业工作流；具身智能则开始补齐跨模型、跨本体的统一评测基础设施。自动驾驶、AI 硬件及融资并购方面，本期资料不足，相关进展待确认。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：OpenAI 发布 GPT-5.6，强调价格性能与效率</h3>
+<ul><li>发生了什么：OpenAI 于 2026-07-30 发布 GPT-5.6，并将其定位为价格性能前沿更新；7 月 29 日另发工程文章讨论其智能与效率。<a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">产品公告</a>｜<a href="https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/">工程文章</a></li><li>为什么重要：厂商开始把单位成本下的有效能力作为核心卖点，意味着 API 采购不能只比较榜单分数，还要评估任务成功率、延迟、Token 消耗和总拥有成本。具体定价、上下文长度及 API 变更在现有资料中未披露，待确认。</li><li>可能影响：企业模型选型将更偏向按场景路由；高频推理、代码生成和 Agent 工作流可能率先受益。其他厂商也可能跟进降价或推出效率优化版本。</li><li>建议关注：核验官方模型卡、API 价格、速率限制、缓存机制及兼容性；用企业自有任务集与 GPT-5.6、Claude Sonnet 5/Opus 5进行成本和成功率对测。</li></ul>
+<h3>事件二：Anthropic 用 Opus 5强化长时 Agent 和专业任务</h3>
+<ul><li>发生了什么：Anthropic 于 2026-07-24 发布 Claude Opus 5，称其面向长时间运行的 Agent，并提升编码与专业工作能力；此前已于 6 月 30 日发布面向规模化编码和 Agent 场景的 Sonnet 5。<a href="https://www.anthropic.com/news/claude-opus-5">Opus 5 公告</a>｜<a href="https://www.anthropic.com/news/claude-sonnet-5">Sonnet 5 公告</a></li><li>为什么重要：前沿模型产品线正在形成“高性能长任务模型+规模化性价比模型”的分层，企业可按任务复杂度进行模型路由，而不必让所有请求使用最高规格模型。</li><li>可能影响：代码 Agent、研究助理和企业流程自动化竞争将从单轮回答质量转向长时稳定性、工具调用、安全权限与人工介入机制。</li><li>建议关注：测试长任务中断恢复、工具调用准确率、上下文漂移和成本上限；结合新项目 <a href="https://github.com/Wanbinyu/ai-surface-skills">ai-surface-skills</a> 关注 MCP 契约、权限、人工复核和评测方法，但其成熟度与采用情况待确认。</li></ul>
+<h3>事件三：具身智能统一评测工具开始出现，触觉与在线更新同步推进</h3>
+<ul><li>发生了什么：<a href="https://github.com/robocurve/inspect-robots">inspect-robots</a> 于 2026-06-26 创建，定位为面向物理 AI 的开源评测框架，试图让不同 LLM/VLA 在机械臂、人形机器人以及真实或仿真基准上运行；截至 8 月 2 日，资料显示其有 107 Stars、14 Forks，并持续更新。IEEE Spectrum 还报道了彩色机器人皮肤触觉方案和利用光学技术动态更新机器人 AI 的研究。<a href="https://spectrum.ieee.org/robot-finger">触觉报道，2026-07-28</a>｜<a href="https://spectrum.ieee.org/ai-in-robotics">光学更新报道，2026-07-26</a></li><li>为什么重要：机器人基础模型缺少类似大模型领域的统一评测体系。跨模型、跨本体评测若能成立，将降低 VLA 选型和复现实验成本；高密度触觉与在线模型更新则可能增强真实环境适应能力。</li><li>可能影响：具身智能竞争可能从演示视频转向可复现任务成功率、安全性和迁移能力。人形机器人厂商、机械臂企业及仿真平台可能逐步接入第三方评测，但商业采用尚待确认。</li><li>建议关注：评测任务覆盖度、真实环境复现率、硬件适配成本和安全指标；同时跟踪 <a href="https://spectrum.ieee.org/x-square-robot-embodied-ai-stack">X Square Robot 通用机器人基础栈报道</a>，验证其模型、数据和跨本体迁移能力。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：模型竞争进入“能力、成本、长时稳定性”三维阶段</h3>
+<p>GPT-5.6 强调价格性能，Opus 5 强调长时 Agent。企业采购指标将从静态榜单转向单位任务成本、连续执行成功率、工具调用可靠性及人工接管频率。</p>
+<h3>趋势二：具身智能基础设施从模型训练延伸到统一评测</h3>
+<p>inspect-robots 尝试打通 LLM/VLA、机械臂、人形机器人与仿真环境。若形成社区标准，机器人公司的技术壁垒将更多体现在真实数据、泛化能力和安全闭环。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目 | 日期/状态 | 公开信号 | 判断 | |---|---|---:|---| | GPT-5.6 | 2026-07-30 发布 | 定位于价格性能前沿 | 定价与 API 细节待确认 | | Claude Opus 5 | 2026-07-24 发布 | 强调长时 Agent、编码和专业工作 | 需用真实长任务验证 | | Claude Sonnet 5 | 2026-06-30 发布 | 面向规模化编码与 Agent | 与 Opus 5形成产品分层 | | inspect-robots | 2026-06-26 创建；8 月 2 日仍更新 | 107 Stars、14 Forks、34 个开放问题 | 新兴项目，已有初步关注度 | | Source-Code-Security-Audit-Reviewer | 2026-07-24 创建；8 月 2 日更新 | 0 Stars、0 Forks，仓库大小 47 KB | 仅可视为新发布项目，不能认定为热门 |</p>
+<p>注：GitHub 搜索结果显示 AI 工具相关 Python 仓库共 32,577 个、机器人具身智能相关仓库共 263 个，但这是特定查询条件下的结果总数，不等同于市场规模或新增项目数。融资金额、硬件出货量、自动驾驶性能及并购交易方面，本期暂无可靠图表数据。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：inspect-robots 跨模型、跨机器人评测框架</p>
+<ul><li>背景：VLA 与机器人基础模型通常依赖不同本体、仿真器和任务定义，实验结果难以横向比较，真实环境复现成本较高。</li><li>做法：项目尝试提供统一开源评测入口，使不同 LLM/VLA 能在机械臂、人形机器人及真实或仿真基准上运行；采用 MIT 许可证。<a href="https://inspectrobots.org">项目主页</a>｜<a href="https://github.com/robocurve/inspect-robots">GitHub 仓库</a></li><li>结果：截至 2026-08-02，资料记录 107 Stars、14 Forks、34 个开放问题，显示已有早期开发者关注；其基准有效性、真实机器人覆盖率和产业采用情况待确认。</li><li>可借鉴点：机器人团队应把任务定义、数据记录、失败分类和安全指标标准化；采购 VLA 或本体前，可先建立跨模型、跨仿真与实机环境的内部评测流水线。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：厂商公告中的性能表述缺少本期资料可核验的完整基准、价格和模型卡；长时 Agent 仍可能出现上下文漂移、工具误调用及任务失控。机器人评测还面临仿真到现实偏差与硬件异构问题。</li><li>合规风险：代码 Agent、机器人和自动驾驶系统涉及责任归属、可解释性和人类监督要求；不同地区监管规则及 Opus 5、GPT-5.6 的具体合规边界待确认。</li><li>商业化风险：前沿模型降本可能压缩 API 毛利；具身智能项目可能受制于数据采集、硬件维护和部署成本。本期资料未提供 AI 公司融资、并购及收入数据。</li><li>数据安全风险：AI 代码审计工具可能接触私有源码与漏洞信息，MCP/Agent 工具链会扩大权限边界；机器人采集的视觉、触觉和环境数据也可能包含敏感信息。应落实最小权限、隔离执行、日志审计与数据留存策略。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>前沿模型的有效竞争指标已扩展为能力、成本和长任务稳定性，企业应建立自有评测与动态模型路由。</li><li>具身智能正在补齐统一评测、触觉感知和模型在线更新能力，但离可复现、规模化部署仍有距离。</li><li>本期资料不能支持自动驾驶、AI 硬件发布以及融资并购方面的确定性判断，相关信息待确认。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>GPT-5.6、Claude Opus 5/Sonnet 5的 API 定价、模型卡、上下文规格及企业实测结果</li><li>inspect-robots 对主流 VLA、机械臂和人形机器人平台的适配进度与标准化可能性</li><li>自动驾驶或机器人基础模型更新、AI 芯片与机器人硬件发布，以及具身智能领域融资并购数据</li></ul>
+  </main>
+</body>
+</html>
