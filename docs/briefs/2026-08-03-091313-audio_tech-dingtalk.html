@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-03</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜第 1 期</h1>
+<p>日期：2026-08-03 主题：开源 DSP 与插件 / DAW 创作工具 / 空间音频产业应用</p>
+<h2>1. 一句话摘要</h2>
+<p>本期可验证的技术进展主要集中在开源 DSP、免费插件与 Ableton Live 创作工具，显示音频开发组件正向跨平台、低依赖和工作流细分演进。音频 AI、生成式语音/音乐、编解码器、专业硬件及标准/API 更新缺少可靠资料，相关产业判断仍待确认。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：DSPark 尝试以纯 C++20 统一跨平台 DSP 与插件开发</h3>
+<ul><li>发生了什么：开源项目 <a href="https://github.com/CristianMoresi/DSPark">DSPark</a> 于 2026-05-30 创建，并在 2026-08-02 更新。项目自述为零依赖、仅头文件的 C++20 DSP 框架，提供 90 余种实时处理器、物理模拟和 EBU R128 计量，目标覆盖桌面、移动端、WebAssembly、嵌入式以及 VST3、CLAP、AU 插件。</li><li>为什么重要：如果其兼容性与实时性能得到验证，开发者可复用同一套 DSP 核心，降低插件、DAW 扩展、移动音频和专业硬件固件之间的移植成本。</li><li>可能影响：轻量化 DSP 框架可能加快效果器原型和跨格式插件交付，也有利于在浏览器及嵌入式设备部署音频处理；但截至资料抓取时项目仅有 12 个 Star、无 Fork，成熟度和生产采用情况待确认。</li><li>建议关注：持续集成覆盖率、实时线程内存分配、SIMD 实现、基准测试、VST3/CLAP/AU 宿主兼容性，以及在耳机 DSP、声学器件调音和专业音频硬件上的实际部署案例。</li></ul>
+<h3>事件二：Glitch2 免费开放，经典音频插件进入长期保存阶段</h3>
+<ul><li>发生了什么：据 <a href="https://cdm.link/remembering-dblue-illformed-glitch2/">CDM 2026-08-02 报道</a>，Kieran Foster 的家人将经典序列式多效果插件 Glitch2 免费提供，以延续其作品。</li><li>为什么重要：免费化降低了实验性音效设计的使用门槛，也凸显商业插件在作者退出维护后面临的授权、下载托管、系统兼容和工程保存问题。</li><li>可能影响：Glitch2 可能获得新一轮用户扩散，并进入更多 DAW 工作流；但免费不等于开源，其后续维护、代码可审计性、新操作系统与插件格式兼容性均待确认。</li><li>建议关注：授权条款、官方分发渠道、签名与安装包安全、Apple Silicon 和新版本 Windows 兼容性，以及能否形成可持续的社区维护机制。</li></ul>
+<h3>事件三：Ableton Live 工具继续向专用声音设计与界面定制分化</h3>
+<ul><li>发生了什么：CDM 于 2026-07-31 介绍 Rawton Forge 面向 Ableton Live 的打击乐合成工具 <a href="https://cdm.link/impactor-rupture-2-by-rawton-forge-for-ableton-live/">Impactor 与 Rupture 2</a>；另于 2026-07-29 报道 <a href="https://cdm.link/deafman-transforms-ableton-live-colors-themes/">DeafMan 主题库及交互式编辑器</a>，可管理主题、颜色和轨道视觉标识。</li><li>为什么重要：前者强化 DAW 内专用合成能力，后者改善大型工程的视觉组织，说明音乐工具竞争正在从通用功能扩展到声音设计效率和工作区可读性。</li><li>可能影响：围绕 Live/Max for Live 的小型开发者生态可能继续增长，并通过窄场景工具切入专业制作；同时也会增加对单一 DAW 版本和运行环境的依赖。</li><li>建议关注：CPU 占用、自动化与预设兼容性、项目交换能力、Max for Live 版本要求，以及主题修改对可访问性和升级稳定性的影响。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：DSP 核心正在脱离单一插件格式</h3>
+<p>DSPark 将同一 C++20 代码指向 VST3、CLAP、AU、WebAssembly 和嵌入式设备，反映 DSP 与产品外壳逐步解耦。下一阶段竞争点将是实时性能、测试体系和宿主兼容性，而非仅看处理器数量。</p>
+<h3>趋势二：音频软件保存成为生态治理问题</h3>
+<p>Glitch2 免费化与经典 Max 补丁重制表明，插件和交互音乐作品的长期可用性依赖授权、运行时、宿主兼容及可信分发。行业可能需要更明确的源码托管、格式迁移和数字档案机制。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 方向 | 本期资料信号 | 可核验状态 | 判断 | |---|---|---|---| | 开源 DSP/插件 | GitHub 检索返回 76 个 C++ 仓库；已提供结果中 DSPark 信息最完整 | 检索完整标记为 <code>false</code>，但资料仅展示部分结果 | 活跃度存在，不能据此推断整体市场规模 | | 空间音频与音频 AI | Python 检索仅返回 1 个视觉检测与空间声音告警项目 | 0 Star、0 Fork、无许可证 | 仅能视为早期应用样本 | | 音乐科技 Python 工具 | 对应检索返回 0 项 | 查询范围和关键词有限 | 不能解释为该领域没有项目 | | DAW 与插件 | Glitch2、Impactor、Rupture 2、DeafMan 工具获得媒体报道 | 可核验报道，缺少销量和用户数据 | 创作工具持续向细分工作流发展 | | 语音/音乐生成、编解码器、沉浸式音频、专业硬件、耳机/声学器件、标准/API | 未获得有效资料 | 待确认 | 不作趋势强弱判断 |</p>
+<p>本期暂无可靠图表数据。现有 GitHub 搜索结果受关键词、语言和展示截断影响，不能用于模型能力、编解码性能、插件市场份额或开源活跃度的定量比较。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：DSPark 跨平台音频处理框架</p>
+<ul><li>背景：音频产品通常需要分别适配桌面插件、移动应用、网页和嵌入式硬件，容易形成重复 DSP 实现与测试成本。</li><li>做法：项目采用纯 C++20、仅头文件和零依赖设计，将实时处理器、模拟建模、FFT、动态处理及 EBU R128 计量集中到一个代码库，并声明支持 VST3、CLAP、AU 等插件目标。</li><li>结果：截至 2026-08-02，仓库有 12 个 Star、0 Fork、0 个公开 Issue；尚无资料证明其已进入商业插件、DAW、耳机 DSP或专业音频硬件量产项目。</li><li>可借鉴点：可将 DSP 算法层与宿主、界面和设备 I/O 分离，并建立跨平台一致性测试；正式采用前必须补做延迟、CPU、内存、线程安全、数值稳定性和插件认证测试。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：新开源 DSP 框架缺少公开基准与大规模宿主验证；Max for Live 工具和旧插件可能受 DAW、操作系统及处理器架构升级影响。空间音频样本项目没有许可证，且“production-grade”仅为仓库自述。</li><li>版权/合规风险：免费插件不必然允许修改、再分发或商用；经典补丁、采样素材及生成式音频的训练数据和输出权属均需单独核验。</li><li>商业化风险：免费化可能扩大用户规模，但无法证明存在维护收入；小型插件和 DAW 工具对单一平台依赖较高。音乐科技公司融资、并购、营收和硬件出货资料本期缺失。</li><li>数据安全风险：第三方插件、主题编辑器及开源工具可能接触工程文件、预设或本地音频；应核查签名、依赖、网络访问和遥测策略。云端语音/音乐生成服务的数据留存情况本期无资料，待确认。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>可验证的主要信号是 DSP 跨平台化、插件免费化和 DAW 工具细分，而不是生成式音频模型的重大更新。</li><li>DSPark 值得技术跟踪，但当前社区规模与生产成熟度不足以支持采购或量产结论。</li><li>音频 AI、空间/沉浸式音频、编解码器、专业硬件、耳机声学及标准/API 缺少可靠新增资料，应避免据此判断行业降温。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>DSPark 的实时性能基准、插件宿主兼容矩阵、许可证合规及社区增长。</li><li>语音与音乐生成模型的可控性、推理成本、训练数据授权和 DAW 集成。</li><li>MPEG-I、IAMF、MPEG-H、Dolby Atmos、CLAP、VST3、Web Audio API 等标准与接口的官方更新。</li><li>空间音频在汽车、XR、无障碍告警和耳机个性化 HRTF 中的量产案例。</li><li>专业音频接口、监听设备、麦克风、扬声器单元及编解码/DSP 芯片的新品和供应链动态。</li></ul>
+  </main>
+</body>
+</html>
