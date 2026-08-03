@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-03</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI简报｜第 X 期</h1>
+<p>日期：2026-08-03 主题：智能体基础设施升级 / 前沿模型迭代 / 具身智能安全与感知</p>
+<h2>1. 一句话摘要</h2>
+<p>本期核心变化是 AI 从“模型能力竞争”进一步转向“可长期运行的智能体工程”：Google 完善托管智能体能力，Anthropic 发布面向长任务的 Claude Opus 5；机器人领域则同步推进触觉感知、通用基础栈和安全评估。</p>
+<h2>2. 重点事件</h2>
+<h3>事件一：Gemini API 扩展托管智能体能力</h3>
+<ul><li>发生了什么：Google 于 2026-07-28 宣布扩展 Gemini API Managed Agents，引入 Gemini 3.6 Flash、hooks 等能力；此前在 2026-07-07 已加入后台任务、远程 MCP 等功能。<a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/">来源：Google</a></li><li>为什么重要：后台执行、外部工具连接和生命周期钩子是智能体进入生产环境的关键组件。Google 正把模型 API 提升为托管式智能体运行平台，降低企业自建编排、状态管理和工具接入的成本。</li><li>可能影响：智能体开发竞争将由单次推理性能扩展至任务可靠性、工具生态、监控审计和单位任务成本；传统 Agent 框架及云端编排平台将面对更强的平台替代压力。</li><li>建议关注：核实 Gemini 3.6 Flash 的价格、上下文窗口、区域可用性和服务等级协议；测试 hooks 与远程 MCP 的权限隔离、失败重试和可观测性。</li></ul>
+<h3>事件二：Anthropic 发布 Claude Opus 5，强化长时智能体与专业工作</h3>
+<ul><li>发生了什么：Anthropic 于 2026-07-24发布 Claude Opus 5，称其在长时间运行的智能体、编程和专业工作方面实现明显提升；Claude Sonnet 5 已于 2026-06-30发布。<a href="https://www.anthropic.com/news/claude-opus-5">来源：Anthropic</a></li><li>为什么重要：Opus 与 Sonnet 在不到一个月内先后更新，显示头部厂商正以不同成本和性能档位覆盖高复杂度任务及规模化部署，而长任务稳定性成为新的产品重点。</li><li>可能影响：编码、研究和企业流程智能体可能处理更长的任务链，但其实际价值仍取决于错误恢复、人工接管、工具调用成功率及总体拥有成本。</li><li>建议关注：等待完整模型卡、API 定价、速率限制和第三方基准；重点比较端到端任务完成率，不宜仅依据厂商表述选型。OpenAI 新闻源本期抓取失败，相关同期更新待确认。</li></ul>
+<h3>事件三：机器人技术同时向高密度触觉、基础模型栈和安全治理演进</h3>
+<ul><li>发生了什么：IEEE Spectrum 于 2026-07-28报道一种利用彩色机器人皮肤获取空间压力与力信息的机器人手指；7月还报道了通用机器人基础栈及在线更新机器人 AI 的光学技术。<a href="https://spectrum.ieee.org/robot-finger">触觉来源</a>｜<a href="https://spectrum.ieee.org/x-square-robot-embodied-ai-stack">基础栈来源</a>｜<a href="https://spectrum.ieee.org/ai-in-robotics">光学更新来源</a></li><li>为什么重要：精细操作不仅依赖视觉语言动作模型（VLA），还需要触觉、实时控制和跨本体迁移。感知硬件与基础模型栈协同，可能成为具身智能从演示走向稳定作业的关键。</li><li>可能影响：机器人厂商可能加大对触觉传感器、多模态数据和软硬件一体化栈的投入；具身系统的攻击面也会从软件扩展到传感器、通信链路和执行机构。</li><li>建议关注：实验室成果的耐久性、标定成本、采样频率和量产能力；通用机器人栈是否提供跨任务、跨本体的公开实机指标。人形机器人、自动驾驶及机器人基础模型本期暂无可确认的新产品发布。</li></ul>
+<h2>3. 趋势观察</h2>
+<h3>趋势一：模型 API 正升级为智能体运行时</h3>
+<p>Google 将后台任务、远程 MCP 和 hooks 纳入托管服务，表明平台竞争开始覆盖执行、状态和工具治理。下一阶段的差异化指标将是任务成功率、故障恢复能力、可审计性和端到端成本。</p>
+<h3>趋势二：具身智能的瓶颈从“会规划”转向“可靠感知与安全执行”</h3>
+<p>机器人基础模型仍是重要方向，但触觉反馈、硬件耐久性、实时控制和安全边界决定其能否稳定落地。开源社区也开始系统整理具身安全研究，反映行业关注点正从能力展示转向风险治理。</p>
+<h2>4. 数据 / 图表</h2>
+<p>| 项目 | 创建/发布时间 | 截至资料抓取时的公开指标 | 解读 | |---|---:|---:|---| | <a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">WyckoffTradingAgent</a> | 2026-01-12 | 558 Stars、175 Forks、4个开放问题 | 支持量价分析、A股筛选、CLI 与 MCP；是本期资料中关注度最高的 Python AI 工具，但搜索结果不等同于 GitHub 官方 Trending | | <a href="https://github.com/Dave-he/RoboticsResearch">RoboticsResearch</a> | 2026-06-07 | 2 Stars、1 Fork | 聚合机械臂、导航、SLAM、具身智能与 VLA 资料，仍属早期开源知识库 | | <a href="https://github.com/x-zheng16/Awesome-Embodied-AI-Safety">Awesome-Embodied-AI-Safety</a> | 待确认 | 项目自述收录500余篇论文 | 覆盖感知、认知、规划、交互及智能体系统安全；具体论文数量需以仓库最新索引复核 |</p>
+<p>注：GitHub 数值来自 2026-08-03所给 API 快照，会持续变化。融资并购金额、AI 硬件出货量、自动驾驶部署规模等方面，本期暂无可靠图表数据。</p>
+<h2>5. 案例拆解</h2>
+<p>案例名称：Gemini API Managed Agents 生产化能力扩展</p>
+<ul><li>背景：企业自行搭建智能体通常需要处理异步任务、工具连接、状态维护、权限管理、重试和监控，工程复杂度明显高于普通模型调用。</li><li>做法：Google 分阶段向 Gemini API 加入后台任务、远程 MCP、hooks 和 Gemini 3.6 Flash，将模型、工具协议及执行生命周期整合为托管服务。</li><li>结果：根据 Google 2026-07-07和2026-07-28公告，相关能力已经发布或扩展；实际客户采用率、任务成功率与成本改善数据未披露，待确认。</li><li>可借鉴点：企业应先选取可回滚、可人工复核的长流程试点，并建立任务级成功率、人工接管率、工具调用失败率、时延和成本指标，再决定是否扩大部署。</li></ul>
+<h2>6. 风险与不确定性</h2>
+<ul><li>技术风险：厂商资料未提供足够的统一第三方评测；长时智能体可能出现错误累积、状态漂移及工具调用失控。机器人触觉和基础栈仍需验证实机耐久性与跨场景泛化。</li><li>合规风险：金融筛选智能体可能涉及投资建议、模型解释与记录留存要求；具身设备还涉及人身安全、产品责任和特定行业认证。</li><li>商业化风险：托管智能体可能降低早期开发成本，但带来平台锁定和推理费用不可控问题。本期资料未提供可核实的 AI 公司融资并购、硬件量产或大规模商业订单，相关判断待确认。</li><li>数据安全风险：远程 MCP、联网搜索和企业应用连接会扩大数据暴露面；机器人传感器、远程更新链路及执行权限还可能引入物理安全风险。</li></ul>
+<h2>7. 本期结论</h2>
+<ol><li>AI 平台竞争正从模型 API 延伸至可持续执行、连接工具并接受治理的托管智能体基础设施。</li><li>Claude Opus 5 将长时智能体列为重点方向，但选型仍需基于第三方任务评测、价格和可靠性数据。</li><li>具身智能开始补齐触觉、安全与基础栈；人形机器人、自动驾驶、AI 硬件及融资并购本期缺少可靠增量信息，不宜作趋势外推。</li></ol>
+<h2>8. 下期可继续关注</h2>
+<ul><li>Gemini 3.6 Flash 与 Claude Opus 5 的 API 定价、模型卡、第三方评测及企业部署案例</li><li>触觉机器人皮肤的论文原文、实机寿命、量产成本，以及通用机器人基础栈的跨本体表现</li><li>人形机器人和自动驾驶基础模型的新发布、AI 芯片与终端硬件量产进展、具身智能领域融资并购与订单数据</li></ul>
+  </main>
+</body>
+</html>
