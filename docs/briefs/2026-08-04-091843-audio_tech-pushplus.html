@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-04</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-04</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日最值得关注的是非官方工具 Push Hack 暴露 Ableton Push 3 的显示、文件与 MIDI 控制面，既拓展硬件改造空间，也带来设备安全、保修和现场稳定性风险；开源侧则出现面向插件、桌面、移动、WebAssembly 与嵌入式平台的 C++20 DSP 框架 DSPark。</li><li>今日关键词：Push 3 非官方访问、设备安全、C++20 DSP、VST3、AU、CLAP、Glitch2 免费化、开源音频工具。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Push Hack 非官方接管 Push 3 显示、文件与 MIDI 接口 ★</h3>
+<ul><li>发生了什么：开发者 Federico Pepe 发布非官方工具 Push Hack。CDM 报道称，该工具可访问 Ableton Push 3 的显示系统、存储文件和 MIDI 等功能；项目使用了 AI 辅助编码工具。当前资料未显示 Ableton 授权或支持该方案。</li><li>涉及技术：Push 3 硬件接口、显示控制、文件系统访问、MIDI 控制、AI 辅助编程。</li><li>关键参数：支持的 Push 3 固件版本、接口权限边界、通信协议、附加时延及恢复机制均为“资料未确认”。</li><li>为什么重要：它说明封闭音乐硬件可能被扩展为自定义控制器和演出终端，同时暴露未授权访问、固件兼容、数据损坏及供应链安全问题。</li><li>对产品研发的影响：硬件团队应检查调试接口、文件系统权限、更新签名和恢复流程；第三方开发者可研究新型显示与 MIDI 工作流，但不宜直接用于关键现场系统。后续取决于 Ableton 是否修补访问路径、发布官方 API 或明确保修政策。</li><li>来源/时间：<a href="https://cdm.link/push-hack-very-unauthorized-access-to-push-3s-display-files-midi-and-more/">CDM｜Push Hack, very unauthorized access to Push 3’s display, files, MIDI, and more</a>｜2026-08-03。</li></ul>
+<h3>事件二：DSPark 推进零依赖 C++20 跨平台音频 DSP 框架</h3>
+<ul><li>发生了什么：DSPark 代码库在 2026-08-04 前后继续更新。维护者将其定位为纯 C++20、头文件式、零第三方依赖的实时音频 DSP 框架。</li><li>涉及技术：实时 DSP、物理模拟、EBU R128 响度计量、C++20、WebAssembly、嵌入式音频，以及 VST3、CLAP、AU 插件开发。</li><li>关键参数：维护者宣称提供 90 余种实时处理器；采样率范围、SIMD 支持、处理时延、CPU 基准、实时线程内存策略及测试覆盖率均为“资料未确认”。</li><li>为什么重要：若其跨平台能力和实时安全性得到验证，可减少插件、移动端、网页和嵌入式产品之间重复实现 DSP 内核的成本；但当前项目成熟度和产业采用情况缺乏独立证据。</li><li>对产品研发的影响：适合进入技术预研或原型验证，不宜仅依据项目描述直接替换生产 DSP。下一步应重点核查许可证、无锁与无动态分配约束、数值一致性、主流宿主兼容性和性能回归测试。</li><li>来源/时间：<a href="https://github.com/CristianMoresi/DSPark">GitHub｜CristianMoresi/DSPark</a>｜检索记录显示 2026-08-04 前后仍有代码活动；精确提交时间“资料未确认”。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：DSPark 尝试以单一 C++20 头文件式框架覆盖实时处理器、模拟建模和 EBU R128 计量；另有 JUCE/C++ 项目 montagem-finisher 将多种处理封装为单旋钮风格化效果。</li><li>工程应用：可用于插件 DSP 原型、桌面与移动音频应用、WebAssembly 处理及嵌入式验证。下一步需要建立跨编译器数值测试、实时线程压力测试和宿主兼容矩阵。</li><li>成熟度：DSPark 为早期开源项目，版本、Stars 与生产部署情况“资料未确认”；montagem-finisher 截至 2026-08-04 为 2 Stars、0 Fork，宜视为实验性项目。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未包含可信的新编解码器版本、实现或标准更新。</li><li>性能与兼容性：码率、算法时延、音质评测和终端支持均无新增可靠数据。</li><li>工程应用：本期不据旧资料推演。后续应关注低时延语音、沉浸式音频对象编码及浏览器解码支持的官方更新。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：针对 <code>spatial audio audio-ai</code> 的 GitHub 条件检索结果为 0，本期资料未发现可验证的新项目。</li><li>渲染链路或终端支持：未发现新的声场格式、双耳渲染器、头部跟踪终端或 DAW 渲染链路更新。</li><li>工程应用：不建议将“无检索结果”解释为行业停滞；下一步需扩大关键词、语言和官方厂商信源范围。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：本期资料仅提到 Push Hack 使用 AI 辅助编码代理，未提供新的语音生成、音乐生成、分离、降噪或音频基础模型。</li><li>能力与限制：AI 对 Push Hack 的具体代码贡献、测试质量和安全影响“资料未确认”，不能据此评价其音频生成能力。</li><li>工程应用：AI 辅助开发硬件控制软件时，应保留代码审查、权限审计和真机回归流程；下一步关注可复现模型、训练数据授权和端侧性能数据。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料没有 AES67、Dante、AVB/Milan、Ravenna、WebRTC 音频或 3GPP 媒体传输的可靠新增动态。</li><li>时延与互操作性：无可核实的新时延或互操作测试结果。</li><li>工程应用：网络音频项目仍应以设备实测和认证矩阵为准；后续关注标准组织及厂商正式发布。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Glitch2；Push Hack；montagem-finisher。</li><li>类型：Glitch2 为序列化多效果音频插件，现已免费提供；Push Hack 为 Push 3 非官方控制与访问工具；montagem-finisher 为面向 funk automotivo 与 phonk 制作的单旋钮效果插件。</li><li>采样率/位深/时延：三者均“资料未确认”。</li><li>兼容平台：montagem-finisher 项目描述列出 VST3、AU、macOS 和独立运行版本；Glitch2 的当前系统与 DAW 兼容清单“资料未确认”；Push Hack 面向 Push 3。</li><li>价格：Glitch2 免费；montagem-finisher 采用 MIT 许可证；Push Hack 价格“资料未确认”。</li><li>与上一代或竞品差异：Glitch2 的变化是授权获取门槛降为免费，并非确认的新版本；montagem-finisher 强调单旋钮风格化处理；Push Hack 的差异在于突破官方工作流访问显示、文件和 MIDI。后续价值取决于兼容维护、代码审计和宿主稳定性。</li><li>来源/时间：<a href="https://cdm.link/remembering-dblue-illformed-glitch2/">CDM｜Remembering Kieran Foster; legendary Glitch2 effect now free</a>｜2026-08-02；<a href="https://github.com/nabsei/montagem-finisher">GitHub｜nabsei/montagem-finisher</a>｜2026-08-04 更新；<a href="https://cdm.link/push-hack-very-unauthorized-access-to-push-3s-display-files-midi-and-more/">CDM｜Push Hack</a>｜2026-08-03。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI 或 3GPP 在近期发布的可靠音频标准或论文更新。</li><li>发布机构：无。</li><li>核心结论：不能以旧标准或开源项目描述代替本期标准动态。</li><li>对产品设计的影响：当前设计基线不应因本期资料而变更；下一步应直接核查 AES、ITU-T、ETSI 与 3GPP 官方发布和勘误页面。</li><li>原文链接：资料未提供。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Push 3 非官方显示、文件与 MIDI 扩展。</li><li>背景：Push 3 的官方工作流无法覆盖所有定制显示、文件管理及 MIDI 控制需求，社区开发者因此尝试获取更底层的设备能力。</li><li>技术方案：Push Hack 据称可接管显示并访问文件与 MIDI；具体漏洞、接口调用方式、权限模型和恢复方案未公开确认。</li><li>结果：CDM 已展示其扩展方向，但稳定性、安全性、固件兼容性及现场运行结果均缺少独立测试。</li><li>可借鉴点：专业音频硬件应提供受控扩展 API、签名更新、最小权限、恢复镜像和开发者模式；后续需观察 Ableton 官方回应及固件变化。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Push Hack | 显示、文件、MIDI 非官方访问；详细权限未确认 | 资料未确认 | Ableton Push 3 | 资料未确认 | <a href="https://cdm.link/push-hack-very-unauthorized-access-to-push-3s-display-files-midi-and-more/">CDM</a> | | DSPark | 厂商宣称纯 C++20、头文件式、零依赖、90+ 实时处理器 | 资料未确认 | 桌面、移动、WebAssembly、嵌入式；VST3/CLAP/AU | 开源；具体许可证以仓库为准 | <a href="https://github.com/CristianMoresi/DSPark">GitHub</a> | | montagem-finisher | 单旋钮风格化 DSP；MIT；2 Stars | 资料未确认 | macOS、VST3、AU、Standalone | 开源 | <a href="https://github.com/nabsei/montagem-finisher">GitHub</a> | | Glitch2 | 序列化声音变形多效果；当前技术参数未确认 | 资料未确认 | 当前兼容平台未确认 | 免费 | <a href="https://cdm.link/remembering-dblue-illformed-glitch2/">CDM</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音乐硬件正被社区转化为可编程终端；DSP 代码库则继续向跨插件、Web 与嵌入式的单一代码基线靠拢。插件免费化也有利于旧软件和电子音乐制作方法的保存。</li><li>工程风险：Push Hack 属未授权方案，可能导致数据损坏、固件失配、设备失效或保修争议；早期开源 DSP 缺少性能、线程安全和宿主兼容性的独立验证。</li><li>版权/合规风险：设备逆向、固件修改、文件访问及接口绕过可能受到许可协议与当地法律限制；Glitch2 免费化的具体授权范围仍应以权利人发布条款为准。</li><li>商业化风险：小型开源项目维护持续性有限；免费旧插件可能无法长期适配新操作系统、CPU 架构和 DAW。下一步应优先核验许可证、维护计划和可复现测试。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Ableton 是否就 Push Hack 涉及的访问路径、保修影响、固件修复或官方开发 API 作出回应。</li><li>DSPark 是否发布正式版本、许可证、基准测试、实时安全说明及 VST3/CLAP/AU 宿主兼容矩阵。</li><li>Glitch2 免费版本的官方授权范围、下载渠道、Apple Silicon 与现代 Windows/DAW 兼容性。</li><li>AES、ITU、ETSI、3GPP 是否出现音频编解码、沉浸式媒体或网络音频的新标准、勘误和工作组文件。</li><li>语音/音乐生成、空间音频、专业音频硬件、耳机及声学器件领域是否出现可由官方信源验证的新发布。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/push-hack-very-unauthorized-access-to-push-3s-display-files-midi-and-more/">Push Hack, very unauthorized access to Push 3’s display, files, MIDI, and more</a>｜2026-08-03</li><li>CDM Create Digital Music｜<a href="https://cdm.link/remembering-dblue-illformed-glitch2/">Remembering Kieran Foster; legendary Glitch2 effect now free</a>｜2026-08-02</li><li>CristianMoresi｜<a href="https://github.com/CristianMoresi/DSPark">DSPark</a>｜2026-08-04 前后仍有代码活动，精确提交时间资料未确认</li><li>nabsei｜<a href="https://github.com/nabsei/montagem-finisher">montagem-finisher</a>｜2026-08-04</li><li>GitHub Search API｜<code>spatial audio audio-ai language:Python pushed:&gt;2026-07-28</code>｜检索结果生成于 2026-08-04，返回 0 个仓库</li><li>GitHub Search API｜<code>music technology audio tools language:Python pushed:&gt;2026-07-28</code>｜检索结果生成于 2026-08-04，返回 0 个仓库</li></ol>
+  </main>
+</body>
+</html>
