@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-05</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-05</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：美国将部分境外移动机器人纳入 FCC “Covered List”，监管变量正从 AI 软件延伸至机器人整机与供应链；同期 OpenAI 强化第三方网络安全评估，Google DeepMind 则继续推进全身机器人基础模型。</li><li>今日关键词：机器人进口限制、第三方网络安全评估、全身智能、具身基础模型、GitHub 数据缺口</li><li>预计阅读时间：6 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：美国扩大受限设备范围，境外移动机器人面临市场准入风险 ★</h3>
+<ul><li>发生了什么：据 IEEE Spectrum 报道，美国 FCC 于 2026 年 7 月 28 日将重量超过 2 千克、具备通信能力的移动机器人纳入“Covered List”。报道指出，这意味着相关类别的外国新产品将不再具备进入美国市场所需的设备授权资格。</li><li>技术变化：本次不是机器人算法或硬件升级，而是监管边界从传统通信设备扩大到具备联网、感知和移动能力的机器人平台。</li><li>为什么重要：FCC 设备授权是大量无线联网产品进入美国市场的重要前置条件。若规则按报道口径执行，境外机器人企业可能需要重新设计通信模块、调整供应链或寻求本地化生产。</li><li>产业影响：仓储、巡检、配送、安防及部分人形机器人厂商的美国市场拓展成本可能上升；美国本土整机、通信组件和系统集成商可能受益。具体覆盖国家、存量产品处理方式及豁免机制仍需以 FCC 文件为准。</li><li>接下来关注：FCC 对“mobile robots”“communicating”的正式定义、既有型号是否受影响、企业申诉与豁免程序，以及美国盟友产品是否同样受到限制。</li><li>来源/时间：<a href="https://spectrum.ieee.org/fcc-covered-list-mobile-robots">IEEE Spectrum｜What Robotics Companies Think About the U.S. Foreign Robot Ban</a>｜2026-08-04</li></ul>
+<h3>事件二：OpenAI 引入第三方网络安全评估，模型安全验证进一步外部化</h3>
+<ul><li>发生了什么：OpenAI 于 2026 年 8 月 4 日发布“涉及 OpenAI 模型的第三方网络安全评估”。现有资料仅确认公告标题与发布时间，评估机构、测试模型、攻击场景及结果未提供，详细结论资料未确认。</li><li>技术变化：没有可靠资料证明模型、API 或安全过滤机制同步更新；可确认的变化是 OpenAI 对外披露了第三方网络安全评估事项。</li><li>为什么重要：外部评估有助于降低模型厂商自行测试带来的利益冲突，也是企业和政府客户判断模型是否适合高风险网络安全场景的重要依据。</li><li>产业影响：若 OpenAI后续披露统一测试方法和可复现结果，可能推动前沿模型供应商采用更标准化的网络能力分级、红队测试和事件报告机制。</li><li>接下来关注：第三方机构的独立性、评估是否覆盖自主代理和工具调用、漏洞披露规则，以及测试结果是否影响 API 权限和企业采购要求。</li><li>来源/时间：<a href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/">OpenAI｜Third-party cyber evaluations involving OpenAI models</a>｜2026-08-04</li></ul>
+<h3>事件三：Google DeepMind 发布 Gemini Robotics 2，机器人模型转向全身协同</h3>
+<ul><li>发生了什么：Google DeepMind 官网列出“Gemini Robotics 2 brings whole body intelligence to robots”，表明其机器人模型升级方向已从局部操作扩展至全身智能。官方页面仅标注 2026 年 7 月，具体发布日期资料未确认。</li><li>技术变化：根据官方标题，可确认的重点是“whole body intelligence”；具体模型规模、训练数据、支持硬件、基准成绩及 API 能力资料未确认。</li><li>为什么重要：全身协调是人形机器人从固定工位操作走向移动、搬运和复杂环境作业的关键能力，也是视觉语言模型转化为物理行动能力的主要技术瓶颈。</li><li>产业影响：若模型能够跨机器人本体迁移，机器人厂商的竞争重点可能由单一动作控制转向数据质量、整机适配、仿真训练和安全执行系统。</li><li>接下来关注：是否开放 API 或模型权重、支持哪些机器人平台、长时序任务成功率，以及与 Gemini Robotics ER 2 的任务编排和多机器人协作能力如何组合。</li><li>来源/时间：<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Google DeepMind｜Gemini Robotics 2 brings whole body intelligence to robots</a>｜2026 年 7 月，具体日期资料未确认</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：本期未发现能够同时确认具体发布日期、性能、价格和开放方式的全新通用大模型或 API 更新。OpenAI GPT-5.6 和 Anthropic Claude Opus 5 已出现在近期历史内容中，本期没有可靠新增事实，因此不重复收录。</li><li>发布方：资料未确认。</li><li>核心能力：OpenAI 另于 2026 年 8 月 4 日发布面向学习、教学、ChatGPT 工作流和 Codex 的产品页面，但现有资料不足以判断是否包含新工具或功能上线。</li><li>性能与价格：资料未确认。</li><li>开放情况：资料未确认。</li><li>竞品差异：资料未确认，无法进行可靠比较。</li><li>来源/时间：<a href="https://openai.com/index/learn-teach-chatgpt-work-codex/">OpenAI｜Learn, teach, and work with ChatGPT and Codex</a>｜2026-08-04</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：Gemini Robotics 2，以及面向视频理解、任务编排和多机器人协作的 Gemini Robotics ER 2。</li><li>应用场景：全身移动与操作、视频驱动的环境理解、多阶段机器人任务及多机器人协同；官方未披露具体量产客户或部署规模。</li><li>技术突破：官方标题显示 Gemini Robotics 2 强调全身智能，ER 2 强调视频理解、任务编排与多机器人协作；基准成绩和相对上一代的量化提升资料未确认。</li><li>商业化进度：API、模型权重、授权价格、适配机器人清单及商业部署数量均未确认。人形机器人硬件方面，本期资料没有发现可核实且未重复的新发布或融资事件。</li><li>来源/时间：<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">Google DeepMind｜Gemini Robotics 2</a>｜2026 年 7 月；<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">Google｜Gemini Robotics ER 2</a>｜2026 年 7 月；具体日期均资料未确认</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：本期没有可核验的新论文或 GitHub 热门、新发布项目。</li><li>解决的问题：资料未确认。GitHub 的 AI 工具与机器人项目检索均因 HTTP 403 限流失败，无法可靠核对项目首次发布时间、版本变化和 Stars 增量。</li><li>实际价值：在无法核验仓库活跃度和历史去重的情况下，不使用旧项目或未经验证的 Stars 数据补齐栏目，避免把短期曝光误判为真实开发者采用。</li><li>论文/仓库链接：资料未确认。</li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：美国 FCC 将部分移动通信机器人纳入“Covered List”；本期资料未发现可独立核验的新融资或并购交易。</li><li>核心事实/金额：报道所述范围为重量超过 2 千克、具备通信能力的移动机器人；政策于 2026 年 7 月 28 日调整。融资与并购金额资料未确认。</li><li>影响：机器人企业需要把无线设备授权、供应链来源和数据通信架构纳入美国市场准入评估。政策的实际影响可能高于单纯关税，因为设备授权限制可能直接阻断新型号上市。</li><li>来源/时间：<a href="https://spectrum.ieee.org/fcc-covered-list-mobile-robots">IEEE Spectrum｜What Robotics Companies Think About the U.S. Foreign Robot Ban</a>｜2026-08-04；FCC 原始规则文件未包含在现有资料中，具体法律适用范围仍需复核</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：AI 安全评估正从厂商内部红队测试转向第三方验证，但评估机构独立性、方法透明度和结果可复现性将决定其采购价值。</li><li>趋势二：机器人基础模型正在由单机械臂操作转向全身控制、任务编排和多机器人协作；与此同时，市场准入与通信安全监管可能成为商业化速度的新约束。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：全身机器人模型的跨本体迁移、长时序稳定性、失误恢复及真实环境泛化数据均未确认，官方能力描述不能替代独立实测。</li><li>合规风险：FCC 政策的适用国家、产品定义、存量型号和豁免机制尚需查验原始文件；仅凭媒体摘要不宜直接形成法律结论。</li><li>商业化风险：机器人基础模型尚未披露明确价格、支持硬件和规模化客户，模型演示与可持续部署之间仍可能存在显著差距。</li><li>数据安全风险：联网机器人持续采集视频、空间和行为数据；若云端模型、远程控制与供应链组件缺乏隔离，可能扩大网络攻击和敏感数据外流风险。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>跟踪 FCC 原始文件、设备授权实施细则及机器人企业的正式回应。</li><li>核验 OpenAI 第三方网络安全评估的机构、测试方法、结果和整改措施。</li><li>跟踪 Gemini Robotics 2/ER 2 的 API、权重、基准测试、适配硬件和首批商业客户。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>IEEE Spectrum｜What Robotics Companies Think About the U.S. Foreign Robot Ban｜2026-08-04｜<a href="https://spectrum.ieee.org/fcc-covered-list-mobile-robots">原文链接</a></li><li>OpenAI｜Third-party cyber evaluations involving OpenAI models｜2026-08-04｜<a href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/">原文链接</a></li><li>OpenAI｜Learn, teach, and work with ChatGPT and Codex｜2026-08-04｜<a href="https://openai.com/index/learn-teach-chatgpt-work-codex/">原文链接</a></li><li>Google DeepMind｜Gemini Robotics 2 brings whole body intelligence to robots｜2026 年 7 月，具体日期资料未确认｜<a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/">原文链接</a></li><li>Google｜Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration｜2026 年 7 月，具体日期资料未确认｜<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
