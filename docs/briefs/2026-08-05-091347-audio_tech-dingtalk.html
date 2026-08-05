@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-05</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-05</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：Steinberg 借 VST 30 周年免费发布五款早期插件的现代化版本，核心价值不在性能突破，而在验证老旧音色资产向现代 Mac、PC 制作环境迁移的商业与工程可行性；其余音频 AI、空间音频、硬件及标准方向暂无可核验新增资料。</li><li>今日关键词：VST 30 周年、经典插件复刻、跨代兼容、软件乐器保存、资料缺口</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Steinberg 免费发布五款经典 VST 插件现代化版本 ★</h3>
+<ul><li>发生了什么：据 CDM 报道，Steinberg 为纪念 VST 插件格式诞生 30 周年，免费提供 Neon、CS-40、Karlette、VB1 和 LM7 的更新版本，可运行于现代 Mac 或 PC。其中包括早期软件乐器及一款磁带延迟效果器。</li><li>涉及技术：VST 插件、虚拟乐器、鼓机、贝斯合成、磁带延迟、旧软件现代化适配、DAW 插件生态。</li><li>关键参数：插件数量为 5；价格为免费。支持的具体插件格式、采样率、位深、系统最低版本、Apple Silicon 原生支持情况及内部处理精度，资料未确认。</li><li>为什么重要：这批产品展示了成熟插件生态中的“数字遗产再发行”路径。对厂商而言，旧算法与旧预置可以通过界面、构建链和系统兼容性更新重新形成用户入口；对 DAW 用户而言，则降低了调用历史音色的系统兼容门槛。</li><li>对产品研发的影响：插件开发团队应将 DSP 算法与 GUI、SDK、签名及安装系统解耦，并保存可复现构建环境。准备复刻旧产品时，还需验证预置兼容、参数自动化映射、工程召回和不同 CPU 架构下的输出一致性。</li><li>来源/时间：<a href="https://cdm.link/vst-at-30-years-and-steinberg-classics-free/">CDM｜VST is 30 years old, and Steinberg is giving away some of its earliest plugins</a>｜2026-08-04</li></ul>
+<h3>事件二：关键音频技术信源抓取受限，暂无第二项可交叉验证事件</h3>
+<ul><li>发生了什么：GitHub 三组音频项目检索均因 API 速率限制返回 HTTP 403；Sound On Sound 的 RSS 与新闻页返回 HTTP 403；MusicTech 页面出现 TLS 证书主机名不匹配。</li><li>涉及技术：开源音频工具、DSP 插件、空间音频、音频 AI、音乐科技资讯采集。</li><li>关键参数：GitHub 检索失败 3 组；Sound On Sound 失败 2 个入口；MusicTech 失败 2 个入口。失败发生时间及相关页面发布时间未提供。</li><li>为什么重要：当前资料不足以判断近期项目 Stars 增长、版本发布、融资或安全事件。将不可访问等同于“没有动态”会造成明显的信息偏差。</li><li>对产品研发的影响：本期不依据搜索摘要补写模型性能、硬件参数或项目热度。研发选型前应直接核验厂商发布页、GitHub Release、提交记录和标准组织目录。</li><li>来源/时间：<a href="https://github.com/">GitHub</a>｜检索时间资料未确认；<a href="https://www.soundonsound.com/news">Sound On Sound</a>｜抓取时间资料未确认；<a href="https://www.musictech.net/news/">MusicTech</a>｜抓取时间资料未确认</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：五款早期 VST 产品完成面向现代桌面系统的更新；底层 DSP 算法是否修改，资料未确认。</li><li>工程应用：可用于评估旧合成器、鼓机和磁带延迟算法的现代化封装，以及历史工程的音色召回。</li><li>成熟度：产品已发布，但宿主兼容矩阵、CPU 占用和自动化一致性尚无可靠参数。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中没有新的音频编解码器、版本或实现更新。</li><li>性能与兼容性：无可核验的码率、复杂度、时延或终端兼容数据。</li><li>工程应用：本期无法形成编解码选型建议，不补写既有标准充数。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中没有可验证的空间音频或沉浸式音频新增技术。</li><li>渲染链路或终端支持：头部跟踪、对象音频、双耳渲染、扬声器阵列及终端支持情况均无新增资料。</li><li>工程应用：涉及沉浸式制作或播放链路的项目，应继续以目标 DAW、渲染器及终端实测为准。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中没有可验证的新语音生成、音乐生成、音频理解或 AI 插件发布。</li><li>能力与限制：GitHub 检索受限，无法确认模型版本、许可证、训练数据、推理速度及项目活跃度。</li><li>工程应用：当前不建议据此更新模型选型；后续需核验官方模型卡、代码仓库和商用条款。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中没有新的网络音频协议、API 或互操作性更新。</li><li>时延与互操作性：无可靠新增测试数据。</li><li>工程应用：专业音频网络项目仍需针对时钟同步、交换机配置、冗余和端到端时延进行独立验证。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Steinberg Neon、CS-40、Karlette、VB1、LM7 现代化版本。</li><li>类型：VST 经典软件乐器及效果器合集；具体产品分类以厂商说明为准。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：现代 Mac、PC；操作系统版本、CPU 架构及具体 DAW 兼容性资料未确认。</li><li>价格：免费。</li><li>与上一代或竞品差异：相较原始版本，主要新增事实是可在现代 Mac、PC 环境运行；是否更改音频算法、GUI、预置或参数体系，资料未确认。</li><li>来源/时间：<a href="https://cdm.link/vst-at-30-years-and-steinberg-classics-free/">CDM｜VST is 30 years old, and Steinberg is giving away some of its earliest plugins</a>｜2026-08-04</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI、3GPP 的可靠新增标准、修订或论文。</li><li>发布机构：无。</li><li>核心结论：不能根据 VST 30 周年产品活动推断 VST SDK、宿主 API 或行业标准发生更新。</li><li>对产品设计的影响：插件研发仍应直接核验 Steinberg 官方 SDK、许可证和兼容性文档；通信与沉浸式音频产品应分别查询相关标准组织的正式目录。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>；<a href="https://www.itu.int/pub/">ITU Publications</a>；<a href="https://www.etsi.org/standards">ETSI Standards</a>；<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：早期 VST 插件向现代桌面制作环境迁移。</li><li>背景：Neon、CS-40、Karlette、VB1 和 LM7 属于 VST 发展早期的软件产品，原始实现与现代操作系统、CPU 架构及 DAW 环境之间可能存在兼容障碍。</li><li>技术方案：Steinberg 发布可运行于现代 Mac、PC 的更新版本；具体 SDK 迁移、代码重构、签名、公证及 DSP 一致性方案未公开。</li><li>结果：五款插件免费重新进入现代制作环境。稳定性、工程召回一致性和性能结果尚缺少独立测试。</li><li>可借鉴点：旧插件复刻项目应建立参考音频回归测试，固定预置与自动化参数映射，并分别验证离线渲染、实时播放、采样率切换和跨 CPU 架构一致性。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Steinberg 经典插件合集 | 5 款更新插件；具体采样率、位深未确认 | 资料未确认 | 现代 Mac、PC；具体插件接口未确认 | 免费 | <a href="https://cdm.link/vst-at-30-years-and-steinberg-classics-free/">CDM，2026-08-04</a> | | 音频 AI、空间音频及开源 DSP 新项目 | GitHub 检索受 HTTP 403 限制，参数无法核验 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://github.com/">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：经典插件与历史音色资产正被重新包装为现代 DAW 可用产品；软件保存、跨架构构建和长期工程召回的重要性上升。资料未显示新的专业音频硬件、耳机或声学器件趋势。</li><li>工程风险：仅有“支持现代 Mac、PC”的二手报道，尚不足以确认插件格式、Apple Silicon 原生运行、自动化兼容、采样率切换及旧工程完全召回。</li><li>版权/合规风险：免费不等于开源，也不代表允许再分发、反向工程或商业捆绑；具体最终用户许可协议资料未确认。AI 音频与生成音乐方向本期无新增可靠材料，不能据此判断训练数据合规性。</li><li>商业化风险：免费经典插件可承担品牌获客功能，但其长期维护、技术支持和对付费产品的转化效果未有公开数据。专业硬件、声学器件及音乐科技公司融资动态亦无可靠新增资料。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核验 Steinberg 官方下载页、许可证、插件格式、系统要求及 Apple Silicon/Windows ARM 支持情况。</li><li>重新执行 GitHub 检索，重点检查音频 AI、空间音频、DSP、插件与开源工具的 Release、Stars 增量和许可证变化。</li><li>复查 AES、ITU、ETSI、3GPP 官方目录，并补充专业音频硬件、耳机/声学器件、DAW、音乐科技公司融资与产业应用的一手信源。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜VST is 30 years old, and Steinberg is giving away some of its earliest plugins｜2026-08-04｜https://cdm.link/vst-at-30-years-and-steinberg-classics-free/</li><li>GitHub｜音频 DSP、空间音频、音频 AI 与音乐科技项目检索入口，检索因 HTTP 403 失败｜时间资料未确认｜https://github.com/</li><li>Sound On Sound｜News，抓取因 HTTP 403 失败｜时间资料未确认｜https://www.soundonsound.com/news</li><li>MusicTech｜News，抓取因 TLS 证书主机名不匹配失败｜时间资料未确认｜https://www.musictech.net/news/</li><li>Audio Engineering Society｜AES Standards｜本期资料未确认新增发布时间｜https://www.aes.org/standards/</li><li>International Telecommunication Union｜ITU Publications｜本期资料未确认新增发布时间｜https://www.itu.int/pub/</li><li>ETSI｜Standards｜本期资料未确认新增发布时间｜https://www.etsi.org/standards</li><li>3GPP｜Specifications by Series｜本期资料未确认新增发布时间｜https://www.3gpp.org/specifications-technologies/specifications-by-series</li></ol>
+  </main>
+</body>
+</html>
