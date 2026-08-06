@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-06</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-06</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：今日缺少经可靠信源确认的前沿模型、硬件及融资大事件；增量主要来自 OpenAI 的公司立场表态，以及多智能体商业工具和机器人开发辅助项目的早期开放。</li><li>今日关键词：平台治理、多智能体工作流、Physical AI 开发工具、具身智能开源</li><li>预计阅读时间：5 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：OpenAI 公开质疑苹果相关做法，公司竞争延伸至平台治理 ★</h3>
+<ul><li>发生了什么：OpenAI 于 8 月 3 日发布题为《Apple is getting this wrong》的公司文章，公开表达对苹果相关做法的反对；文章具体争议事项在所给资料中未展开，资料未确认。</li><li>技术变化：未涉及已确认的新模型、API、价格或技术参数。</li><li>为什么重要：头部模型公司开始更直接地介入终端平台规则讨论，意味着 AI 竞争不再局限于模型能力，也涉及应用分发、默认入口与平台控制权。</li><li>产业影响：若争议涉及 AI 产品接入或分发，可能影响模型厂商、AI 应用开发者与终端平台之间的商业关系；具体影响需等待完整原文或苹果回应。</li><li>接下来关注：争议所指向的具体产品政策、苹果是否回应，以及是否引发监管机构或其他 AI 厂商跟进。</li><li>来源/时间：<a href="https://openai.com/index/apple-is-getting-this-wrong/">OpenAI｜Apple is getting this wrong</a>｜2026-08-03</li></ul>
+<h3>事件二：Project Jaguar 开源多智能体商业工作流平台</h3>
+<ul><li>发生了什么：Project Jaguar 于 8 月 2 日创建并采用 MIT 许可证开源，定位为利用多智能体 AI 自动完成战略规划、文档生成和商业工作流；截至 8 月 6 日资料快照仅有 3 Stars。</li><li>技术变化：项目尝试将多个智能体组织为可复用的业务自动化流程，但模型适配范围、评测结果、权限隔离与生产部署能力资料未确认。</li><li>为什么重要：AI 工具正从单轮内容生成转向跨步骤业务执行，战略规划和文档流转成为新项目集中尝试的场景。</li><li>产业影响：早期项目可能降低中小企业搭建多智能体流程的门槛，但当前社区规模很小，不能据此认定为 GitHub 热门项目或成熟产品。</li><li>接下来关注：Stars 与贡献者增长、可复现实例、外部系统连接器，以及是否建立人工审批、审计和失败恢复机制。</li><li>来源/时间：<a href="https://github.com/Forwarduy/Project-Jaguar">GitHub｜Forwarduy/Project-Jaguar</a>｜创建于 2026-08-02，最近推送于 2026-08-06 01:09 UTC</li></ul>
+<h3>事件三：pidog-embodiment 更新低成本具身智能接口</h3>
+<ul><li>发生了什么：pidog-embodiment 于 8 月 6 日继续更新，目标是把视觉、听觉、语音和运动能力连接到 PiDog、树莓派等低成本机器人平台；截至资料快照为 3 Stars。</li><li>技术变化：项目将 LLM、语音控制、视觉识别、物联网和机器人运动接口组合为开源框架；本次提交的具体功能差异资料未确认。</li><li>为什么重要：低成本硬件与通用模型的组合，为具身智能原型验证和教学实验提供了比人形机器人更低的进入门槛。</li><li>产业影响：短期价值主要在开发、教育和社区实验，尚无证据表明其已形成稳定商业部署或机器人基础模型能力。</li><li>接下来关注：真实硬件测试、动作安全机制、端侧时延、断网可用性，以及是否形成标准化评测。</li><li>来源/时间：<a href="https://github.com/carlossuarez091011-lgtm/pidog-embodiment">GitHub｜pidog-embodiment</a>｜最近推送于 2026-08-06 00:50 UTC</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：今日未发现可由所给资料确认、且未在近 14 天简报中出现的新大模型、API版本或 AI 硬件发布；OpenAI GPT-5.6、GPT Live、Anthropic Claude Opus 5 等均属于近期已使用主题，不重复收录。</li><li>发布方：资料未确认。</li><li>核心能力：资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：资料未确认。</li><li>竞品差异：资料未确认。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI News</a>｜检索截至 2026-08-06；<a href="https://www.anthropic.com/news">Anthropic Newsroom</a>｜检索截至 2026-08-06</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：Robium 是面向 AI 编程智能体的开源 Physical AI 知识与技能插件集合，覆盖机器人框架、仿真器、开发库和工具；pidog-embodiment 则面向低成本实体机器人连接视觉、语音与运动能力。今日未确认新的人形机器人、自动驾驶系统、机器人基础模型或机器人硬件正式发布。</li><li>应用场景：机器人代码生成辅助、仿真与框架配置、低成本机器人教学、语音交互和自主移动原型。</li><li>技术突破：两个项目均未提供可独立验证的基准测试，不能认定存在基础模型或机器人控制层面的技术突破。</li><li>商业化进度：均处于早期开源阶段；客户、收入、规模部署、硬件销量及安全认证资料未确认。</li><li>来源/时间：<a href="https://github.com/robium-ai/robium">GitHub｜robium-ai/robium</a>｜项目发布时间资料未确认，检索于 2026-08-06；<a href="https://github.com/carlossuarez091011-lgtm/pidog-embodiment">GitHub｜pidog-embodiment</a>｜最近推送于 2026-08-06 00:50 UTC</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：Project Jaguar、Robium、pidog-embodiment；今日资料未包含可确认的新论文。</li><li>解决的问题：分别面向多智能体商业流程自动化、AI 编程智能体缺少机器人领域知识，以及通用 AI 能力与低成本机器人硬件的连接。</li><li>实际价值：可用于概念验证和开发实验，但三个项目的社区规模、维护持续性、生产可靠性及安全边界尚未得到验证。GitHub 搜索结果只代表符合检索条件，不代表热门排名。</li><li>论文/仓库链接：<a href="https://github.com/Forwarduy/Project-Jaguar">Project Jaguar</a>｜<a href="https://github.com/robium-ai/robium">Robium</a>｜<a href="https://github.com/carlossuarez091011-lgtm/pidog-embodiment">pidog-embodiment</a></li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：OpenAI 发布针对苹果的公司立场文章；今日未发现所给资料能够确认的新融资、并购、重大硬件投资或新增监管政策。</li><li>核心事实/金额：OpenAI 文章发布于 8 月 3 日，具体争议内容资料未确认；融资与并购金额资料未确认。</li><li>影响：AI 公司与终端平台之间的入口及规则竞争值得关注，但在缺少文章全文和苹果回应的情况下，不宜进一步推断法律或商业后果。</li><li>来源/时间：<a href="https://openai.com/index/apple-is-getting-this-wrong/">OpenAI｜Apple is getting this wrong</a>｜2026-08-03</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：智能体工具继续从通用对话转向战略规划、文档生成和业务流程执行，但早期开源项目普遍缺少可靠评测、权限治理和实际客户验证。</li><li>趋势二：Physical AI 开发层正在形成“AI 编程智能体加机器人专业知识库”的新工具形态；短期更可能提升原型开发效率，而非直接替代机器人控制栈或基础模型。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：早期开源项目可能存在动作规划错误、接口不稳定、模型幻觉和真实机器人执行失控问题，现有资料未提供系统性安全评测。</li><li>合规风险：商业工作流涉及企业数据、自动决策和审计责任；机器人视觉、语音及人脸识别功能还可能触及个人信息和生物识别监管。</li><li>商业化风险：Project Jaguar、Robium 与 pidog-embodiment 的 Stars 和生态验证有限，尚不能证明用户需求、维护能力或付费转化。</li><li>数据安全风险：多智能体工具和机器人插件可能接触企业文档、摄像头、麦克风及控制接口，权限最小化、凭证管理、数据留存与第三方模型传输规则均资料未确认。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>OpenAI 与苹果争议的具体事项、苹果官方回应及潜在平台政策变化。</li><li>Project Jaguar、Robium 的版本发布、Stars 增长、贡献者结构和可复现演示。</li><li>是否出现经官方确认的人形机器人、自动驾驶或机器人基础模型新发布，以及对应评测、硬件成本和量产计划。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>OpenAI｜Apple is getting this wrong｜2026-08-03｜https://openai.com/index/apple-is-getting-this-wrong/</li><li>OpenAI｜OpenAI News｜检索截至 2026-08-06｜https://openai.com/news/</li><li>Anthropic｜Anthropic Newsroom｜检索截至 2026-08-06｜https://www.anthropic.com/news</li><li>Forwarduy｜Project Jaguar｜创建于 2026-08-02，最近推送于 2026-08-06｜https://github.com/Forwarduy/Project-Jaguar</li><li>robium-ai｜Robium｜发布时间资料未确认，检索于 2026-08-06｜https://github.com/robium-ai/robium</li><li>carlossuarez091011-lgtm｜pidog-embodiment｜最近推送于 2026-08-06｜https://github.com/carlossuarez091011-lgtm/pidog-embodiment</li></ol>
+  </main>
+</body>
+</html>
