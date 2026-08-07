@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-07</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-07</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：PS Vita 获得免费开源采样 Groovebox 与合成器软件，并通过定制内核插件支持 USB 多声道音频，显示停产消费硬件仍可被改造成便携音乐制作终端；其余音频 AI、空间音频、编解码器和专业硬件领域暂无可交叉验证的重要更新。</li><li>今日关键词：PS Vita、DS-8 Drumstream、采样 Groovebox、USB 多声道音频、Homebrew、VST3、开源音频工具</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：DS-8 Drumstream 将 PS Vita 改造成采样 Groovebox 与合成器 ★</h3>
+<ul><li>发生了什么：DS-8 Drumstream 面向 PS Vita 提供免费开源的便携节拍制作、采样与合成功能，并通过定制内核插件支持 USB 多声道音频。下一步取决于项目能否形成稳定安装流程、硬件兼容清单与持续维护机制。</li><li>涉及技术：采样播放、节奏音序、声音合成、Homebrew 软件、定制内核插件、USB 多声道音频。</li><li>关键参数：支持 USB 多声道音频；通道数量、采样率、位深、往返时延及 USB Audio Class 兼容情况，资料未确认。</li><li>为什么重要：它将带触控屏、实体按键和便携供电的停产游戏硬件转化为一体化音乐终端，为低成本控制器、复古硬件再利用和独立乐器开发提供了新样本。</li><li>对产品研发的影响：研发团队可参考其“消费硬件交互层＋定制音频驱动＋开源音乐软件”架构，但在产品化前必须验证驱动稳定性、USB 主从模式、时钟同步、系统破解依赖和长期维护风险。</li><li>来源/时间：<a href="https://cdm.link/the-playstation-vita-just-got-a-new-sampling-groovebox-and-synth/">CDM｜The PlayStation Vita just got a new sampling groovebox and synth</a>｜2026-08-06</li></ul>
+<h3>事件二：aeolian-understory 启动面向口播内容的 VST3 环境声设计插件</h3>
+<ul><li>发生了什么：GitHub 新建 <code>aeolian-understory</code> 项目，定位为面向播客、讲座等口播内容的环境背景声设计 VST3 插件，采用 C++ 并以 MIT 许可证开放。仓库创建时为 0 Stars、0 Forks，尚不足以证明已有可用版本；接下来应关注代码、构建说明和二进制发行是否补齐。</li><li>涉及技术：C++、VST3、音频 DSP、环境声与音效处理、宿主插件接口。</li><li>关键参数：仓库元数据显示项目大小为 0、Stars 为 0；支持的操作系统、DAW、声道格式、采样率、位深、自动化参数及处理时延均未确认。</li><li>为什么重要：它指向一个相对具体的插件需求，即针对语音内容自动或半自动生成低干扰背景声，而非服务于传统音乐混音；但当前仅能视为早期项目意向。</li><li>对产品研发的影响：播客与教育音频产品可关注其背景声生成和口播避让思路；在集成评估前，应先检查是否具备响度控制、侧链 Ducking、无缝循环、预设管理和离线渲染能力。</li><li>来源/时间：<a href="https://github.com/spodzone/aeolian-understory">GitHub｜spodzone/aeolian-understory</a>｜仓库创建于 2026-08-07 00:31 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：新增 <code>aeolian-understory</code> VST3 环境声设计项目，但当前公开元数据未显示可验证的 DSP 算法或实现代码。</li><li>工程应用：潜在用于播客、讲座、教育内容和其他口播节目的背景声生成与处理；实际算法、CPU 占用及实时性能仍待确认。</li><li>成熟度：概念或仓库初始化阶段，0 Stars、0 Forks，尚无足够证据支持生产环境采用。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中没有可验证的新音频编解码器、版本发布或编码效率测试。</li><li>性能与兼容性：DS-8 的 USB 多声道传输所用 PCM 格式、采样率、位深及封装方式未公开确认。</li><li>工程应用：暂不建议据此调整编解码技术路线；继续关注终端是否采用标准 USB Audio Class 或专用传输协议。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中没有可靠的空间音频或沉浸式音频渲染、制作格式、HRTF、对象音频及终端支持更新。</li><li>渲染链路或终端支持：未发现可验证的新声道布局、耳机渲染链路或扬声器终端适配信息。</li><li>工程应用：本期无新增设计依据，不应以旧版空间音频规范补充为当日动态。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中没有可验证的新语音生成、音乐生成、源分离、语音增强或音频基础模型发布。</li><li>能力与限制：暂无新的模型参数、训练数据许可、推理时延或生成质量测试可供比较。</li><li>工程应用：本期不建议调整 AI 音频选型；仍需重点核验训练数据授权、输出可追溯性和生成内容版权。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：DS-8 通过定制 PS Vita 内核插件提供 USB 多声道音频；资料未表明其支持 Dante、AES67、AVB/Milan、Ravenna 或网络音频 API。</li><li>时延与互操作性：声道数量、端到端时延、时钟方式、操作系统驱动兼容性及丢包恢复机制均未确认。</li><li>工程应用：可用于验证旧硬件作为便携音源或控制终端的可能性，但进入现场演出或专业制作链路前必须进行稳定性与时钟测试。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：DS-8 Drumstream。</li><li>类型：PS Vita 免费开源采样 Groovebox、合成器与便携节拍制作软件。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：PS Vita；USB 多声道音频依赖定制内核插件，具体主机系统兼容性未确认。</li><li>价格：软件免费；PS Vita 硬件及改机成本未确认。</li><li>与上一代或竞品差异：核心差异是复用停产掌机的触控、实体控制和便携形态，并扩展 USB 多声道音频；与现售便携 Groovebox 的音轨数、效果器、同步协议和稳定性尚无法比较。DAW 插件支持、工程文件交换和 MIDI 规格亦未确认。</li><li>来源/时间：<a href="https://cdm.link/the-playstation-vita-just-got-a-new-sampling-groovebox-and-synth/">CDM｜The PlayStation Vita just got a new sampling groovebox and synth</a>｜2026-08-06</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI、3GPP 的可靠新标准、修订版或论文更新；亦无新的音频 API 规范可确认。</li><li>发布机构：无。</li><li>核心结论：不能将既有标准重新包装为 2026-08-07 的新动态。</li><li>对产品设计的影响：维持现有标准基线；涉及 USB 多声道音频时，应在取得项目技术文档后核对其 USB Audio Class、驱动模型和时钟机制。</li><li>原文链接：资料未提供当日可验证的新标准原文。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：PS Vita 便携音乐工作站改造。</li><li>背景：Sony 已停止推进 PS Vita 产品生态，但其便携机身、显示与控制硬件仍可被 Homebrew 社区复用。</li><li>技术方案：在 PS Vita 上运行 DS-8 Drumstream，实现采样、节奏编排和声音合成；通过定制内核插件扩展 USB 多声道音频输出。</li><li>结果：据 CDM 报道，该设备获得了一体化 Groovebox 使用方式；实际音频性能、稳定性和长期可维护性尚未获得独立测试。</li><li>可借鉴点：消费电子存量硬件可作为音乐产品原型平台，但定制内核、破解环境和非标准驱动会增加安全、兼容、分发及售后成本。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | DS-8 Drumstream | 采样、节奏编排、合成；支持 USB 多声道音频；具体声道数、采样率和位深未确认 | 资料未确认 | PS Vita；定制内核插件；USB | 软件免费，硬件成本未确认 | <a href="https://cdm.link/the-playstation-vita-just-got-a-new-sampling-groovebox-and-synth/">CDM，2026-08-06</a> | | aeolian-understory | C++、VST3、MIT；面向口播内容的环境声设计；创建时 0 Stars | 资料未确认 | VST3；具体 DAW 与操作系统未确认 | 开源；商业定价不适用 | <a href="https://github.com/spodzone/aeolian-understory">GitHub，2026-08-07</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：Homebrew 与开源软件正在延长停产音频硬件和消费电子设备的使用周期；音频插件需求也开始从音乐制作延伸至播客、讲座等口播场景。专业音频硬件、耳机与声学器件本期暂无可靠新品动态。</li><li>工程风险：定制内核插件可能带来系统版本依赖、崩溃、USB 时钟不稳定和驱动兼容问题；新建 VST3 项目尚无代码与性能数据，不能据仓库描述判断可用性。</li><li>版权/合规风险：采样素材的复制、发行与商用需要单独获得授权；破解或修改设备系统可能受到最终用户许可、平台安全机制及地区法规限制。</li><li>商业化风险：停产硬件供应、维修和电池老化限制规模化；早期开源插件缺乏维护记录、用户基础与 DAW 兼容验证，暂不适合直接进入关键生产链路。资料中未发现可验证的音乐科技公司融资、并购或重大安全事件。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 DS-8 Drumstream 的源代码地址、许可证、安装流程、音轨数量、MIDI/同步能力及 USB 音频实测时延。</li><li>跟踪 <code>aeolian-understory</code> 是否提交实际 DSP 代码、构建脚本、VST3 二进制版本及 DAW 兼容测试。</li><li>继续监测 AES、ITU、ETSI、3GPP 的音频标准，以及语音/音乐生成、空间音频、编解码器、专业音频硬件、耳机和声学器件的官方更新。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/the-playstation-vita-just-got-a-new-sampling-groovebox-and-synth/">The PlayStation Vita just got a new sampling groovebox and synth</a>｜2026-08-06</li><li>GitHub / spodzone｜<a href="https://github.com/spodzone/aeolian-understory">aeolian-understory</a>｜2026-08-07</li></ol>
+  </main>
+</body>
+</html>
