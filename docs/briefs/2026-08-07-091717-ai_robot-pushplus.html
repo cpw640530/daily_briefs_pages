@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-07</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-07</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：今日缺少经多方确认的重大模型、硬件或融资发布，新增信号主要来自垂直工业工具和具身智能评测自动化；AI 工具正从通用助手进一步进入 CAD、数据分析和机器人实验流程。</li><li>今日关键词：工业 MCP、CAD 自动化、具身评测、气旋预测、数据分析智能体</li><li>预计阅读时间：6 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：ZWCAD Mechanical MCP 将 AI 工具调用引入机械 CAD ★</h3>
+<ul><li>发生了什么：开源项目 ZWCAD-Mechanical-MCP 提供面向中望机械 CAD 的 MCP Server，公开描述覆盖 34 个整合工具，可执行二维/三维绘图、尺寸标注、图层与图块管理、对象变换、BOM、图框及命令行操作。</li><li>技术变化：项目把 CAD 操作封装成可被大模型调用的结构化工具，使 AI 从生成设计建议进一步转向直接操作工程软件。</li><li>为什么重要：机械 CAD 数据结构复杂、操作链长，是通用 AI 助手较难进入的专业场景；MCP 接口有望降低设计自动化和企业智能体接入门槛。</li><li>产业影响：若权限控制、操作回滚和复杂图纸兼容性得到验证，CAD 厂商及工业软件集成商可能加速推出原生智能体接口。</li><li>接下来关注：实际支持的 ZWCAD 版本、34 项工具的执行稳定性、复杂装配能力、企业数据隔离，以及是否获得中望软件官方支持。</li><li>来源/时间：<a href="https://github.com/john0909/ZWCAD-Mechanical-MCP">GitHub｜ZWCAD-Mechanical-MCP</a>｜检索于 2026-08-07；仓库创建时间及正式发布日期资料未确认。</li></ul>
+<h3>事件二：Google DeepMind 披露 WeatherNext 气旋预测进展</h3>
+<ul><li>发生了什么：Google DeepMind 新闻页新增 WeatherNext 气旋预测成果，官方将其描述为气旋预报领域的突破。</li><li>技术变化：资料表明 AI 天气模型进一步聚焦高影响、低频率的极端天气事件，但模型架构、预测提前量、误差指标及与传统数值天气预报的完整对比尚未在所给资料中确认。</li><li>为什么重要：气旋路径和强度预测直接影响灾害预警、保险、航运及能源调度，是 AI 科学模型能否产生高价值公共效益的重要检验。</li><li>产业影响：若独立评测证实其在预测速度或准确率上具有优势，气象机构可能采用“AI 模型快速预测＋物理模型复核”的混合流程。</li><li>接下来关注：论文与评测数据、不同海域泛化能力、强度快速增强预测表现，以及是否开放模型、API或数据集。</li><li>来源/时间：<a href="https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/">Google DeepMind｜WeatherNext: AI model achieves breakthrough in forecasting cyclones</a>｜2026-08，具体发布日期资料未确认。</li></ul>
+<h3>事件三：embodied-eval-automation 开源机器人评测批处理流程</h3>
+<ul><li>发生了什么：GitHub 新项目 embodied-eval-automation 提供机器人基准测试和模拟器的批量 episode 采集工作流，并声明支持 Agent Skills 与 Codex 插件。</li><li>技术变化：项目试图将环境启动、任务执行、轨迹采集和结果整理转化为可重复的智能体自动化流程，服务 VLA、世界模型及机器人学习评测。</li><li>为什么重要：具身智能实验的环境差异和人工操作成本较高，自动化采集有助于提高实验复现效率，但该项目当前为零 Star、零 Fork，成熟度和可信度有限。</li><li>产业影响：短期价值主要在研究工作流；若后续接入主流模拟器并建立标准化输出格式，可能成为机器人模型持续评测工具链的一部分。</li><li>接下来关注：支持的模拟器和基准范围、失败恢复机制、随机种子与环境版本记录，以及真实机器人数据接入能力。</li><li>来源/时间：<a href="https://github.com/Evidentiary-operatingmicroscope154/embodied-eval-automation">GitHub｜embodied-eval-automation</a>｜创建于 2026-07-30，更新于 2026-08-07 00:51 UTC。</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：今日未发现符合历史去重条件且信息完整的新大模型、API、硬件或正式产品发布；Google 7 月更新汇总发表于 8 月 4 日，但属于历史内容汇编，不作为今日新发布。</li><li>发布方：资料未确认。</li><li>核心能力：资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：资料未确认。</li><li>竞品差异：资料未确认。</li><li>来源/时间：<a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/">Google｜The latest AI news we announced in July 2026</a>｜2026-08-04；仅用于排除旧内容。</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：embodied-eval-automation，面向具身智能基准和模拟器的批量实验采集工具；今日未确认新的人形机器人、自动驾驶基础模型、机器人基础模型或实体硬件发布。</li><li>应用场景：VLA、世界模型、机器人学习算法的批量评测与实验复现。</li><li>技术突破：核心增量是评测流程自动化，不构成机器人控制模型或硬件层面的已验证突破。</li><li>商业化进度：开源早期项目，零 Star、零 Fork，尚无商业部署、客户或融资信息。</li><li>来源/时间：<a href="https://github.com/Evidentiary-operatingmicroscope154/embodied-eval-automation">GitHub｜embodied-eval-automation</a>｜2026-07-30 创建，2026-08-07 更新。</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：dataCopilot；2026-08-07 新建的 Python 项目，定位为个人 AI 数据分析师/数据科学助手。当前仓库大小为 0、Star 为 0，尚不足以认定为可用发布或热门项目。</li><li>解决的问题：尝试降低非专业用户进行数据探索、分析和解释的门槛；具体模型、数据连接器、执行隔离和可视化能力资料未确认。</li><li>实际价值：方向具有应用价值，但当前仅能视为项目占位或极早期代码库，应等待代码、文档、测试和演示完善后再评估。</li><li>论文/仓库链接：<a href="https://github.com/buenr/dataCopilot">GitHub｜buenr/dataCopilot</a>｜创建于 2026-08-07 01:00 UTC，更新于 2026-08-07 01:09 UTC。</li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：今日所给资料未确认新的 AI 公司融资、机器人融资、并购、硬件量产合作或政策落地事件。</li><li>核心事实/金额：资料未确认。</li><li>影响：无法形成可靠的资本流向或市场集中度判断，不以传闻和旧闻补齐。</li><li>来源/时间：Anthropic 新闻页和 Google/DeepMind 官方页面检索于 2026-08-07；未发现信息完整且符合近 14 天去重要求的新增融资并购事项。</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：MCP 正从办公软件扩展至机械 CAD 等高专业度工具，但真正的竞争壁垒将是操作可靠性、权限控制、审计和工程数据兼容，而非工具数量。</li><li>趋势二：具身智能基础设施开始覆盖实验采集和可复现评测；在模型能力差距收窄后，标准化评测、真实任务成功率和跨平台泛化可能成为新的竞争焦点。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：今日新增开源项目缺少独立测试和用户验证；CAD 自动执行可能产生不可逆的图纸修改，机器人评测自动化也可能因环境配置差异给出失真结果。</li><li>合规风险：工程图纸、BOM 和机器人轨迹可能包含商业秘密；外部模型或 MCP 服务的数据传输边界尚未确认。</li><li>商业化风险：新项目均未显示明确用户规模、收入或企业部署，不能依据功能描述推断产品成熟度。</li><li>数据安全风险：智能体获得 CAD 命令执行、文件读写或模拟器控制权限后，提示注入、恶意工具调用和依赖链攻击的影响范围会扩大。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>跟踪 ZWCAD-Mechanical-MCP 是否发布可复现实例、版本兼容列表、安全权限机制及正式 Release。</li><li>等待 WeatherNext 气旋预测的论文、量化指标、独立评测和 API/开放权重政策。</li><li>观察 embodied-eval-automation 与 dataCopilot 是否出现持续提交、首个 Release、真实用户和明显 Star 增长。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>john0909｜ZWCAD-Mechanical-MCP｜检索于 2026-08-07，正式发布时间资料未确认｜<a href="https://github.com/john0909/ZWCAD-Mechanical-MCP">原文链接</a></li><li>Google DeepMind｜WeatherNext: AI model achieves breakthrough in forecasting cyclones｜2026-08，具体日期资料未确认｜<a href="https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/">原文链接</a></li><li>Evidentiary-operatingmicroscope154｜embodied-eval-automation｜2026-07-30 创建，2026-08-07 更新｜<a href="https://github.com/Evidentiary-operatingmicroscope154/embodied-eval-automation">原文链接</a></li><li>buenr｜dataCopilot｜2026-08-07｜<a href="https://github.com/buenr/dataCopilot">原文链接</a></li><li>Google｜The latest AI news we announced in July 2026｜2026-08-04｜<a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
