@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-08-10</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-08-10</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天推荐 Loadout、Driftcheck 和 two-point-one-analytics Toolkit，分别适合管理 AI 编程 Agent 扩展、审计依赖版本漂移，以及沉淀团队 AI 开发规范；三者均为新项目，成熟度和社区验证有限，建议先在非生产环境试用。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Loadout（新项目）</h3>
+<ul><li>一句话介绍：面向 AI 编程 Agent 的扩展包管理器，用于发现、安装、更新、优化及回滚 Skills 和 MCP 工具。</li><li>分类：Vibe Coding / 编程插件</li><li>适合谁：同时使用 Codex、Claude Code、Cursor 等多个 AI 编程 Agent，希望统一管理扩展的开发者。</li><li>典型场景：在不同 Agent 之间配置 Skills 与 MCP 工具；集中执行扩展升级或版本回滚。</li><li>核心功能：扩展发现、安装、更新、优化和回滚；支持 Codex、Claude Code、Cursor 等工具。</li><li>GitHub Stars：资料未确认。</li><li>近期新增 Stars：资料未确认。</li><li>最近更新时间：搜索结果显示项目在 2026-08-03 后仍有推送，具体时间资料未确认。</li><li>最新版本：资料未确认。</li><li>开源协议：资料未确认。</li><li>支持平台：资料确认支持 Codex、Claude Code、Cursor 等 Agent；操作系统兼容性未确认。</li><li>使用成本：仓库公开；软件费用及第三方模型、API 成本资料未确认。</li><li>上手步骤：访问仓库并核对 README、安装命令和权限要求；先接入一个测试 Agent，验证安装与回滚后再扩展到主力环境。</li><li>推荐理由：直接处理多 Agent 工作流中的扩展分散和版本管理问题，是三个候选中与 Vibe Coding 工作效率关联最明确的项目。因本期资料没有满足 1,000 Stars 且未重复的可验证候选，作为仍在更新的新项目补充入选。</li><li>局限与风险：Stars、协议、版本及具体安装方式均未确认；扩展安装器可能获得本地文件、命令执行或凭据访问权限，使用前应审查源码与权限范围。</li><li>官网/仓库链接：https://github.com/VirajMishra1/loadout</li></ul>
+<h3>工具二：Driftcheck（新项目）</h3>
+<ul><li>一句话介绍：检查 AI Agent 工具清单与锁文件之间版本漂移的审计工具。</li><li>分类：自动化 / Vibe Coding</li><li>适合谁：维护 Codex、Claude Code、MCP Server 配置的开发者、平台工程团队和 DevSecOps 团队。</li><li>典型场景：在 CI 或升级前检查 manifest 与 lockfile 是否一致，减少因依赖版本偏移造成的不可复现问题。</li><li>核心功能：检测并审计 Codex、Claude Code、MCP Server 等 AI Agent 工具的版本漂移。</li><li>GitHub Stars：资料未确认。</li><li>近期新增 Stars：资料未确认。</li><li>最近更新时间：搜索结果显示项目在 2026-08-03 后仍有推送，具体时间资料未确认。</li><li>最新版本：资料未确认。</li><li>开源协议：资料未确认。</li><li>支持平台：资料未确认。</li><li>使用成本：仓库公开；软件费用资料未确认。</li><li>上手步骤：访问仓库确认支持的 manifest 和 lockfile 格式；在测试仓库运行一次只读审计，再根据输出决定是否接入 CI。</li><li>推荐理由：AI 编程工作流开始依赖大量 Skills、MCP Server 和 Agent 配置，版本一致性将直接影响环境复现和供应链安全。因缺少达到 1,000 Stars 的未重复候选，该项目凭借明确的工程痛点和近期活动补充入选。</li><li>局限与风险：Stars、许可证、兼容格式及命令参数均未确认；项目社区成熟度无法判断，不能替代依赖漏洞扫描、签名验证和人工代码审查。</li><li>官网/仓库链接：https://github.com/significancemoloch680/driftcheck</li></ul>
+<h3>工具三：two-point-one-analytics Toolkit（新项目）</h3>
+<ul><li>一句话介绍：集中存放 AI 指令、Skills、Agents、知识文档、技术手册和配置文件的团队资源库。</li><li>分类：知识管理 / Vibe Coding</li><li>适合谁：需要统一 AI 编程规范、提示词和 Agent 配置的数据分析或软件团队。</li><li>典型场景：建立团队共享的 AI 指令库；复用 Skills、Agent 定义、技术手册与配置模板。</li><li>核心功能：集中管理 AI instructions、skills、agents、knowledge documents、technical playbooks 和配置文件。</li><li>GitHub Stars：0（GitHub 搜索快照，2026-08-10）。</li><li>近期新增 Stars：资料未提供历史快照，无法确认。</li><li>最近更新时间：2026-08-10 01:06:53 UTC（最近推送）；仓库元数据更新时间为 2026-08-10 01:07:05 UTC。</li><li>最新版本：资料未确认。</li><li>开源协议：资料未确认；GitHub 元数据显示未声明许可证。</li><li>支持平台：以文档和配置资源为主，具体兼容平台资料未确认。</li><li>使用成本：仓库公开；相关模型、Agent 或 API 成本资料未确认。</li><li>上手步骤：访问仓库检查现有目录和文件；选择一项与当前工具兼容的资源进行审阅，在测试项目验证后再纳入团队规范。</li><li>推荐理由：可作为团队 AI 工作流资产库的参考样本，帮助减少提示词、Agent 配置和工程手册的重复维护。该仓库创建于 2026-08-09，属于刚发布的新项目；因本期资料缺少高 Stars 且未重复的合格候选，以“方向明确、当天仍更新”补充入选。</li><li>局限与风险：当前为 0 Stars，尚无社区验证；未声明开源许可证时，不应默认可以复制、修改或再分发其中内容；资源质量和工具兼容性需要逐项检查。</li><li>官网/仓库链接：https://github.com/two-point-one-analytics/toolkit</li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | Loadout | 管理 AI 编程 Agent 的 Skills 与 MCP 扩展 | 资料未确认 | 2026-08-03 后有推送，具体时间未确认 | 仓库公开，其他成本未确认 | 4/5 | | Driftcheck | 审计 Agent 工具清单与锁文件的版本漂移 | 资料未确认 | 2026-08-03 后有推送，具体时间未确认 | 仓库公开，其他成本未确认 | 3.5/5 | | two-point-one-analytics Toolkit | 共享 AI 指令、Agent 配置和技术手册 | 0 | 2026-08-10 有推送 | 仓库公开，许可证未声明 | 2.5/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料未提供。</li><li>说了什么：本期资料没有可核验的国内 AI 重要人物近期原始言论。</li><li>为什么重要：人物观点必须能够追溯至演讲、采访、官方文章或本人账号，不能用公司新闻代替个人表态。</li><li>可能影响：待取得可靠原始来源后评估。</li><li>来源/时间：本期资料未提供，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：资料未提供。</li><li>说了什么：OpenAI 与 Anthropic 的资料包含产品、安全和公司公告，但没有提供可明确归属于具体人物的近期原始言论。</li><li>为什么重要：将机构公告推定为某位高管的个人观点会造成错误归因，因此本期不作延伸解读。</li><li>可能影响：OpenAI 在 2026-08-04 至 08-07 连续发布产品与网络安全相关公告，显示前沿模型能力治理仍是行业重点；但这属于机构动态，不作为人物言论收录。</li><li>来源/时间：https://openai.com/news/（2026-08-04 至 2026-08-07）；https://www.anthropic.com/news（页面抓取时间资料未确认）。</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：优先试用 Loadout，在隔离测试项目中验证 Skills 与 MCP 工具的安装、升级和回滚；需要保障环境可复现时，再评估 Driftcheck。</li><li>办公场景：三款工具均偏开发工作流，本期没有资料充分、适合通用办公且满足推荐标准的新工具；不建议为了凑数采用低可信候选。</li><li>创作场景：可参考 two-point-one-analytics Toolkit 的资源组织方式建设团队提示词和知识库，但其内容质量、授权范围及实际兼容性需逐项核验。</li></ul>
+  </main>
+</body>
+</html>
