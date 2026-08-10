@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-10</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-10</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：新增动态集中在开源音频工具：<code>gba-audio-tools</code>打通 GBA 游戏音乐提取、还原与 MIDI/SoundFont 导出链路，<code>lovoip</code>则以纯 DSP 模拟早期游戏语音编码失真；音频 AI、空间音频、专业硬件及主流标准暂无可验证的新发布。</li><li>今日关键词：GBA 音频逆向、MP2K/Sappy、SoundFont、CLAP、语音编码器音色、纯 DSP、开源音频工具</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：gba-audio-tools 打通 GBA 音乐提取与可编辑导出链路 ★</h3>
+<ul><li>发生了什么：开源项目 <code>gba-audio-tools</code> 于 2026 年 8 月 9 日更新，可从 GBA ROM 中提取并渲染 MP2K/Sappy 及 Webfoot Technologies 引擎音乐；支持输出 WAV，并将 MP2K 曲目导出为 MIDI 与 SoundFont。项目同时记录了对 Webfoot 音频引擎的逆向结果。</li><li>涉及技术：游戏音频逆向、ROM 数据解析、序列音乐还原、采样库提取、MIDI、SoundFont、离线音频渲染。</li><li>关键参数：Python；GPL-3.0；WAV 输出；MP2K 至 MIDI、SoundFont 导出；当前 1 Star、0 Fork。采样率、位深及渲染一致性资料未确认。</li><li>为什么重要：其价值不只是播放旧游戏音乐，而是把封闭 ROM 内的序列与采样数据转换为可进入 DAW 的编辑资产，可用于游戏音频保存、重制、引擎研究和数据集整理。</li><li>对产品研发的影响：复古游戏音频工具可采用“格式解析层、事件序列层、采样资产层、渲染层”分离架构；商用前必须确认 ROM、曲目和采样素材的权利边界。</li><li>来源/时间：<a href="https://github.com/mudassarzahid/gba-audio-tools">GitHub｜mudassarzahid/gba-audio-tools</a>｜项目创建于 2026-07-14，最近推送于 2026-08-09 22:36 UTC。</li></ul>
+<h3>事件二：lovoip 用纯 DSP 模拟 Source Engine 语音编码失真</h3>
+<ul><li>发生了什么：新近活跃的开源 CLAP 音频效果插件 <code>lovoip</code>，尝试以纯 DSP 模拟 Source Engine <code>vaudio_celt</code> 语音编码链路的听感。项目描述强调的是音色模拟，并不能据此认定其实现了原始编码器。</li><li>涉及技术：CLAP 插件、实时 DSP、带限与编码伪影模拟、游戏语音音色设计。</li><li>关键参数：C++、CLAP；采样率、位深、算法时延、许可证、版本号及准确发布日期资料未确认。检索条件仅能确认项目在 2026-08-03 后发生过代码推送。</li><li>为什么重要：编码失真正从传输副作用转化为可控的声音设计元素，可用于游戏语音、拟音、音乐制作及复古通信效果，同时避免在创作链路中运行旧编码器。</li><li>对产品研发的影响：研发团队应区分“比特流兼容编解码器”与“感知效果模拟器”；后续评估需补充空输入稳定性、参数突变噪声、实时线程内存分配及跨宿主兼容测试。</li><li>来源/时间：<a href="https://github.com/Paranoid-AF/lovoip">GitHub｜Paranoid-AF/lovoip</a>｜2026-08-03 后有代码推送；准确发布时间资料未确认。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：<code>lovoip</code>将游戏语音编码伪影抽象为纯 DSP 效果，而非面向通信传输的完整编解码链路。</li><li>工程应用：低保真语音、游戏无线电效果、角色对白处理及音乐制作插件；需验证实时安全性、增益管理和宿主自动化行为。</li><li>成熟度：早期项目；缺少版本、测试、性能和宿主兼容数据，不宜直接用于生产环境。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期仅发现对 Source Engine <code>vaudio_celt</code>声音特征的 DSP 模拟，未发现新的通用音频编解码器发布。</li><li>性能与兼容性：<code>lovoip</code>不应视为已验证的 CELT 或 <code>vaudio_celt</code>兼容实现；码率、帧长、算法时延及比特流互操作性资料未确认。</li><li>工程应用：适合音效模拟；通信、存储和流媒体产品仍应采用经过验证的正式编解码器。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：给定检索中“spatial audio audio-ai”近期 Python 项目结果为 0；没有可靠的新空间音频或沉浸式音频事件。</li><li>渲染链路或终端支持：未发现可验证的对象音频、Ambisonics、双耳渲染、头部追踪或耳机终端支持更新。</li><li>工程应用：继续关注渲染器跨终端一致性、HRTF 个性化和 DAW 至消费终端的元数据保真度，不以旧版本信息填充本期动态。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中未出现可验证的新音频 AI、语音生成、音乐生成或 AI 音频 API 发布。</li><li>能力与限制：无新增模型参数、评测、授权条款或部署数据可供比较。</li><li>工程应用：暂不调整选型；后续重点核验训练数据授权、声音身份保护、生成内容标识及端侧推理成本。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：未发现新的 AoIP 协议、传输 API 或互操作规范更新。</li><li>时延与互操作性：资料未提供网络时延、时钟同步、丢包恢复或跨厂商测试结果。</li><li>工程应用：现有产品应继续以实测端到端时延、PTP 稳定性和异常网络恢复能力作为验收指标。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：<code>gba-audio-tools</code></li><li>类型：GPL-3.0 开源命令行音频提取、逆向与渲染工具；不是 DAW 插件或专业音频硬件。</li><li>采样率/位深/时延：资料未确认；主要为离线处理，实时音频时延不适用。</li><li>兼容平台：Python；具体操作系统和 Python 最低版本资料未确认。</li><li>价格：免费开源；ROM、音乐及采样素材的使用权不随工具许可证自动授予。</li><li>与上一代或竞品差异：同一工具覆盖 MP2K/Sappy 与 Webfoot 引擎，并提供 WAV 渲染及 MP2K 至 MIDI、SoundFont 的可编辑导出；尚无可靠资料支持其还原精度优于竞品。</li><li>来源/时间：<a href="https://github.com/mudassarzahid/gba-audio-tools">GitHub 项目页</a>｜最近推送于 2026-08-09 22:36 UTC。资料中未发现新的 DAW、专业音频硬件、耳机或声学器件发布。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供可确认在 2026-08-10 发布的 AES、ITU、ETSI 或 3GPP 音频标准、修订版或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：暂无可靠更新；不能将标准目录页变化或既有规范重复列为新动态。</li><li>对产品设计的影响：本期不触发编解码、响度、沉浸式音频或通信接口的合规基线变更；实际立项仍需核验各机构正式发布记录和版本状态。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：GBA ROM 音乐资产迁移至现代 DAW。</li><li>背景：GBA 游戏常将音符事件、音色参数和采样封装在 ROM 及专有音频引擎数据结构中，不能直接进入现代制作流程。</li><li>技术方案：使用 <code>gba-audio-tools</code>识别 MP2K/Sappy 或 Webfoot 引擎数据，离线渲染为 WAV；对 MP2K 曲目进一步导出 MIDI 与 SoundFont，再导入支持相应格式的 DAW。</li><li>结果：项目宣称可完成上述提取和导出；音符、循环、包络、音高及混音还原精度尚无独立测试。</li><li>可借鉴点：保留原始 ROM 哈希、解析日志和中间事件数据；将“历史还原版本”与“重新编曲版本”分开管理，并在发布前完成素材版权审查。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | gba-audio-tools | MP2K/Sappy、Webfoot；WAV；MP2K 至 MIDI＋SoundFont；GPL-3.0 | 离线处理，不适用 | Python；ROM/WAV/MIDI/SoundFont | 免费开源 | <a href="https://github.com/mudassarzahid/gba-audio-tools">GitHub</a> | | lovoip | 纯 DSP 模拟 <code>vaudio_celt</code>语音音色；具体参数未确认 | 资料未确认 | C++；CLAP | 资料未确认 | <a href="https://github.com/Paranoid-AF/lovoip">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音频逆向工具正从“直接播放”扩展到结构化资产导出；旧编解码器的听觉伪影也开始被封装为现代插件效果。音频 AI、空间音频、DAW、硬件和声学器件本期没有足够新事实支持趋势升级。</li><li>工程风险：两个项目均缺少充分的性能、准确度与兼容性证据；<code>lovoip</code>尤其需要区分听感模拟和协议兼容，避免错误用于通信链路。</li><li>版权/合规风险：GPL-3.0 只约束工具代码，不代表用户拥有 ROM、录音、序列或采样的再发布权；对特定游戏语音特征的产品化还可能涉及商标与素材来源问题。生成式语音和音乐方面本期无新政策资料。</li><li>商业化风险：项目规模小、维护持续性和 API 稳定性未知；直接集成可能带来版本锁定、宿主兼容及后续维护成本。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 <code>gba-audio-tools</code>是否发布版本标签、格式文档、渲染一致性测试及更多 GBA 音频引擎支持。</li><li>核验 <code>lovoip</code>的许可证、算法时延、支持的采样率、CLAP 宿主矩阵及其与真实 <code>vaudio_celt</code>输出的盲听或频谱对比。</li><li>继续监测 AES、ITU、ETSI、3GPP，以及音频 AI、语音/音乐生成 API、空间音频、DAW、专业硬件和耳机声学器件的官方发布渠道。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>mudassarzahid｜gba-audio-tools｜创建于 2026-07-14，更新于 2026-08-09｜<a href="https://github.com/mudassarzahid/gba-audio-tools">原文链接</a></li><li>Paranoid-AF｜lovoip｜2026-08-03 后有代码推送，准确发布时间资料未确认｜<a href="https://github.com/Paranoid-AF/lovoip">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜本期无可确认的新发布日期｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜本期无可确认的新发布日期｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>European Telecommunications Standards Institute｜ETSI Standards｜本期无可确认的新发布日期｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3rd Generation Partnership Project｜3GPP Specifications｜本期无可确认的新发布日期｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
