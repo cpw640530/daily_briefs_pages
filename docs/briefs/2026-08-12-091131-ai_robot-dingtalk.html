@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-12</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-12</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：AI 产品竞争正从通用模型能力延伸至医疗实时交互、商业化变现和云端安全模型交付；机器人侧的新进展集中在低成本学习管线与循环拆解，尚无可靠的人形机器人或自动驾驶基础模型重大更新。</li><li>今日关键词：医疗视频问诊、ChatGPT 广告、AWS 模型分发、智能体安全、LeRobot、机器人拆解</li><li>预计阅读时间：6 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：Google AMIE 展示实时临床视频问诊能力 ★</h3>
+<ul><li>发生了什么：Google 研究团队披露，医疗 AI 系统 AMIE 已在模拟场景中完成实时临床视频问诊研究；Google 将其称为首项此类研究。</li><li>技术变化：AMIE 的交互界面从文本问答扩展至同步视频会诊，需要在连续对话中综合患者陈述和视频信息。具体模型架构、临床指标及与医生对照结果，所给资料未确认。</li><li>为什么重要：医疗 AI 若能处理实时、多模态、长流程问诊，其价值将从辅助检索转向临床工作流协同，但模拟研究不能等同于真实医疗有效性。</li><li>产业影响：可能推动远程医疗平台、医疗大模型和视频基础设施的结合，同时提高对临床验证、责任划分和敏感数据治理的要求。</li><li>接下来关注：同行评审结果、真实患者试验、不同人群表现、误诊与漏诊率，以及监管机构是否允许其进入临床决策流程。</li><li>来源/时间：<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/">Google｜AMIE 实时临床视频问诊研究</a>｜2026-08-11</li></ul>
+<h3>事件二：OpenAI 开始测试 ChatGPT 广告</h3>
+<ul><li>发生了什么：OpenAI 新闻页发布“Testing ads in ChatGPT”，确认开始测试 ChatGPT 广告；广告形式、覆盖用户、地域及是否影响付费用户，所给资料未确认。</li><li>技术变化：这不是模型能力更新，而是 ChatGPT 商业模式新增广告实验，可能需要建立对话语境下的广告匹配、标识和隔离机制。</li><li>为什么重要：广告可能为高频免费推理提供新的收入来源，也会直接考验回答中立性以及商业内容与模型建议之间的边界。</li><li>产业影响：若测试扩大，搜索广告、内容推荐和对话式购物入口的竞争将进一步汇合；品牌方可能增加面向 AI 对话界面的投放预算。</li><li>接下来关注：广告是否进入回答正文、是否使用对话数据定向、用户能否关闭，以及 OpenAI如何披露排序和利益关联。</li><li>来源/时间：<a href="https://openai.com/index/testing-ads-in-chatgpt/">OpenAI｜Testing ads in ChatGPT</a>｜2026-08-11</li></ul>
+<h3>事件三：Daybreak 模型登陆 AWS（持续更新）</h3>
+<ul><li>发生了什么：OpenAI 宣布 Daybreak 模型现已可通过 AWS 获取。具体 AWS 服务入口、区域、价格、调用限额和客户资格，所给资料未确认。</li><li>技术变化：模型交付从 OpenAI 自有渠道扩展至 AWS 云环境，降低企业将其接入既有云治理体系的潜在摩擦。</li><li>为什么重要：前沿网络安全模型能否规模化应用，不只取决于能力，也取决于身份权限、审计、数据边界和采购渠道。</li><li>产业影响：AWS 获得新的安全 AI 工作负载，企业安全工具厂商则需要评估 Daybreak 与现有检测、响应及代码分析产品的集成方式。</li><li>相对上次新增的事实：此前资料聚焦 Daybreak 的受控开放与防御窗口；本次新增事实是模型已扩展至 AWS 分发渠道。</li><li>接下来关注：AWS 上的实际可用范围、企业数据是否用于训练、责任共担机制，以及模型能力是否通过独立安全评测。</li><li>来源/时间：<a href="https://openai.com/index/daybreak-models-are-now-available-on-aws/">OpenAI｜Daybreak models are now available on AWS</a>｜2026-08-11</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：AMIE 实时临床视频问诊系统；ChatGPT 广告测试；AWS 上的 Daybreak 模型。</li><li>发布方：Google；OpenAI；OpenAI/AWS。</li><li>核心能力：AMIE 面向实时医疗视频交互；ChatGPT 新增广告商业化实验；Daybreak 获得 AWS 云端交付渠道。</li><li>性能与价格：AMIE 完整评测数据、ChatGPT 广告计费方式及 AWS Daybreak 价格均为资料未确认。</li><li>开放情况：AMIE 是否对外开放未确认；ChatGPT 广告处于测试阶段；Daybreak 宣布已在 AWS 可用，但具体准入范围未确认。</li><li>竞品差异：AMIE 强调临床视频会诊场景；ChatGPT 广告将对话产品与广告变现结合；Daybreak 的差异点是网络安全定位与受控云端交付。</li><li>来源/时间：<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/">Google</a>｜2026-08-11；<a href="https://openai.com/index/testing-ads-in-chatgpt/">OpenAI 广告测试</a>｜2026-08-11；<a href="https://openai.com/index/daybreak-models-are-now-available-on-aws/">OpenAI Daybreak/AWS</a>｜2026-08-11</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：开源项目 <a href="https://github.com/physical-hardware-intelligence/phi">Φ（phi）</a> 提供基于 LeRobot、面向 SO-ARM101 等硬件的机器人学习管线；另有研究展示从损坏机器中回收零部件的机器人系统。今日没有可靠的人形机器人、自动驾驶/机器人基础模型或机器人硬件新品资料。</li><li>应用场景：低成本机械臂模仿学习、VLA 实验，以及报废机器拆解与零部件再利用。</li><li>技术突破：Φ 主要价值是整合开放机器人学习流程，当前仅 1 Star，不能视为成熟基础模型；拆解机器人尝试处理非标准化旧设备，但成功率、速度和成本资料未确认。</li><li>商业化进度：Φ 属于早期开源项目；机器人拆解方案的量产客户、部署数量及商业合同资料未确认。人形机器人和自动驾驶商业化新进展亦为资料未确认。</li><li>来源/时间：<a href="https://github.com/physical-hardware-intelligence/phi">GitHub｜physical-hardware-intelligence/phi</a>｜2026-08-11 最近推送；<a href="https://spectrum.ieee.org/recycling-robot">IEEE Spectrum｜Robot Recycler Salvages Parts From Broken Machines</a>｜2026-08-10</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：AMIE 视频问诊研究；WyckoffTradingAgent；aegis；Φ（phi）。</li><li>解决的问题：AMIE 探索实时临床视频交互；WyckoffTradingAgent 将量价分析、A 股筛选、CLI 和 MCP 工具整合为交易智能体；aegis 面向提示词注入、数据外泄和工具滥用提供策略化网关；Φ 整合低成本机器人学习流程。</li><li>实际价值：AMIE 为医疗多模态交互提供研究样本；WyckoffTradingAgent 已有 562 Stars、175 Forks，但不代表投资有效性；aegis 展示“策略即代码、可审计日志、人工审批”的智能体防护思路，但当前星标及成熟度资料未确认；Φ 适合教学和原型实验，生态仍处早期。</li><li>论文/仓库链接：<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/">AMIE</a>；<a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">WyckoffTradingAgent</a>；<a href="https://github.com/hamidmatiny/aegis">aegis</a>；<a href="https://github.com/physical-hardware-intelligence/phi">Φ</a></li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：OpenAI 测试 ChatGPT 广告，并将 Daybreak 模型扩展至 AWS 渠道；今日未获得可靠的 AI/机器人融资、并购、硬件发布或新增监管政策资料。</li><li>核心事实/金额：广告测试范围及收入分成资料未确认；Daybreak 的 AWS 定价资料未确认；融资与并购金额资料未确认。</li><li>影响：OpenAI 同时推进消费端变现和企业云分发，收入结构可能进一步多元化，但也增加广告中立性、云端数据治理及模型责任边界问题。</li><li>来源/时间：<a href="https://openai.com/index/testing-ads-in-chatgpt/">OpenAI｜Testing ads in ChatGPT</a>｜2026-08-11；<a href="https://openai.com/index/daybreak-models-are-now-available-on-aws/">OpenAI｜Daybreak models are now available on AWS</a>｜2026-08-11</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：AI 商业竞争正在从“谁的模型更强”转向“谁能嵌入高价值实时工作流并建立可持续变现”，医疗视频问诊和对话广告分别代表专业场景与消费流量两条路径。</li><li>趋势二：具身智能开源生态继续向低成本机械臂、标准化数据管线和可复现实验靠拢，但早期仓库的活跃推送不等于技术成熟，更不能替代真实机器人评测。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：AMIE 仅披露模拟场景结论，真实临床泛化能力未确认；早期开源智能体及机器人项目缺少独立基准和长期运行数据。</li><li>合规风险：医疗视频涉及健康数据、知情同意和医疗器械监管；对话广告需要明确标识商业内容并防止误导。</li><li>商业化风险：广告可能削弱用户对回答中立性的信任；机器人拆解能否覆盖设备差异并实现正向单位经济性尚未确认。</li><li>数据安全风险：医疗视频、对话定向数据和云端网络安全模型均可能处理高敏感信息，需要验证数据留存、访问控制、审计和训练使用边界。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>OpenAI 是否披露 ChatGPT 广告展示位置、定向机制、测试范围及付费用户政策。</li><li>Google 是否公布 AMIE 的同行评审论文、医生对照指标及真实临床试验计划。</li><li>AWS 是否公布 Daybreak 的服务入口、区域、价格、权限控制和数据处理条款。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>Google｜AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities｜2026-08-11｜<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/">原文链接</a></li><li>OpenAI｜Testing ads in ChatGPT｜2026-08-11｜<a href="https://openai.com/index/testing-ads-in-chatgpt/">原文链接</a></li><li>OpenAI｜Daybreak models are now available on AWS｜2026-08-11｜<a href="https://openai.com/index/daybreak-models-are-now-available-on-aws/">原文链接</a></li><li>IEEE Spectrum｜Robot Recycler Salvages Parts From Broken Machines｜2026-08-10｜<a href="https://spectrum.ieee.org/recycling-robot">原文链接</a></li><li>GitHub｜physical-hardware-intelligence/phi｜2026-08-11 最近推送｜<a href="https://github.com/physical-hardware-intelligence/phi">仓库链接</a></li><li>GitHub｜YoungCan-Wang/WyckoffTradingAgent｜2026-08-12 最近推送｜<a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">仓库链接</a></li><li>GitHub｜hamidmatiny/aegis｜发布时间资料未确认｜<a href="https://github.com/hamidmatiny/aegis">仓库链接</a></li></ol>
+  </main>
+</body>
+</html>
