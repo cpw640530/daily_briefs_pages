@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-12</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-12</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证的新变化集中在两类开源工具：SuperOS-808 尝试延长经典 TR-808 硬件的可维护周期，Quill 则把 C++ DSP 原型直接带入 VST/AU 宿主；两者均处于需要进一步验证成熟度的早期阶段。</li><li>今日关键词：TR-808、开源固件、硬件延寿、JUCE、DSP 原型、VST3、AU、AGPL-3.0</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：SuperOS-808 为 TR-808 引入开源固件扩展路径 ★</h3>
+<ul><li>发生了什么：CDM 报道一项面向 Roland TR-808 的 MSW 开源固件工作，并提及 Tubbutec 改装方案；该项目旨在延长现有 TR-808 的使用寿命并扩展功能，也是相关团队继 TR-606、TR-303 固件之后的新尝试。</li><li>涉及技术：鼓机嵌入式固件、节奏音序控制、老旧专业音频硬件维护、硬件改装。</li><li>关键参数：支持的固件版本、功能清单、安装方式、处理器占用、授权协议及改装价格均未在所给资料中确认。</li><li>为什么重要：经典鼓机的维护逐渐从原厂备件转向第三方固件与替代硬件。若项目开放程度和稳定性得到验证，可降低老设备继续服役的维护门槛。</li><li>对产品研发的影响：硬件厂商可评估固件可升级性、维修接口和长期备件策略；改装开发者需重点处理时钟精度、参数兼容、掉电恢复与安装可逆性。下一步应关注代码仓库、正式兼容列表及实机稳定性测试。</li><li>来源/时间：<a href="https://cdm.link/superos-808/">CDM｜The TR-808 is getting an MSW open-source firmware and a Tubbutec mod</a>｜2026-08-11 15:34 UTC</li></ul>
+<h3>事件二：Quill 探索在 VST/AU 插件内实时编写 C++ DSP</h3>
+<ul><li>发生了什么：Quill 是一个基于 JUCE 的实时 C++ DSP 原型插件。GitHub 项目描述标注 VST/AU，仓库主题同时包含 VST3；截至资料采集时仅有 1 Star，尚无成熟度证据。</li><li>涉及技术：C++、JUCE、实时 DSP、VST3/AU 插件、DAW 内原型验证。</li><li>关键参数：仓库创建于 2026-07-08，最近推送于 2026-08-11 20:22 UTC，采用 AGPL-3.0；采样率、位深、支持的 DAW、动态编译机制、音频线程安全性和附加时延均未确认。</li><li>为什么重要：在宿主环境中直接验证 DSP 可缩短“算法代码、插件封装、DAW 听测”之间的迭代链路，但实时编译、内存分配和异常隔离可能影响音频线程稳定性。</li><li>对产品研发的影响：适合用于滤波器、动态处理和失真算法的早期听感验证，暂不宜直接纳入生产链路。下一步应测试热更新是否产生爆音、状态是否可随工程保存，以及崩溃能否与宿主隔离。</li><li>来源/时间：<a href="https://github.com/nickpanaccione/Quill">GitHub｜nickpanaccione/Quill</a>｜仓库创建于 2026-07-08，最近推送于 2026-08-11 20:22 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：Quill 将基于 JUCE 的 C++ DSP 原型执行环境封装为 VST/AU 插件，使算法可在 DAW 音频链路中直接试听。</li><li>工程应用：可用于滤波、动态、调制和非线性处理算法的快速原型；实时线程行为、热更新稳定性及参数状态管理尚待验证。</li><li>成熟度：早期项目；1 Star、无版本发布信息，不能据此认定已达到生产可用状态。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未出现新的音频编解码器、版本发布或可靠性能测试。</li><li>性能与兼容性：资料未确认；不得由 Quill 的插件格式推导其内部编解码能力。</li><li>工程应用：近期仍应以现有产品基线开展兼容测试，等待 AES、ITU、ETSI、3GPP 或编解码器维护方发布可核验更新。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 定向检索未发现符合条件的新 spatial audio/audio-AI Python 项目；没有可靠的新渲染器、HRTF 或沉浸式音频更新。</li><li>渲染链路或终端支持：资料未确认；耳机、扬声器阵列和头部跟踪终端亦无新增可靠信息。</li><li>工程应用：不建议据本期资料调整空间音频路线图；继续关注双耳渲染、个性化 HRTF、对象音频互操作与终端算力约束。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：所给资料未出现可验证的新语音生成、音乐生成、声音分离或音频理解模型。</li><li>能力与限制：资料未确认；GitHub 空间音频/audio-AI 检索结果为 0，不能据此推断行业没有更新。</li><li>工程应用：本期不新增模型选型建议。产品侧仍需独立评估训练数据来源、生成内容标识、声音克隆授权与推理成本。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：所给资料未出现 Dante、AES67、AVB/Milan、RTP 或 WebRTC 音频 API 的可靠新增版本。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：SuperOS-808 当前资料指向本机固件与硬件改装，不应推导其具备网络音频能力；联网产品仍需执行协议互操作和安全更新验证。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Quill</li><li>类型：开源 C++ DSP 原型插件；涉及音频插件、DAW 开发工具与开源音频工具。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：项目描述称支持 VST/AU，仓库主题包含 VST3；操作系统、具体格式版本及已验证 DAW 清单未确认。</li><li>价格：开源仓库未标示商业价格；采用 AGPL-3.0，商业集成前需评估许可证义务。</li><li>与上一代或竞品差异：其定位是把实时 C++ DSP 原型放入插件宿主，而非提供固定效果器；与 Faust、SOUL、Max/gen~等工作流的性能及开发效率差异尚无可靠对比。</li><li>来源/时间：<a href="https://github.com/nickpanaccione/Quill">GitHub｜nickpanaccione/Quill</a>｜2026-08-11 20:22 UTC 最近推送</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI、3GPP 的可验证新增标准、修订版本或新论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：暂无可靠更新；不以旧标准或常规规范页面充当今日动态。</li><li>对产品设计的影响：本期不触发编解码、沉浸式音频、广播响度或网络音频合规基线变更；研发团队仍应通过各机构正式版本记录确认后续更新。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：以第三方开源固件延长 TR-808 硬件生命周期</li><li>背景：TR-808 属于停产多年的经典专业音乐硬件，原厂维护、部件供应和功能升级空间有限。</li><li>技术方案：SuperOS-808 从嵌入式固件层扩展设备，并与第三方硬件改装生态形成潜在配合；具体功能和安装链路尚待项目正式资料确认。</li><li>结果：CDM 已报道项目出现，但尚无长期稳定性、批量安装成功率、时钟偏差或故障恢复数据，不能认定已完成工程验证。</li><li>可借鉴点：老硬件延寿项目应同步公开固件回滚、校准、兼容批次、失效保护和维修文档；产品化前还需核查商标、固件分发和改装责任边界。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | SuperOS-808 | TR-808 开源固件；具体版本与功能未确认 | 资料未确认 | Roland TR-808；改装接口未确认 | 资料未确认 | <a href="https://cdm.link/superos-808/">CDM，2026-08-11</a> | | Quill | C++、JUCE、AGPL-3.0；1 Star | 资料未确认 | VST/AU；仓库主题含 VST3 | 未标示商业价格 | <a href="https://github.com/nickpanaccione/Quill">GitHub，2026-08-11 最近推送</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开源音频工具正同时向“老硬件固件延寿”和“DAW 内实时 DSP 原型”两端扩展；专业音频硬件与软件研发链路的可修改性继续增强。今日没有可靠的新 AI 生成、沉浸式音频、声学器件或音乐科技公司融资动态。</li><li>工程风险：SuperOS-808 缺少公开的兼容批次与稳定性数据；Quill 缺少实时线程、崩溃隔离、工程状态保存和跨 DAW 验证信息。</li><li>版权/合规风险：Quill 的 AGPL-3.0 可能影响闭源产品集成与网络服务部署；TR-808 固件改装还需核查原固件权利、商标使用和设备改装责任。AI 语音与音乐生成因本期无新增可靠资料，不作新结论。</li><li>商业化风险：两项工具均缺少规模化用户、支持承诺和长期维护证据；开源固件还可能面临安装复杂、硬件损坏责任不清及小众存量市场等问题。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 SuperOS-808 的代码仓库、许可证、功能列表、兼容硬件批次、安装与回滚流程。</li><li>对 Quill 执行多采样率、多缓冲区和多 DAW 压力测试，重点检查热更新爆音、实时线程分配与宿主崩溃隔离。</li><li>继续监测 AES、ITU、ETSI、3GPP，以及语音/音乐生成、沉浸式音频、编解码器、耳机与声学器件厂商的正式发布。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜The TR-808 is getting an MSW open-source firmware and a Tubbutec mod｜2026-08-11 15:34 UTC｜<a href="https://cdm.link/superos-808/">原文链接</a></li><li>nickpanaccione / GitHub｜Quill: live C++ DSP prototyping VST/AU plugin built on JUCE｜2026-07-08 创建，2026-08-11 20:22 UTC 最近推送｜<a href="https://github.com/nickpanaccione/Quill">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜本期资料未确认新增发布时间｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜本期资料未确认新增发布时间｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>ETSI｜Standards｜本期资料未确认新增发布时间｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications by series｜本期资料未确认新增发布时间｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
