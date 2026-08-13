@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-13</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-13</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：企业 AI 的竞争重点正从单一模型能力转向可量化部署、业务工作流嵌入和物理智能工程集成，但今日缺少可信的新模型、机器人硬件及融资发布。</li><li>今日关键词：企业 AI、营销智能体、推理基准、ROS 2、具身智能</li><li>预计阅读时间：6 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：OpenAI 发布企业 AI 应用专题，竞争重心继续向组织落地迁移 ★</h3>
+<ul><li>发生了什么：OpenAI 新闻页于 8 月 12 日新增“How enterprises put AI to work”公司类内容，主题指向企业如何将 AI 投入实际业务。</li><li>技术变化：现有资料仅能确认专题发布，未披露新模型、API、价格或企业产品功能更新，具体技术变化资料未确认。</li><li>为什么重要：头部模型公司的企业叙事已从“模型能做什么”转向“企业如何采用”，采购决策将更关注集成成本、权限治理和可衡量回报。</li><li>产业影响：模型厂商、云服务商和咨询实施商之间的边界可能进一步模糊，企业 AI 项目将更强调生产环境使用率而非试点数量。</li><li>接下来关注：OpenAI 是否公布客户案例的量化收益、部署周期，以及新的企业 API、管理控制台或渠道合作。</li><li>来源/时间：<a href="https://openai.com/index/how-enterprises-put-ai-to-work/">OpenAI｜How enterprises put AI to work</a>｜2026-08-12</li></ul>
+<h3>事件二：Google 将 AI 与智能体能力进一步嵌入广告和分析工作流</h3>
+<ul><li>发生了什么：Google 发布 Google Ads 与 Google Analytics AI 更新，提出用新的 AI 工具及智能体体验简化营销工作流。</li><li>技术变化：AI 的落点从内容生成扩展至广告投放与数据分析流程；具体支持范围、自动化权限和计费变化资料未确认。</li><li>为什么重要：广告和分析拥有明确预算、转化率及投入产出指标，是 AI 智能体较容易验证商业价值的场景。</li><li>产业影响：营销软件厂商将面临平台原生 AI 的挤压，差异化重点可能转向跨平台数据整合、归因能力和可审计执行。</li><li>接下来关注：智能体能否直接执行预算调整与投放操作，以及误操作保护、人工审批和效果归因机制。</li><li>来源/时间：<a href="https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/">Google｜Evolve your marketing with new AI tools</a>｜2026-08-10 14:30 UTC</li></ul>
+<h3>事件三：AIPerf 持续活跃，生成式 AI 推理评测工具受到开发者关注</h3>
+<ul><li>发生了什么：<code>ai-dynamo/aiperf</code> 于 8 月 13 日继续提交更新；GitHub 检索时拥有 534 Stars，用于衡量不同推理方案所托管生成式 AI 模型的性能。</li><li>技术变化：项目提供面向生成式 AI 服务的综合性能基准框架，但本次提交的具体功能差异和正式版本号资料未确认。</li><li>为什么重要：模型部署成本越来越取决于并发、延迟、吞吐量和推理后端配置，统一评测是采购与容量规划的基础。</li><li>产业影响：推理框架的竞争将更多依赖可复现的真实负载结果，模型服务商也可能面临更透明的价格性能比较。</li><li>接下来关注：项目 Stars 增速、新版本说明、不同推理后端覆盖范围，以及测试结果能否在生产负载下复现。</li><li>来源/时间：<a href="https://github.com/ai-dynamo/aiperf">GitHub｜ai-dynamo/aiperf</a>｜最近推送：2026-08-13 01:09 UTC；Stars：534（检索时点）</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：今日资料中未发现经官方信源确认的新大模型、新 API 版本或新硬件产品；Google Ads 与 Google Analytics AI 工具属于现有业务平台的 AI 工作流更新。</li><li>发布方：Google。</li><li>核心能力：以 AI 工具和智能体体验简化营销操作与分析流程；详细功能清单资料未确认。</li><li>性能与价格：未披露可核验的性能指标与价格变化。</li><li>开放情况：具体地区、账户类型和上线节奏资料未确认。</li><li>竞品差异：Google同时控制广告投放平台和分析入口，具备业务闭环优势；跨平台兼容性及自动执行边界仍待确认。</li><li>来源/时间：<a href="https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/">Google 官方博客</a>｜2026-08-10 14:30 UTC</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：新开源项目 <code>ROS2-Embodied-Robot-Agent</code>，定位为基于 ROS 2 的多模态具身机器人智能体，覆盖导航、感知、操作与长期记忆。自动驾驶基础模型、人形机器人整机及机器人硬件新发布资料未确认。</li><li>应用场景：面向具身智能研究及 ROS 2 机器人原型集成，尝试连接感知、任务执行和记忆模块。</li><li>技术突破：仓库描述显示覆盖多个机器人能力模块，但尚无可靠基准证明其构成技术突破；项目检索时仅有 1 Star。</li><li>商业化进度：MIT 许可证开源，创建于 8 月 7 日并于 8 月 13 日更新；未披露量产、客户、融资或商业部署信息。</li><li>来源/时间：<a href="https://github.com/jxql-airobot/ROS2-Embodied-Robot-Agent">GitHub｜jxql-airobot/ROS2-Embodied-Robot-Agent</a>｜创建：2026-08-07 05:03 UTC；最近推送：2026-08-13 01:04 UTC</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：<code>AIPerf</code>；<code>ROS2-Embodied-Robot-Agent</code>。今日资料未提供可独立核验的新论文。</li><li>解决的问题：前者比较生成式 AI 推理服务性能，后者探索在 ROS 2 环境中整合导航、感知、操作和长期记忆。</li><li>实际价值：AIPerf 可辅助推理后端选型与容量规划；ROS 2 项目可作为具身智能原型参考，但成熟度和复现性尚低。</li><li>论文/仓库链接：<a href="https://github.com/ai-dynamo/aiperf">AIPerf</a>；<a href="https://github.com/jxql-airobot/ROS2-Embodied-Robot-Agent">ROS2-Embodied-Robot-Agent</a></li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：OpenAI 发布企业 AI 应用专题；今日资料未提供可核验的新融资、并购、政策调整或机器人公司资本事件。</li><li>核心事实/金额：OpenAI 内容发布时间为 8 月 12 日；融资及并购金额资料未确认。</li><li>影响：企业 AI 竞争进一步围绕部署、治理和业务价值展开，但缺少量化案例，暂不能判断实际采用规模。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI 官方新闻页</a>｜2026-08-12</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：AI 产品价值评估正在从模型榜单转向业务结果和服务性能，营销转化指标与推理吞吐指标将成为两类关键量化依据。</li><li>趋势二：具身智能开源项目开始尝试把多模态感知、导航、操作和长期记忆统一到 ROS 2，但当前新增项目规模小、验证不足，距离机器人基础模型的标准化工程栈仍有明显距离。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：GitHub 新项目缺少基准、测试覆盖和大规模用户验证；Stars 与活跃提交不能等同于生产成熟度。</li><li>合规风险：营销智能体涉及用户画像、广告决策和自动执行，需关注数据授权、算法透明度及地区监管差异。</li><li>商业化风险：企业 AI 专题未提供可核验的成本节省、收入增长或部署周期数据，实际投资回报仍不明确；机器人商业化资料未确认。</li><li>数据安全风险：企业工作流与机器人长期记忆可能持续保存业务、环境及用户数据，需要权限隔离、留存控制和操作审计。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>OpenAI 是否公布企业案例的量化成效，以及相应 API、管理和定价更新。</li><li>Google 营销智能体是否获得预算调整等直接执行权限，并配套人工审批与回滚机制。</li><li>AIPerf 的版本说明、Stars 增长和后端覆盖范围，以及 ROS 2 具身智能项目能否提供可复现实机结果。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>OpenAI｜How enterprises put AI to work｜2026-08-12｜<a href="https://openai.com/index/how-enterprises-put-ai-to-work/">原文链接</a></li><li>Google｜Evolve your marketing with new AI tools｜2026-08-10 14:30 UTC｜<a href="https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/">原文链接</a></li><li>ai-dynamo｜AIPerf｜最近推送于 2026-08-13 01:09 UTC｜<a href="https://github.com/ai-dynamo/aiperf">仓库链接</a></li><li>jxql-airobot｜ROS2-Embodied-Robot-Agent｜创建于 2026-08-07 05:03 UTC，最近推送于 2026-08-13 01:04 UTC｜<a href="https://github.com/jxql-airobot/ROS2-Embodied-Robot-Agent">仓库链接</a></li></ol>
+  </main>
+</body>
+</html>
