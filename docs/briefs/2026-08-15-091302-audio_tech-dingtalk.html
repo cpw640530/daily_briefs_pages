@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-15</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-15</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：实验性插件 otophon 将耳声发射引入个人音乐创作，但可验证的格式、参数与安全边界尚不完整；过去 24 小时未发现音频 AI、生成式语音/音乐、空间音频、编解码器、DAW、专业音频硬件及标准组织的其他可靠新增。</li><li>今日关键词：耳声发射、耳蜗声学、实验音频插件、听力安全、信源不足</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：otophon 将耳声发射转化为可操作的音频插件 ★</h3>
+<ul><li>发生了什么：CDM 报道 otophon 插件可用于探索耳声发射，即由耳蜗内部产生、可被测量的声学信号。该现象过去主要见于听力检测和实验音乐，插件试图降低个人创作者的使用门槛。</li><li>涉及技术：耳声发射、耳蜗非线性响应、双音刺激、实验性声音合成、音频插件；具体算法和插件架构资料未确认。</li><li>关键参数：支持的插件格式、操作系统、采样率、位深、处理时延、刺激频率范围、输出声压级及价格均未由现有资料确认。</li><li>为什么重要：它把生理声学现象引入常规音乐制作工具链，可能形成新的音色设计与交互方式；同时，实际效果受个体听觉系统、耳机频响、佩戴密封和环境噪声影响，不能将厂商或媒体描述直接视为所有用户都能获得的确定结果。</li><li>对产品研发的影响：研发团队可关注听觉个性化校准、输出限幅、频率与声压风险提示，以及在 DAW 中的可重复性。接下来需要核验插件格式、信号链、测量条件和听力安全说明，再判断其是否适合进入商业声音设计流程。</li><li>来源/时间：<a href="https://cdm.link/otophon-is-a-plug-in-to-play-tones-inside-your-head/">CDM｜otophon is a plug-in to play tones inside your head</a>｜2026-08-14 11:52 UTC</li></ul>
+<h3>事件二：主要音频技术品类暂无第二项可验证新增</h3>
+<ul><li>发生了什么：给定资料未提供另一项同时满足“近期新增、未在过去 14 天使用、具备原始来源和明确发布时间”的事件。GitHub 结果中的 RoomReverb、Quill 与 gba-audio-tools 均已在历史简报采用，且没有版本发布、Stars 明显增长或重大新增事实，因此不重复收录。</li><li>涉及技术：音频 AI、语音/音乐生成、空间与沉浸式音频、编解码器、DSP、音频网络、DAW、专业音频硬件、耳机与声学器件、开源工具及音乐科技公司动态。</li><li>关键参数：资料未确认。</li><li>为什么重要：搜索结果中的“近期推送”只能证明代码活动，不能自动等同于正式版本、性能提升或产业事件；重复报道会放大低成熟度项目的产业信号。</li><li>对产品研发的影响：不建议据此调整产品路线。接下来应优先监测正式发行说明、可复现实测、标准组织工作项和厂商安全公告。</li><li>来源/时间：<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B&amp;type=repositories">GitHub 搜索结果</a>｜资料快照截至 2026-08-14；Sound On Sound 与 MusicTech 本轮抓取失败</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：otophon 涉及利用耳蜗非线性响应产生或感知耳声发射；具体 DSP 实现、滤波结构与信号路由资料未确认。</li><li>工程应用：可探索实验音色、听觉交互和个性化声学体验，但需要输出限幅、校准流程及旁路保护。</li><li>成熟度：实验性插件阶段；缺少公开参数、独立测试和规模化用户验证。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：未发现新的可验证编解码器版本、规范或实现。</li><li>性能与兼容性：资料未确认；不得从插件报道推导编码效率或终端兼容性。</li><li>工程应用：继续关注低时延编码、生成式音频传输及沉浸式媒体封装，但今日无可据此立项的新事实。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：未发现空间音频或沉浸式音频渲染链路的可靠新增；GitHub 对指定 Python 条件的搜索结果为 0。</li><li>渲染链路或终端支持：资料未确认。otophon 属于耳蜗声学实验，不等同于双耳渲染、对象音频或声场重建。</li><li>工程应用：当前不建议将其包装为空间音频能力；后续需关注头部跟踪、HRTF 个性化及耳机端渲染的正式更新。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：未发现新的可验证音频 AI、语音生成或音乐生成模型与产品发布。</li><li>能力与限制：资料不足，无法确认模型架构、数据来源、推理时延、授权范围或音质指标。</li><li>工程应用：今日无新依据支持替换现有生成、分离、降噪或语音合成技术栈；仍需将训练数据授权和生成内容标识作为准入条件。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：未发现 AES67、Dante、AVB/TSN、SMPTE ST 2110-30 或 WebRTC 音频 API 的可靠新增。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：保持现有互操作性测试矩阵，不依据抓取失败或搜索空结果判断标准停滞。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：otophon</li><li>类型：实验性音频插件，面向耳声发射与耳蜗声学探索。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：插件格式、DAW 与操作系统支持资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：现有报道强调其将通常用于医学和实验音乐的耳声发射现象带入个人插件工作流；是否存在上一代产品及直接竞品，资料未确认。</li><li>来源/时间：<a href="https://cdm.link/otophon-is-a-plug-in-to-play-tones-inside-your-head/">CDM</a>｜2026-08-14 11:52 UTC</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本轮资料未提供 AES、ITU、ETSI 或 3GPP 的可靠新增标准、修订稿或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：不能将机构入口页或历史规范作为 2026-08-15 新动态；今日标准层面应记为“暂无可验证更新”。</li><li>对产品设计的影响：维持现有合规基线，继续监测沉浸式音频、下一代语音编码、广播响度、网络音频和 AI 媒体标识相关工作项。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：耳声发射插件的个人实验工作流</li><li>背景：耳声发射通常依赖受控刺激和测量条件，个人音乐创作者此前较难直接探索。</li><li>技术方案：通过 otophon 在插件环境中提供刺激信号或相关控制；具体信号生成、反馈抑制、校准及采集方案资料未确认。</li><li>结果：CDM 报道其降低了实验门槛，但未提供独立听测、医学级测量结果、兼容性数据或可重复性统计。</li><li>可借鉴点：面向生理声学的产品应把听力安全、设备校准、个体差异和结果不可保证写入设计要求；验证时需记录耳机型号、频响、声压级、测试频率和环境噪声。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | otophon | 耳声发射实验；频率范围、声压级、采样率及位深未确认 | 资料未确认 | 插件格式、DAW 与操作系统未确认 | 资料未确认 | <a href="https://cdm.link/otophon-is-a-plug-in-to-play-tones-inside-your-head/">CDM，2026-08-14</a> | | AI/语音/音乐生成 | 今日无可靠新增 | 资料未确认 | 资料未确认 | 资料未确认 | 给定资料未提供合格事件 | | 空间/沉浸式音频 | 今日无可靠新增 | 资料未确认 | 资料未确认 | 资料未确认 | GitHub 指定搜索结果为 0 | | 编解码与音频网络 | 今日无可靠新增 | 资料未确认 | 资料未确认 | 资料未确认 | 标准机构入口页未显示在本轮资料中的明确新增 |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音频插件的探索范围正从传统合成与效果处理延伸至听觉生理现象；若能加入个体校准，耳机可能同时承担播放、刺激和交互终端角色。</li><li>工程风险：效果高度依赖个体与播放设备；缺少声压、频率和限幅参数时存在听力安全风险。未经测量不能声称插件确实在所有用户耳内产生可验证的耳声发射。</li><li>版权/合规风险：otophon 暂未显示生成式内容版权问题；若采集或保存用户听觉响应，应评估健康数据、隐私告知与数据最小化要求。其结果不得未经验证用于医疗诊断宣传。</li><li>商业化风险：实验现象的新颖性不等于稳定需求；缺少 DAW 兼容性、价格、可重复性和安全说明会限制专业市场采用。音频 AI及语音/音乐生成方向今日无新事实，避免用空白信号推导市场降温。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核验 otophon 的开发者原始页面、插件格式、系统要求、价格、许可证、更新日志与可下载版本。</li><li>查找刺激频率、输出声压限制、耳机要求、校准方法及听力安全警告，并进行独立频谱与声压测试。</li><li>持续监测 AES、ITU、ETSI、3GPP 的正式工作项，以及音频 AI、生成式语音/音乐、空间音频、DAW、专业硬件和音频 API 的官方发布。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/otophon-is-a-plug-in-to-play-tones-inside-your-head/">otophon is a plug-in to play tones inside your head</a>｜2026-08-14 11:52 UTC</li><li>GitHub｜<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B&amp;type=repositories">音频 DSP 插件仓库搜索</a>｜资料快照截至 2026-08-14</li><li>Audio Engineering Society｜<a href="https://www.aes.org/standards/">AES Standards</a>｜本轮未确认新增发布时间</li><li>International Telecommunication Union｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜本轮未确认新增发布时间</li><li>ETSI｜<a href="https://www.etsi.org/standards">Standards</a>｜本轮未确认新增发布时间</li><li>3GPP｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">Specifications by series</a>｜本轮未确认新增发布时间</li></ol>
+  </main>
+</body>
+</html>
