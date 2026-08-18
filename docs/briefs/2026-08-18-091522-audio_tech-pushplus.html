@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-18</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-18</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日唯一可确认的新动向来自小型专业音频硬件领域：阿根廷团队 Los Aparatos 开始向国际市场销售手工实验合成器 Auduina MK2；其意义主要在于模块化、DIY 教育与小批量硬件商业化结合，而非关键音频参数突破。</li><li>今日关键词：手工合成器、DIY 音频硬件、电子音乐教育、小批量国际销售、信息供给不足</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Los Aparatos 推动 Auduina MK2 手工实验合成器国际销售 ★</h3>
+<ul><li>发生了什么：阿根廷图库曼团队 Los Aparatos 将手工实验合成器 Auduina MK2 扩展至国际销售，同时继续开展电子制作与 DIY 教育项目。</li><li>涉及技术：实验合成、嵌入式音频电子、手工控制器、DIY 硬件设计。</li><li>关键参数：振荡器结构、滤波器类型、复音数、MIDI/CV 接口、音频输出规格、价格及交付周期均资料未确认。</li><li>为什么重要：它显示小型音乐科技团队可以把硬件产品、工作坊和电子教育结合，形成区别于规模化乐器厂商的社区型产品路径。</li><li>对产品研发的影响：适合关注低批量硬件的模块化设计、可维修性、元器件替代和跨境认证成本。下一步需观察其完整规格、产能、售后体系及国际交付稳定性。</li><li>来源/时间：<a href="https://cdm.link/los-aparatos/">CDM｜Handmade experimental synths and DIY from Argentina’s Los Aparatos</a>｜2026-08-17</li></ul>
+<h3>事件二：暂无第二项符合去重与验证要求的新增重点事件</h3>
+<ul><li>发生了什么：GitHub 检索发现 MatchingCompressor 等近期活跃项目，但现有资料没有提供可核验的版本发布记录、完整提交时间或性能测试；Sound On Sound 与 MusicTech 信源分别因 HTTP 403 和 TLS 证书错误无法抓取。</li><li>涉及技术：三拐点压缩/扩展、参考音频匹配、C++ 音频插件。</li><li>关键参数：插件格式、采样率、位深、前瞻时延、增益计算方法及授权方式均资料未确认。</li><li>为什么重要：项目描述具有研发参考价值，但尚不足以支撑产品能力或成熟度判断，不应将搜索结果中的“近期推送”直接等同于正式发布。</li><li>对产品研发的影响：暂不建议纳入技术选型；后续应核对源代码、许可证、构建状态、版本标签及自动化测试。</li><li>来源/时间：<a href="https://github.com/justonem0reuser/MatchingCompressor">GitHub｜justonem0reuser/MatchingCompressor</a>｜检索快照 2026-08-18，项目发布时间资料未确认</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：MatchingCompressor 描述了一种带三个 knee 区域并可匹配参考音频的压缩器/扩展器；现有资料不足以确认其具体算法与最新版本。</li><li>工程应用：可能用于动态曲线匹配、母带参考匹配及压缩器原型验证；实时性、稳定性和音质尚需基准测试。</li><li>成熟度：早期项目，Stars、版本标签、许可证和可复现测试资料未完整确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：今日资料未发现新的音频编解码器版本、实现或权威性能测试。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：继续关注实时通信、流媒体和沉浸式音频编码，但不以旧版标准补充今日动态。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：空间音频与沉浸式音频 GitHub 定向检索返回 0 项，未发现可验证的新渲染器、制作工具或终端更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：今日没有足够证据调整扬声器布局、双耳渲染、头部跟踪或对象音频产品路线。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：今日资料未发现可验证的新语音生成、音乐生成、音频理解模型或商业 API 更新。</li><li>能力与限制：此前出现的 incant-audio 已在 14 天历史中使用；虽然仓库于 2026-08-18 有代码推送，但没有新版本、Stars 明显增长或官方新增能力说明，不构成可再次采用的新事实。</li><li>工程应用：暂不据此更新生成式音频、插件代码生成或实时推理选型。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：今日资料未发现 AES67、Dante、AVB/TSN、Ravenna、WebRTC 音频或移动通信音频协议的新发布。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：现阶段不调整网络音频时钟、缓冲、冗余或互操作性方案。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Los Aparatos Auduina MK2。</li><li>类型：手工实验合成器、专业/创客音频硬件。</li><li>采样率/位深/时延：资料未确认；现有资料也未说明其是否采用数字音频链路。</li><li>兼容平台：MIDI、CV/Gate、USB、DAW 集成及音频插件兼容性资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：报道确认其型号为 MK2 并已支持国际发货，但未提供相对上一代的功能对照。今日资料未发现可验证的新 DAW、音频插件、耳机、扬声器或声学器件发布。</li><li>来源/时间：<a href="https://cdm.link/los-aparatos/">CDM｜Los Aparatos</a>｜2026-08-17</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：今日资料中没有 AES、ITU、ETSI 或 3GPP 可确认的新音频标准、修订版或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：缺少可靠新增资料，不补写旧标准作为今日动态。</li><li>对产品设计的影响：编解码、响度、沉浸式音频、语音通信和网络音频设计暂按现有规范执行；正式立项前仍需核对各机构最新版本目录。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Los Aparatos 的“硬件产品＋DIY 教育”模式。</li><li>背景：团队位于阿根廷图库曼，从事手工合成器、电子设备和 DIY 教育项目。</li><li>技术方案：以小批量手工实验合成器为产品载体，并通过电子制作教育建立用户与创作者社区；具体电路和软件架构资料未确认。</li><li>结果：Auduina MK2 已被报道可面向国际市场发货；销量、交付规模和用户反馈尚无可验证数据。</li><li>可借鉴点：小型硬件团队可将产品销售、课程和社区支持结合，但商业扩张前需要同步解决器件供应、EMC/安全认证、维修文档与跨境售后问题。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Auduina MK2 | 手工实验合成器；详细合成架构资料未确认 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://cdm.link/los-aparatos/">CDM，2026-08-17</a> | | MatchingCompressor | 三 knee 压缩/扩展、参考音频匹配；实现参数未确认 | 资料未确认 | C++；插件格式未确认 | 开源仓库可访问；授权条件未确认 | <a href="https://github.com/justonem0reuser/MatchingCompressor">GitHub，检索于 2026-08-18</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：实验音频硬件继续向小批量、社区化和教育服务结合发展；开源插件则在探索参考音频驱动的动态处理，但今日没有足够证据表明其已达到生产级成熟度。</li><li>工程风险：Auduina MK2 缺少完整规格和认证信息；MatchingCompressor 缺少可复现测试、明确许可证与实时性能数据。</li><li>版权/合规风险：参考音频匹配功能需要明确训练、分析或缓存流程是否复制受版权保护素材；硬件跨境销售还涉及电气安全、EMC、环保和标签合规。</li><li>商业化风险：手工硬件可能受到元器件供应、产能和售后限制；早期开源插件则面临维护持续性、宿主兼容性和授权不确定性。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 Auduina MK2 的官方规格、价格、接口、产能、认证和交付范围。</li><li>核验 MatchingCompressor 的许可证、版本标签、支持的插件格式、算法实现及实时 CPU/时延测试。</li><li>恢复 Sound On Sound 与 MusicTech 信源访问，并继续检查 AES、ITU、ETSI、3GPP 的正式发布目录。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Handmade experimental synths and DIY from Argentina’s Los Aparatos｜2026-08-17｜<a href="https://cdm.link/los-aparatos/">原文链接</a></li><li>GitHub｜justonem0reuser/MatchingCompressor｜检索于 2026-08-18，项目发布时间资料未确认｜<a href="https://github.com/justonem0reuser/MatchingCompressor">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜截至 2026-08-18 未取得可靠新增发布资料｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜截至 2026-08-18 未取得可靠新增发布资料｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>ETSI｜Standards｜截至 2026-08-18 未取得可靠新增发布资料｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications by Series｜截至 2026-08-18 未取得可靠新增发布资料｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
