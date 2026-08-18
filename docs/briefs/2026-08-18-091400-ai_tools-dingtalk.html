@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-08-18</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-08-18</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今日资料仅发现 1 个未重复且可核验的新工具 Thesmos Governance，适合需要约束 AI 编程 Agent 行为的开发与安全团队；其余候选均因 14 天内已推荐、Stars/关键数据不足或缺少重大新增事实而不重复收录。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Thesmos Governance（新项目）</h3>
+<ul><li>一句话介绍：面向 Claude、Cursor、GitHub Copilot、Gemini 和 Codex 的 AI 编程治理工具，提供 CLI、GitHub Action、VS Code 扩展及 MCP Server。</li><li>分类：开发者工具 / Vibe Coding / 编程插件 / 自动化</li><li>适合谁：使用多个 AI 编程工具的开发团队、平台工程团队、安全团队及需要统一代码生成规范的企业。</li><li>典型场景：在提交或合并代码前，自动检查 AI 生成代码是否符合安全、合规和工程规则。</li><li>核心功能：项目自述宣称内置 1,075 条治理规则，并支持 CLI、本地编辑器、GitHub CI 与 MCP 工作流；规则效果及覆盖范围尚需实际验证。</li><li>GitHub Stars：2（GitHub 检索快照）</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-08-18 00:01 UTC（<code>pushed_at</code>）</li><li>最新版本：资料未确认</li><li>开源协议：仓库标记为 <code>NOASSERTION / Other</code>，具体授权条款需查看仓库文件后确认</li><li>支持平台：命令行、GitHub Actions、VS Code、支持 MCP 的客户端；具体系统兼容性资料未确认</li><li>使用成本：资料未确认</li><li>上手步骤：先检查仓库 README 与授权条款，再按实际工作流选择 CLI、GitHub Action、VS Code 扩展或 MCP Server；建议先在非生产仓库测试规则误报率。</li><li>推荐理由：它将分散在 Claude、Cursor、Copilot、Gemini、Codex 等工具中的治理要求集中到同一套规则体系，是本期唯一同时满足“未重复、近期有提交、仓库可访问”的新候选。</li><li>局限与风险：仅 2 Stars，尚缺少社区验证；存在 21 个开放 Issue；未确认正式版本、价格和明确开源许可证。对“1,075 条规则”的宣传不应直接视为有效安全覆盖。</li><li>官网/仓库链接：<a href="https://github.com/Holley-Studio/thesmos-governance">GitHub 仓库</a> ｜ <a href="https://holley.studio/thesmos">项目主页</a></li></ul>
+<h3>工具二：无合格候选</h3>
+<ul><li>一句话介绍：本期可靠资料不足，未用低质量或重复项目补足名额。</li><li>分类：资料未确认</li><li>适合谁：资料未确认</li><li>典型场景：资料未确认</li><li>核心功能：资料未确认</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：资料未确认</li><li>使用成本：资料未确认</li><li>上手步骤：待获得可核验候选后再评估。</li><li>推荐理由：不推荐。Agent Canvas AI Model、Claude Subagent Editor 和 AI Design Skills 已在近 14 天出现，且资料未提供符合“持续更新”条件的重大新事实。</li><li>局限与风险：强行补足会违反历史去重和数据真实性要求。</li><li>官网/仓库链接：无</li></ul>
+<h3>工具三：无合格候选</h3>
+<ul><li>一句话介绍：本期 GitHub 检索结果未提供第三个可独立核验、近期活跃且值得实际试用的新项目。</li><li>分类：资料未确认</li><li>适合谁：资料未确认</li><li>典型场景：资料未确认</li><li>核心功能：资料未确认</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：资料未确认</li><li>使用成本：资料未确认</li><li>上手步骤：待获得完整仓库元数据、README、Release 与近期增长数据后再评估。</li><li>推荐理由：不推荐。检索结果中没有可确认达到 1,000 Stars 的新候选，也没有足够证据支持另一个低 Stars 项目作为“增长快、仍活跃”的例外。</li><li>局限与风险：Product Hunt、Google AI Blog 和 Hugging Face Blog 本期抓取失败，候选覆盖可能不完整。</li><li>官网/仓库链接：无</li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | Thesmos Governance（新项目） | AI 编程治理与自动化检查 | 2 | 高：2026-08-18 有推送 | 资料未确认 | ★★★☆☆ | | 无合格候选 | 未推荐 | 资料未确认 | 资料未确认 | 资料未确认 | 不适用 | | 无合格候选 | 未推荐 | 资料未确认 | 资料未确认 | 资料未确认 | 不适用 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：资料未确认</li><li>说了什么：所给资料没有包含近期国内 AI 重要人物可核验的原始发言。</li><li>为什么重要：缺少人物、原文和发布时间时，不宜通过二手推断补写观点。</li><li>可能影响：暂无法判断。</li><li>来源/时间：本期资料未提供，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：资料未确认</li><li>说了什么：OpenAI 新闻页显示 2026-08-17 发布安全文章《The Defender’s Window》，GitHub 同日讨论用画布提高 Agent 工作流的可见性、可干预性与成本效率；但现有摘要均未提供可归属于具体人物的原始引言。</li><li>为什么重要：两项内容分别指向 AI 安全防御和 Agent 工作流可观测性，但不能据此虚构高管或研究人员观点。</li><li>可能影响：安全评估与可视化编排可能成为企业部署 Agent 时更重要的采购和工程指标。</li><li>来源/时间：<a href="https://openai.com/index/the-defenders-window/">OpenAI《The Defender’s Window》</a>，2026-08-17；<a href="https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/">GitHub Blog：Agent 工作流画布</a>，2026-08-17。</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：需要同时治理 Claude、Cursor、Copilot、Gemini 或 Codex 时，可在测试仓库试用 Thesmos Governance；正式接入前重点核查许可证、规则来源、误报率和 GitHub Action 权限。</li><li>办公场景：本期资料没有足够可靠且未重复的新工具，不建议为凑数安装。</li><li>创作场景：本期资料没有符合去重与可核验要求的新候选；可关注 GitHub 提出的 Agent 画布工作流方法，但它不是本期可确认的独立推荐工具。</li></ul>
+  </main>
+</body>
+</html>
