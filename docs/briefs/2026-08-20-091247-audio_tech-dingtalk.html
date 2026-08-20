@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-20</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-20</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：近期可独立验证的新动态主要集中在插件创新，Minimal Audio 推出颗粒多效果器 Lucid，Basilica Audio 发布开源低音处理插件 Crypta；音频 AI、空间音频、编解码器和标准领域暂无资料显示有新的重大发布。</li><li>今日关键词：颗粒效果、AU/VST3、开源插件、低音分频、JUCE 8、AGPLv3、DSP、音频 AI</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Minimal Audio 发布颗粒多效果器 Lucid ★</h3>
+<ul><li>发生了什么：Minimal Audio 推出 Lucid，一款面向切片、拉伸、颗粒化和节奏化处理的多效果器插件。</li><li>涉及技术：颗粒合成、音频切片、时间拉伸、节拍同步、调性约束、多效果器处理。</li><li>关键参数：资料未确认采样率、位深、内部处理延迟、插件格式细节和价格。</li><li>为什么重要：颗粒处理从单一音色设计工具扩展为包含节奏、音高和多效果链的综合插件，适合电子音乐、声音设计和现场处理。</li><li>对产品研发的影响：同类产品需要重点评估颗粒窗函数、实时拉伸质量、节奏同步稳定性、CPU 占用和自动化响应。文章中关于“极端音色”“按调性运行”等能力属于厂商宣称或媒体转述，不能替代独立测评。</li><li>来源/时间：<a href="https://cdm.link/lucid-slices-stretches-and-scrubs-sound-like-no-other-granular-fx/">CDM 报道</a>｜2026-08-19 16:25 UTC</li></ul>
+<h3>事件二：Basilica Audio 发布开源低音处理插件 Crypta</h3>
+<ul><li>发生了什么：GitHub 新出现 Crypta 项目，定位为具有视差效果的低音插件，支持低频分离、低频压缩和高频失真处理。</li><li>涉及技术：多频段分离、低频压缩、高频失真、AU/VST3、JUCE 8、实时 DSP。</li><li>关键参数：项目描述显示支持 AU/VST3，采用 JUCE 8，许可证为 AGPLv3；采样率、位深、处理延迟、CPU 占用和可用二进制版本资料未确认。</li><li>为什么重要：开源插件将低音分频、动态控制和高频音色塑形组合到单一处理链，有利于研究低频与高频分离后的独立处理策略。</li><li>对产品研发的影响：商业产品需要关注 AGPLv3 对插件代码分发、衍生开发和闭源集成的影响；工程验证应重点测试分频相位、低频瞬态、旁路一致性及不同宿主中的参数自动化。</li><li>来源/时间：<a href="https://github.com/basilica-audio/Crypta">Crypta GitHub 项目</a>｜GitHub 页面显示最近更新于 2026-08-19 18:08 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：Lucid 将颗粒切片、时间拉伸、节奏同步与多效果链结合；Crypta 采用低频分离、压缩和高频失真组合。</li><li>工程应用：适用于电子音乐音色设计、低音增强、实时表演和声音后期。</li><li>成熟度：颗粒处理和多频段 DSP 已较成熟；具体插件的实时性能、音质和稳定性仍需实测。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料未提供 2026-08-20 前后新的编解码器发布、版本变化或兼容性公告。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：暂无法据此调整编码链路或终端兼容策略。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料未发现新的空间音频格式、渲染器、头部跟踪方案或终端支持更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：暂无法形成新的空间音频产品设计建议。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料未发现新的语音生成、音乐生成、音频分离、语音增强或音频大模型发布。</li><li>能力与限制：近期已出现的 <code>incant-audio</code> 等主题属于历史已使用内容；本期没有可确认的新版本、显著 Stars 增长或官方新增事实。</li><li>工程应用：AI 音频产品仍应重点评估训练数据授权、输出可追溯性、实时延迟和模型推理成本。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料未提供 AES、ITU、ETSI、3GPP 或其他音频网络协议的新发布信息。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：暂不建议基于本期资料调整 AVB、AES67、Dante 或其他网络音频方案。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Minimal Audio Lucid</li><li>类型：颗粒多效果器插件</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：资料未确认</li><li>价格：资料未确认</li><li>与上一代或竞品差异：资料显示其强调切片、拉伸、擦洗、节拍同步和调性控制，但缺乏与上一代或竞品的独立对比</li><li>来源/时间：<a href="https://cdm.link/lucid-slices-stretches-and-scrubs-sound-like-no-other-granular-fx/">CDM 报道</a>｜2026-08-19 16:25 UTC</li></ul>
+<ul><li>产品：Basilica Audio Crypta</li><li>类型：开源低音处理插件</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：AU/VST3；具体操作系统支持未确认</li><li>价格：资料未确认</li><li>与上一代或竞品差异：项目定位为低音分离、低频压缩和高频塑形的组合式处理器，暂无上一代产品或性能对比资料</li><li>来源/时间：<a href="https://github.com/basilica-audio/Crypta">Crypta GitHub 项目</a>｜最近更新：2026-08-19 18:08 UTC</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期未发现 AES、ITU、ETSI、3GPP 在音频编解码、空间音频、音频网络或语音技术方面的可靠新增发布。</li><li>发布机构：AES、ITU、ETSI、3GPP 官方资料入口</li><li>核心结论：现有资料不足以确认新标准、新修订版或新论文，不以旧标准充当本期动态。</li><li>对产品设计的影响：暂不产生新的合规或接口要求；研发团队仍应按项目适用的现行标准开展验证。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>；<a href="https://www.itu.int/pub/">ITU Publications</a>；<a href="https://www.etsi.org/standards">ETSI Standards</a>；<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：颗粒效果器与低音分频插件的实时 DSP 产品化</li><li>背景：近期新工具集中在音色变形和频段独立处理，目标用户包括制作人、声音设计师和现场表演者。</li><li>技术方案：颗粒切片、时间拉伸、节奏同步、多效果链，以及低音分离、低频压缩和高频失真。</li><li>结果：资料仅确认相关产品和项目的公开定位，未提供独立测试数据、实时延迟、CPU 占用或用户规模结果。</li><li>可借鉴点：产品研发应先建立可复现的音质和性能基准，包括相位一致性、瞬态保真度、宿主兼容性、自动化稳定性和旁路透明度。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Minimal Audio Lucid | 颗粒切片、拉伸、擦洗、节拍同步、多效果器 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://cdm.link/lucid-slices-stretches-and-scrubs-sound-like-no-other-granular-fx/">CDM</a> | | Basilica Audio Crypta | 低音分离、低频压缩、高频失真；JUCE 8；AGPLv3 | 资料未确认 | AU/VST3 | 资料未确认 | <a href="https://github.com/basilica-audio/Crypta">GitHub</a> | | 音频 AI | 本期资料未确认新模型或新版本 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-13">GitHub 搜索</a> | | 空间音频 | 本期资料未确认新格式或新渲染器 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://cdm.link/">CDM</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：插件创新继续向复合化发展，将颗粒处理、节奏控制、调性约束和多段 DSP 集成到单一工作流；开源插件则更多承担算法验证和社区协作角色。</li><li>工程风险：实时颗粒处理可能带来较高 CPU 占用、音质伪影和自动化不稳定；低音分频处理可能引入相位偏移、瞬态损失和系统间听感差异。</li><li>版权/合规风险：Crypta 使用 AGPLv3，闭源商业集成前必须完成许可证义务评估；Lucid 的内部算法、训练数据和音色资源授权情况资料未确认。</li><li>商业化风险：新插件缺乏独立性能、价格、更新承诺和长期兼容性数据；仅凭厂商或媒体宣传难以判断付费转化和专业工作流渗透率。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 Lucid 的正式产品页面、插件格式、系统要求、价格及独立测评数据。</li><li>跟踪 Crypta 是否发布二进制版本、版本标签、测试数据及许可证说明。</li><li>继续核查音频 AI、语音/音乐生成、空间音频和编解码器领域是否出现可独立验证的新版本或官方公告。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Lucid slices, stretches, and scrubs sound like no other granular FX｜2026-08-19 16:25 UTC｜https://cdm.link/lucid-slices-stretches-and-scrubs-sound-like-no-other-granular-fx/</li><li>Basilica Audio｜Crypta GitHub 项目主页｜最近更新：2026-08-19 18:08 UTC｜https://github.com/basilica-audio/Crypta</li><li>Audio Engineering Society｜AES Standards｜本期未确认新增发布时间｜https://www.aes.org/standards/</li><li>International Telecommunication Union｜ITU Publications｜本期未确认新增发布时间｜https://www.itu.int/pub/</li><li>ETSI｜ETSI Standards｜本期未确认新增发布时间｜https://www.etsi.org/standards</li><li>3GPP｜Specifications by Series｜本期未确认新增发布时间｜https://www.3gpp.org/specifications-technologies/specifications-by-series</li></ol>
+  </main>
+</body>
+</html>
