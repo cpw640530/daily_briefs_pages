@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-21</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-21</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：近期可验证的新动态主要集中在开源 DSP 框架、物理建模混响和硬件/桌面一体化混音设备；音频 AI、语音/音乐生成、空间音频、编解码标准暂无可靠新增事实。</li><li>今日关键词：<code>DSPark</code>、<code>RoomReverb</code>、<code>Bluebox 1.5</code>、JUCE、VST3、CLAP、AU、LV2、WebAssembly、嵌入式音频</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：DSPark 发布近期代码更新，尝试以纯 C++20 统一跨平台 DSP 与插件开发 ★</h3>
+<ul><li>发生了什么：GitHub 项目 DSPark 定位为无外部依赖的 header-only C++20 音频 DSP 框架，项目描述覆盖桌面、移动端、WebAssembly、嵌入式设备，以及 VST3、CLAP 和 AU 插件格式。</li><li>涉及技术：实时 DSP、模拟建模、EBU R128 响度计量、VST3、CLAP、Audio Unit、WebAssembly、嵌入式部署。</li><li>关键参数：项目自称包含 90 多个实时处理器；具体处理器清单、CPU 占用、实时稳定性和各平台测试结果资料未确认。</li><li>为什么重要：如果同一套 C++ DSP 代码能够覆盖插件、移动端和嵌入式产品，可减少多平台算法重复实现，但仍需验证 ABI、线程模型、内存分配和宿主兼容性。</li><li>对产品研发的影响：适合用于原型验证和跨平台算法抽象；正式产品应补充实时线程禁止阻塞、参数平滑、状态保存、SIMD 优化、插件扫描和自动化测试。</li><li>来源/时间：<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-14">GitHub 搜索结果</a>；近期推送记录，具体发布时间资料未确认。</li></ul>
+<h3>事件二：RoomReverb 探索基于射线追踪的 JUCE 房间混响插件</h3>
+<ul><li>发生了什么：开源项目 RoomReverb 更新了一个基于 JUCE 的音频插件，项目描述称其使用射线追踪技术模拟房间声学，并支持卷积混响和三维房间建模相关功能。</li><li>涉及技术：射线追踪、房间声学建模、卷积混响、JUCE、VST/VST3、AU、CLAP、LV2。</li><li>关键参数：项目为 GPL-3.0 许可，GitHub 页面显示 11 Stars、1 个 Fork；具体采样率、最大声道数、CPU 占用、算法时延和可支持的房间规模资料未确认。</li><li>为什么重要：它体现了从传统 IR 卷积向可参数化、可实时变化的房间建模方向探索，可能服务于游戏、交互媒体和沉浸式制作。</li><li>对产品研发的影响：研发团队可关注射线追踪与卷积混合架构、早期反射计算、动态声源更新和 GPU/CPU 分工；GPL-3.0 许可也需要纳入商业闭源产品的合规评估。</li><li>来源/时间：<a href="https://github.com/Mr-Hamza1001/RoomReverb">RoomReverb GitHub</a>；最近推送时间为 2026-08-20 23:54 UTC。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：DSPark 尝试以 header-only C++20 框架封装多类实时处理器；RoomReverb 探索射线追踪房间混响。</li><li>工程应用：可用于跨平台插件、移动端音频应用、嵌入式音频设备、游戏和交互式空间声场原型。</li><li>成熟度：均属于开源项目或探索性实现；可用性有公开代码支撑，但性能、稳定性和商业级验证资料不足。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中未发现 2026-08-21 前后新增且可独立验证的音频编解码器、版本或产业部署事件。</li><li>性能与兼容性：资料未提供新的码率、复杂度、时延或互操作性数据。</li><li>工程应用：继续采用既有编码方案时，应根据平台、授权、实时性和网络条件进行验证；本期不以旧标准充当新动态。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中未发现近期新的空间音频标准、渲染器或终端支持更新。</li><li>渲染链路或终端支持：RoomReverb 涉及三维房间建模方向，但其完整空间声渲染链路、头部跟踪和多终端兼容性资料未确认。</li><li>工程应用：可作为空间声学原型研究对象，正式产品仍需测试多声道布局、双耳渲染、房间变化和设备校准。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中未发现近期新增且可验证的语音生成、音乐生成、音频大模型或 AI 音频产品事件。</li><li>能力与限制：暂无可靠新参数；包括生成质量、版权数据来源、推理时延和商用许可在内的关键信息均未确认。</li><li>工程应用：本期不建议据此形成模型选型或采购结论，应等待模型官方发布、API 文档或可复现实测。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中未发现近期新增的音频网络协议、互操作性认证或重大版本更新。</li><li>时延与互操作性：没有新的可核验时延、同步精度或网络拓扑数据。</li><li>工程应用：网络音频项目仍应重点验证时钟同步、丢包恢复、QoS、发现机制和跨厂商互操作性。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：1010music Bluebox 1.5 mixer module and desktop</li><li>类型：硬件模块与桌面设备；面向 Eurorack、硬件设备和计算机连接场景的混音、效果与录音整合工具。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：资料确认其同时涉及模块形态和桌面设备；具体操作系统、接口协议和宿主兼容性资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：官方或报道摘要强调 Bluebox 1.5 补充混音、效果、录音及计算机连接等一体化需求；具体新增功能、硬件改版和性能差异资料未确认。</li><li>来源/时间：<a href="https://cdm.link/bluebox-1-5/">CDM 报道</a>；2026-08-20 12:51 UTC。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期未发现 AES、ITU、ETSI、3GPP 在 2026-08-21 前后发布的、与音频技术直接相关且可核验的新标准或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP 官方资料页。</li><li>核心结论：现有资料不足以确认新的标准条文、版本变更或论文结论。</li><li>对产品设计的影响：不应将旧标准页面或历史版本作为本期新增标准依据；产品研发仍需按目标市场核对现行版本和专利/授权要求。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>、<a href="https://www.itu.int/pub/">ITU Publications</a>、<a href="https://www.etsi.org/standards">ETSI Standards</a>、<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Bluebox 1.5 面向硬件工作流的混音、效果与录音整合</li><li>背景：硬件合成器、Eurorack 系统和计算机制作之间通常需要额外的混音、效果处理和录音设备。</li><li>技术方案：根据 CDM 摘要，Bluebox 1.5 将混音、效果、录音和计算机连接集中到模块或桌面设备形态中。</li><li>结果：报道认为其功能组合可能覆盖硬件系统中的多项基础需求；具体测试结果、时延和可靠性资料未确认。</li><li>可借鉴点：硬件音频产品的竞争点不只在单一处理算法，也在于减少连接复杂度、统一录音路径并兼容模块化系统。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | DSPark | C++20、header-only、项目自称 90+ 实时处理器 | 资料未确认 | 桌面、移动端、WebAssembly、嵌入式；VST3/CLAP/AU | 开源；具体商用条件资料未确认 | <a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-14">GitHub 搜索结果</a> | | RoomReverb | JUCE、射线追踪、卷积混响、GPL-3.0、11 Stars | 资料未确认 | VST/VST3、AU、CLAP、LV2 | 开源 | <a href="https://github.com/Mr-Hamza1001/RoomReverb">GitHub</a> | | 1010music Bluebox 1.5 | 混音、效果、录音、计算机连接；具体硬件参数未确认 | 资料未确认 | 模块与桌面设备形态；具体接口未确认 | 资料未确认 | <a href="https://cdm.link/bluebox-1-5/">CDM</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开源音频开发正在从单个插件项目扩展到跨平台 DSP 基础设施；房间声学方向则继续探索可实时变化的物理或几何建模。</li><li>工程风险：DSP 框架的“跨平台”描述不等于产品级验证；需重点检查实时线程安全、CPU 峰值、内存分配、插件格式差异和移动端功耗。</li><li>版权/合规风险：RoomReverb 使用 GPL-3.0，若将代码或衍生成果并入闭源商业产品，应先完成许可证义务评估；DSPark 的完整许可和第三方依赖情况也需核查。</li><li>商业化风险：开源项目的维护活跃度、文档、版本稳定性和宿主兼容性尚未充分证明；Bluebox 1.5 的价格、供应和核心规格资料不足，暂不宜形成采购结论。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 DSPark 的正式版本、许可证、基准测试及 VST3/CLAP/AU/WebAssembly 实际构建结果。</li><li>验证 RoomReverb 的房间参数、射线追踪计算成本、实时变化能力和多声道/双耳输出支持。</li><li>等待 1010music 发布 Bluebox 1.5 的完整规格、价格、接口、采样率、位深及固件更新说明。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜DSPark 近期搜索结果｜近期推送，具体发布时间未确认｜<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-14">原文链接</a></li><li>Mr-Hamza1001｜RoomReverb｜最近推送：2026-08-20 23:54 UTC｜<a href="https://github.com/Mr-Hamza1001/RoomReverb">原文链接</a></li><li>CDM Create Digital Music｜1010music Bluebox 1.5 mixer module and desktop is your do-everything tool｜2026-08-20 12:51 UTC｜<a href="https://cdm.link/bluebox-1-5/">原文链接</a></li><li>AES｜AES Standards｜本期未确认新增发布时间｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>ITU｜ITU Publications｜本期未确认新增发布时间｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>ETSI｜ETSI Standards｜本期未确认新增发布时间｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications and Technologies｜本期未确认新增发布时间｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
