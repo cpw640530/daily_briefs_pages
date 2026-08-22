@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-22</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-22</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证新增重点集中于低成本模块化电子音频教育工具；音频 AI、空间音频、编解码与音频网络未发现可独立验证的新增发布。</li><li>今日关键词：Glitch&#x27;n、模块化鼓机、电路教育、面包板、开源硬件、DSPark 持续更新</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Glitch&#x27;n 推出约 5 美元模块化鼓机电路与在线课程 ★</h3>
+<ul><li>发生了什么：CDM 于 8 月 21 日报道，Glitch&#x27;n 提供面向初学者的电子音乐硬件课程，以面包板搭建振荡器、生成式节拍、滤波器和噪声电路；报道标题称其模块化鼓机电路成本约为 5 美元。</li><li>涉及技术：模拟振荡、滤波、噪声发生、生成式节拍、面包板原型开发、模块化合成。</li><li>关键参数：约 5 美元成本为媒体报道口径；电路供电、音频电平、频响、信噪比及课程许可证等资料未确认。</li><li>为什么重要：其价值不在于替代成熟鼓机，而在于将音频电子学原型门槛压低至教学和社区实践可承受范围，有利于培养模拟电路、交互控制与声音设计的基础工程能力。</li><li>对产品研发的影响：教育硬件、STEAM 课程和创客平台可将“可听见的最小电路”作为原型模板；量产产品仍需补足电源保护、EMC、可靠性、校准和音频接口规范。</li><li>来源/时间：<a href="https://cdm.link/glitch-n-free-online/">CDM｜A $5 modular drum circuit, a free online course, and how it grows into more</a>｜2026-08-21</li></ul>
+<h3>事件二：DSPark 代码库出现当日提交（持续更新）</h3>
+<ul><li>发生了什么：开源 C++20 音频 DSP 框架 DSPark 的 GitHub 元数据显示，仓库于 8 月 22 日 00:17 UTC 有代码推送。</li><li>相对上次新增的事实：此前简报仅记录其近期代码更新；本次可确认新增事实为 2026-08-22 的推送时间。资料未提供提交差异、发布版本或性能测试，不能据此推断新增功能。</li><li>涉及技术：header-only C++20、实时 DSP、模拟建模、EBU R128 计量、VST3、CLAP、AU、WebAssembly。</li><li>关键参数：项目自述包含“90+ 实时处理器”和零外部依赖；当前 13 Stars、MIT 许可证。上述功能与性能为项目方自述，未见独立基准验证。</li><li>为什么重要：统一桌面、移动端、WebAssembly、嵌入式与插件目标的单代码库路径，可降低原型阶段的移植成本；但多目标实时性与插件宿主兼容性仍需逐平台测试。</li><li>对产品研发的影响：适合用于 DSP 算法验证或跨端原型；商用集成前应验证 CPU 占用、内存分配、线程模型、状态保存和各插件格式认证要求。</li><li>来源/时间：<a href="https://github.com/CristianMoresi/DSPark">GitHub｜CristianMoresi/DSPark</a>｜2026-08-22（代码推送时间）</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：DSPark 持续更新；项目采用纯 C++20、header-only 结构，覆盖效果器、模拟建模、FFT 与响度计量等模块。</li><li>工程应用：可用于插件、桌面应用、嵌入式和 WebAssembly 原型的共享 DSP 层。</li><li>成熟度：开源早期项目。仓库当前 13 Stars，缺少本次提交的变更说明及独立性能数据。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料未发现过去 24 小时内可验证的编解码器新版本、标准修订或重大部署事件。</li><li>性能与兼容性：无新增可核验参数。</li><li>工程应用：建议继续以现有目标平台的编解码兼容矩阵和端到端时延实测作为选型依据。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 针对 spatial audio/audio-AI 的 Python 项目检索结果为 0，资料未发现可验证新增动态。</li><li>渲染链路或终端支持：无新增终端、渲染器或格式支持信息。</li><li>工程应用：不应将旧有空间音频格式或设备支持表述为当日更新。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料未发现可验证的音频 AI、语音生成或音乐生成模型发布、融资、API 更新或安全事件。</li><li>能力与限制：无新增可核验能力指标；模型音色相似性、训练数据来源和商业使用授权仍是部署审查重点。</li><li>工程应用：生成式音频功能上线前，应保留提示词、模型版本、输入素材权属与输出审查记录。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料未发现 AES、ITU、ETSI 或 3GPP 体系内的可靠新增音频网络标准动态。</li><li>时延与互操作性：无新增可核验时延或互操作性数据。</li><li>工程应用：继续在目标交换机、时钟源和终端组合上进行实测，不以协议标称能力替代系统级验证。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Glitch&#x27;n 模块化鼓机电路与在线课程。</li><li>类型：面向初学者的模拟电子音乐教育工具与面包板电路项目。</li><li>采样率/位深/时延：非数字音频产品；相关参数不适用或资料未确认。</li><li>兼容平台：面包板电子元件与在线课程；具体浏览器、课程平台和物料清单资料未确认。</li><li>价格：约 5 美元，依据 CDM 报道标题；对应范围及地区税费资料未确认。</li><li>与上一代或竞品差异：资料未披露产品迭代关系；其已知定位是将生成式节拍、振荡、滤波与噪声实验整合进低成本教学路径。</li><li>来源/时间：<a href="https://cdm.link/glitch-n-free-online/">CDM｜A $5 modular drum circuit, a free online course, and how it grows into more</a>｜2026-08-21</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：未发现资料支持的 AES、ITU、ETSI、3GPP 音频标准新增发布或修订。</li><li>发布机构：不适用。</li><li>核心结论：今日不补写既有标准作为新增动态。</li><li>对产品设计的影响：版本冻结、认证计划和互操作测试应继续引用项目实际采用的标准版本。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>；<a href="https://www.itu.int/pub/">ITU Publications</a>；<a href="https://www.etsi.org/standards">ETSI Standards</a>；<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Glitch&#x27;n 低成本模块化音频电子教学。</li><li>背景：模拟电子音乐硬件的入门通常受元器件、工具和电路知识门槛限制。</li><li>技术方案：在面包板上组织振荡器、生成式节拍、滤波器与噪声模块，并配套在线课程。</li><li>结果：CDM 报道显示，该项目旨在支持初学者学习电子音频电路，并延伸至教学和就业技能培养；学习效果与规模化成果尚无独立量化数据。</li><li>可借鉴点：先以低压、可替换、可听见反馈的模块建立学习闭环，再逐步引入电源设计、封装、控制接口与产品化测试。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Glitch&#x27;n 模块化鼓机电路 | 振荡、生成式节拍、滤波、噪声；具体电路参数未确认 | 模拟链路，不适用 | 面包板；在线课程 | 约 5 美元，范围未确认 | <a href="https://cdm.link/glitch-n-free-online/">CDM</a> | | DSPark | C++20、header-only；项目方称 90+ 实时处理器 | 取决于宿主、缓冲设置与算法，未公布 | VST3、CLAP、AU、桌面、移动、WASM、嵌入式 | 免费，MIT | <a href="https://github.com/CristianMoresi/DSPark">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：低成本电子音乐工具正在与在线教学结合，声音合成从成品设备使用向电路级可理解、可改造的实践延伸。</li><li>工程风险：面包板原型不等于可量产音频硬件；噪声、串扰、供电稳定性、元件偏差和安全保护均需独立验证。</li><li>版权/合规风险：本期未出现新增生成式音频版权政策或模型授权事实；涉及课程内容、原理图与样本素材时仍需确认许可证。</li><li>商业化风险：教育项目的低物料成本未覆盖物流、支持、质量控制、内容维护和本地合规成本。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 Glitch&#x27;n 是否公布完整 BOM、原理图、许可证、电源规格及课程平台信息。</li><li>核验 DSPark 2026-08-22 提交的具体差异、发布标签与跨平台实时性能数据。</li><li>持续监测 AES、ITU、ETSI、3GPP 的音频编解码、沉浸式媒体与网络音频标准更新。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/glitch-n-free-online/">A $5 modular drum circuit, a free online course, and how it grows into more</a>｜2026-08-21｜原文链接</li><li>GitHub｜<a href="https://github.com/CristianMoresi/DSPark">CristianMoresi/DSPark</a>｜2026-08-22｜原文链接</li><li>Audio Engineering Society｜<a href="https://www.aes.org/standards/">AES Standards</a>｜资料未显示当日新增发布时间｜原文链接</li><li>ITU｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜资料未显示当日新增发布时间｜原文链接</li><li>ETSI｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜资料未显示当日新增发布时间｜原文链接</li><li>3GPP｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">Specifications by Series</a>｜资料未显示当日新增发布时间｜原文链接</li></ol>
+  </main>
+</body>
+</html>
