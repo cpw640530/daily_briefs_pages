@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-08-24</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-08-24</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：今日可核验新增主要来自开源基础设施，AI 智能体安全扫描与具身智能运行时正在向“可部署、可治理”的工程层集中。</li><li>今日关键词：MCP 安全、具身智能运行时、ROS、物理记忆、GitHub 开源</li><li>预计阅读时间：4 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：<code>aishield</code> 更新，面向 MCP 与 AI Agent 工具链的安全扫描 ★</h3>
+<ul><li>发生了什么：GitHub 项目 <code>lm203688/aishield</code> 于 8 月 24 日更新。项目自述为 Agent 原生 AI 工具安全扫描器，可扫描 MCP、Skill、GPT 与 Prompt 的风险，并提供四维评分及 Guardrail MCP 自动防护能力。</li><li>技术变化：安全对象从单次提示词输入，延伸至智能体的工具调用、技能包和 MCP 服务接口。</li><li>为什么重要：MCP 与智能体工具链扩大了提示注入、越权调用和供应链风险暴露面；部署前的结构化检查是企业接入外部工具的基础环节。</li><li>产业影响：安全能力可能逐步成为 Agent 平台、MCP 市场和企业采购的准入要求，而非附加功能。</li><li>接下来关注：评分方法、规则覆盖率、误报率、与主流 MCP 客户端的集成情况，以及是否有独立安全评测。</li><li>来源/时间：<a href="https://github.com/lm203688/aishield">GitHub｜lm203688/aishield</a>｜2026-08-24（仓库最近推送时间）；项目能力为作者自述，尚无独立验证。</li></ul>
+<h3>事件二：<code>rosclaw</code> 更新，尝试构建具身智能体的自演化运行时</h3>
+<ul><li>发生了什么：GitHub 项目 <code>ros-claw/rosclaw</code> 于 8 月 24 日更新。项目定位为面向 Physical AI 与具身智能体的运行时基础设施，覆盖 e-URDF、本体安全沙箱、能力路由、物理记忆、运行时干预和技能演化。</li><li>技术变化：项目试图将机器人本体描述、安全隔离、任务能力调度和经验沉淀纳入统一运行时。</li><li>为什么重要：具身系统的难点不止于视觉语言动作模型，还在于把模型输出转化为受限、可追踪、可恢复的真实机器人操作。</li><li>产业影响：若接口与 ROS/ROS 2 生态兼容，此类运行时可降低多机器人、多工具和多场景部署的集成成本；但其生产可用性尚待验证。</li><li>接下来关注：e-URDF 的规范定义、支持的机器人硬件与仿真器、故障恢复机制、真实设备测试数据和社区采用度。</li><li>来源/时间：<a href="https://github.com/ros-claw/rosclaw">GitHub｜ros-claw/rosclaw</a>｜2026-08-24（仓库最近推送时间）；当前 186 Stars、33 Forks，数据为检索快照。</li></ul>
+<h3>事件三：Google DeepMind 回顾游戏 AI 研究，强化“可交互世界”研发叙事</h3>
+<ul><li>发生了什么：Google DeepMind 新闻页列出《From Atari to EVE Online: Building on 15 Years of AI Research in Games》，回顾其在游戏环境中的 AI 研究积累。</li><li>技术变化：资料未披露新的模型、API、基准成绩或产品化指标。</li><li>为什么重要：游戏环境持续是智能体规划、强化学习、多智能体协作和长程决策的重要验证场；这些能力与世界模型、机器人任务编排存在技术关联。</li><li>产业影响：本次更接近研究叙事与能力路线梳理，暂不足以构成大模型或机器人产品发布。</li><li>接下来关注：DeepMind 是否公布可复现实验、开放环境、世界模型接口，或将相关能力接入 Gemini Robotics 等产品。</li><li>来源/时间：<a href="https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/">Google DeepMind｜From Atari to EVE Online</a>｜2026 年 8 月；具体发布日期资料未确认。</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：主流厂商当日新增大模型、API、定价或硬件发布资料未确认。</li><li>发布方：OpenAI、Anthropic、Google DeepMind。</li><li>核心能力：资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：资料未确认。</li><li>竞品差异：资料未确认。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI News</a>｜页面最新可见条目为 2026-08-20；<a href="https://www.anthropic.com/news">Anthropic News</a>｜最新带日期产品条目为 2026-07-24；<a href="https://deepmind.google/discover/blog/">Google DeepMind News</a>｜2026-08-24 检索。</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：<code>rosclaw</code>，面向 Physical AI 的具身智能体运行时。</li><li>应用场景：机器人能力调用、任务执行安全控制、技能记录与演化；具体落地客户和真实场景资料未确认。</li><li>技术突破：项目提出 e-URDF、本体安全沙箱、能力路由和物理记忆的组合式运行时设计，尚未见独立性能测试。</li><li>商业化进度：开源 MIT 协议；商业部署、收入和客户资料未确认。</li><li>来源/时间：<a href="https://github.com/ros-claw/rosclaw">GitHub｜ros-claw/rosclaw</a>｜2026-08-24。</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：<code>aishield</code></li><li>解决的问题：识别 MCP 服务、智能体技能、GPT 配置和提示词中的安全风险。</li><li>实际价值：为企业在接入外部智能体工具前增加自动化检查环节；当前仅有 2 Stars，社区采用与有效性尚未得到充分验证。</li><li>论文/仓库链接：<a href="https://github.com/lm203688/aishield">GitHub｜lm203688/aishield</a></li></ul>
+<ul><li>论文/项目：<code>rosclaw</code></li><li>解决的问题：在机器人侧整合本体描述、能力调度、安全隔离、经验记忆与运行时控制。</li><li>实际价值：为具身智能体提供比单一 VLA 模型更完整的工程运行环境；其跨硬件兼容性与实际性能仍待验证。</li><li>论文/仓库链接：<a href="https://github.com/ros-claw/rosclaw">GitHub｜ros-claw/rosclaw</a></li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：AI 公司融资、并购、重大人事、监管政策及机器人硬件新品的当日可靠新增资料未确认。</li><li>核心事实/金额：资料未确认。</li><li>影响：短期不宜以未核验的媒体线索替代官方公告或交易文件。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI News</a>｜2026-08-24 检索；<a href="https://www.anthropic.com/news">Anthropic News</a>｜2026-08-24 检索；<a href="https://deepmind.google/discover/blog/">Google DeepMind News</a>｜2026-08-24 检索。</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：Agent 工具生态的竞争正从“连接更多工具”转向“调用前安全评估、调用中约束、调用后审计”，MCP 安全将成为企业部署的关键控制点。</li><li>趋势二：具身智能工程栈正补齐运行时层。模型能力之外，本体抽象、安全沙箱、状态记忆和技能复用将决定机器人能否稳定进入生产环境。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：<code>aishield</code> 与 <code>rosclaw</code> 的能力主要来自项目自述，缺乏独立基准、规模化部署数据和第三方评测。</li><li>合规风险：对 MCP、提示词和工具调用的扫描可能涉及代码、凭据、业务数据和模型上下文的处理边界。</li><li>商业化风险：开源仓库活跃不等于生产可用；机器人运行时还面临硬件适配、现场维护和责任划分问题。</li><li>数据安全风险：安全扫描器与具身运行时若获得过高权限，可能成为新的供应链或控制面风险点。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li><code>aishield</code> 是否公开检测规则、评测集、误报率及主流 MCP 客户端集成方案。</li><li><code>rosclaw</code> 是否发布真实机器人演示、支持硬件清单和安全故障处理指标。</li><li>头部模型厂商是否在未来数日公布新的模型、API、硬件或企业合作公告。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜<code>lm203688/aishield</code>｜2026-08-24（最近推送时间）｜https://github.com/lm203688/aishield</li><li>GitHub｜<code>ros-claw/rosclaw</code>｜2026-08-24（最近推送时间）｜https://github.com/ros-claw/rosclaw</li><li>Google DeepMind｜From Atari to EVE Online: Building on 15 Years of AI Research in Games｜2026 年 8 月，具体日期未确认｜https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/</li><li>OpenAI｜News｜2026-08-24 检索｜https://openai.com/news/</li><li>Anthropic｜Newsroom｜2026-08-24 检索｜https://www.anthropic.com/news</li><li>Google DeepMind｜News｜2026-08-24 检索｜https://deepmind.google/discover/blog/</li></ol>
+  </main>
+</body>
+</html>
