@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-08-25</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-08-25</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可独立验证的新动态集中在免费 ABX 听觉测试工具，重点价值是把编码、音频位深和音色差异从主观争论转化为可重复测试；AI 音频、语音/音乐生成、空间音频、编解码器和标准组织暂无可靠新增发布。</li><li>今日关键词：ABX 测试、编码差异、16-bit/24-bit、主观听感验证、音频研发评测</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：免费 ABX 网站支持自建音频差异测试 ★</h3>
+<ul><li>发生了什么：CDM 报道一款免费 ABX 测试网站，用户可以创建自定义测试，也可以使用预置测试，对比不同编码方式、鼓机音色模拟以及 16-bit 与 24-bit 音频等差异。</li><li>涉及技术：ABX 双盲听觉测试、音频编码对比、位深对比、听觉感知评测。</li><li>关键参数：资料未确认网站的采样率支持、编码格式范围、测试样本数量、统计显著性算法和数据保存方式。</li><li>为什么重要：它为编解码器选型、插件音色比较、母带交付和音频硬件评测提供了更可重复的验证方法，降低仅凭试听印象作出工程判断的风险。</li><li>对产品研发的影响：研发团队可将 ABX 测试纳入编解码器、降噪、音色建模和音频插件的 A/B 验证流程；正式结论仍需控制响度、样本、播放链路和受试者数量。</li><li>来源/时间：<a href="https://cdm.link/free-abx-testing/">CDM｜Test what you’re hearing, scientifically: free ABX testing website｜2026-08-24</a></li></ul>
+<h3>事件二：主要音频技术品类暂无第二项符合去重与验证要求的新增事件</h3>
+<ul><li>发生了什么：现有资料未发现 2026-08-25 当日可独立验证的音频 AI、语音/音乐生成、空间音频、沉浸式音频、编解码器、DSP、DAW、专业硬件、耳机/声学器件或音乐科技公司重大新事件。</li><li>涉及技术：音频 AI、语音生成、音乐生成、空间音频、沉浸式音频、音频网络、插件与 DAW。</li><li>关键参数：资料未确认。</li><li>为什么重要：缺乏可靠新增事实时，继续重复近期已使用的 RoomReverb、Crypta、DSPark、Bluebox、Lucid 等主题会违反历史去重规则。</li><li>对产品研发的影响：今日不宜据此调整技术路线或采购决策；可将 ABX 测试工具作为评测基础设施候选，等待官方版本、性能或兼容性信息进一步确认。</li><li>来源/时间：<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-18">GitHub 音频 DSP 插件检索｜检索结果｜2026-08-25</a>、<a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-18">GitHub 空间音频与 AI 音频检索｜检索结果｜2026-08-25</a>、<a href="https://cdm.link/feed/">CDM 新闻源｜检索结果｜2026-08-25</a></li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：今日暂无符合去重条件的新 DSP 工具或算法发布。</li><li>工程应用：可将 ABX 评测用于比较压缩器、失真、混响、颗粒处理和音色建模的听觉差异。</li><li>成熟度：ABX 方法成熟；本次网站的具体实现、统计方法和可审计性资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：暂无 AES、ITU、ETSI 或 3GPP 可确认的新编解码器更新。</li><li>性能与兼容性：资料未提供该 ABX 网站支持的具体编码器、码率、采样率或浏览器兼容性。</li><li>工程应用：适合用于编码格式和码率的主观质量验证，但不能替代客观指标，如 PEAQ、POLQA、ViSQOL 或误码测试。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：暂无新的空间音频或沉浸式音频技术更新。</li><li>渲染链路或终端支持：暂无新增渲染器、头部跟踪、双耳化或终端适配信息。</li><li>工程应用：ABX 可用于比较双耳渲染、编码处理前后的定位和空间感，但需针对空间声场设计专门测试样本。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：暂无可验证的新音频 AI、语音生成或音乐生成模型发布。</li><li>能力与限制：资料未确认新的生成质量、推理时延、版权数据来源或商业授权条件。</li><li>工程应用：暂不形成产品选型建议；后续应重点验证可控性、音色一致性、语音自然度、版权清晰度和端侧部署成本。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：暂无 AES、ITU、ETSI、3GPP 或其他可靠来源确认的新音频网络协议更新。</li><li>时延与互操作性：资料未确认新增时延、同步精度、网络拓扑或设备互操作性指标。</li><li>工程应用：当前无新增网络音频架构可供评估。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：免费 ABX 测试网站</li><li>类型：在线音频听觉差异测试工具</li><li>采样率/位深/时延：资料未确认；报道提及可测试 16-bit 与 24-bit，但不等同于网站输入输出规格。</li><li>兼容平台：资料未确认；推测需要浏览器环境，但尚无官方兼容性清单。</li><li>价格：免费</li><li>与上一代或竞品差异：资料未提供版本代际或竞品对比；新增价值在于支持用户自建测试和预置测试。</li><li>来源/时间：<a href="https://cdm.link/free-abx-testing/">CDM｜2026-08-24</a></li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：今日未发现 AES、ITU、ETSI、3GPP 发布的可靠新增标准或论文资料。</li><li>发布机构：AES、ITU、ETSI、3GPP 官方公开页面。</li><li>核心结论：资料不足，不能将历史标准或论文包装为今日更新。</li><li>对产品设计的影响：暂无标准层面的新增约束；ABX 测试可作为主观评测补充，但仍需与相关编码、响度、测量和互操作标准配套。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>、<a href="https://www.itu.int/pub/">ITU Publications</a>、<a href="https://www.etsi.org/standards">ETSI Standards</a>、<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：编码与位深差异的 ABX 验证流程</li><li>背景：工程团队经常需要判断不同编码方式、鼓机音色模拟或 16-bit/24-bit 音频是否产生可感知差异。</li><li>技术方案：使用 ABX 测试网站建立 A、B、X 样本，随机呈现未知样本，并在控制响度、播放设备、样本长度和测试次数后记录识别结果。</li><li>结果：资料仅确认网站支持自建及预置测试，尚未提供具体准确率、统计显著性或参与者规模。</li><li>可借鉴点：将主观试听转化为可重复实验；正式研发流程应保存源文件、编码参数、响度校准方式、测试轮次和统计方法。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | ABX 测试网站 | 支持自建与预置测试；可用于编码、音色、16-bit/24-bit 对比 | 资料未确认 | 在线网站；具体浏览器兼容性未确认 | 免费 | <a href="https://cdm.link/free-abx-testing/">CDM，2026-08-24</a> | | RoomReverb | JUCE 房间混响、射线追踪；属于近期已使用主题，今日无新事实 | 资料未确认 | JUCE 插件；具体格式未确认 | 资料未确认 | <a href="https://github.com/Mr-Hamza1001/RoomReverb">GitHub</a> | | Crypta | AU/VST3、JUCE 8、AGPLv3；2026-08-25 有代码推送，但未提供明确版本说明 | 资料未确认 | AU/VST3、C++、JUCE 8 | 免费/开源项目；商业条件需核对许可证 | <a href="https://github.com/basilica-audio/Crypta">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音频研发评测从“凭耳朵判断”转向 ABX 等可重复的主观测试，并与客观测量结合。</li><li>工程风险：在线测试工具的播放链路、浏览器音频处理、响度不匹配、样本设计和统计方法可能影响结果；不能直接把单次 ABX 结果当作普遍结论。</li><li>版权/合规风险：测试样本若使用商业音乐、受版权保护的音色或模型生成内容，需确认授权、存储和分享范围。</li><li>商业化风险：免费工具的持续维护、隐私政策、数据导出、团队协作和审计能力均未确认，暂不适合作为唯一的企业级评测系统。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核实 ABX 测试网站的官方地址、支持格式、统计显著性计算方式和数据隐私政策。</li><li>关注该工具是否新增项目导出、团队协作、自动响度匹配或 API 能力。</li><li>继续跟踪 AES、ITU、ETSI、3GPP 的音频编解码、沉浸式音频、音频网络和语音通信标准更新。</li><li>关注音频 AI 与语音/音乐生成产品是否出现可验证的新模型、版本、融资、授权或安全事件。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM｜Test what you’re hearing, scientifically: free ABX testing website｜2026-08-24｜https://cdm.link/free-abx-testing/</li><li>GitHub｜audio dsp plugin language:C++ pushed:&gt;2026-08-18 检索结果｜2026-08-25｜https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-18</li><li>GitHub｜spatial audio audio-ai language:Python pushed:&gt;2026-08-18 检索结果｜2026-08-25｜https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-18</li><li>CDM｜新闻 RSS 检索结果｜2026-08-25｜https://cdm.link/feed/</li><li>AES｜Standards｜未发现本期资料对应的新增发布时间｜https://www.aes.org/standards/</li><li>ITU｜Publications｜未发现本期资料对应的新增发布时间｜https://www.itu.int/pub/</li><li>ETSI｜Standards｜未发现本期资料对应的新增发布时间｜https://www.etsi.org/standards</li><li>3GPP｜Specifications and Technologies｜未发现本期资料对应的新增发布时间｜https://www.3gpp.org/specifications-technologies/specifications-by-series</li></ol>
+  </main>
+</body>
+</html>
