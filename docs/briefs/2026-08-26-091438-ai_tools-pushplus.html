@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-08-26</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-08-26</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天建议开发者优先试用 Shopware AI Coding Tools 做垂直业务开发、Customaise MCP 打通 AI 编程 Agent 与浏览器自动化、miniClaudeCode 用于理解和搭建轻量级代码 Agent；三者均为近期活跃的新项目，但均未达到 1,000 Stars 门槛。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Shopware AI Coding Tools</h3>
+<ul><li>一句话介绍：面向 Shopware 电商开发的 Claude Code 插件市场，集合 MCP Server、Skills、Agent、Hooks 与命令。</li><li>分类：Vibe Coding</li><li>适合谁：使用 Shopware 构建或维护电商站点的 PHP 开发者、技术服务商。</li><li>典型场景：让 Claude Code 调用 Shopware 开发工具，辅助生成扩展、排查问题和执行项目内工作流。</li><li>核心功能：提供 MCP 集成、预置 Skills、Agent、Hooks 与命令；将 Shopware 工具接入 AI 编程流程。</li><li>GitHub Stars：42</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-08-25（仓库推送时间）</li><li>最新版本：资料未确认</li><li>开源协议：MIT License</li><li>支持平台：需 Claude Code；具体运行环境以项目文档为准。</li><li>使用成本：开源免费；Claude Code 及相关模型调用成本需另行确认。</li><li>上手步骤：</li><li>推荐理由：仓库于 8 月 25 日仍有推送，且由 ShopwareLabs 维护；对垂直电商技术栈的上下文和工具连接比通用提示词更具实用价值。</li><li>局限与风险：Stars 较低，社区验证有限；AI Agent 获得工具权限后可能修改代码或执行命令，应在 Git 分支、最小权限和人工审查下使用。</li><li>官网/仓库链接：<a href="https://github.com/shopwareLabs/ai-coding-tools">GitHub</a></li></ul>
+<ol><li>打开仓库 README，确认本地已具备 Shopware 与 Claude Code 环境。</li><li>按项目说明安装插件市场或配置 MCP Server。</li><li>在 Shopware 项目中先执行低风险任务，例如读取模块结构、生成测试或定位错误。</li></ol>
+<h3>工具二：Customaise MCP</h3>
+<ul><li>一句话介绍：通过 MCP Server 与 CLI，将 Cursor、Claude Code、Codex、Windsurf、Kiro 等编程 Agent 连接到 Customaise Chrome 扩展，实现可授权的浏览器操作。</li><li>分类：自动化</li><li>适合谁：需要让 AI Agent 辅助调试网页、验证前端流程、执行浏览器重复操作的开发者和测试人员。</li><li>典型场景：让 Agent 定位页面 DOM、控制标签页、调用 WebMCP，或在人工确认后执行 UserScripts 与 AgentScripts。</li><li>核心功能：提供 MCP Server、CLI 及 19 项工具；支持可视化 DOM 定位、标签页控制、带人工确认机制的 WebMCP 调用。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料显示项目符合 <code>pushed:&gt;2026-08-19</code> 检索条件，具体时间未确认。</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Chrome 扩展；可连接 Cursor、Claude Code、Codex、Windsurf、Kiro、Claude Desktop 等 MCP 客户端。</li><li>使用成本：资料未确认</li><li>上手步骤：</li><li>推荐理由：它将 Vibe Coding 从“生成代码”扩展到“操作与验证真实网页”，并明确设计了 HITL（人工在环）同意机制，适合前端开发和测试自动化探索。</li><li>局限与风险：浏览器控制涉及登录态、页面数据和脚本执行权限；不得接入生产高权限账号，需限制可访问域名并审查每次自动化操作。</li><li>官网/仓库链接：<a href="https://github.com/getcustomaise/customaise-mcp">GitHub</a></li></ul>
+<ol><li>安装 Customaise Chrome 扩展，并阅读其权限范围。</li><li>按仓库文档安装 MCP Server 或 CLI，并将其加入所用 Agent 的 MCP 配置。</li><li>从只读页面检查、DOM 定位等任务开始；对脚本执行与敏感网页操作保留人工确认。</li></ol>
+<h3>工具三：miniClaudeCode</h3>
+<ul><li>一句话介绍：约 800 行 Python 实现的轻量级 Claude Code 结构教学项目，覆盖 Agent 循环、工具调用、权限和上下文管理。</li><li>分类：开发者工具</li><li>适合谁：希望理解代码 Agent 工作机制，或准备构建内部轻量 Agent 原型的 Python 开发者。</li><li>典型场景：拆解 Agent 如何规划任务、调用工具、控制权限与压缩上下文；基于最小实现验证自定义工具链。</li><li>核心功能：实现 Agent loop、工具系统、权限机制和上下文管理，定位为 Claude Code 的精简实现。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Python 环境；具体版本要求以仓库文档为准。</li><li>使用成本：项目代码成本资料未确认；底层模型 API 调用通常会产生费用，具体取决于配置。</li><li>上手步骤：</li><li>推荐理由：相比封装完善的商业 Agent，该项目把关键机制压缩到可阅读的规模，适合作为理解、审计和二次开发代码 Agent 的起点。</li><li>局限与风险：项目定位为教学和精简复刻，不能直接等同于成熟生产级 Agent；其安全隔离、异常处理、并发与评估能力需自行补足。</li><li>官网/仓库链接：<a href="https://github.com/Sleeknessbounder869/miniClaudeCode">GitHub</a></li></ul>
+<ol><li>克隆仓库并阅读依赖、环境变量和模型配置说明。</li><li>先在隔离目录运行只读或无副作用的工具调用示例。</li><li>逐步替换为自定义工具，并为文件写入、Shell 命令和网络请求增加权限确认。</li></ol>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | Shopware AI Coding Tools | Shopware 开发工作流接入 Claude Code | 42 | 2026-08-25 有推送 | 开源免费，模型成本另计 | 3/5 | | Customaise MCP | AI Agent 驱动的浏览器自动化与网页验证 | 资料未确认 | 近 7 天内活跃 | 资料未确认 | 4/5 | | miniClaudeCode | 学习和原型化代码 Agent | 资料未确认 | 资料未确认 | 资料未确认，模型调用可能收费 | 3/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：所给资料未包含近期开源、产品发布或访谈中的国内 AI 产业重要人物原始表态。</li><li>为什么重要：避免将二手解读、媒体转述或无原文链接的内容误作人物观点。</li><li>可能影响：待获得企业公告、演讲实录或经核验的采访原文后评估。</li><li>来源/时间：资料未确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：OpenAI 于 8 月 25 日发布多项公告，GitHub 于 8 月 25 日发布生产前 LLM 评估实践文章，但所给资料未提供可归属至具体高管或研究负责人的原始引语。</li><li>为什么重要：产品公告和机构文章不能自动等同于个人关键言论；为保证可溯源性，本期不作人物观点归因。</li><li>可能影响：开发团队可关注生产前评估、数据治理和 Agent 工具权限控制，但具体立场需回溯原文确认。</li><li>来源/时间：<a href="https://github.blog/ai-and-ml/llms/how-to-evaluate-llms-before-production/">GitHub：How to evaluate LLMs before production</a>，2026-08-25；<a href="https://openai.com/news/">OpenAI News</a>，2026-08-25。</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：做 Shopware 项目选 Shopware AI Coding Tools；想研究或自建代码 Agent，先从 miniClaudeCode 的工具权限和上下文管理模块入手。</li><li>办公场景：本期无经核验、适合通用办公的新增工具；不建议为了凑数引入权限边界不清晰的 Agent。</li><li>创作场景：需要网页素材采集、页面流程验证或浏览器内重复操作时，可小范围试用 Customaise MCP，并避免接入含敏感信息的网站。</li></ul>
+  </main>
+</body>
+</html>
