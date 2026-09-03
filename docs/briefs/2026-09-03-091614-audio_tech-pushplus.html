@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-03</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-03</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证的新动向集中在音乐生成软件、模块化音频硬件和可脚本化 DSP；AI 音频、空间/沉浸式音频、编解码器、专业音频硬件、耳机与声学器件以及主要标准组织均无可靠新增资料。</li><li>今日关键词：旋律生成扩展、DFAM 风格打击乐、箱式平均器、Eurorack、Lua DSP、LLM 辅助声音设计。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Elastic Melody 1.2 扩展至低音与打击乐生成 ★</h3>
+<ul><li>发生了什么：Elastic Melody 1.2 为 macOS、iPadOS 和 iOS 增加 Pitch 与 Filter Drive 模式，使原本面向旋律生成的工具也可用于低音线和 DFAM 风格打击乐；软件仍可通过内部合成器发声，或向其他应用及硬件输出控制数据。</li><li>涉及技术：算法旋律生成、音高处理、滤波器驱动、移动端音乐制作、软硬件联动。</li><li>关键参数：支持 Mac、iPad 和 iPhone；具体采样率、位深、缓冲时延、输出协议及版本价格资料未确认。</li><li>为什么重要：同一生成器开始覆盖旋律、低音与节奏，减少移动创作中跨应用编排步骤，也说明音乐生成产品正从单一音符生成转向多声部素材生产。</li><li>对产品研发的影响：音乐生成工具可考虑采用共享序列内核加可切换音色/节奏模式的架构；下一步需关注其自动化接口、MIDI 输出精度、工程导出能力以及与主流 DAW 的互操作性。</li><li>来源/时间：<a href="https://cdm.link/elastic-melody-1-2/">CDM｜Elastic Melody now does bass and DFAM-style percussion, too</a>｜2026-09-02 10:50 UTC。</li></ul>
+<h3>事件二：AI Synthesis 推出多功能 Eurorack 模块 AI250 BXR</h3>
+<ul><li>发生了什么：AI Synthesis 发布 AI250 BXR。厂商宣称其设计受早期核试验设备中的箱式平均器启发，可同时充当振荡器、电压发生器和音频处理模块，并面向 DIY 模块用户。</li><li>涉及技术：箱式平均、模拟振荡、控制电压生成、音频波形处理、Eurorack 模块化合成。</li><li>关键参数：模块宽度、供电需求、频率范围、电平范围、套件/成品价格及测量性能资料未确认。</li><li>为什么重要：产品将测量仪器中的信号累积/采样思路转化为音乐控制与音频破坏性处理，提供了不同于常规振荡器、失真器和随机电压源的交互路径。</li><li>对产品研发的影响：硬件团队可评估将测量 DSP 或模拟计算结构迁移到创意音频产品的可行性；下一步需验证噪声、混叠、控制电压兼容性和实际量产成本。</li><li>来源/时间：<a href="https://cdm.link/ai-bxr-module/">CDM｜Nuclear test equipment inspired this new Eurorack module</a>｜2026-09-02 19:03 UTC。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：AbacDsp 新建开源项目，定位为面向音频插件及独立应用的 header-only、零依赖 C++20 DSP 组件库，并提供 Lua 脚本接口。</li><li>工程应用：可用于快速组合插件 DSP 原型，并尝试让 LLM 生成或辅助修改 Lua 层声音设计逻辑；实时线程安全性、单元测试、宿主兼容性和性能数据仍需验证。</li><li>成熟度：早期实验阶段；项目于 2026-08-29 创建，资料快照显示 0 Stars、无正式版本或可验证生产案例。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料中未发现 2026-09-03 前可核验的新编解码器版本、实现或芯片动态。</li><li>性能与兼容性：无新增数据，不能据此判断 LC3、Opus、AAC、MPEG-H 或其他编解码方案的性能变化。</li><li>工程应用：维持现有编解码选型与回归测试基线，等待官方规范、参考实现或终端支持清单更新。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：本次 GitHub 检索未返回符合条件的 Python 空间音频/Audio AI 新项目。</li><li>渲染链路或终端支持：没有可靠资料证明对象音频、双耳渲染、头部跟踪或扬声器阵列支持发生变化。</li><li>工程应用：暂不调整空间及沉浸式音频产品路线；继续关注渲染器版本、HRTF 数据集和终端 API 更新。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：AbacDsp 提出“Lua 脚本结合 LLM 辅助声音设计”的开发方式；当前资料未显示其集成具体模型，也未发现新的语音生成或端到端音乐生成模型。</li><li>能力与限制：项目描述表明 LLM 面向脚本辅助，不等于模型直接生成实时音频；输出正确性、资源上限、确定性与实时安全机制均未确认。</li><li>工程应用：适合探索自然语言到 DSP 参数/脚本的原型流程，不宜在缺少沙箱、执行限额和音频线程隔离时直接进入生产环境。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：所给资料中未发现 Dante、AES67、AVB/TSN、NDI Audio、Ableton Link 或 Link Audio 的新增协议/API 更新。</li><li>时延与互操作性：无新增测试数据。</li><li>工程应用：继续以现有协议版本进行互操作和时钟漂移测试，不依据本期资料变更网络音频架构。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Elastic Melody 1.2。</li><li>类型：算法旋律、低音线与打击乐生成软件。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：macOS、iPadOS、iOS；具体最低系统版本及插件格式资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：相对旧版新增 Pitch 与 Filter Drive 模式，将使用范围从旋律生成扩展到低音和 DFAM 风格打击乐；与竞品的量化比较资料不足。</li><li>来源/时间：<a href="https://cdm.link/elastic-melody-1-2/">CDM</a>｜2026-09-02。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI 或 3GPP 在观察期内可验证的新音频标准、修订版或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：不能将既有标准目录或旧版本重新表述为本期动态。</li><li>对产品设计的影响：本期不触发标准符合性方案变更；仍需跟踪编解码、广播响度、沉浸式音频、媒体传输及移动通信语音规范的正式发布日期与版本号。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a>。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：将旋律生成器扩展为多角色素材生成工具。</li><li>背景：移动端创作通常需要分别调用旋律、低音和打击乐工具，增加路由、同步与参数管理成本。</li><li>技术方案：Elastic Melody 1.2 在既有生成与合成框架中增加 Pitch 和 Filter Drive 模式，使同一工具承担旋律、低音及打击乐素材生成；内部算法和 DSP 实现细节未公开。</li><li>结果：据 CDM 报道，功能边界已扩展至 bassline 和 DFAM 风格 percussion；音质、时延、CPU 占用及用户效率提升尚无独立测试。</li><li>可借鉴点：保留统一的时序与随机化内核，以模式层改变音高约束、滤波驱动和包络行为，可比维护多个独立生成器降低交互及状态同步成本。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Elastic Melody 1.2 | 新增 Pitch、Filter Drive；支持旋律、低音及 DFAM 风格打击乐 | 资料未确认 | macOS、iPadOS、iOS；外部输出接口细节未确认 | 资料未确认 | <a href="https://cdm.link/elastic-melody-1-2/">CDM</a> | | AI250 BXR | 振荡器、电压发生器、音频处理；厂商宣称受箱式平均器启发 | 不适用/资料未确认 | Eurorack；具体 CV 与音频电平未确认 | 资料未确认 | <a href="https://cdm.link/ai-bxr-module/">CDM</a> | | AbacDsp | Header-only、零依赖、C++20、Lua 脚本 | 资料未确认 | 音频插件与独立应用；具体格式未确认 | 开源；许可证资料未确认 | <a href="https://github.com/scjurgen/AbacDsp">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音乐生成软件正从单一旋律功能扩展到低音和节奏；DSP 工具链开始尝试以 Lua 作为可控中间层，连接 C++ 实时内核与 LLM 辅助编程；模块硬件继续从测试仪器和非音乐电路中寻找新型交互结构。</li><li>工程风险：AbacDsp 与 AI250 BXR 均缺少公开测量数据；脚本执行若进入实时音频线程，可能引入内存分配、执行时间不确定和崩溃风险。</li><li>版权/合规风险：本期资料没有说明 Elastic Melody 的生成规则、训练数据或素材授权机制；若生成结果依赖受保护素材或预训练模型，商业使用边界需另行核验。</li><li>商业化风险：早期开源项目为 0 Stars 且没有正式版本，维护连续性不足；DIY Eurorack 产品的市场规模、认证、供应链及售后成本也未确认。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Elastic Melody 1.2 的价格、插件格式、MIDI/音频输出方式及与 DAW 的同步精度。</li><li>AI250 BXR 的正式规格、原理图、供电与电平标准、套件价格及独立测量结果。</li><li>AbacDsp 的许可证、首个 Release、宿主/插件格式支持、实时线程安全测试及 Stars 增长。</li><li>AES、ITU、ETSI、3GPP 是否发布新的音频编解码、沉浸式媒体或通信语音规范。</li><li>语音生成、音乐生成、专业音频接口、耳机与声学器件领域是否出现可由厂商原文或测试数据验证的新事件。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Elastic Melody now does bass and DFAM-style percussion, too (Mac, iOS)｜2026-09-02 10:50 UTC｜<a href="https://cdm.link/elastic-melody-1-2/">原文链接</a></li><li>CDM Create Digital Music｜Nuclear test equipment inspired this new Eurorack module｜2026-09-02 19:03 UTC｜<a href="https://cdm.link/ai-bxr-module/">原文链接</a></li><li>GitHub / scjurgen｜AbacDsp｜创建于 2026-08-29，最近推送于 2026-09-01 21:42 UTC｜<a href="https://github.com/scjurgen/AbacDsp">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜本期资料未确认新增发布时间｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜本期资料未确认新增发布时间｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>European Telecommunications Standards Institute｜ETSI Standards｜本期资料未确认新增发布时间｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications by Series｜本期资料未确认新增发布时间｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
