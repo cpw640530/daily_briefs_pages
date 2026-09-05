@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-05</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-05</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日唯一符合近 14 天去重与可验证要求的新增技术事件，是 SonorieAI 开源 <code>sonore-sdk</code>，尝试以单一 C++17 源码构建 CLAP、VST3、AU、LV2 与独立应用；其价值在于降低跨插件格式交付的工程重复，但实时性能、宿主兼容性及许可条件仍需实测确认。</li><li>今日关键词：<code>sonore-sdk</code>、C++17、CLAP、VST3、AU、LV2、跨格式音频插件、软件光栅化 UI。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：SonorieAI 发布跨格式 C++ 音频插件框架 <code>sonore-sdk</code> ★</h3>
+<ul><li>发生了什么：GitHub 检索新增发现 <code>SonorieAI/sonore-sdk</code>。项目说明宣称这是一个仅头文件的 C++17 音频插件框架，单一源代码可构建为 CLAP、VST3、AU、LV2 及独立应用，并提供软件光栅化的原生 UI。</li><li>涉及技术：C++17；头文件式框架；CLAP、VST3、Audio Unit、LV2 插件格式；独立应用构建；原生软件光栅化 UI。</li><li>关键参数：支持 5 类目标交付形态；采样率、位深、处理块大小、端到端时延、CPU 占用、支持的宿主清单及许可证信息均为资料未确认。</li><li>为什么重要：多格式插件通常意味着构建脚本、SDK 适配、参数状态管理、UI 与宿主测试成本同步上升。该项目若能稳定覆盖宣称的格式，可减少小型 DSP 工具或音频 AI 后处理模块的首次产品化门槛。</li><li>对产品研发的影响：适合评估为内部 DSP 原型的跨格式封装候选。进入正式产品前，应在主流宿主中验证自动化、MIDI、参数回调、预设兼容、崩溃恢复、离线渲染及 Apple 平台签名/公证流程；不能仅依据项目说明认定其具备生产可用性。</li><li>来源/时间：<a href="https://github.com/SonorieAI/sonore-sdk">SonorieAI/sonore-sdk</a>｜发布时间：资料未确认；本次 GitHub 检索时间：2026-09-05。</li></ul>
+<h3>事件二：空间音频与 Python 音乐/音频 AI 开源检索未发现合格新增项目</h3>
+<ul><li>发生了什么：资料中的 GitHub 检索显示，<code>spatial audio audio-ai language:Python pushed:&gt;2026-08-29</code> 与 <code>music technology audio tools language:Python pushed:&gt;2026-08-29</code> 均返回 0 个结果。</li><li>涉及技术：空间音频、沉浸式音频、Python 音频 AI、音乐科技工具。</li><li>关键参数：两个检索式的结果数均为 0；该结果仅覆盖给定检索条件，不代表相关领域不存在其他更新。</li><li>为什么重要：在严格去重条件下，不能以旧项目的改写标题替代新增事实。今日不应将 Audacity 4、Septabee、Elastic Melody 1.2、AI250 BXR 或 <code>chiptune_music_maker</code> 重复计入重点事件。</li><li>对产品研发的影响：空间音频与音频 AI 团队应继续监测新仓库、官方发布页及标准组织工作组公告；现阶段不宜据此作出生态活跃度下降的结论。</li><li>来源/时间：<a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-29&amp;type=repositories">GitHub 搜索：空间音频/音频 AI</a>；<a href="https://github.com/search?q=music+technology+audio+tools+language%3APython+pushed%3A%3E2026-08-29&amp;type=repositories">GitHub 搜索：音乐科技工具</a>｜检索时间：2026-09-05。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：<code>sonore-sdk</code> 提供面向多插件格式的 C++17 DSP 承载层；项目说明宣称采用仅头文件形式。</li><li>工程应用：可用于滤波、动态处理、合成器、音频 AI 推理前后处理等算法原型的跨宿主封装。</li><li>成熟度：早期公开项目；未见独立基准、稳定版本或大规模宿主兼容性验证资料。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期资料未提供新的音频编解码器发布、版本升级或互操作性测试结果。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：继续采用已量产验证的既有编解码栈；本期无新增替换依据。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：给定检索未发现符合条件的新增 Python 空间音频或音频 AI 项目。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：暂无可纳入本期研发路线的新增开源渲染器、双耳化工具或终端支持信息。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：本期未发现符合去重规则且有可靠新增事实的语音生成、音乐生成或音频 AI 模型/产品。</li><li>能力与限制：<code>chiptune_music_maker</code> 虽于 2026-09-05 有仓库推送记录，且项目说明含人声/口技转音符能力，但其已于 2026-09-04 使用；资料未提供版本发布、功能变更或 Stars 明显增长等新增事实，因此不重复采用。</li><li>工程应用：持续关注具备模型卡、训练数据来源、商业授权和推理性能数据的发布，避免把项目描述直接转化为产品性能结论。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料未提供 Dante、AES67、RAVENNA、AVB/TSN、WebRTC 音频或 Link Audio 的新增可靠动态。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：无新增选型依据；继续按现网协议、时钟同步和设备互操作矩阵进行验证。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：<code>sonore-sdk</code></li><li>类型：开源 C++ 音频插件开发框架。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：项目说明宣称可构建为 CLAP、VST3、AU、LV2 与独立应用；具体操作系统、CPU 架构及宿主兼容范围资料未确认。</li><li>价格：开源仓库可访问；商业使用条件及许可证资料未确认。</li><li>与上一代或竞品差异：项目说明的差异点是“单一源代码、多插件格式、仅头文件、软件光栅化原生 UI”；尚无独立对比测试，不能据此断言优于 JUCE、iPlug2 或其他插件框架。</li><li>来源/时间：<a href="https://github.com/SonorieAI/sonore-sdk">GitHub 项目页</a>｜发布时间：资料未确认；检索时间：2026-09-05。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI 或 3GPP 的可核验新增音频标准、修订案、工作项或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：无可靠新增标准动态，不以历史标准条目替代本期更新。</li><li>对产品设计的影响：不改变现有编解码、空间音频、媒体传输与电信音频的合规基线；应继续跟踪正式工作组文件与已发布版本。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：单 DSP 核心的多插件格式交付评估。</li><li>背景：插件产品需覆盖不同 DAW 与操作系统时，格式适配、UI、状态管理和测试成本容易超过核心 DSP 开发成本。</li><li>技术方案：以 <code>sonore-sdk</code> 的单源多目标构建设计为候选方案，建立同一 DSP 算法在 CLAP、VST3、AU、LV2 和独立应用中的一致性测试；重点记录参数自动化、预设加载、离线导出、CPU 占用和崩溃率。</li><li>结果：尚无该项目的公开独立工程结果；资料未确认。</li><li>可借鉴点：框架能力与算法正确性应分离验证。跨格式交付至少需要覆盖宿主行为、构建发布、签名分发、状态迁移和实时线程安全，而非仅验证音频输出一致。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | <code>sonore-sdk</code> | 项目说明宣称：C++17、仅头文件、单源构建 5 类目标 | 资料未确认 | CLAP、VST3、AU、LV2、独立应用 | 资料未确认 | <a href="https://github.com/SonorieAI/sonore-sdk">GitHub</a> | | 空间音频/音频 AI Python 新项目检索 | 给定检索式返回 0 个项目 | 不适用 | GitHub 检索 | 免费检索 | <a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-29&amp;type=repositories">GitHub 搜索</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：插件研发正持续向“算法一次实现、多格式交付”收敛；CLAP 与 LV2 等开放格式同 VST3、AU 并行，要求框架具备更清晰的抽象和更完整的宿主测试。</li><li>工程风险：头文件式框架会简化接入，但可能带来编译时间、二进制体积、依赖版本漂移和 ABI 管理风险；实时音频线程中的内存分配、锁竞争与 UI 交互必须独立压测。</li><li>版权/合规风险：本期无新增生成式音频产品可评估。对含语音转 MIDI、音乐生成或训练数据的工具，仍需审查数据授权、声音人格权、输出权属和模型服务条款。</li><li>商业化风险：开源仓库“可访问”不等同于可商用；在确认 <code>sonore-sdk</code> 的许可证、第三方 SDK 条款和签名发布路径前，不应将其作为商业产品的唯一基础设施。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核验 <code>sonore-sdk</code> 的许可证、发布版本、示例工程，以及在主流 DAW 中的兼容性与性能数据。</li><li>跟踪 AES、ITU、ETSI、3GPP 是否发布与沉浸式媒体、低时延传输、语音编解码相关的正式新文件。</li><li>持续检索具备明确版本说明、模型授权与可复现实测数据的音频 AI、空间音频及开源 DSP 项目。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>SonorieAI｜<a href="https://github.com/SonorieAI/sonore-sdk">sonore-sdk</a>｜发布时间资料未确认；检索时间 2026-09-05｜GitHub 项目页</li><li>GitHub｜<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-29&amp;type=repositories">audio dsp plugin language:C++ pushed:&gt;2026-08-29</a>｜检索时间 2026-09-05｜GitHub 搜索结果</li><li>GitHub｜<a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-08-29&amp;type=repositories">spatial audio audio-ai language:Python pushed:&gt;2026-08-29</a>｜检索时间 2026-09-05｜GitHub 搜索结果</li><li>GitHub｜<a href="https://github.com/search?q=music+technology+audio+tools+language%3APython+pushed%3A%3E2026-08-29&amp;type=repositories">music technology audio tools language:Python pushed:&gt;2026-08-29</a>｜检索时间 2026-09-05｜GitHub 搜索结果</li><li>AES｜<a href="https://www.aes.org/standards/">AES Standards</a>｜本期未见可核验新增发布时间｜官方标准页</li><li>ITU｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜本期未见可核验新增发布时间｜官方发布页</li><li>ETSI｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜本期未见可核验新增发布时间｜官方标准页</li><li>3GPP｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">Specifications by Series</a>｜本期未见可核验新增发布时间｜官方规范页</li></ol>
+  </main>
+</body>
+</html>
