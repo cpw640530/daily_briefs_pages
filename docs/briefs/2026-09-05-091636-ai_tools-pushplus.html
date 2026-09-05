@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-09-05</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-09-05</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天优先关注 GitHub Copilot 的 HydraFusion 多模型编排预览；其余候选未达到“Stars 不低于 1,000 且可确认活跃”的推荐门槛，因此不以低质量项目凑足 3 款推荐。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Project HydraFusion</h3>
+<ul><li>一句话介绍：GitHub Copilot 内测中的多模型编排工作流，根据任务选择模型与路径，以更低成本完成编码任务。</li><li>分类：Vibe Coding / 自动化</li><li>适合谁：使用 GitHub Copilot、需要同时平衡代码任务质量与模型调用成本的个人开发者和工程团队。</li><li>典型场景：将需求拆解、代码生成、验证等环节交由不同模型或工作流处理，减少对单一高价模型的依赖。</li><li>核心功能：选择性编码工作流；多模型编排；面向代码任务的成本优化。</li><li>GitHub Stars：不适用，官方资料未提供对应开源仓库。</li><li>近期新增 Stars：不适用。</li><li>最近更新时间：2026-09-04，GitHub 官方文章发布。</li><li>最新版本：研究预览版，具体版本号资料未确认。</li><li>开源协议：不适用，资料未确认其开源计划。</li><li>支持平台：GitHub Copilot，具体可用客户端与区域以官方研究预览资格为准。</li><li>使用成本：资料未确认；官方仅称其在受控离线评测中可降低预估工作流成本。</li><li>上手步骤：</li><li>推荐理由：GitHub 称，HydraFusion 在受控离线评测中，选择性编码工作流的效果达到或超过所评估的 Opus 5 基线，同时降低预估成本；值得工程团队用真实任务验证其收益。</li><li>局限与风险：目前是研究预览，离线评测结果不等于生产环境效果；多模型路由的可解释性、数据边界、实际计费和稳定性仍需自行验证。</li><li>官网/仓库链接：<a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">GitHub 官方说明</a></li></ul>
+<ol><li>确认组织或账号是否获得 GitHub Copilot 研究预览资格。</li><li>选择适合并行拆解的编码任务进行对照测试。</li><li>记录任务完成率、审查返工率、模型用量与实际账单变化。</li></ol>
+<h3>工具二：本期无符合门槛的新增候选</h3>
+<ul><li>一句话介绍：资料中的 <code>skillscripts</code> 是用于索引和发现本地 AI Agent Skills 的零配置 CLI，但当前不满足推荐门槛。</li><li>分类：开发者工具 / 自动化</li><li>适合谁：需要管理本地 Agent Skills、脚本和工具说明的开发者。</li><li>典型场景：在本机项目与技能目录中快速建立索引，检索可复用的 Agent 能力。</li><li>核心功能：本地 Skills 索引；命令行发现；面向 Agent 与开发者的技能检索。</li><li>GitHub Stars：0。</li><li>近期新增 Stars：资料未确认。</li><li>最近更新时间：2026-09-05。</li><li>最新版本：资料未确认。</li><li>开源协议：MIT License。</li><li>支持平台：CLI；具体操作系统支持范围资料未确认。</li><li>使用成本：开源项目；第三方模型、运行环境或关联服务成本资料未确认。</li><li>上手步骤：</li><li>推荐理由：项目在 2026-09-05 仍有提交，切中 Agent Skills 的本地发现需求。</li><li>局限与风险：Stars 为 0，缺乏社区验证；近期增长、发布版本、完整平台兼容性均未确认，不建议直接用于生产或向其暴露敏感代码。</li><li>官网/仓库链接：<a href="https://github.com/gtiders/skillscripts">GitHub 仓库</a></li></ul>
+<ol><li>阅读仓库 README，确认安装方式与本机依赖。</li><li>仅对不含敏感密钥的测试目录建立索引。</li><li>检查索引范围、文件读取权限及输出内容后，再接入日常工作流。</li></ol>
+<h3>工具三：本期无符合门槛的新增候选</h3>
+<ul><li>一句话介绍：<code>jetbrains-centered-editor</code> 是一个将 JetBrains 编辑器内容居中显示的轻量插件，作者标注为 Vibe-coded。</li><li>分类：编程插件 / Vibe Coding</li><li>适合谁：偏好 Zen Mode 式聚焦写代码体验的 JetBrains IDE 用户。</li><li>典型场景：长时间阅读、重构或编写单个文件时，减少宽屏下代码贴边带来的视觉负担。</li><li>核心功能：编辑器内容居中显示；聚焦式编辑体验。</li><li>GitHub Stars：0。</li><li>近期新增 Stars：资料未确认。</li><li>最近更新时间：2026-09-03。</li><li>最新版本：资料未确认。</li><li>开源协议：资料未确认。</li><li>支持平台：JetBrains 系列 IDE；具体兼容版本资料未确认。</li><li>使用成本：资料未确认。</li><li>上手步骤：</li><li>推荐理由：2026-09-03 仍有更新，功能单一明确，适合作为 JetBrains 开发环境的轻量效率增强项。</li><li>局限与风险：Stars 为 0，且许可、版本和兼容性资料未确认；功能与 IDE 内置 Zen Mode 存在重叠，不构成高优先级工具替换。</li><li>官网/仓库链接：<a href="https://github.com/johnzzon/jetbrains-centered-editor">GitHub 仓库</a></li></ul>
+<ol><li>查看仓库 README 与 JetBrains Marketplace 发布信息。</li><li>在非关键项目的 IDE 配置中安装测试。</li><li>验证其与现有主题、分屏、Zen Mode 及快捷键插件是否兼容。</li></ol>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | Project HydraFusion | 多模型编码工作流编排 | 不适用 | 2026-09-04 官方发布研究预览 | 资料未确认 | ★★★★☆ | | skillscripts | 本地 Agent Skills 索引与发现 | 0 | 2026-09-05 有提交 | 开源，其他成本未确认 | ★★☆☆☆ | | jetbrains-centered-editor | JetBrains 聚焦式编辑界面 | 0 | 2026-09-03 有提交 | 资料未确认 | ★★☆☆☆ |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：提供资料未包含近期开源、产品或媒体原始来源中可核验的国内 AI 重要人物公开言论。</li><li>为什么重要：人物言论需要能回溯至原始采访、演讲、公司公告或正式社交媒体账号，不能以二手转述补充。</li><li>可能影响：待确认。</li><li>来源/时间：本期可靠资料不足，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：GitHub 团队，具体负责人资料未确认。</li><li>身份/公司：GitHub / GitHub Copilot。</li><li>说了什么：GitHub 表示，HydraFusion 的选择性编码工作流在受控离线评测中达到或超过所评估的 Opus 5 基线，并降低预估工作流成本。</li><li>为什么重要：这反映出 AI 编程产品正从“单一最强模型”转向“按任务分配模型和流程”的编排策略，质量、延迟与成本将共同成为工程团队的评价指标。</li><li>可能影响：团队可能增加对任务路由、模型评测、工具调用链路和实际单位任务成本的监控，而非只比较模型榜单。</li><li>来源/时间：<a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">GitHub Blog，2026-09-04</a></li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：已使用 GitHub Copilot 且有研究预览资格的团队，可用 HydraFusion 对照现有单模型流程，优先测试可量化验收的修复、重构和测试补全任务。</li><li>办公场景：本期资料未出现同时满足活跃度、社区验证和可试用性门槛的新增办公 AI 工具，建议不新增部署。</li><li>创作场景：本期资料未出现满足推荐门槛的新增创作工具，建议继续使用现有成熟工具，并等待可核验的新版本或用户数据。</li></ul>
+  </main>
+</body>
+</html>
