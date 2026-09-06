@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-06</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-06</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证的新动态集中于实验性模块化硬件；音频 AI、语音/音乐生成、空间音频、编解码、音频网络及标准组织未发现可与近 14 天内容去重的可靠新增事件。</li><li>今日关键词：模块化合成器、低频时序振荡器、太阳能供电、香蕉插孔、开源音频工具</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：MONAD Forever Grouse 将扬声器、模块化连接与太阳能供电集成 ★</h3>
+<ul><li>发生了什么：CDM 于 9 月 2 日报道，MONAD 推出 Forever Grouse 实验性电子音乐硬件，产品配有内置扬声器、用于模块化连接的香蕉插孔及太阳能板。</li><li>涉及技术：模块化合成器接口、板载扩声、低功耗/太阳能供电。</li><li>关键参数：内置扬声器、香蕉插孔、太阳能板；音频规格、供电续航、信号电平与价格均资料未确认。</li><li>为什么重要：其价值不在于已验证的专业音频性能，而是将发声、监听、模块化互连和离网供电合并到单一硬件形态，适合户外、装置艺术和实验性现场表演。</li><li>对产品研发的影响：研发团队需重点验证太阳能供电波动对模拟音频噪声、时钟稳定性和功耗管理的影响；香蕉插孔与常见 Eurorack 3.5 mm 接口之间的电平、极性和安全连接规则也需明确。</li><li>来源/时间：<a href="https://cdm.link/">CDM｜Forever Grouse 介绍</a>｜2026-09-02</li></ul>
+<h3>事件二：Patience 以超低频振荡器扩展 Eurorack 时间控制范围</h3>
+<ul><li>发生了什么：CDM 于 9 月 1 日报道，Olivia Artz 发起 Patience 模块的 Kickstarter；该产品定位为“最低”频率振荡器，覆盖秒、分钟、小时、天、月、年乃至数十年的时长控制。</li><li>涉及技术：超低频振荡器（LFO）、长时程控制电压、Eurorack 模块化控制。</li><li>关键参数：厂商宣称可覆盖从秒到数十年的时长；振荡精度、漂移、输出电压范围、同步能力、尺寸与价格资料未确认。</li><li>为什么重要：常规 LFO 通常面向秒至分钟级调制；若长时程稳定性成立，该模块可为生成音乐、长期声学装置和缓慢参数演化提供更直接的硬件控制源。</li><li>对产品研发的影响：超长周期控制的核心风险是 RC 元件温漂、供电漂移和校准误差。产品定义应将“标称周期范围”与“长期绝对计时精度”分开表述，并评估是否需要外部时钟或数字计时校准。</li><li>来源/时间：<a href="https://cdm.link/">CDM｜Patience 模块报道</a>｜2026-09-01</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：未发现可去重且具备明确版本说明的 DSP 算法、插件或框架新增动态。GitHub C++ 检索结果中，<code>chiptune_music_maker</code> 于 9 月 5 日仍有提交，但该项目已于 9 月 4 日采用，资料未提供相对上次的功能变化，不作重复报道。</li><li>工程应用：关注低功耗硬件中的振荡器稳定性、模拟噪声控制及控制电压标定。</li><li>成熟度：Forever Grouse 与 Patience 均属于面向实验性音乐硬件的产品/众筹阶段信息；量产可靠性资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：未发现可靠的音频编解码器新版本、规范更新或兼容性公告。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：持续采用目标平台既有编解码能力，并在跨平台交付前完成编码延迟、响度与元数据兼容性测试。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 对近期 Python 空间音频/音频 AI 项目的检索结果为 0；未发现可验证的空间音频渲染、头部追踪或沉浸式音频终端更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：暂无新增可落地信息；空间音频产品仍应独立验证扬声器布局、双耳渲染、头部追踪和内容元数据链路。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：未发现可去重的语音生成、音乐生成、音色克隆或音频 AI 模型/产品发布。</li><li>能力与限制：GitHub 对近期 Python 音乐科技/音频工具项目的检索结果为 0；不能据此推断整个行业没有更新。</li><li>工程应用：语音与音乐生成产品仍需落实训练数据授权、输出可追溯性、声音人格权及合成内容标识策略。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：未发现 Dante、AES67、RAVENNA、AVB/TSN、NMOS 或其他音频网络协议的可靠新增信息。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：现网项目应继续以交换机 QoS、时钟域、PTP 配置、单播/组播规划和故障切换演练作为验收重点。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：MONAD Forever Grouse</li><li>类型：实验性电子音乐硬件/模块化音频装置。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：香蕉插孔模块化连接；与 Eurorack、MIDI、USB 或 DAW 的兼容性资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：报道显示其整合内置扬声器、香蕉插孔和太阳能板；未提供可供核验的竞品参数对比。</li><li>来源/时间：<a href="https://cdm.link/">CDM｜Forever Grouse 介绍</a>｜2026-09-02</li></ul>
+<ul><li>产品：Patience</li><li>类型：Eurorack 超低频振荡器/长时程控制模块。</li><li>采样率/位深/时延：不适用或资料未确认。</li><li>兼容平台：Eurorack；具体电源规格、控制电压范围及外部同步支持资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：厂商定位为可覆盖秒至数十年的超长时程控制；缺少基准测试和精度数据，不能确认其相对同类模块的性能优势。</li><li>来源/时间：<a href="https://cdm.link/">CDM｜Patience 模块报道</a>｜2026-09-01</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：AES、ITU、ETSI、3GPP 相关音频标准与论文，本期资料未提供可验证的新发布或修订信息。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：无可靠新增结论，不以既有标准条目替代当日更新。</li><li>对产品设计的影响：涉及沉浸式音频、语音通信、广播音频或移动音频的产品，应继续以正式版本规范、勘误和实施指南为设计依据。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>；<a href="https://www.itu.int/pub/">ITU Publications</a>；<a href="https://www.etsi.org/standards">ETSI Standards</a>；<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：长时程模块化声学装置的控制链路设计。</li><li>背景：Patience 所代表的超低频控制需求，适用于需要数小时至数月缓慢变化的生成式声音与声学装置。</li><li>技术方案：将长周期控制与音频振荡、滤波、空间声像或灯光控制解耦；对控制电压进行限幅、平滑和校准，并记录环境温度与供电变化。</li><li>结果：具体项目验证结果资料未确认。</li><li>可借鉴点：不要把“能产生极低频率”直接等同于“可长期精确计时”；工程验收应测量周期误差、漂移、复位一致性和断电恢复行为。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | MONAD Forever Grouse | 内置扬声器、香蕉插孔、太阳能板 | 资料未确认 | 模块化香蕉插孔；其他接口未确认 | 资料未确认 | <a href="https://cdm.link/">CDM</a> | | Olivia Artz Patience | 厂商宣称时长覆盖秒至数十年 | 不适用或资料未确认 | Eurorack；具体 CV/电源规格未确认 | 资料未确认 | <a href="https://cdm.link/">CDM</a> | | <code>chiptune_music_maker</code> | C++20 tracker/DAW；项目描述含语音/节拍转音符、69 种乐器及多种合成引擎 | 资料未确认 | C++；具体发行平台未确认 | 开源仓库，授权信息未列出 | <a href="https://github.com/jfalvarez1/chiptune_music_maker">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：实验性硬件正把声音生成、控制、扩声和供电整合到更独立的物理系统中；超长时程控制是生成式音乐与装置艺术的细分需求。</li><li>工程风险：太阳能供电可能引入供电噪声、充放电管理与低照度可用性问题；超低频控制需防范温漂、元件老化和校准误差。</li><li>版权/合规风险：本期未出现可验证的音频 AI 新发布；涉及生成式音频时，训练数据授权、输出相似性和合成内容标识仍是主要风险。</li><li>商业化风险：实验性模块化硬件面对小众市场，生产批次、维修能力、众筹交付和规格透明度将直接影响采购决策。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核验 Forever Grouse 的完整技术规格、售价、供电策略及模块化信号标准。</li><li>跟踪 Patience 众筹页披露的周期精度、温漂、输出电压和外部同步信息。</li><li>继续监测 AES、ITU、ETSI、3GPP 是否发布音频编解码、沉浸式音频、语音通信或媒体 API 的正式更新。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Forever Grouse 相关报道｜2026-09-02｜https://cdm.link/</li><li>CDM Create Digital Music｜Patience 超低频振荡器 Kickstarter 相关报道｜2026-09-01｜https://cdm.link/</li><li>GitHub｜jfalvarez1/chiptune_music_maker｜2026-09-05（仓库最近推送时间）｜https://github.com/jfalvarez1/chiptune_music_maker</li><li>GitHub Search｜audio dsp plugin language:C++ pushed:&gt;2026-08-30｜检索快照日期未确认｜https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-08-30&amp;type=repositories</li><li>AES｜Standards｜访问时未见本期资料中的可靠新增条目｜https://www.aes.org/standards/</li><li>ITU｜Publications｜访问时未见本期资料中的可靠新增条目｜https://www.itu.int/pub/</li><li>ETSI｜Standards｜访问时未见本期资料中的可靠新增条目｜https://www.etsi.org/standards</li><li>3GPP｜Specifications by Series｜访问时未见本期资料中的可靠新增条目｜https://www.3gpp.org/specifications-technologies/specifications-by-series</li></ol>
+  </main>
+</body>
+</html>
