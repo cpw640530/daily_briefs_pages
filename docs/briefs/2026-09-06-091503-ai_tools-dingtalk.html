@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-09-06</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-09-06</h1>
+<h2>1. 今日推荐结论</h2>
+<p>本期可靠资料仅确认 2 个未在近 14 天出现、且仍有更新可试用的新项目：<code>paperr</code> 适合重视本地部署的个人与小团队，<code>ClaudeCodeExtension</code> 适合在 Visual Studio 中统一操作多种编码 Agent 的 .NET 开发者；第 3 个合格候选不足，暂不为凑数推荐。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：paperr</h3>
+<ul><li>一句话介绍：一套可私有部署的任务、项目、日历、笔记与 AI 助手整合平台。</li><li>分类：效率工具 / 知识管理 / 自动化</li><li>适合谁：希望把个人或小团队的任务、例行事务和 AI 助手放在自有网络中的用户。</li><li>典型场景：管理待办和项目进度、家庭或团队共享日历、集中记录笔记与调用内置 AI Agent。</li><li>核心功能：任务、项目、日历、笔记、例行事务、共享看板、专注工具，以及内置 AI 助手与 Agent。</li><li>GitHub Stars：2</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-06</li><li>最新版本：资料未确认</li><li>开源协议：Apache-2.0</li><li>支持平台：自托管 Web 平台；具体运行环境资料未确认</li><li>使用成本：项目代码开源；模型、部署与基础设施成本需自行承担</li><li>上手步骤：克隆仓库；按 README 配置本地或内网部署环境；先建立任务和日历数据，再配置所需 AI 模型或 Agent。</li><li>推荐理由：功能覆盖从计划到执行的日常工作流，且强调 local-first、privacy-first，适合不希望将任务与笔记默认交给第三方 SaaS 的用户。</li><li>局限与风险：目前仅 2 Stars，社区验证与长期维护能力有限；自托管、模型接入和数据备份需要一定运维能力。</li><li>官网/仓库链接：<a href="https://paperr.ai">官网</a> / <a href="https://github.com/biswasprateek/paperr">GitHub</a></li></ul>
+<h3>工具二：ClaudeCodeExtension</h3>
+<ul><li>一句话介绍：面向 Visual Studio/.NET 的 AI 编码 Agent 集成扩展，为 Claude Code、Codex、Cursor Agent 等提供统一操作界面。</li><li>分类：编程插件 / Vibe Coding</li><li>适合谁：使用 Visual Studio 开发 .NET 项目，并同时试用多个 AI 编码 Agent 的开发者。</li><li>典型场景：在 IDE 内发起 Agent 任务、粘贴图片或文件作为上下文、查看代码 Diff、跟踪会话与用量。</li><li>核心功能：支持 Claude Code、Codex、Cursor Agent、Open Code、Devin、PI、Antigravity、Reasonix；提供图片/文件粘贴、Diff 查看、Agent 完工后动作、用量跟踪和会话历史。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认；GitHub 检索结果确认其在 2026-08-30 后仍有推送</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Visual Studio / .NET</li><li>使用成本：扩展及各 Agent 的订阅、API 或本地运行成本资料未确认</li><li>上手步骤：访问仓库 README；按说明安装 Visual Studio 扩展；在本机配置已使用的 Claude Code、Codex 或其他 Agent；以非生产代码库先验证权限、Diff 审核与会话留存策略。</li><li>推荐理由：它解决的不是“再增加一个模型”，而是把多 Agent 的命令入口、上下文传递和结果审阅收进 .NET 开发者熟悉的 IDE 工作流。</li><li>局限与风险：多 Agent 同时接入会扩大密钥、代码上下文和命令执行权限的管理面；应限制 Agent 对生产凭据、部署脚本和敏感仓库的访问。</li><li>官网/仓库链接：<a href="https://github.com/dliedke/ClaudeCodeExtension">GitHub</a></li></ul>
+<h3>工具三：本期无合格候选</h3>
+<ul><li>一句话介绍：本期不补充第 3 个工具。</li><li>分类：不适用</li><li>适合谁：不适用</li><li>典型场景：不适用</li><li>核心功能：资料中其余候选要么已在近 14 天日报出现，要么 Stars、近期增长或可用性不足以支持推荐。</li><li>GitHub Stars：不适用</li><li>近期新增 Stars：不适用</li><li>最近更新时间：不适用</li><li>最新版本：不适用</li><li>开源协议：不适用</li><li>支持平台：不适用</li><li>使用成本：不适用</li><li>上手步骤：不适用</li><li>推荐理由：遵循历史去重与数据可核验要求，不以低质量或重复项目填充推荐位。</li><li>局限与风险：本期工具覆盖不足，尤其缺少已获较高 Stars 验证的新项目。</li><li>官网/仓库链接：不适用</li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | paperr | 私有部署的任务、笔记与 AI 协作 | 2 | 2026-09-06 有推送 | 开源，部署与模型成本自理 | 3/5 | | ClaudeCodeExtension | Visual Studio 多 Agent 编码工作流 | 资料未确认 | 2026-08-30 后仍有推送 | 资料未确认 | 3/5 | | 本期无合格候选 | 不适用 | 不适用 | 不适用 | 不适用 | 不适用 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：本期可靠资料不足，待确认</li><li>说了什么：所给资料未包含可核验的国内 AI 领域重要人物近期原始发言、完整上下文与发布时间。</li><li>为什么重要：人物观点类信息若缺少原始出处，容易将媒体转述、市场传闻或产品宣传误作正式表态。</li><li>可能影响：待补充企业公告、演讲实录或经认证账号原文后再评估。</li><li>来源/时间：本期可靠资料不足，待确认</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认</li><li>身份/公司：本期可靠资料不足，待确认</li><li>说了什么：OpenAI、Anthropic 与 GitHub 的资料主要为产品或研究公告，未提供可归属于特定重要人物的近期原始观点。</li><li>为什么重要：例如 GitHub 对 Project HydraFusion 的表述仅说明其受控离线评测中可匹配或超过所评估的 Opus 5 基线，并降低预估工作流成本；这属于产品研究结论，不宜擅自归因至某位高管。</li><li>可能影响：多模型编排可能成为降低编码 Agent 成本的路径，但仍应以真实项目中的质量、延迟、安全性和总成本验证。</li><li>来源/时间：<a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">GitHub Blog：Project HydraFusion</a>，2026-09-04</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：.NET/Visual Studio 团队可先在非敏感仓库试用 ClaudeCodeExtension，重点验证 Diff 审核、Agent 权限和会话记录是否符合团队规范。</li><li>办公场景：需要私有化任务与知识管理的个人或小团队，可用 paperr 试建一个单项目工作区，再评估其部署维护成本。</li><li>创作场景：本期没有达到可靠推荐标准的新增 AI 创作工具；不建议仅因“AI Agent”标签而迁移既有创作工作流。</li></ul>
+  </main>
+</body>
+</html>
