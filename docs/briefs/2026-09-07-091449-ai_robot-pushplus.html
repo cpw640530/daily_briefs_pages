@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-09-07</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-09-07</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：今日可核验的新信息集中在垂直领域智能体与人形机器人演示，主流基础模型、融资并购及自动驾驶基础模型暂无可靠新增公告。</li><li>今日关键词：交易智能体、量价分析、Digit、人形机器人、开源工具</li><li>预计阅读时间：3 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：开源 WyckoffTradingAgent 更新，面向 A 股量价分析的交易智能体 ★</h3>
+<ul><li>发生了什么：<code>WyckoffTradingAgent</code> 于 9 月 7 日继续提交更新。项目提供基于 Wyckoff 量价分析方法的股票筛选、命令行工作流和 MCP 工具，并标注支持 A 股筛选。</li><li>技术变化：将量价规则、股票筛选与智能体工具调用封装在同一开源项目中；当前 GitHub 数据显示 598 Stars、184 Forks。</li><li>为什么重要：垂直智能体正在从通用问答转向可执行的专业工作流，但金融场景的结论可解释性、数据时效性与合规边界仍是实际落地前提。</li><li>产业影响：对个人研究者和量化工具开发者而言，可作为研究型工作流参考；不构成投资建议，也不应直接替代持牌金融服务或人工风控。</li><li>接下来关注：项目是否公开可复现的回测框架、实时数据来源、模型调用成本及风险控制机制。</li><li>来源/时间：<a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">GitHub 仓库</a>｜2026-09-07（最近推送）</li></ul>
+<h3>事件二：Agility Robotics 展示 Digit 执行室内搬运与整理任务</h3>
+<ul><li>发生了什么：IEEE Spectrum 发布视频汇编，其中包含 Agility Robotics 的 Digit 在室内环境拖动沙发等整理任务的演示。</li><li>技术变化：公开资料仅能确认演示了移动、抓取及物体搬运的组合动作；控制模型、成功率、连续作业时长及是否为客户现场部署，资料未确认。</li><li>为什么重要：人形机器人商业化的验证重点正从单项动作转向移动、操作与环境适应的连续任务，但演示视频不能等同于规模化生产能力。</li><li>产业影响：零售仓储、设施服务和轻工业内部物流是 Digit 此类平台可能优先验证的场景；采购决策仍需关注安全认证、维护成本和任务吞吐量。</li><li>接下来关注：Agility 是否披露可量化的客户部署、任务成功率与单位工时成本。</li><li>来源/时间：<a href="https://spectrum.ieee.org/video-friday-agility-robotics-digit">IEEE Spectrum《Video Friday: Digit Redecorates》</a>｜2026-09-04</li></ul>
+<h3>事件三：主流大模型、硬件发布及融资并购未发现可独立核验新增事件</h3>
+<ul><li>发生了什么：所给资料中，OpenAI 新闻页访问受限；Hugging Face 博客订阅抓取失败；Anthropic 与 Google DeepMind 的可访问页面未显示 9 月 7 日新增、且未在近 14 日简报中出现的独立重大发布。</li><li>技术变化：资料未确认。</li><li>为什么重要：在高频发布周期中，不能将页面索引、旧公告或转载内容误判为当日产品/API 更新。</li><li>产业影响：企业不应据此调整模型采购、硬件路线或融资判断。</li><li>接下来关注：OpenAI、Anthropic、Google、主要机器人公司及监管机构的正式公告。</li><li>来源/时间：资料未确认｜截至 2026-09-07</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：当日未发现可独立核验、且未与近 14 天主题重复的主流大模型或 API 新发布。</li><li>发布方：资料未确认。</li><li>核心能力：资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：资料未确认。</li><li>竞品差异：资料未确认。</li><li>来源/时间：Anthropic、Google DeepMind 可访问页面未显示符合去重条件的当日新增发布；OpenAI 新闻页访问受限｜2026-09-07</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：Agility Robotics Digit 室内移动与物体搬运演示。</li><li>应用场景：设施整理、内部物流及需要移动操作能力的室内任务。</li><li>技术突破：可见组合式移动操作演示；底层模型、传感器配置和任务指标资料未确认。</li><li>商业化进度：此次资料未披露新增订单、部署数量或收入数据。</li><li>来源/时间：<a href="https://spectrum.ieee.org/video-friday-agility-robotics-digit">IEEE Spectrum</a>｜2026-09-04</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：<a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">WyckoffTradingAgent</a></li><li>解决的问题：把 Wyckoff 量价分析、A 股筛选、CLI 操作和 MCP 工具接入整合为可复用的开源工作流。</li><li>实际价值：降低研究者搭建垂直金融分析智能体的工程门槛；输出质量仍依赖行情数据、策略验证和人工审查。</li><li>论文/仓库链接：<a href="https://github.com/YoungCan-Wang/WyckoffTradingAgent">GitHub 仓库</a>｜2026-09-07（最近推送，598 Stars）</li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：未发现可独立核验的新融资、并购、硬件发布或政策事件。</li><li>核心事实/金额：资料未确认。</li><li>影响：避免将持续性新闻页内容或无法访问的来源误写为新增公司动态。</li><li>来源/时间：资料未确认｜截至 2026-09-07</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：智能体工具继续向金融、代码与行业知识等垂直工作流延伸，竞争重心将落在数据接入、可验证结果和风险控制，而非单纯聊天能力。</li><li>趋势二：人形机器人展示正增加连续移动操作内容，但从演示到商业部署仍受可靠性、任务节拍、安全与总拥有成本约束。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：交易智能体可能受数据缺失、规则适配失效和模型幻觉影响；公开演示无法代表复杂环境下的稳定性。</li><li>合规风险：证券分析、荐股和自动交易可能触及投资顾问、数据授权及平台监管要求。</li><li>商业化风险：人形机器人在非结构化场景中的维护、集成和人工兜底成本仍可能高于预期。</li><li>数据安全风险：MCP 或外部工具接入可能扩大敏感账户、行情数据和操作权限的暴露面。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>WyckoffTradingAgent 是否补充回测基准、数据授权说明与真实交易风险控制。</li><li>Digit 是否发布客户场景下的任务成功率、运行时长及部署规模。</li><li>主流模型厂商是否发布可核验的新模型、API 定价或企业安全能力更新。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜WyckoffTradingAgent｜2026-09-07（最近推送）｜https://github.com/YoungCan-Wang/WyckoffTradingAgent</li><li>IEEE Spectrum｜Video Friday: Digit Redecorates｜2026-09-04｜https://spectrum.ieee.org/video-friday-agility-robotics-digit</li><li>Anthropic｜Newsroom｜2026-09-07 访问核验｜https://www.anthropic.com/news</li><li>Google DeepMind｜News｜2026-09-07 访问核验｜https://deepmind.google/discover/blog/</li></ol>
+  </main>
+</body>
+</html>
