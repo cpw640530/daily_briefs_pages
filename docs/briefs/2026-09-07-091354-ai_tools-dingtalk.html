@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-09-07</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-09-07</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天优先试用面向多模型编程协作的 Grok Build VS Code、为 AI 编程补足界面设计约束的 AI Design Skills，以及可本地运行桌面任务的 libr-agent，分别适合 Vibe Coding 开发者、产品型全栈开发者和希望尝试 Agent 自动化的个人用户。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Grok Build VS Code（持续更新）</h3>
+<ul><li>一句话介绍：面向 VS Code、Cursor 等编辑器的 Grok Build 图形化与扩展工具，并可与 Codex、Claude Code 协作。</li><li>分类：Vibe Coding / 编程插件</li><li>适合谁：同时使用多种代码 Agent、希望在 IDE 内统一调度任务的开发者。</li><li>典型场景：将需求拆分后交由 Grok Build、Codex、Claude Code 分别完成编码、审查或调试，再由开发者汇总验证。</li><li>核心功能：Grok Build CLI 图形界面；Windows/macOS 桌面端；VS Code、Cursor 等编辑器扩展；接入 Codex 与 Claude Code。</li><li>GitHub Stars：188</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-07 00:02 UTC（仓库最新推送）</li><li>最新版本：资料未确认</li><li>开源协议：Other / NOASSERTION，需在实际使用前核对具体授权条款。</li><li>支持平台：Windows、macOS；VS Code、Cursor 等编辑器。</li><li>使用成本：仓库可访问；Grok、Codex、Claude 等模型或 API 的实际调用成本资料未确认。</li><li>上手步骤：</li><li>推荐理由：<strong>相对上次新增的事实</strong>：仓库在 2026-09-07 仍有推送，当前项目说明明确标注已可与 Codex、Claude Code 对话，适合需要跨 Agent 协作而非单一模型生成代码的工作流。</li><li>局限与风险：Stars 未达到 1,000；近期新增 Stars 和发布版本未确认；许可证为非标准标识；多 Agent 并行会增加 API 成本、上下文泄露面与结果冲突，禁止直接授予生产环境写入权限。</li><li>官网/仓库链接：<a href="https://github.com/phuryn/grok-build-vscode">GitHub 仓库</a></li></ul>
+<ol><li>从仓库阅读安装说明并安装桌面端或 VS Code 扩展。</li><li>配置所需模型服务的账号或 API 凭证。</li><li>先在非敏感代码库中，用一个小型修复任务验证各 Agent 的权限、输出格式和费用。</li><li>将生成改动纳入 Git diff、测试与人工代码审查流程。</li></ol>
+<h3>工具二：AI Design Skills（新项目）</h3>
+<ul><li>一句话介绍：为 Claude Code、Cursor、Windsurf 提供模块化设计技能包，帮助 AI 编程工具输出更一致的界面方案与前端代码。</li><li>分类：Vibe Coding / 设计</li><li>适合谁：用 AI 快速搭建产品界面、但常遇到视觉层级混乱或组件不一致问题的前端与全栈开发者。</li><li>典型场景：在生成后台系统、产品原型或营销页面前，为 Agent 注入设计规则、组件约束和界面审查清单。</li><li>核心功能：模块化、可组合的设计技能；适配 Claude Code、Cursor、Windsurf 等 AI 编程工具。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Claude Code、Cursor、Windsurf；具体安装方式以仓库说明为准。</li><li>使用成本：仓库可访问；模型订阅或 API 调用成本取决于所接入的 AI 编程工具。</li><li>上手步骤：</li><li>推荐理由：新项目。虽然 Stars 与增长数据未确认、未达到日报常规门槛，但它直接处理 Vibe Coding 中“功能可用而界面不可用”的高频问题，且覆盖主流 AI 编程工作流，适合作为受控试验项。</li><li>局限与风险：关键仓库指标、版本与许可证资料未确认；设计技能只能提升提示和约束质量，不能替代设计评审；引入前应审查其中的依赖、外链资源及许可。</li><li>官网/仓库链接：<a href="https://github.com/tilliesubsidized136/ai-design-skills">GitHub 仓库</a></li></ul>
+<ol><li>打开仓库，确认其技能文件格式和适配工具。</li><li>选择与项目相符的设计技能，如布局、色彩、组件或响应式规则。</li><li>将技能放入对应 Agent 的项目级规则或 Skills 配置目录。</li><li>用一个独立页面进行 A/B 测试，检查可访问性、移动端适配和组件复用情况。</li></ol>
+<h3>工具三：libr-agent（新项目）</h3>
+<ul><li>一句话介绍：基于 Rust 与 Tauri 的桌面 AI Agent，内置工具调用、MCP 客户端、多 Agent 编排和子 Agent 委派能力。</li><li>分类：自动化 / 效率工具</li><li>适合谁：希望尝试让 AI 在本地桌面环境执行信息整理、工具调用和多步骤任务的高级个人用户。</li><li>典型场景：将检索、文件处理、MCP 工具调用等步骤组合为可重复的桌面任务，并由主 Agent 委派给子 Agent。</li><li>核心功能：桌面 Agent；内置工具；MCP 客户端；多 Agent 编排；Skills；子 Agent 委派。</li><li>GitHub Stars：9</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-07 00:25 UTC（仓库最新推送）</li><li>最新版本：资料未确认</li><li>开源协议：MIT License</li><li>支持平台：桌面端；具体操作系统安装包资料未确认。</li><li>使用成本：代码开源免费；模型 API、MCP 服务及第三方工具的使用成本取决于实际配置。</li><li>上手步骤：</li><li>推荐理由：新项目。该仓库在今日仍有代码推送，且将 MCP、Skills、多 Agent 与桌面端集成到同一工具中，适合技术用户验证“本地任务编排”是否能节省重复操作时间。</li><li>局限与风险：Stars 显著低于 1,000，且近期增长数据未确认；项目仍处早期，存在稳定性和权限边界风险；Agent 接入本地文件、命令与 MCP 服务前必须最小化授权，避免暴露密钥和业务数据。</li><li>官网/仓库链接：<a href="https://fritzprix.github.io/libr-agent/">官网</a>｜<a href="https://github.com/fritzprix/libr-agent">GitHub 仓库</a></li></ul>
+<ol><li>阅读仓库 README 与安全说明，确认本地运行环境。</li><li>先配置无敏感权限的模型与 MCP 工具。</li><li>从只读任务开始，例如资料归集或结构化摘要。</li><li>对文件写入、命令执行、外部发送等操作保留人工确认。</li></ol>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | Grok Build VS Code | 多模型代码 Agent 协作 | 188 | 2026-09-07 有推送 | 工具可访问，模型调用成本另计 | 4/5 | | AI Design Skills | 改善 AI 生成前端的设计约束 | 资料未确认 | 资料未确认 | 取决于所接入的 AI 编程工具 | 3/5 | | libr-agent | 桌面 Agent 与 MCP 自动化 | 9 | 2026-09-07 有推送 | 开源免费，模型与服务成本另计 | 3/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：提供的资料中没有可核验的中国 AI 企业负责人近期原始公开表态。</li><li>为什么重要：日报不应将媒体转述、二手摘录或无原始出处的观点作为人物关键言论。</li><li>可能影响：待获得官方演讲、采访、财报电话会或社交账号原文后补充。</li><li>来源/时间：本期可靠资料不足，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：Anthropic 于 2026-09-01 发布 Claude Fable 5.1 与 Mythos 5.1，公告称其面向编程和知识工作，并显示 AI 对科学研究贡献的早期潜力；但所给资料未包含可归属到具体高管或研究负责人的原始引述。</li><li>为什么重要：产品公告可反映公司产品方向，但不能替代“重要人物言论”。</li><li>可能影响：对长期 Agent、知识工作和科研辅助的产品投入可能继续加强，但具体战略判断需以负责人原始表态核验。</li><li>来源/时间：<a href="https://www.anthropic.com/news">Anthropic Newsroom</a>，2026-09-01。</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：需要在 Codex、Claude Code 等多个 Agent 间协作，先试用 Grok Build VS Code；所有自动改码必须经过测试、diff 审查与人工合并。</li><li>办公场景：有明确、重复的本地信息处理任务，可在隔离环境中试用 libr-agent，并从只读权限开始。</li><li>创作场景：使用 Claude Code、Cursor 或 Windsurf 生成界面时，先接入 AI Design Skills，再以真实目标设备检查页面质量。</li></ul>
+  </main>
+</body>
+</html>
