@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-09</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-09</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：音频软件的近期新增价值集中在可控生成式 MIDI、无障碍交互及开源 DAW 的调性/硬件控制能力；空间音频、编解码、音频网络和标准体系未见资料可验证的新增发布。</li><li>今日关键词：Sting、生成旋律、无障碍、VST3、AU、CLAP、Ardour 9.8、调式、调音、开源 DAW。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Sting 从 Max for Live 扩展为跨平台生成式旋律插件 ★</h3>
+<ul><li>发生了什么：Sting 不再仅限 Max for Live，现以插件形式支持 macOS、Windows、Linux；发布方列出的插件格式为 VST3、AU、CLAP。其定位是可通过手部控制进行表达式调节的生成旋律/酸性旋律模式工具，并强调对盲人和视障创作者的可访问性。</li><li>涉及技术：生成式 MIDI 编排、参数化演奏表达、跨宿主插件封装、无障碍交互。</li><li>关键参数：支持 VST3、AU、CLAP；支持 macOS、Windows、Linux。采样率、位深、MIDI 时钟精度、CPU 占用及价格资料未确认。</li><li>为什么重要：从 Max for Live 专属工具转为多格式插件，降低了非 Ableton Live 用户部署生成旋律工具的门槛。无障碍设计若能覆盖参数浏览、模式编辑和宿主自动化，可成为音乐软件交互设计的实际差异化能力。</li><li>对产品研发的影响：生成式 MIDI 产品应将“生成结果”与“实时可控参数”分离，确保用户可快速介入节奏、音高、密度和表达；插件开发需同步验证 VST3、AU、CLAP 在 MIDI 路由、预置管理和自动化上的行为一致性。无障碍能力需在键盘操作、屏幕阅读器标签和参数反馈层面进入验收流程。</li><li>来源/时间：<a href="https://cdm.link/sting-the-plugin/">CDM：Eminently controllable, accessible by design, Sting is now a plug-in</a>｜2026-09-08。</li></ul>
+<h3>事件二：Ardour 9.8 增加调式/调性功能，并披露调音感知能力规划</h3>
+<ul><li>发生了什么：开源 DAW Ardour 9.8 更新了会话恢复、片段录制、控制器与硬件支持，并加入琶音器 MIDI 工具以及调式、调性功能。报道指出，其后续调式/模式功能拟支持调音系统感知。</li><li>涉及技术：DAW 会话恢复、Clip 录制、MIDI 琶音、调式/调性元数据、微分音及调音系统适配、控制器集成。</li><li>关键参数：版本号为 9.8；支持改进的控制器和硬件工作流。具体支持的调音格式、调律标准、插件兼容范围及端到端 MIDI 时延资料未确认。</li><li>为什么重要：多数 DAW 的调式工具仍主要服务十二平均律音高约束。若后续实现调音感知，调式判定、音阶映射与 MIDI 生成可与微分音工作流形成更紧密的工程链路。</li><li>对产品研发的影响：涉及音高约束、和弦辅助、琶音或生成 MIDI 的产品，不宜将音名、音阶和音高频率完全绑定于 12-TET 假设；应预留调音表、音高映射和硬件控制器反馈的抽象层。当前“调音感知”仍属后续计划，不应作为既有交付能力采购。</li><li>来源/时间：<a href="https://cdm.link/ardour-9-8-scales-and-tuning/">CDM：Scales among updates to the free Ardour DAW — with tuning on the way</a>｜2026-09-07。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：<code>AbacDsp</code> 在 GitHub 于 2026-09-08 有推送记录。项目自述为面向音频插件和独立应用的 header-only、零依赖 C++20 创意 DSP 构件库，并包含用于 LLM 辅助声音设计的 Lua 脚本能力。</li><li>工程应用：可用于快速验证滤波、调制、失真及其他创意效果算法，并探索“自然语言/LLM 生成参数或脚本，再落到确定性 DSP 执行”的工具链。</li><li>成熟度：早期开发项目。其跨平台编译、实时安全性、CPU 占用、插件宿主兼容性及许可证适用范围需要在引入前独立验证。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期资料未发现可验证的新增编解码器发布、标准修订或主要终端支持变化。</li><li>性能与兼容性：无新增可靠参数。</li><li>工程应用：继续按目标平台既有编解码栈进行兼容性测试；不宜将历史格式更新作为今日动态。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 检索条件 <code>spatial audio audio-ai language:Python pushed:&gt;2026-09-02</code> 返回 0 个项目，资料中未出现可靠的空间/沉浸式音频新事件。</li><li>渲染链路或终端支持：无新增可靠信息。</li><li>工程应用：耳机双耳渲染、对象音频元数据和扬声器布局适配仍需按现有产品路线验证。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：<code>AbacDsp</code> 提出 Lua 脚本与 LLM 辅助声音设计；Sting 则属于可控生成式 MIDI 工具，不足以据现有资料判定其底层是否使用机器学习模型。</li><li>能力与限制：LLM 可缩短原型和参数探索时间，但生成的 DSP 或脚本需经实时安全、数值稳定、削波/爆音、确定性输出和许可证审查。性能资料未确认。</li><li>工程应用：建议将 AI 限定在非实时设计层、预置生成层或离线编译层；实时音频线程应只运行经过校验的确定性 DSP。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料未发现 Dante、AES67、RAVENNA、AVB/TSN、WebRTC 音频或相关 API 的可靠新增动态。</li><li>时延与互操作性：无新增可靠数据。</li><li>工程应用：继续以时钟同步、链路抖动、跨网段发现和主备切换为验收重点。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Sting。</li><li>类型：生成式旋律/MIDI 插件。</li><li>采样率/位深/时延：资料未确认；作为 MIDI 工具，其关键工程指标还包括 MIDI 输出时序与宿主自动化响应。</li><li>兼容平台：macOS、Windows、Linux；格式为 VST3、AU、CLAP。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：相对其原有 Max for Live 形态，新增跨平台及多插件格式部署；报道强调可控表达和无障碍设计。实际功能覆盖差异需以开发方文档验证。</li><li>来源/时间：<a href="https://cdm.link/sting-the-plugin/">CDM</a>｜2026-09-08。</li></ul>
+<ul><li>产品：Ardour 9.8。</li><li>类型：开源 DAW 更新。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：资料未确认。</li><li>价格：报道称其为免费开源 DAW；具体发行与支持模式应以 Ardour 官方渠道为准。</li><li>与上一代或竞品差异：新增调式/调性支持、琶音器 MIDI 工具，并改进会话恢复、片段录制、控制器及硬件支持；调音感知为报道披露的后续方向。</li><li>来源/时间：<a href="https://cdm.link/ardour-9-8-scales-and-tuning/">CDM</a>｜2026-09-07。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI、3GPP 在 2026-09-09 前后的可验证新增音频标准、勘误或论文发布。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：无可靠新增标准结论，不以既有标准条目替代今日更新。</li><li>对产品设计的影响：空间音频、沉浸式媒体、语音编码及音频网络产品仍应在立项和发布前核验目标标准版本、专利声明、配置文件和终端实现状态。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>；<a href="https://www.itu.int/pub/">ITU Publications</a>；<a href="https://www.etsi.org/standards">ETSI Standards</a>；<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a>。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：从 Max for Live 工具迁移至多格式生成式 MIDI 插件。</li><li>背景：Sting 从依赖特定 DAW 生态的 Max for Live 工具扩展至 VST3、AU、CLAP。</li><li>技术方案：将旋律模式生成与宿主适配层拆分；通过统一的参数、状态、预置和 MIDI 输出接口对接各插件格式；将无障碍标签、键盘导航及可感知参数反馈作为 UI 层的共同要求。</li><li>结果：发布方称已覆盖 macOS、Windows、Linux 及三种插件格式。跨宿主稳定性、无障碍覆盖率和 MIDI 时序表现尚无独立测试数据。</li><li>可借鉴点：对音乐创作工具而言，算法新颖性不足以替代控制可预测性。产品验收应至少覆盖宿主扫描、工程重开、自动化回放、MIDI 路由、预置迁移、屏幕阅读器和键盘全流程。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Sting | 生成式旋律；强调表达控制与无障碍 | 未确认 | macOS、Windows、Linux；VST3、AU、CLAP | 未确认 | <a href="https://cdm.link/sting-the-plugin/">CDM，2026-09-08</a> | | Ardour 9.8 | 调式/调性、琶音器、会话恢复及 Clip 录制改进 | 未确认 | 控制器及硬件支持增强；平台资料未确认 | 报道称免费开源 | <a href="https://cdm.link/ardour-9-8-scales-and-tuning/">CDM，2026-09-07</a> | | AbacDsp | Header-only、零依赖、C++20、Lua 脚本 | 未确认 | C++20；插件与独立应用目标 | 未确认 | <a href="https://github.com/scjurgen/AbacDsp">GitHub，2026-09-08 推送</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：生成式音乐工具正从“自动生成”转向“生成结果可演奏、可自动化、可无障碍操作”；开源 DAW 则在 MIDI 调性、微分音兼容和硬件控制方面深化。</li><li>工程风险：多插件格式的参数状态恢复、MIDI 输出时序和自动化行为可能存在宿主差异；LLM 生成 DSP/脚本存在实时线程阻塞、数值异常、不可重复输出和调试困难风险。</li><li>版权/合规风险：若 AI 工具涉及训练数据、风格模仿、提示词或生成预置的外部素材，需明确数据来源、输出权利和第三方许可证；<code>AbacDsp</code> 的 GitHub 许可标识为 <code>NOASSERTION</code>，商用接入前应取得明确授权。</li><li>商业化风险：无障碍功能可提升覆盖人群，但需要持续维护各操作系统、宿主和辅助技术兼容性；开源 DAW 的功能更新不等于企业级支持、稳定版本承诺或商业 SLA。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Sting 是否发布官方技术文档，明确其 MIDI 生成机制、宿主兼容矩阵、无障碍实现范围和定价。</li><li>Ardour 调音感知功能的落地版本、支持的调音格式及与 MIDI/插件生态的互操作性。</li><li><code>AbacDsp</code> 的许可证、实时性能基准、测试覆盖与版本发布节奏。</li><li>AES、ITU、ETSI、3GPP 是否发布与沉浸式音频、语音编码或网络音频有关的新增规范。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/sting-the-plugin/">Eminently controllable, accessible by design, Sting is now a plug-in</a>｜2026-09-08｜https://cdm.link/sting-the-plugin/</li><li>CDM Create Digital Music｜<a href="https://cdm.link/ardour-9-8-scales-and-tuning/">Scales among updates to the free Ardour DAW — with tuning on the way</a>｜2026-09-07｜https://cdm.link/ardour-9-8-scales-and-tuning/</li><li>GitHub｜<a href="https://github.com/scjurgen/AbacDsp">scjurgen/AbacDsp</a>｜2026-09-08（最近推送）｜https://github.com/scjurgen/AbacDsp</li><li>GitHub Search｜<code>spatial audio audio-ai language:Python pushed:&gt;2026-09-02</code>｜2026-09-09 检索｜无结果</li><li>AES｜<a href="https://www.aes.org/standards/">AES Standards</a>｜2026-09-09 核验｜https://www.aes.org/standards/</li><li>ITU｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜2026-09-09 核验｜https://www.itu.int/pub/</li><li>ETSI｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜2026-09-09 核验｜https://www.etsi.org/standards</li><li>3GPP｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">Specifications by Series</a>｜2026-09-09 核验｜https://www.3gpp.org/specifications-technologies/specifications-by-series</li></ol>
+  </main>
+</body>
+</html>
