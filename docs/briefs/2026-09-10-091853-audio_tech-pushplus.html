@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-10</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-10</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：Dirtywave 将 M8 tracker 工作流扩展到 iPhone/iPad，移动音乐制作获得新的软硬件入口；开源侧出现一款基于 JUCE 的轻量瞬态塑形插件，但仍处早期验证阶段。</li><li>今日关键词：Dirtywave M8、iOS tracker、移动 DAW、瞬态塑形、JUCE、VST3、Audio Unit、开源插件</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Dirtywave M8 推出官方 iOS 应用 ★</h3>
+<ul><li>发生了什么：据 CDM 报道，Dirtywave 为 M8 推出官方 iOS 应用，可在 iPhone 和 iPad 上使用，为既有 M8 硬件及 headless 自组系统增加移动端入口。</li><li>涉及技术：tracker 音序、移动音乐制作、iOS 音频、M8 软硬件工作流。</li><li>关键参数：支持 iPhone、iPad；具体系统版本要求、音频接口方式、工程兼容范围、应用价格及端到端时延资料未确认。</li><li>为什么重要：M8 从专用硬件和 headless 方案进一步延伸至通用移动终端，降低随身编曲与 tracker 工作流的设备门槛，也显示专业音乐硬件厂商正在通过移动应用扩大产品生态。</li><li>对产品研发的影响：移动 DAW、硬件控制器及便携音频设备团队需要关注项目文件互通、触控编辑效率、外接 MIDI/音频接口稳定性和后台音频行为。下一步应验证该应用是完整制作环境、硬件伴侣还是 headless 前端，以及其导入导出能力。</li><li>来源/时间：<a href="https://cdm.link/dirtywave-m8-ios/">CDM｜Dirtywave M8 has an official iOS app</a>｜2026-09-09 17:23 UTC</li></ul>
+<h3>事件二：开源瞬态塑形插件 montagem-punch 持续开发</h3>
+<ul><li>发生了什么：GitHub 项目 <code>montagem-punch</code> 于 2026-09-09 更新，项目描述显示其为单旋钮瞬态塑形器，用于增强起音并控制延音，提供 VST3 和 Audio Unit 插件形态。</li><li>涉及技术：瞬态检测、attack/sustain 增益塑形、实时 DSP、JUCE、CMake、VST3、Audio Unit。</li><li>关键参数：C++/JUCE；MIT 许可证；支持 VST3、AU；面向 macOS；截至资料采集时 1 Star、无正式 Release，采样率、位深、内部过采样和处理时延资料未确认。</li><li>为什么重要：其代码可作为轻量瞬态处理器和跨格式插件构建样例，但低 Star、无 Release 和缺少测量数据意味着尚不能视为成熟生产工具。</li><li>对产品研发的影响：可用于评估单参数瞬态控制的交互设计及 JUCE 插件工程结构。下一步取决于是否补充可复现构建、自动化测试、参数平滑、延迟申报和多采样率一致性验证。</li><li>来源/时间：<a href="https://github.com/sturdy-genova223/montagem-punch">GitHub｜sturdy-genova223/montagem-punch</a>｜最近推送于 2026-09-09 23:57 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：<code>montagem-punch</code> 将瞬态起音增强与延音管理压缩为单旋钮控制，最新代码推送发生于 2026-09-09。</li><li>工程应用：可用于鼓组、拨弦乐器和其他瞬态明显素材的动态塑形；算法结构、CPU 占用及听感一致性仍需实测。</li><li>成熟度：早期开源项目；1 Star、无正式 Release，生产环境成熟度资料不足。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未发现新的音频编解码器版本、参考实现或硬件支持更新。</li><li>性能与兼容性：压缩效率、复杂度、授权方式及终端兼容性无新增可靠数据。</li><li>工程应用：暂不建议据此调整编码链路；继续关注移动端 M8 应用实际支持的录音、导出和交换格式。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：相关 GitHub 检索结果为 0，未发现符合时间与去重要求的新增空间音频项目。</li><li>渲染链路或终端支持：未获得新的对象音频、双耳渲染、头部跟踪或扬声器阵列支持信息。</li><li>工程应用：沉浸式混音、游戏音频与耳机空间化方案今日无可验证新增结论。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：未发现符合条件的新语音生成、音乐生成、音频修复或音效生成模型；Python 音乐技术及空间音频相关检索均无结果。</li><li>能力与限制：无新的模型参数、训练数据、推理速度、授权或生成质量数据可供核验。</li><li>工程应用：今日不建议基于资料调整 AI 音频选型；应继续重点核查训练数据来源、输出版权和端侧推理成本。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：未发现 AES67、Dante、AVB/TSN、Ravenna、SMPTE ST 2110-30 或移动网络音频的新公告。</li><li>时延与互操作性：资料没有提供 M8 iOS 应用的连接协议、缓冲配置或端到端时延数据。</li><li>工程应用：如将移动端用于现场或硬件伴侣场景，应实测 USB、蓝牙及网络连接下的抖动、断连恢复与时钟同步表现。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Dirtywave M8 官方 iOS 应用。</li><li>类型：iPhone/iPad tracker 音乐制作应用及 M8 生态移动端入口。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：iOS、iPadOS；最低系统版本及外设兼容列表资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：相较 M8 专用硬件和 headless 自组方案，新增通用移动终端入口；与其他移动 tracker 在编辑深度、工程交换和硬件整合方面的差异仍需实测。</li><li>来源/时间：<a href="https://cdm.link/dirtywave-m8-ios/">CDM</a>｜2026-09-09</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：截至本期资料，未发现 AES、ITU、ETSI 或 3GPP 可确认于当日发布、且直接涉及音频技术的新标准或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：无可靠新增内容，不使用既有标准补充为当日动态。</li><li>对产品设计的影响：现有项目继续依照已选定版本执行，不应在缺少正式公告和版本号的情况下修改互操作性或合规基线。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：M8 tracker 工作流向 iPhone/iPad 延伸。</li><li>背景：M8 既有专用硬件和 headless 自组使用方式，移动端应用为外出创作及轻量编辑提供新的终端选择。</li><li>技术方案：通过官方 iOS 应用承载 tracker 操作；与硬件、音频接口及项目文件的具体连接和同步机制资料未确认。</li><li>结果：已确认应用发布信息，但稳定性、功耗、音频时延和项目互通效果尚无独立测试数据。</li><li>可借鉴点：专业音频硬件可用移动应用扩展触控编辑和随身工作流；立项时应优先定义项目格式、离线能力、外设连接和异常恢复，而非仅移植桌面界面。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Dirtywave M8 iOS 应用 | tracker 工作流；具体音频参数未确认 | 资料未确认 | iPhone、iPad；接口资料未确认 | 资料未确认 | <a href="https://cdm.link/dirtywave-m8-ios/">CDM，2026-09-09</a> | | montagem-punch | C++/JUCE、单旋钮瞬态塑形、VST3/AU、MIT | 资料未确认 | macOS；VST3、AU | 开源；无正式 Release | <a href="https://github.com/sturdy-genova223/montagem-punch">GitHub，2026-09-09 更新</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：专业音乐硬件继续通过移动应用扩展使用场景；开源音频插件则倾向以 JUCE 和 CMake 快速覆盖多种插件格式。语音/音乐生成、空间及沉浸式音频、编解码器、专业耳机和声学器件今日未出现可验证的新动态。</li><li>工程风险：M8 应用的时延、后台运行、文件互通和外设支持尚未确认；<code>montagem-punch</code> 缺少版本发布、性能数据和广泛用户验证。</li><li>版权/合规风险：今日无新增 AI 生成产品可评估。开源插件采用 MIT 许可证，但集成前仍需核对依赖组件、SDK 许可和二进制分发义务。</li><li>商业化风险：移动应用能否带动 M8 硬件生态取决于功能边界和定价；早期开源插件若缺少签名、公证、安装包及宿主兼容测试，较难直接进入商业制作流程。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核实 Dirtywave M8 iOS 应用的价格、系统要求、音频规格、项目格式、MIDI/音频接口支持及硬件连接模式。</li><li>跟踪 <code>montagem-punch</code> 是否发布正式版本，并补充 CPU 占用、延迟申报、多采样率测试及 Windows 支持。</li><li>继续监测 AES、ITU、ETSI、3GPP 的音频标准更新，以及 AI 语音/音乐生成、沉浸式音频、编解码器、耳机与专业音频硬件的可靠一手公告。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Dirtywave M8 has an official iOS app — a great addition to mobile tracker apps｜2026-09-09 17:23 UTC｜<a href="https://cdm.link/dirtywave-m8-ios/">原文</a></li><li>sturdy-genova223｜montagem-punch｜最近推送于 2026-09-09 23:57 UTC｜<a href="https://github.com/sturdy-genova223/montagem-punch">GitHub</a></li><li>Audio Engineering Society｜AES Standards｜本期资料未发现可确认的当日新增发布时间｜<a href="https://www.aes.org/standards/">标准入口</a></li><li>International Telecommunication Union｜ITU Publications｜本期资料未发现可确认的当日新增发布时间｜<a href="https://www.itu.int/pub/">出版物入口</a></li><li>European Telecommunications Standards Institute｜ETSI Standards｜本期资料未发现可确认的当日新增发布时间｜<a href="https://www.etsi.org/standards">标准入口</a></li><li>3rd Generation Partnership Project｜Specifications by series｜本期资料未发现可确认的当日新增发布时间｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">规范入口</a></li></ol>
+  </main>
+</body>
+</html>
