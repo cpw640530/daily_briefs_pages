@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI简报｜2026-09-11</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI 与机器人简报｜2026-09-11</h1>
+<h2>1. 今日核心判断</h2>
+<ul><li>一句话结论：AI 产业今日的新增信号集中在 API 产品化、智能体安全防护和机器人触觉数据，模型能力正从“生成内容”进一步转向“调用工具、操作设备与进入专业工作流”。</li><li>今日关键词：实时 API、Agents API、智能体安全、触觉数据、机器人操作、专业工作流</li><li>预计阅读时间：5 分钟</li></ul>
+<h2>2. 今日三大事件</h2>
+<h3>事件一：OpenAI 连续推出 GPT Live API 与 Agents API，开发者接入重点转向实时交互和任务执行 ★</h3>
+<ul><li>发生了什么：OpenAI 于 9 月 10 日发布 <code>GPT Live 1</code> API，并公布 Agents API；同时推出面向金融服务的 ChatGPT 产品与数据应用案例。</li><li>技术变化：API 能力从传统文本调用扩展至实时交互、智能体编排和企业数据工作流。</li><li>为什么重要：开发者可直接构建具备持续交互、工具调用和多步骤执行能力的应用，模型厂商竞争重点进一步从单一模型性能转向平台能力。</li><li>产业影响：客服、金融分析、企业知识管理和软件开发等场景的集成门槛可能下降；API 成本、延迟、权限管理和可观测性将成为采购决策的重要指标。</li><li>接下来关注：GPT Live 1 的正式可用范围、计费方式、延迟与并发限制；Agents API 是否支持更完整的生产级安全控制。</li><li>来源/时间：<a href="https://openai.com/index/introducing-gpt-live-1-in-the-api/">OpenAI：Introducing GPT Live 1 in the API</a>；<a href="https://openai.com/index/introducing-the-agents-api/">OpenAI：Introducing the Agents API</a>；2026-09-10</li></ul>
+<h3>事件二：Anthropic 披露 2026 年 9 月 AI 滥用处置情况，智能体安全进入持续运营阶段</h3>
+<ul><li>发生了什么：Anthropic 发布最新威胁情报报告，称其团队在过去 8 个月识别并中断了攻击者试图利用 Claude 实施恶意活动的多起行动。</li><li>技术变化：安全工作从模型发布前评测，延伸至上线后的行为监测、滥用识别和行动中断。</li><li>为什么重要：大模型被用于网络攻击、自动化情报搜集或其他恶意任务的风险，已成为模型运营方必须持续处理的产品问题。</li><li>产业影响：企业客户会更加关注模型供应商的滥用检测、事件响应、审计日志和跨账户风险隔离；安全能力可能成为 API 采购的差异化因素。</li><li>接下来关注：报告披露的具体案例、误报与漏报边界、用户隐私保护方式，以及 Anthropic 后续是否更新模型权限和使用政策。</li><li>来源/时间：<a href="https://www.anthropic.com/news/detecting-and-countering-misuse-of-ai-september-2026">Anthropic：Detecting and countering misuse of AI: September 2026</a>；2026-09-10</li></ul>
+<h3>事件三：机器人触觉数据与触觉学习成为灵巧操作的新竞争点</h3>
+<ul><li>发生了什么：IEEE Spectrum 报道，学术实验室和创业公司正在建设触觉数据集，并探索将触觉信息用于机器人操作。</li><li>技术变化：机器人感知从视觉主导扩展到接触、压力和滑移等触觉信号，训练数据类型随之扩大。</li><li>为什么重要：抓取柔软、易碎或形状不规则物体时，仅依赖视觉难以判断接触状态；触觉有望提升操作稳定性和泛化能力。</li><li>产业影响：触觉传感器、数据采集设备、仿真环境和视觉语言动作模型训练将形成新的供应链需求，但数据标准化和跨硬件迁移仍是落地障碍。</li><li>接下来关注：触觉数据集规模与公开程度、触觉传感器成本、真实任务成功率，以及触觉是否能在仓储、装配和家庭服务场景产生可量化收益。</li><li>来源/时间：<a href="https://spectrum.ieee.org/tactile-data-robots">IEEE Spectrum：Robots Are Learning to Feel</a>；2026-09-10 18:22 UTC</li></ul>
+<h2>3. 大模型与产品发布</h2>
+<ul><li>模型/产品：<code>GPT Live 1</code> API</li><li>发布方：OpenAI</li><li>核心能力：面向实时交互的 API 能力，具体模态、上下文和工具调用参数资料未完全确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：官方宣布进入 API 产品线，具体可用地区、账户权限和限额资料未确认。</li><li>竞品差异：当前可确认的差异在于 OpenAI 将实时 API 与 Agents API 同期推进，形成“交互入口+任务执行”组合；定量性能差异资料未确认。</li><li>来源/时间：<a href="https://openai.com/index/introducing-gpt-live-1-in-the-api/">OpenAI 原文</a>；2026-09-10</li></ul>
+<ul><li>模型/产品：Agents API</li><li>发布方：OpenAI</li><li>核心能力：支持开发者构建和编排 AI 智能体，具体工具、状态管理和部署组件资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：官方产品公告已发布，实际开放范围资料未确认。</li><li>竞品差异：从公开标题可确认其定位为智能体开发接口；与其他平台在执行可靠性、权限隔离和观测能力上的差异资料未确认。</li><li>来源/时间：<a href="https://openai.com/index/introducing-the-agents-api/">OpenAI 原文</a>；2026-09-10</li></ul>
+<ul><li>模型/产品：面向金融服务的 ChatGPT</li><li>发布方：OpenAI</li><li>核心能力：将 ChatGPT 引入金融服务工作流，具体功能和客户范围资料未确认。</li><li>性能与价格：资料未确认。</li><li>开放情况：官方产品公告已发布，商业可用范围资料未确认。</li><li>竞品差异：公开资料仅能确认其行业化定位，定量差异资料未确认。</li><li>来源/时间：<a href="https://openai.com/index/introducing-chatgpt-financial-services/">OpenAI 原文</a>；2026-09-10</li></ul>
+<h2>4. 机器人与具身智能</h2>
+<ul><li>产品/技术：机器人触觉数据集与触觉学习技术受到产业和研究机构关注。</li><li>应用场景：灵巧抓取、装配、仓储分拣、家庭服务和处理柔性物体。</li><li>技术突破：将触觉信号纳入机器人感知与操作学习，有望补足视觉对接触状态判断的不足；公开报道未给出统一基准或明确性能提升数据。</li><li>商业化进度：触觉传感器和数据技术仍处于研究与早期产业化阶段，规模化商业化进度资料未确认。</li><li>人形机器人：2026-09-11 未发现可独立核验的新增人形机器人发布或订单事件。</li><li>自动驾驶/机器人基础模型：2026-09-11 未发现可独立核验的新增自动驾驶基础模型或机器人基础模型发布。</li><li>来源/时间：<a href="https://spectrum.ieee.org/tactile-data-robots">IEEE Spectrum：Robots Are Learning to Feel</a>；2026-09-10 18:22 UTC</li></ul>
+<h2>5. 研究与开源</h2>
+<ul><li>论文/项目：<code>sunglasses</code></li><li>解决的问题：为 AI 智能体提供本地输入防火墙，扫描文本、代码、PDF、图像、二维码、音频和视频中的潜在风险，并可通过 Claude Code hook 在工具执行前阻断凭据泄露和策略违规。</li><li>实际价值：将提示注入、敏感信息泄露和工具调用前检查放到本地执行层，适合用于智能体开发环境的初步安全防护；项目目前仍标注为 beta，GitHub Stars 为 5，成熟度有限。</li><li>论文/仓库链接：<a href="https://github.com/sunglasses-dev/sunglasses">GitHub：sunglasses-dev/sunglasses</a>；最近推送时间：2026-09-11 01:10 UTC</li></ul>
+<ul><li>论文/项目：<code>RoboticsResearch</code></li><li>解决的问题：汇总机械臂、移动机器人、操控、导航、SLAM 和具身智能方向的研究与产业链信息。</li><li>实际价值：可作为机器人研究与项目选型的动态索引，但仓库描述和活跃度不足以证明其内容质量或完整性。</li><li>论文/仓库链接：<a href="https://github.com/Dave-he/RoboticsResearch">GitHub：Dave-he/RoboticsResearch</a>；最近推送时间：资料显示为 2026-09-11，具体时间资料未确认</li></ul>
+<h2>6. 公司、融资与政策</h2>
+<ul><li>事件：Anthropic 发布 AI 滥用检测与处置报告。</li><li>核心事实/金额：Anthropic 表示过去 8 个月识别并中断了多起攻击者利用 Claude 实施恶意活动的行动；融资金额资料未涉及。</li><li>影响：模型公司的安全责任从训练和发布阶段扩展至持续运营、威胁情报和事件响应；企业客户的供应商评估将增加运行时安全指标。</li><li>来源/时间：<a href="https://www.anthropic.com/news/detecting-and-countering-misuse-of-ai-september-2026">Anthropic 原文</a>；2026-09-10</li></ul>
+<ul><li>事件：OpenAI 扩展企业与专业工作流产品布局。</li><li>核心事实/金额：OpenAI 同日发布 GPT Live 1 API、Agents API、金融服务 ChatGPT 和数据应用相关公告；融资、并购及具体合同金额资料未确认。</li><li>影响：OpenAI 的产品重心继续从通用聊天向实时交互、智能体平台和行业解决方案延伸。</li><li>来源/时间：<a href="https://openai.com/news/">OpenAI News</a>；2026-09-10</li></ul>
+<ul><li>事件：融资、并购与硬件发布。</li><li>核心事实/金额：2026-09-11 在所提供资料中未发现可独立核验的新增 AI/机器人重大融资、并购或硬件发布事件。</li><li>影响：今日产业信号主要来自软件平台、安全运营和机器人研究，资本与硬件端暂缺可靠新增事实。</li><li>来源/时间：所提供官方新闻与行业资料汇总；截至 2026-09-11</li></ul>
+<h2>7. 趋势判断</h2>
+<ul><li>趋势一：大模型平台竞争正在转向“实时交互、智能体执行、行业工作流”的组合能力，单纯比较文本生成质量已不足以解释产品竞争。</li><li>趋势二：具身智能的瓶颈从视觉识别逐步扩展到触觉数据、接触建模和跨硬件泛化，数据基础设施可能成为机器人基础模型落地的关键约束。</li></ul>
+<h2>8. 风险与不确定性</h2>
+<ul><li>技术风险：触觉数据标准、传感器可靠性和跨机器人迁移能力尚未形成统一验证体系；智能体 API 的长链路执行可能放大错误。</li><li>合规风险：金融服务等高监管行业使用智能体时，需关注可解释性、责任归属、数据驻留和人工复核要求。</li><li>商业化风险：实时 API、Agents API 和触觉硬件的价格、可用性及规模化交付条件尚未充分披露。</li><li>数据安全风险：智能体可访问企业数据和外部工具，凭据泄露、提示注入、工具投毒及恶意自动化仍是核心风险。</li></ul>
+<h2>9. 后续观察</h2>
+<ul><li>OpenAI 是否披露 GPT Live 1 与 Agents API 的价格、限额、工具调用和企业安全能力。</li><li>Anthropic 后续是否公布更多滥用案例、检测准确性和独立评估结果。</li><li>触觉数据集是否出现公开基准、标准化传感器接口或机器人基础模型的实测增益。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>OpenAI｜Introducing GPT Live 1 in the API｜2026-09-10｜<a href="https://openai.com/index/introducing-gpt-live-1-in-the-api/">原文</a></li><li>OpenAI｜Introducing the Agents API｜2026-09-10｜<a href="https://openai.com/index/introducing-the-agents-api/">原文</a></li><li>OpenAI｜Introducing ChatGPT financial services｜2026-09-10｜<a href="https://openai.com/index/introducing-chatgpt-financial-services/">原文</a></li><li>Anthropic｜Detecting and countering misuse of AI: September 2026｜2026-09-10｜<a href="https://www.anthropic.com/news/detecting-and-countering-misuse-of-ai-september-2026">原文</a></li><li>IEEE Spectrum｜Robots Are Learning to Feel｜2026-09-10 18:22 UTC｜<a href="https://spectrum.ieee.org/tactile-data-robots">原文</a></li><li>GitHub｜sunglasses-dev/sunglasses｜最近推送于 2026-09-11 01:10 UTC｜<a href="https://github.com/sunglasses-dev/sunglasses">仓库</a></li><li>GitHub｜Dave-he/RoboticsResearch｜最近推送于 2026-09-11，具体时间资料未确认｜<a href="https://github.com/Dave-he/RoboticsResearch">仓库</a></li></ol>
+  </main>
+</body>
+</html>
