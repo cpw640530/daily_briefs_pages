@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-15</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-15</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证的新变化集中在模块化硬件与开源插件：ALM 将多轨录音、立体声混音和 USB MIDI 控制压缩至 14HP Eurorack 组合；Destroy FX 开源效果器项目出现代码更新，但尚无新版本说明。音频 AI、生成式语音/音乐、空间音频、编解码器、DAW、耳机及主流标准组织暂无可靠新增。</li><li>今日关键词：Eurorack 多轨录音、Stem 工作流、模块化混音、USB MIDI、开源音频插件、Audio Unit、VST</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：ALM 推出紧凑型多轨录音与混音模块组合 ★</h3>
+<ul><li>发生了什么：ALM/Busy Circuits 推出 Stem Ripper 及其扩展模块 With Mixer。CDM 报道称，该组合可分别录制音轨，并提供立体声混音、辅助发送、声像控制和外部 USB MIDI 控制。</li><li>涉及技术：Eurorack、多轨音频录制、Stem 管理、立体声混音、辅助发送、USB MIDI 控制。</li><li>关键参数：Stem Ripper 宽度 6HP，With Mixer 宽度 8HP，组合占用 14HP；采样率、位深、轨道数量、存储格式、音频接口规格及端到端时延资料未确认。</li><li>为什么重要：它把通常由 DAW、录音机和调音台共同承担的录制与混音操作放入模块化系统，可减少现场演出中的外部设备依赖，并简化分轨素材进入后期制作的流程。</li><li>对产品研发的影响：模块化硬件团队可关注多轨文件写入稳定性、存储带宽、削波保护、时钟同步及 USB MIDI 映射；下一步需要等待官方手册和独立测试确认轨道规模、文件兼容性与实际时延。</li><li>来源/时间：<a href="https://cdm.link/alm-multichannel-record-mix/">CDM｜ALM records everything to stems, and now mixes, too, in compact modules</a>｜2026-09-13</li></ul>
+<h3>事件二：Destroy FX 开源音频插件项目出现代码更新</h3>
+<ul><li>发生了什么：Destroy FX GitHub 仓库于 2026-09-14 更新。该项目包含多款实验性音频效果器，以及 DfxPlugin、DFX GUI 插件开发框架；仓库描述列出的插件 API 包括 Audio Unit 和 VST。</li><li>涉及技术：C++、音频 DSP、Audio Unit、VST、插件 GUI 框架、跨格式插件开发。</li><li>关键参数：GPL-2.0 许可证；GitHub 检索时为 271 Stars、12 Forks；具体提交内容、二进制版本、支持的 VST代际、操作系统范围及实时处理性能资料未确认。</li><li>为什么重要：Destroy FX 是较成熟的开源实验性效果器代码库，可用于研究非传统声音处理算法及旧插件框架的维护方式；但一次代码推送不能等同于正式产品发布。</li><li>对产品研发的影响：采用前应核查最新提交、依赖项、现代宿主兼容性及 GPL-2.0 对闭源产品的约束。后续需观察项目是否发布版本说明、签名二进制文件或新增现代插件 API 支持。</li><li>来源/时间：<a href="https://github.com/sophiapoirier/destroyfx">GitHub｜sophiapoirier/destroyfx</a>｜仓库推送时间 2026-09-14 03:55 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：Destroy FX 的 C++ DSP 与插件框架仓库继续更新，但资料未披露新增算法或性能改进。</li><li>工程应用：可用于实验性音效算法研究、Audio Unit/VST 插件结构参考和旧工程迁移评估；商用集成前必须完成许可证与代码质量审查。</li><li>成熟度：项目历史较长且保持可访问，但本次更新缺少版本说明，新增代码的成熟度资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未发现 2026-09-08 之后可验证的新编解码器、版本或实现更新。</li><li>性能与兼容性：无新增测试数据，不补写既有编解码标准或历史性能结论。</li><li>工程应用：继续关注低时延编码、沉浸式音频承载和硬件解码支持；今日无可据此调整产品路线的新增事实。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：GitHub 指定条件检索结果为 0，未发现合格的 Python 空间音频或 audio-AI 新项目。</li><li>渲染链路或终端支持：所给资料未出现新的对象音频渲染器、HRTF 工具、耳机终端或扬声器布局支持。</li><li>工程应用：现阶段不建议仅依据“无搜索结果”判断行业停滞；后续应扩大关键词、语言及厂商官方信源范围。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：未发现符合时间窗口与历史去重要求的新语音生成、音乐生成、音频修复或音频理解模型。</li><li>能力与限制：GitHub 的 Python 音乐技术与空间音频检索均无结果；这只能说明指定检索条件下无命中，不代表全行业无更新。</li><li>工程应用：今日没有足够资料支持模型选型变化。后续重点核查授权数据来源、可控生成、实时推理成本、水印及内容溯源能力。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：ALM 新模块支持外部 USB MIDI 控制，但 USB MIDI 属控制链路，不应视为网络音频传输协议。</li><li>时延与互操作性：MIDI 映射范围、控制时延、USB 角色及与主流宿主的互操作性资料未确认；未发现新的 AES、ITU、ETSI 或 3GPP 音频网络更新。</li><li>工程应用：现场系统集成时应分别验证音频录制链路和 MIDI 控制链路，避免将控制连接误作音频传输或时钟同步机制。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：ALM/Busy Circuits Stem Ripper + With Mixer。</li><li>类型：Eurorack 多轨录音模块及立体声混音扩展。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：Eurorack；支持外部 USB MIDI 控制，具体主机、设备角色及操作系统兼容性资料未确认。</li><li>价格：资料未确认。</li><li>与上一代或竞品差异：公开摘要强调 6HP 录音模块与 8HP 混音扩展的紧凑组合，以及录制、辅助发送、声像和外部控制的一体化；是否存在直接上一代产品及相对性能差异，资料未确认。</li><li>来源/时间：<a href="https://cdm.link/alm-multichannel-record-mix/">CDM｜ALM multichannel record/mix</a>｜2026-09-13</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：未发现所给资料中可验证的 AES、ITU、ETSI、3GPP 新标准、修订稿或音频论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：今日不能确认这些机构发布了新的音频编解码、沉浸式音频或网络音频规范。</li><li>对产品设计的影响：维持现有合规基线，不以门户页面存在或更新时间代替正式标准发布日期；后续应核查标准编号、版本、状态和变更记录。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：在 Eurorack 内完成分轨录制与现场立体声混音。</li><li>背景：模块化演出通常需要外置多轨录音机、调音台或 DAW 才能同时保留独立素材并输出立体声混音。</li><li>技术方案：使用 6HP Stem Ripper 承担分轨录制，连接 8HP With Mixer 完成立体声混音、辅助发送与声像控制，并通过 USB MIDI 接入外部控制器。</li><li>结果：CDM 报道显示其核心录制和混音功能可置于 14HP 空间内；轨道数量、录音时长、文件可靠性及现场实测结果资料未确认。</li><li>可借鉴点：产品设计可将“演出时混音”和“演出后分轨编辑”作为同一工作流设计，但应优先验证掉电保护、文件封装完整性、存储介质性能和削波余量。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | ALM Stem Ripper | 6HP；多轨录音；其余参数未确认 | 资料未确认 | Eurorack | 资料未确认 | <a href="https://cdm.link/alm-multichannel-record-mix/">CDM，2026-09-13</a> | | ALM With Mixer | 8HP；立体声混音、辅助发送、声像、外部 USB MIDI 控制 | 资料未确认 | Eurorack、USB MIDI | 资料未确认 | <a href="https://cdm.link/alm-multichannel-record-mix/">CDM，2026-09-13</a> | | Destroy FX | C++；GPL-2.0；Audio Unit、VST；271 Stars | 资料未确认 | 插件 API；具体系统兼容性未确认 | 开源；商业使用成本需结合许可证评估 | <a href="https://github.com/sophiapoirier/destroyfx">GitHub，更新于 2026-09-14</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：专业音频硬件继续把录制、混音和外部控制整合进更小的模块空间；开源音频插件仍在维护，但旧框架向现代宿主与 API 迁移的需求上升。</li><li>工程风险：ALM 模块的采样规格、轨道数量、存储带宽和时延尚未确认；Destroy FX 本次提交内容不明，不能据此判断稳定性或兼容性已经改善。</li><li>版权/合规风险：Destroy FX 使用 GPL-2.0，闭源产品直接复用代码可能触发源代码开放义务，应进行法律审查；今日无新的 AI 训练数据授权事实可供评估。</li><li>商业化风险：模块化录音产品市场相对垂直，紧凑尺寸不必然转化为可靠性或成本优势；开源插件项目有技术参考价值，但维护周期、签名发布和宿主认证可能增加产品化成本。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>核查 ALM 官方手册与定价，确认轨道数量、采样率、位深、存储格式、同步方式、USB MIDI 映射及上市时间。</li><li>检查 Destroy FX 2026-09-14 的具体提交和后续 Release，判断是否涉及 DSP、编译系统、宿主兼容性或安全修复。</li><li>继续监测 AES、ITU、ETSI、3GPP 的正式发布记录，并扩大对音频 AI、生成式语音/音乐、空间音频、DAW、插件 API、专业硬件及声学器件的信源覆盖。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜<a href="https://cdm.link/alm-multichannel-record-mix/">ALM records everything to stems, and now mixes, too, in compact modules</a>｜2026-09-13</li><li>GitHub｜<a href="https://github.com/sophiapoirier/destroyfx">sophiapoirier/destroyfx</a>｜仓库更新于 2026-09-14</li><li>GitHub Search｜<a href="https://github.com/search?q=audio+dsp+plugin+language%3AC%2B%2B+pushed%3A%3E2026-09-08&amp;type=repositories">audio dsp plugin language:C++ pushed:&gt;2026-09-08</a>｜检索资料截至 2026-09-15</li><li>GitHub Search｜<a href="https://github.com/search?q=spatial+audio+audio-ai+language%3APython+pushed%3A%3E2026-09-08&amp;type=repositories">spatial audio audio-ai language:Python pushed:&gt;2026-09-08</a>｜检索资料截至 2026-09-15</li><li>GitHub Search｜<a href="https://github.com/search?q=music+technology+audio+tools+language%3APython+pushed%3A%3E2026-09-08&amp;type=repositories">music technology audio tools language:Python pushed:&gt;2026-09-08</a>｜检索资料截至 2026-09-15</li><li>Audio Engineering Society｜<a href="https://www.aes.org/standards/">AES Standards</a>｜检索资料截至 2026-09-15</li><li>International Telecommunication Union｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜检索资料截至 2026-09-15</li><li>ETSI｜<a href="https://www.etsi.org/standards">Standards</a>｜检索资料截至 2026-09-15</li><li>3GPP｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">Specifications by series</a>｜检索资料截至 2026-09-15</li></ol>
+  </main>
+</body>
+</html>
