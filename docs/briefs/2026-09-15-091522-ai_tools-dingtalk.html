@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-09-15</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-09-15</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天推荐 <code>driftcheck</code>、<code>cc-thingz</code> 和 <code>ai-setup-sync</code>：分别适合管理 AI Agent 依赖、复用跨工具开发能力，以及团队同步 AI 编程配置；三者均为近期活跃的新项目，但 Stars 尚未达到 1,000 门槛。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：driftcheck</h3>
+<ul><li>一句话介绍：用于检测 AI Agent 工具、MCP 服务及项目清单与锁定文件之间版本漂移的 Go 命令行工具。</li><li>分类：开发者工具 / Vibe Coding / 自动化</li><li>适合谁：使用 Codex、Claude Code、MCP Server 的开发者和需要维护多套 Agent 环境的团队。</li><li>典型场景：升级 AI 编程工具后，检查清单文件与 lockfile 是否一致；在 CI 中发现依赖版本漂移。</li><li>核心功能：版本漂移检测、依赖审计、CLI 使用、面向 AI Agent 工具链的配置检查。</li><li>GitHub Stars：0</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-15，GitHub API 显示 <code>updated_at</code> 为 01:06:49 UTC，<code>pushed_at</code> 为 01:06:45 UTC。</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：资料未确认；项目主要语言为 Go，可优先按 Go CLI 工具评估。</li><li>使用成本：开源免费；运行环境和二进制分发方式资料未确认。</li><li>上手步骤：访问仓库，阅读 README；按项目说明构建或安装 CLI；将其接入本地项目或 CI；先在非生产仓库验证检测结果。</li><li>推荐理由：解决 AI 开发环境中容易被忽略的版本一致性问题，尤其适合同时维护 Codex、Claude Code 和 MCP 配置的用户。</li><li>局限与风险：目前 Stars 为 0，社区验证不足；资料未确认其测试覆盖、发布包和 CI 集成方式；检测结果仍需结合项目实际依赖策略复核。</li><li>官网/仓库链接：<a href="https://github.com/significancemoloch680/driftcheck">GitHub 仓库</a></li></ul>
+<h3>工具二：cc-thingz</h3>
+<ul><li>一句话介绍：面向 Claude Code、Codex CLI、Copilot、Cursor、Grok 和 Pi 等工具的可移植 skills、Agent、hooks 与扩展集合。</li><li>分类：编程插件 / Vibe Coding / 自动化</li><li>适合谁：需要在多个 AI 编程 Agent 之间复用工作流、代码审查规则和自动化钩子的开发者。</li><li>典型场景：把代码审查、Git hooks、Agent skills 和命令配置统一迁移到不同 AI 编程工具。</li><li>核心功能：跨工具 Agent skills、hooks、扩展、代码审查工作流，以及面向 Claude Code 和 Codex CLI 的插件能力。</li><li>GitHub Stars：35</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-14，GitHub API 显示 <code>updated_at</code> 为 19:02:10 UTC，<code>pushed_at</code> 为 19:02:04 UTC。</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：Claude Code、Codex CLI、GitHub Copilot、Cursor、Grok、Pi Coding Agent 等；具体系统要求资料未确认。</li><li>使用成本：开源免费；所接入的 AI 服务可能产生订阅或 API 费用。</li><li>上手步骤：克隆仓库；根据 README 选择需要的 skills、Agent 或 hooks；复制到对应工具的配置目录；在测试项目中执行代码审查或自动化任务。</li><li>推荐理由：适合已经使用多个 AI 编程工具的开发者，能够减少重复编写配置和工作流的成本。</li><li>局限与风险：项目规模和社区仍较小，Stars 为 35；不同 Agent 的配置格式和权限模型可能存在差异；安装 hooks 或自动化命令前应审查脚本内容。</li><li>官网/仓库链接：<a href="https://github.com/alexei-led/cc-thingz">GitHub 仓库</a></li></ul>
+<h3>工具三：ai-setup-sync</h3>
+<ul><li>一句话介绍：用于把 AI 编程工具配置文件和 MCP 配置从 GitHub 仓库同步到多个项目的 VS Code 扩展。</li><li>分类：编程插件 / Vibe Coding / 知识管理</li><li>适合谁：需要在多个代码仓库、成员设备或团队项目中统一维护 Claude Code、Copilot、Cursor、Codex 等 AI 配置的开发者和团队。</li><li>典型场景：统一下发项目级 AI 指令、MCP 配置、Agent 规则和代码工作流设置。</li><li>核心功能：从 GitHub 仓库同步 AI setup 文件；跨项目分发配置；支持 Claude Code、Copilot、Cursor、Codex、Antigravity 等工具。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认；GitHub 搜索结果显示项目符合 2026-09-08 之后更新的检索条件。</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：VS Code；所同步的 AI 工具包括 Claude Code、Copilot、Cursor、Codex、Antigravity 等。</li><li>使用成本：资料未确认；VS Code 扩展是否收费及相关 AI 服务费用待确认。</li><li>上手步骤：从 VS Code 扩展市场或仓库安装；配置用于存放 AI setup 文件的 GitHub 仓库；选择目标项目；先同步到测试项目并检查 MCP 与权限配置。</li><li>推荐理由：适合团队把 AI 编程规范纳入版本控制，减少手工复制配置造成的遗漏和不一致。</li><li>局限与风险：Stars、许可证、版本和具体同步机制尚未确认；GitHub 仓库权限、敏感密钥和 MCP 配置可能带来供应链与凭据泄露风险；不应把 API Key 直接提交到配置仓库。</li><li>官网/仓库链接：<a href="https://github.com/olekpuchka/ai-setup-sync">GitHub 仓库</a></li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---:| | <code>driftcheck</code> | 检测 AI Agent 依赖和 lockfile 版本漂移 | 0 | 2026-09-15 有提交 | 开源免费 | 3/5 | | <code>cc-thingz</code> | 跨 Claude Code、Codex、Cursor 等工具复用 Agent 能力 | 35 | 2026-09-14 有提交 | 开源免费，模型服务可能收费 | 4/5 | | <code>ai-setup-sync</code> | 通过 VS Code 和 GitHub 同步 AI 开发配置 | 资料未确认 | 近期有更新记录 | 资料未确认 | 4/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：资料未确认</li><li>身份/公司：资料未确认</li><li>说了什么：本期可靠资料不足，待确认。</li><li>为什么重要：缺少可核验的原始发言，无法判断其对模型、Agent、应用或产业政策的具体判断。</li><li>可能影响：待可靠来源确认后评估。</li><li>来源/时间：本期资料未提供可核验的国内 AI 业界人物原始采访、演讲或官方公告。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：James Manyika</li><li>身份/公司：Google 高级副总裁，负责 Research、Labs、Technology &amp; Society</li><li>说了什么：资料仅确认其于 2026-09-14 与宇航员 Christina Koch 进行关于太空、技术与探索的对谈，未提供可核验的具体引语或明确 AI 产业判断。</li><li>为什么重要：Manyika 负责 Google 的研究、实验室及技术社会议题，其公开讨论通常涉及前沿技术与社会影响；但本期材料不足以提炼具体观点。</li><li>可能影响：本次活动显示 Google 继续围绕技术、探索和 AI 时代的社会议题进行公众沟通，具体产品、研发或治理影响待完整文字稿确认。</li><li>来源/时间：<a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/">Google 官方博客</a>；2026-09-14</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：多 Agent、多 MCP、多项目并行时，先试 <code>ai-setup-sync</code> 统一配置；需要跨工具复用 skills、hooks 或代码审查规则时，再试 <code>cc-thingz</code>。涉及生产仓库前，审查所有 Agent 指令和自动化脚本。</li><li>办公场景：本期推荐工具主要面向开发者，办公自动化方向暂无可靠资料中同时满足“新主题、可试用、活跃”的候选。</li><li>创作场景：本期可靠资料未提供新的创作类工具；不建议为满足数量强行补充未经验证的产品。</li></ul>
+  </main>
+</body>
+</html>
