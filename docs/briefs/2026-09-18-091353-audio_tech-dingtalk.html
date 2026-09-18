@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-18</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-18</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日新增信息集中在开源音乐硬件复兴与开源音频插件持续开发，未发现经资料验证的音频 AI、编解码器、空间音频标准或专业硬件重大更新。</li><li>今日关键词：<code>x0xb0x</code> 数字重制、开源硬件、TB-303、Destroy FX、VST、Audio Unit、GPL-2.0、资料未确认</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：x0xb0x 经典开源硬件项目推出数字重制版本 ★</h3>
+<ul><li>发生了什么：CDM 报道，原 x0xb0x 创作者推出该经典硬件的数字模拟版本。x0xb0x 基于 Roland TB-303 设计，曾对开源硬件音乐设备生态产生影响。</li><li>涉及技术：TB-303 风格音源建模、数字硬件模拟、音序器、开源音乐硬件设计。</li><li>关键参数：采样率、位深、处理延迟、插件格式、售价及具体平台支持，资料未确认。</li><li>为什么重要：经典模拟硬件的数字重制降低了复现特定音色与工作流的门槛，也说明早期音乐硬件开源项目仍具备产品化和再传播价值。</li><li>对产品研发的影响：音源设备研发可继续关注经典硬件的行为建模、可编程音序器和开放硬件生态；但在评估音色还原度前，需要等待官方规格、实测或音频对比。</li><li>来源/时间：<a href="https://cdm.link/x0xb0x-begets-digix0x/">CDM｜x0xb0x, the synth that launched an open-source hardware boom, is reborn</a>｜2026-09-17 17:06 UTC</li></ul>
+<h3>事件二：Destroy FX 开源音频插件项目持续更新</h3>
+<ul><li>发生了什么：<strong>持续更新</strong>。GitHub 数据显示，Destroy FX 仓库在 2026-09-18 00:07 UTC 出现新的代码推送；项目当前公开信息显示支持 Audio Unit 与 VST，并采用 GPL-2.0 许可证。</li><li>涉及技术：音频效果插件、DSP、Audio Unit、VST、C++ 插件框架与图形界面框架。</li><li>关键参数：GitHub 当前显示 271 Stars、12 Forks、7 个开放 Issue；具体新增功能、修复内容和可发布构建版本，资料未确认。</li><li>为什么重要：持续维护的开源插件项目可为效果器原型、DSP 教学、宿主兼容性测试和插件框架研究提供参考。</li><li>对产品研发的影响：商业产品集成前需审查 GPL-2.0 对链接方式、发布方式和衍生代码的影响，并核对最新提交是否已形成稳定发行版。</li><li>相对上次新增的事实：相较 2026-09-15 的记录，新增 2026-09-18 代码推送时间；当前仓库公开统计为 271 Stars、12 Forks、7 个开放 Issue。资料未提供本次提交的具体变更说明。</li><li>来源/时间：<a href="https://github.com/sophiapoirier/destroyfx">GitHub｜sophiapoirier/destroyfx</a>｜仓库推送时间：2026-09-18 00:07 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：Destroy FX 项目持续提交代码，继续围绕音频效果插件和 C++ 插件框架维护。</li><li>工程应用：可用于失真、噪声和其他破坏性音效的插件原型开发，也可作为 Audio Unit/VST 宿主兼容性测试样本。</li><li>成熟度：项目长期存在且仍在更新；本次提交的功能完整性、实时性能和生产稳定性，资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期资料未发现经过可靠来源确认的新编解码器、版本发布或互操作性更新。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：暂不建议据此调整编码链路或终端兼容策略。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：本期资料未发现新的空间音频渲染器、对象音频格式或终端支持更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：此前已记录的 MOTU DP12 Dolby Atmos 信息不属于本期新增事实，按历史去重规则不重复展开。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：本期资料未发现符合历史去重和可靠性要求的新音频 AI、语音生成或音乐生成模型。</li><li>能力与限制：资料未确认。</li><li>工程应用：暂无可据此验证的模型选型、推理延迟或部署建议。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料未发现 AES、ITU、ETSI 或 3GPP 相关音频网络协议的新发布或重大更新。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：暂无新的网络音频系统设计依据。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：x0xb0x 数字重制版本</li><li>类型：经典 TB-303 风格音乐硬件的数字模拟产品</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：资料未确认</li><li>价格：资料未确认</li><li>与上一代或竞品差异：从硬件形态转向数字模拟版本；具体音色建模、控制方式和功能差异，资料未确认</li><li>来源/时间：<a href="https://cdm.link/x0xb0x-begets-digix0x/">CDM 原文</a>｜2026-09-17 17:06 UTC</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未发现新的 AES、ITU、ETSI 或 3GPP 音频标准、技术规范或论文发布。</li><li>发布机构：AES、ITU、ETSI、3GPP 官方资料源均未提供本期可核实的新动态。</li><li>核心结论：资料不足，不能以旧标准或既有规范代替本期更新。</li><li>对产品设计的影响：暂不需要因标准变化调整音频接口、编码、空间音频或网络音频设计。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：x0xb0x 从开源硬件文化到数字音乐工具</li><li>背景：x0xb0x 基于 TB-303 设计，并曾推动开源硬件音乐设备的发展；本期报道其以数字模拟形式重新出现。</li><li>技术方案：以数字方式复现经典硬件音色与使用方式，具体建模算法和硬件架构资料未公开确认。</li><li>结果：已由 CDM 报道产品重新推出；音色还原度、实时性、稳定性和商业销售数据尚未确认。</li><li>可借鉴点：经典设备数字化时，应同时保留核心声音行为、关键交互逻辑和可扩展的开发生态，并通过实测验证而非仅依赖厂商或媒体描述。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | x0xb0x 数字重制版本 | TB-303 风格数字模拟；其余参数未确认 | 资料未确认 | 平台与接口未确认 | 资料未确认 | <a href="https://cdm.link/x0xb0x-begets-digix0x/">CDM</a> | | Destroy FX | C++ 音频效果插件项目；271 Stars；GPL-2.0 | 资料未确认 | Audio Unit、VST | 免费开源项目；具体发行方式未确认 | <a href="https://github.com/sophiapoirier/destroyfx">GitHub</a> | | Destroy FX 最新代码状态 | 2026-09-18 00:07 UTC 有代码推送；变更内容未确认 | 资料未确认 | Audio Unit、VST | 资料未确认 | <a href="https://github.com/sophiapoirier/destroyfx">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：经典模拟硬件持续被数字化重制；开源音频插件项目仍通过持续代码更新维持生态价值。</li><li>工程风险：数字模拟产品的音色一致性、控制响应、实时延迟和跨平台稳定性尚无本期资料验证；开源项目最新提交可能尚未经过完整回归测试。</li><li>版权/合规风险：Destroy FX 采用 GPL-2.0，商业产品集成时需审查源代码、动态或静态链接、修改发布和许可证声明义务；TB-303 相关商标、外观和音色模仿边界也需单独评估。</li><li>商业化风险：x0xb0x 数字重制版本的价格、销售渠道、售后支持和长期维护未确认；开源插件的持续提交不等同于正式版本或商业级质量保证。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 x0xb0x 数字重制版本的官方规格、价格、平台支持和音频实测。</li><li>核对 Destroy FX 2026-09-18 提交的具体代码变更，并确认是否发布新版本或构建包。</li><li>继续监测 AES、ITU、ETSI、3GPP 是否发布新的音频编解码、空间音频、网络音频或 API 规范。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM｜x0xb0x, the synth that launched an open-source hardware boom, is reborn｜2026-09-17 17:06 UTC｜<a href="https://cdm.link/x0xb0x-begets-digix0x/">原文链接</a></li><li>GitHub｜sophiapoirier/destroyfx｜仓库推送时间：2026-09-18 00:07 UTC｜<a href="https://github.com/sophiapoirier/destroyfx">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜本期未发现可确认的新发布｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜本期未发现可确认的新发布｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>ETSI｜Standards｜本期未发现可确认的新发布｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications and Technologies｜本期未发现可确认的新发布｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
