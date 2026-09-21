@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-09-21</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-09-21</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天优先推荐 Helm、Customaise MCP 和 Claude Code：分别适合多 Agent 路由、浏览器自动化和代码库级开发，但公开资料中仅 Helm 明确达到近期活跃项目标准，其余两款的 Stars、版本和协议仍需进一步核验。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：Helm</h3>
+<ul><li>一句话介绍：将 Claude Code、Codex、Cursor、Gemini CLI、Aider 和 OpenCode 等编码 Agent 统一路由到合适的任务执行者。</li><li>分类：编程插件 / Vibe Coding / 开发者工具</li><li>适合谁：同时使用多个 AI 编程 Agent、希望按任务选择模型或工具链的开发者。</li><li>典型场景：根据任务类型在 Claude Code、Codex、Gemini CLI 等工具之间切换；为团队统一编码 Agent 的调用入口。</li><li>核心功能：Agent 路由、模型和工具选择、Claude Code 插件、Gemini 扩展、Agent Skill 集成。</li><li>GitHub Stars：9（截至资料抓取时）</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-09-20</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：依赖 Claude Code、Gemini CLI、Codex、Cursor、Aider 或 OpenCode 所支持的平台；具体兼容矩阵资料未确认。</li><li>使用成本：项目本身开源；所调用的第三方模型或 Agent 可能产生订阅或 API 费用。</li><li>上手步骤：</li><li>推荐理由：项目创建于 2026-09-20，近期有提交，直接解决多 Agent 并存时的选择和切换成本，适合 Vibe Coding 工作流实验。</li><li>局限与风险：Stars 较低，成熟度和稳定性尚未充分验证；多 Agent 路由可能增加上下文传递、权限管理和费用控制的复杂度。</li><li>官网/仓库链接：<a href="https://github.com/Jimuelle07/Helm">GitHub</a></li></ul>
+<ol><li>访问 GitHub 仓库并克隆项目。</li><li>按 README 配置已安装的编码 Agent。</li><li>将 Helm 安装为 Claude Code 插件、Gemini 扩展或 Agent Skill。</li><li>用一个低风险代码任务验证路由结果，再接入日常开发流程。</li></ol>
+<h3>工具二：Customaise MCP</h3>
+<ul><li>一句话介绍：通过 MCP Server 和 CLI，把浏览器扩展能力接入 Cursor、Claude Code、Codex、Windsurf 等 AI 编程 Agent。</li><li>分类：自动化 / 编程插件 / Vibe Coding</li><li>适合谁：需要让 AI Agent 操作浏览器、网页 DOM、UserScripts 或 WebMCP 的开发者和自动化工程师。</li><li>典型场景：让编码 Agent 控制浏览器标签页、调用网页脚本、定位可视化 DOM 元素并执行经过人工确认的操作。</li><li>核心功能：19 个工具接口、UserScripts、AgentScripts、WebMCP 调用、人工确认机制、可视化 DOM 定位、标签页控制。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Cursor、Claude Code、Codex、Windsurf、Kiro、Antigravity、Claude Desktop；浏览器扩展和操作系统兼容性资料未确认。</li><li>使用成本：资料未确认；可能涉及第三方 Agent、模型 API 或浏览器扩展的费用。</li><li>上手步骤：</li><li>推荐理由：它把浏览器自动化纳入 Vibe Coding Agent 的工具调用范围，可用于网页测试、数据采集、后台操作和原型验证。</li><li>局限与风险：浏览器控制权限较高；必须审查 MCP 工具定义、脚本来源和人工确认机制，避免敏感页面数据泄露或误操作。Stars、活跃度和协议资料未确认。</li><li>官网/仓库链接：<a href="https://github.com/getcustomaise/customaise-mcp">GitHub</a></li></ul>
+<ol><li>访问项目仓库，确认 MCP Server、CLI 和浏览器扩展的安装要求。</li><li>在目标 Agent 中配置 MCP Server。</li><li>安装对应浏览器扩展并授予必要权限。</li><li>先使用只读网页操作测试，再逐步开放脚本执行和标签页控制权限。</li></ol>
+<h3>工具三：Claude Code</h3>
+<ul><li>一句话介绍：面向代码库的终端 AI 编程 Agent，可读取项目上下文、修改文件、运行命令并协助完成开发任务。</li><li>分类：编程插件 / Vibe Coding / 开发者工具</li><li>适合谁：需要进行代码生成、重构、调试、测试和跨文件修改的软件工程师。</li><li>典型场景：解释陌生代码库、实现功能、修复测试失败、批量重构、生成测试和审查变更。</li><li>核心功能：代码库上下文分析、终端命令执行、文件修改、代码重构、调试和测试辅助。</li><li>GitHub Stars：不适用，官方商业工具，资料未提供对应开源仓库</li><li>近期新增 Stars：不适用</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：不适用，官方商业产品</li><li>支持平台：终端工作流；具体操作系统和 IDE 集成范围资料未确认。</li><li>使用成本：资料未确认，通常取决于官方订阅或模型使用额度。</li><li>上手步骤：</li><li>推荐理由：适合把需求分析、编码、测试和调试串成一个终端工作流；Anthropic 近期仍持续发布与编码和知识工作相关的模型及安全信息。</li><li>局限与风险：Agent 可能误读项目约束、执行不必要的命令或生成不完整代码；应限制权限、保护密钥，并通过版本控制和测试验证结果。具体价格、版本和最新能力资料未确认。</li><li>官网/仓库链接：<a href="https://www.anthropic.com/news">Anthropic Newsroom</a></li></ul>
+<ol><li>从 Anthropic 官方渠道确认安装方式、账户和计费规则。</li><li>在一个非敏感代码仓库中启动 Claude Code。</li><li>先让 Agent 分析项目结构和测试命令，再提出小范围修改任务。</li><li>对所有文件变更、命令执行和依赖安装进行人工审查。</li></ol>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---:| | Helm | 多编码 Agent 路由与统一入口 | 9 | 2026-09-20 有更新 | 项目开源，模型费用另计 | 4/5 | | Customaise MCP | 浏览器能力接入 AI Agent | 资料未确认 | 资料未确认 | 资料未确认 | 3/5 | | Claude Code | 代码库级终端开发 Agent | 不适用 | Anthropic 持续发布相关产品与安全信息 | 资料未确认 | 4/5 |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：资料未确认</li><li>身份/公司：资料未确认</li><li>说了什么：本期可靠资料不足，待确认。</li><li>为什么重要：当前资料没有提供可核验的国内 AI 产业负责人原始言论，无法判断其是否代表模型能力、商业化或监管方向的最新变化。</li><li>可能影响：待获得人物、原始来源和具体时间后评估。</li><li>来源/时间：本期可靠资料不足，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：资料未确认</li><li>身份/公司：资料未确认</li><li>说了什么：本期可靠资料不足，待确认。现有资料包含 Anthropic、OpenAI 和 GitHub 的官方文章，但未提供可直接归属于具体人物的完整原话。</li><li>为什么重要：公司公告或产品文章不能直接替代个人关键言论；若缺少演讲、采访、公开信或官方社交账号原文，容易把机构观点误归因给个人。</li><li>可能影响：待获得人物姓名、身份、原始引文和发布时间后，评估其对模型安全、AI Agent、企业应用和开发者工具市场的影响。</li><li>来源/时间：<a href="https://www.anthropic.com/news">Anthropic Newsroom</a>、<a href="https://openai.com/news/">OpenAI News</a>、<a href="https://github.blog/ai-and-ml/">GitHub AI &amp; ML</a></li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：已有多个编码 Agent 的开发者可先试 Helm；需要直接处理代码库、运行测试和调试时，优先评估 Claude Code，并将权限限制在测试仓库。</li><li>办公场景：Customaise MCP 更适合浏览器流程自动化，而不是普通文档问答；涉及账号、客户数据或后台操作时，应先启用只读权限和人工确认。</li><li>创作场景：本期可靠资料中没有足够证据支持新的图像、音视频或创意生产工具推荐；不建议仅因项目新建或描述醒目而替代已验证工具。</li></ul>
+  </main>
+</body>
+</html>
