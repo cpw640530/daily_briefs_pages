@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-09-21</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-09-21</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可验证的新动态集中在开源实验性 DSP 插件和档案音频驱动的遗作协作；音频 AI、语音/音乐生成、空间音频、编解码、专业硬件及耳机声学领域未发现足以确认的新发布，研发团队不宜仅凭搜索结果调整产品路线。</li><li>今日关键词：心理声学 DSP、开源插件、档案音频、遗作协作、版权与授权、信源不足</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：ZorakAudio 持续开发实验性心理声学 DSP 插件集 ★</h3>
+<ul><li>发生了什么：ZorakAudio-Experimental-Plugins 在 2026 年 9 月 20 日出现代码推送。项目以 C++ 开发、采用 MIT 许可证，收录面向感知与心理声学问题的实验性音频插件；截至资料快照有 22 Stars、1 Fork 和 11 个未关闭 Issue。</li><li>涉及技术：心理声学 DSP、实时音频插件、C++、感知导向参数设计、开源插件工程。</li><li>关键参数：仓库创建于 2025 年 12 月 31 日；最近推送时间为 2026 年 9月20日 22:15:49 UTC；仓库体积约 54,535 KB。插件格式、采样率、位深、系统兼容性及处理时延资料未确认。</li><li>为什么重要：该项目体现出插件设计从“复刻传统硬件参数”转向“围绕听觉结果设计少量控制项”的思路，可为响度、掩蔽、空间感和失真感知类处理器提供原型参考。不过，当前 Stars 数量和 Issue 状态不足以证明其生产环境成熟度。</li><li>对产品研发的影响：可作为算法验证与交互设计参考，但接入 DAW 或商业产品前，需要补做实时线程安全、参数平滑、极端输入、采样率切换、自动化回放和跨宿主兼容性测试。项目仍在更新，下一步应关注正式 Release、二进制构建及插件格式说明。</li><li>来源/时间：<a href="https://github.com/ZorakAudio/ZorakAudio-Experimental-Plugins">GitHub｜ZorakAudio-Experimental-Plugins</a>｜最近推送：2026-09-20 22:15:49 UTC</li></ul>
+<h3>事件二：Adam Wiltzie 披露基于历史循环素材完成 Jóhann Jóhannsson 遗作协作</h3>
+<ul><li>发生了什么：Adam Wiltzie 介绍了《Friendship Survival Guide》的制作过程。作品使用其与已故作曲家 Jóhann Jóhannsson 过往交换和留存的循环音频构建，属于档案素材进入新作品制作流程的产业应用案例。</li><li>涉及技术：音频档案整理、循环素材编辑、非同期协作、数字音频工作站制作流程；具体 DAW、插件、修复算法和生成式 AI 使用情况未披露。</li><li>关键参数：源素材格式、采样率、位深、素材数量、修复方式及母带链路均未确认。现有资料不能证明项目使用了语音克隆或生成式音乐模型。</li><li>为什么重要：它说明历史工程文件和音频交换记录能够成为后续创作资产，同时凸显素材授权、创作署名、遗产管理和“创作者意图”边界。该案例不应被表述为 AI 复活或声音克隆。</li><li>对产品研发的影响：DAW、云协作和素材管理产品可强化版本来源、贡献者身份、授权范围、素材血缘和不可篡改审计记录。下一步行业关注点将是遗作项目对授权披露和 AI 使用声明提出何种要求。</li><li>来源/时间：<a href="https://cdm.link/adam-wiltzie-johann-johannsson-friendship/">CDM｜Adam Wiltzie talks about his posthumous collaboration with Jóhann Jóhannsson</a>｜2026-09-18 16:00:23 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：ZorakAudio 开源实验插件集继续更新，方向为感知和心理声学 DSP，并强调少量控制项与安全行为；具体算法实现和本次提交差异未由资料展开。</li><li>工程应用：适用于效果器算法原型、听觉感知实验及插件参数映射研究。正式采用前需验证数值稳定性、实时线程行为、旁路一致性和多采样率响应。</li><li>成熟度：实验性项目；22 Stars、11 个未关闭 Issue，未提供足以确认量产成熟度的版本和测试信息。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期资料未提供新的音频编解码器版本、实现或性能测试。</li><li>性能与兼容性：资料未确认；不得据此推断 LC3、Opus、AAC、MPEG-H 或其他编解码技术出现更新。</li><li>工程应用：维持现有选型和兼容性验证计划，等待实现方或标准机构的正式发布。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：给定 GitHub 检索条件下结果为 0，未发现可验证的新空间音频或 Audio AI Python 项目。</li><li>渲染链路或终端支持：资料未提供新的对象音频、双耳渲染、头部跟踪、扬声器布局或终端支持信息。</li><li>工程应用：不建议根据“零搜索结果”判断产业停滞；后续需扩大到厂商公告、论文数据库和标准工作组记录。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：未发现可验证的新语音生成、音乐生成、分离、修复或音频基础模型发布。</li><li>能力与限制：Adam Wiltzie 项目使用档案循环素材，但现有资料未说明采用生成式 AI，不应将其归类为 AI 生成音乐。</li><li>工程应用：涉及历史人物声音或作品时，应保留授权凭证、数据来源、模型使用声明和人工编辑记录。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料未提供 AES67、Dante、AVB/TSN、Ravenna、SMPTE ST 2110-30 或网络 MIDI 的可靠新动态。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：现阶段应继续以目标网络下的端到端实测为准，包括时钟恢复、抖动缓冲、丢包恢复和不同厂商设备互操作测试。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Distortion</li><li>类型：免费、GPL 许可的开源失真插件；厂商/开发者描述其支持在示波器界面上直接绘制 EQ 曲线。</li><li>采样率/位深/时延：资料未确认。</li><li>兼容平台：Windows、macOS、Linux；项目描述列出 VST3、AU 和独立运行版本。AU 通常仅适用于 macOS，但具体构建矩阵未确认。</li><li>价格：免费。</li><li>与上一代或竞品差异：主要差异是将可绘制 EQ 曲线与失真处理界面结合；是否支持过采样、抗混叠、响度补偿和参数自动化，资料未确认。项目成熟度、正式 Release 和二进制安全性仍需核验。</li><li>来源/时间：<a href="https://github.com/elarmuzik1993/Distortion">GitHub｜elarmuzik1993/Distortion</a>｜进入 <code>pushed:&gt;2026-09-14</code> 检索结果；具体推送及发布时间资料未确认。同期未发现可验证的专业音频硬件、耳机或声学器件新品。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供 AES、ITU、ETSI 或 3GPP 在统计窗口内发布的新音频标准、修订版或论文。</li><li>发布机构：AES、ITU、ETSI、3GPP。</li><li>核心结论：没有足够可靠的新资料，不能将既有标准页面或历史规范重新包装为本期动态。</li><li>对产品设计的影响：暂不触发编解码、广播互操作、通信音频或沉浸式音频合规基线变更；研发团队仍应持续监控正式版本号、发布日期和变更记录。</li><li>原文链接：<a href="https://www.aes.org/standards/">AES Standards</a>｜<a href="https://www.itu.int/pub/">ITU Publications</a>｜<a href="https://www.etsi.org/standards">ETSI Standards</a>｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">3GPP Specifications</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：《Friendship Survival Guide》档案循环素材协作。</li><li>背景：Adam Wiltzie 与 Jóhann Jóhannsson 生前交换并积累了音频循环；在 Jóhannsson 去世后，这些素材被用于完成新的合作作品。</li><li>技术方案：以历史循环和声音交换记录为素材基础进行筛选、编排与后期制作。具体 DAW、修复工具、插件链路和 AI 使用情况未披露。</li><li>结果：形成可公开发行或展示的遗作协作成果；主观艺术效果来自受访者和媒体叙述，无法通过现有资料独立验证。</li><li>可借鉴点：工程文件应保留作者、时间、版本、许可范围及处理历史；面向遗作和档案项目的工具应支持素材血缘、权限继承、操作审计及 AI 处理标识。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | ZorakAudio-Experimental-Plugins | C++、MIT；22 Stars、1 Fork、11 个未关闭 Issue | 资料未确认 | 插件格式及操作系统未确认 | 开源 | <a href="https://github.com/ZorakAudio/ZorakAudio-Experimental-Plugins">GitHub</a> | | Distortion | JUCE；可绘制 EQ 曲线；GPL | 资料未确认 | Windows、macOS、Linux；VST3、AU、Standalone | 免费 | <a href="https://github.com/elarmuzik1993/Distortion">GitHub</a> | | 档案循环素材协作流程 | 基于历史 loops 与声音交换记录 | 不适用 | 具体 DAW 与插件未披露 | 资料未确认 | <a href="https://cdm.link/adam-wiltzie-johann-johannsson-friendship/">CDM</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开源插件继续探索“感知结果优先、控制项精简”的 DSP 交互；音乐制作端则开始更重视历史音频资产的再利用和来源管理。今日没有可靠证据显示音频 AI、空间音频、编解码器、硬件或标准出现重大变化。</li><li>工程风险：实验插件缺少明确的采样率、时延、格式、自动化和宿主兼容信息；未经压力测试直接进入实时制作链路，可能产生爆音、状态恢复失败或工程不可复现问题。</li><li>版权/合规风险：档案素材涉及原作者授权、遗产管理、署名和衍生作品权利。若后续使用生成式 AI、源分离或声音克隆，还需单独披露数据来源与处理方式。</li><li>商业化风险：低 Stars 或持续更新不等同于质量不足，但也不能作为市场需求或工程成熟度证据。免费/GPL 插件集成到闭源产品前，需要核查许可证义务；音乐科技公司融资、并购及重大经营变化本期资料未确认。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 ZorakAudio 项目的正式 Release、插件格式、二进制构建、测试覆盖和 Issue 收敛情况，不将普通代码推送误判为稳定版本。</li><li>核验 Distortion 的最新提交时间、过采样与抗混叠设计、实测时延、插件签名、公证状态和各平台安装包。</li><li>继续监控 AES、ITU、ETSI、3GPP 官方变更记录，以及语音/音乐生成、空间渲染、专业音频硬件和耳机声学器件的厂商原始公告。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜ZorakAudio/ZorakAudio-Experimental-Plugins｜最近推送 2026-09-20｜<a href="https://github.com/ZorakAudio/ZorakAudio-Experimental-Plugins">原文链接</a></li><li>CDM Create Digital Music｜Adam Wiltzie talks about his posthumous collaboration with Jóhann Jóhannsson｜2026-09-18｜<a href="https://cdm.link/adam-wiltzie-johann-johannsson-friendship/">原文链接</a></li><li>GitHub｜elarmuzik1993/Distortion｜具体发布时间资料未确认；进入 2026-09-15 以后推送检索结果｜<a href="https://github.com/elarmuzik1993/Distortion">原文链接</a></li><li>Audio Engineering Society｜AES Standards｜本期资料未确认新增发布时间｜<a href="https://www.aes.org/standards/">原文链接</a></li><li>International Telecommunication Union｜ITU Publications｜本期资料未确认新增发布时间｜<a href="https://www.itu.int/pub/">原文链接</a></li><li>ETSI｜Standards｜本期资料未确认新增发布时间｜<a href="https://www.etsi.org/standards">原文链接</a></li><li>3GPP｜Specifications by series｜本期资料未确认新增发布时间｜<a href="https://www.3gpp.org/specifications-technologies/specifications-by-series">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
