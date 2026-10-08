@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-08</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-08</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：本期可验证的新动态集中在颗粒音频插件、Pure Data 开源音频工具链和响度 DSP 基础库；资料未显示音频 AI、空间音频、编解码标准或耳机声学器件出现可靠的新发布。</li><li>今日关键词：颗粒合成、时间变形、Pure Data 0.57、libpd、plugdata、BS.1770、EBU R128、实时安全、JUCE、Linux 音频。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：HyperWarp 将可绘制时间路径引入颗粒音频处理 ★</h3>
+<ul><li>发生了什么：CDM 于 2026-10-06 发布 Baby Audio HyperWarp 上手评测及免费预置包。该插件允许用户通过曲线和阶梯绘制工具定义时间变化路径，用颗粒引擎生成节奏切片、音高扫动、音色染色及停滞类效果。</li><li>涉及技术：颗粒合成、时间拉伸、音高变换、图形化调制、音频效果插件。</li><li>关键参数：插件格式、采样率、位深、内部过采样、算法时延及 CPU 占用资料未确认。</li><li>为什么重要：时间处理正从固定参数和传统自动化转向可视化路径编辑，能够降低复杂颗粒调制的制作门槛，并提高声音设计的可重复性。</li><li>对产品研发的影响：插件团队可重点评估路径编辑器与宿主自动化的映射方式、参数平滑、离线渲染一致性及极端时间变形下的瞬态和混叠控制。接下来需要关注厂商是否公开时延、格式兼容性和性能数据。</li><li>来源/时间：<a href="https://cdm.link/hyperwarp-hands-on-free-soundpack/">CDM｜Time-bending, granular-powered HyperWarp: hands-on, free pack</a>｜2026-10-06</li></ul>
+<h3>事件二：Pure Data 0.57 推进 Pd、libpd 与 plugdata 共用工具链</h3>
+<ul><li>发生了什么：CDM 于 2026-10-02 报道自由开源可视化音频环境 Pure Data 正获得 0.57 更新，并指出该更新与基于 Pd 的 libpd、plugdata 工具链相关。具体完整变更清单在所给资料中未提供。</li><li>涉及技术：可视化音频编程、实时 DSP、嵌入式音频引擎、插件化开发、开源音频工具。</li><li>关键参数：新增对象、API 变化、实时性能、平台支持范围及兼容性细节资料未确认。</li><li>为什么重要：Pd 衍生生态覆盖桌面创作、插件和嵌入式交互音频；核心版本变化可能同时影响补丁兼容性、外部对象和产品内嵌方案。</li><li>对产品研发的影响：采用 libpd 或 plugdata 的团队应等待并核对官方变更记录，建立旧补丁回归测试，重点检查对象行为、消息调度、音频线程和第三方 externals。接下来将取决于下游项目的适配速度。</li><li>来源/时间：<a href="https://cdm.link/">CDM 首页相关条目</a>｜2026-10-02</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：开源 C++20 项目 Bellweather Audio Core 于 2026-10-07 更新，仓库描述显示其提供 BS.1770、EBU Tech 3341 一致性测试、实时安全基础组件，以及基于 JUCE 构建的 Barometer 参考插件。</li><li>工程应用：可用于响度计量、广播响度合规测试和 JUCE 插件原型；对自研计量插件而言，一致性测试比单纯提供 DSP 算法更具复用价值。</li><li>成熟度：早期项目。GitHub 数据显示仅 1 Star、1 Fork，尚不足以证明生产级稳定性；需进一步审查测试向量、平台覆盖、数值误差和实时线程实现。<a href="https://github.com/keithhetrick/bellweather-audio-core">来源</a>｜最后推送：2026-10-07</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：所给资料未包含新的音频编解码器、版本发布或 AES、ITU、ETSI、3GPP 编码标准更新。</li><li>性能与兼容性：资料未确认，不能据此比较压缩率、主观质量、复杂度或终端兼容性。</li><li>工程应用：近期产品选型仍应以现有目标平台的硬件解码能力、授权条件和互操作测试结果为依据；后续关注 LC3、MPEG-H、IAMF、EVS 等是否出现官方新版本或部署声明，但本期不将旧进展列为新动态。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：给定 GitHub 检索未发现 2026-10-01 以后同时匹配“spatial audio”“audio-ai”、Python 语言条件的新项目。</li><li>渲染链路或终端支持：没有可靠资料证明对象音频、声场、双耳渲染、头部追踪或终端 API 在本期发生更新。</li><li>工程应用：暂不调整渲染链路选型；继续关注 HRTF 个性化、头部追踪时延、扬声器布局适配和跨终端元数据一致性。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：所给资料没有可核实的新语音生成、音乐生成、源分离、语音增强或音频基础模型发布。</li><li>能力与限制：无法确认模型架构、训练数据、推理成本、生成质量、授权范围及水印能力。</li><li>工程应用：本期不建议基于缺失数据作模型选型。后续评估应同时要求可复现实验、商用授权、训练数据说明、输出溯源和真人声音授权机制。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：所给资料未包含 Dante、AES67、ST 2110-30、AVB/Milan、WebRTC 音频或网络化 MIDI 的可靠更新。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：专业音频网络项目仍需以端到端实测为准，覆盖时钟恢复、拥塞、冗余切换、组播配置及不同厂商设备互操作。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Baby Audio HyperWarp；Pure Data 0.57；Madrona Labs Aalto 2；Novation FLpad、FLpad mini。</li><li>类型：颗粒时间处理插件；开源可视化音频环境；可补丁式 West Coast 软件合成器；面向 FL Studio 的网格控制器。</li><li>采样率/位深/时延：所给资料均未确认。FLpad 标准型号支持力度感应，FLpad mini 的力度规格资料未确认。</li><li>兼容平台：Aalto 2 被报道计划于 2026 年秋季支持 macOS、Windows 和 Linux；Pure Data 衍生链路涉及 libpd、plugdata。HyperWarp 与 FLpad 的完整平台及接口兼容表资料未确认。</li><li>价格：资料未确认；Aalto 相关 Linux 混响伴侣测试版被报道可免费试用，但正式授权与价格未确认。</li><li>与上一代或竞品差异：HyperWarp 突出可绘制时间路径；Aalto 2 的明显变化是把 Linux 纳入计划平台；FLpad 将 Launchpad 系列的网格交互扩展到 FL Studio 工作流。专业音频接口、监听设备、耳机和声学器件没有可靠新品资料。</li><li>来源/时间：<a href="https://cdm.link/hyperwarp-hands-on-free-soundpack/">HyperWarp 上手评测</a>｜2026-10-06；<a href="https://cdm.link/">CDM 首页相关条目</a>｜Aalto 2：2026-10-04，Pure Data 0.57：2026-10-02，FLpad：2026-10-01</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供新的 AES、ITU、ETSI、3GPP 正式标准、修订案或可核验论文。</li><li>发布机构：无可确认的新发布机构条目。</li><li>核心结论：Bellweather Audio Core 引用了既有 BS.1770 与 EBU Tech 3341 作为一致性测试目标，但这属于开源实现动态，不代表标准本身更新。</li><li>对产品设计的影响：响度产品可参考其测试组织方式，但认证或合规判断仍须回到 ITU、EBU 等机构原文及正式测试材料；不得以单个 GitHub 项目替代标准符合性认证。</li><li>原文链接：<a href="https://github.com/keithhetrick/bellweather-audio-core">Bellweather Audio Core</a></li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Barometer JUCE 响度参考插件。</li><li>背景：响度计量实现需要兼顾 BS.1770 算法、EBU 测量流程、实时线程约束和宿主插件集成。</li><li>技术方案：Bellweather Audio Core 将响度 DSP、一致性测试和实时安全组件放入 C++20 库，并提供可从源码构建的 JUCE 参考插件。</li><li>结果：仓库已公开并于 2026-10-07 推送更新；测量精度、测试覆盖率、跨宿主表现及生产部署结果资料未确认。</li><li>可借鉴点：将标准测试向量、DSP 内核和宿主适配层分离；在 CI 中验证门限、积分响度和边界输入；对音频线程执行无锁、无分配检查。项目仍处早期，接入前应完成独立代码审计。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | HyperWarp | 颗粒引擎、曲线及阶梯时间路径 | 资料未确认 | 插件平台资料未确认 | 资料未确认 | <a href="https://cdm.link/hyperwarp-hands-on-free-soundpack/">CDM，2026-10-06</a> | | Pure Data 0.57 | 可视化音频编程；关联 libpd、plugdata | 资料未确认 | 完整平台清单未确认 | 开源；具体许可证以项目原文为准 | <a href="https://cdm.link/">CDM，2026-10-02</a> | | Aalto 2 | 可补丁式 West Coast 软件合成器 | 资料未确认 | macOS、Windows、Linux，厂商计划 | 资料未确认 | <a href="https://cdm.link/">CDM，2026-10-04</a> | | FLpad | 标准型号支持力度感应 | 资料未确认 | FL Studio；具体接口资料未确认 | 资料未确认 | <a href="https://cdm.link/">CDM，2026-10-01</a> | | Bellweather Audio Core | C++20、BS.1770、EBU Tech 3341、JUCE | 资料未确认 | CMake/JUCE；Apache-2.0 | 开源 | <a href="https://github.com/keithhetrick/bellweather-audio-core">GitHub，2026-10-07</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音频插件交互从旋钮参数向可绘制路径演进；开源音频框架继续向嵌入式和插件宿主扩展；Linux 正逐步进入商业音乐软件的正式平台规划。</li><li>工程风险：颗粒处理可能带来突发 CPU 负载、额外缓存时延和自动化不连续；Pd 版本升级可能影响旧补丁和 externals；早期开源 DSP 库的低采用量意味着跨平台验证不足。</li><li>版权/合规风险：本期资料未提供 AI 训练数据和生成内容，因此不能确认相关授权风险已解决。免费预置包仍需核查许可范围；响度实现需要区分“参考标准”与“通过正式合规验证”。</li><li>商业化风险：Linux 支持会扩大覆盖面，但也增加发行格式、图形栈、插件宿主和技术支持成本；缺少公开时延、CPU 和兼容性数据的软件不宜直接进入关键制作或播出链路。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Pure Data 0.57 官方变更日志、libpd/plugdata 兼容性及 externals 回归情况。</li><li>HyperWarp 的插件格式、算法时延、CPU 占用、自动化能力、授权价格及免费预置许可。</li><li>Aalto 2 Linux 正式版本与宿主兼容性，以及 AES、ITU、ETSI、3GPP 是否发布新的音频标准或技术报告。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Time-bending, granular-powered HyperWarp: hands-on, free pack｜2026-10-06｜https://cdm.link/hyperwarp-hands-on-free-soundpack/</li><li>CDM Create Digital Music｜Aalto 2 is coming this fall for macOS, Windows and Linux｜2026-10-04｜https://cdm.link/</li><li>CDM Create Digital Music｜Pure Data 0.57 update｜2026-10-02｜https://cdm.link/</li><li>CDM Create Digital Music｜Novation FLpad and FLpad mini｜2026-10-01｜https://cdm.link/</li><li>Keith Hetrick｜Bellweather Audio Core｜最后推送于 2026-10-07｜https://github.com/keithhetrick/bellweather-audio-core</li></ol>
+  </main>
+</body>
+</html>
