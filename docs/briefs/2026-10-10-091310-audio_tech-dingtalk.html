@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-10</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-10</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日新增信息集中在开源音频插件和音乐科技公司战略信号，音频 AI、空间音频、编解码器及标准暂无可靠的新事实更新。</li><li>今日关键词：开源 DSP、瞬态塑形、VST3、Audio Unit、音乐科技公司战略、合成器业务、音频插件生态</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：teenage engineering 创始人释放“退出合成器制造”信号 ★</h3>
+<ul><li>发生了什么：CDM 报道，teenage engineering 首席执行官兼创始人 Jesper Kouthoofd 表示，他曾告诉公司“停止制造合成器”。报道未披露正式业务调整方案、时间表或产品路线图。</li><li>涉及技术：硬件合成器、音乐制作设备、产品战略。</li><li>关键参数：具体产品、收入占比、停产范围和时间表均未确认。</li><li>为什么重要：如果公司减少或退出合成器制造，可能影响其硬件产品组合、研发资源配置及音乐科技硬件市场的竞争格局。目前仍属于管理层表态，不能视为正式公告。</li><li>对产品研发的影响：相关企业应继续跟踪 teenage engineering 的官方产品发布、库存与软件支持策略；短期内不宜据此调整供应链或竞品规划。</li><li>来源/时间：<a href="https://cdm.link/end-of-teenage-synths/">CDM 原文</a>｜2026-10-09 15:02 UTC</li></ul>
+<h3>事件二：montagem-punch 发布开源瞬态塑形插件</h3>
+<ul><li>发生了什么：GitHub 项目 <code>montagem-punch</code> 最近更新，定位为使用单旋钮增强攻击、控制延音的轻量级音频插件，项目描述显示其支持 VST3 和 Audio Unit。</li><li>涉及技术：瞬态检测与塑形、DSP、JUCE、C++、VST3、Audio Unit、CMake。</li><li>关键参数：采样率、位深、处理时延、内部算法、宿主兼容性和预设数量均未确认。项目当前显示 2 Stars、0 Forks；许可证为 MIT。</li><li>为什么重要：它体现了开源音频插件继续向单功能、低学习成本和跨格式分发方向发展，适合用于鼓组、打击乐和需要增强起音的乐器轨道。</li><li>对产品研发的影响：研发团队可参考其单参数交互方式和 JUCE 跨平台工程结构；在集成前仍需测试瞬态检测误触发、过冲、相位行为、参数自动化及不同宿主中的扫描稳定性。</li><li>来源/时间：<a href="https://github.com/sturdy-genova223/montagem-punch">GitHub 项目</a>｜最近推送时间：2026-10-10 01:08 UTC</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：开源瞬态塑形插件 <code>montagem-punch</code> 更新，项目描述强调通过单一控制参数增强攻击并管理延音。</li><li>工程应用：鼓组、打击乐、贝斯及需要提高起音辨识度的音轨处理；可作为 VST3 或 Audio Unit 插件接入 DAW。</li><li>成熟度：原型或早期项目。当前社区规模较小，算法细节、测试覆盖率和跨宿主稳定性资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中没有可靠的新编解码器、版本或标准更新。</li><li>性能与兼容性：无新增可核实参数。</li><li>工程应用：暂不能据此调整编码链路；现有项目应继续依据既定平台兼容矩阵进行验证。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中没有可靠的新空间音频技术、渲染器或终端支持更新。</li><li>渲染链路或终端支持：未提供新的对象音频、双耳渲染、Ambisonics 或多声道终端信息。</li><li>工程应用：暂无新增工程建议。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中没有可靠的新音频 AI、语音生成、音乐生成或音频分离模型发布。</li><li>能力与限制：暂无可核实的新性能、价格、授权或 API 信息。</li><li>工程应用：不建议使用本期资料更新模型选型或生产流程。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中没有可靠的 AES、AVB、Dante、RAVENNA、AES67、WebRTC 音频链路更新。</li><li>时延与互操作性：无新增测量数据或兼容性声明。</li><li>工程应用：暂不改变现有网络音频架构。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：montagem-punch</li><li>类型：开源瞬态塑形音频插件</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：项目描述标注 VST3 和 Audio Unit；具体操作系统及宿主兼容性未确认</li><li>价格：免费开源；GitHub 项目许可证显示为 MIT</li><li>与上一代或竞品差异：资料未提供上一代版本或系统性竞品测试；已知特点是单旋钮操作和轻量级定位</li><li>来源/时间：<a href="https://github.com/sturdy-genova223/montagem-punch">GitHub 项目</a>｜最近推送时间：2026-10-10 01:08 UTC</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料中没有可靠的新标准或论文更新</li><li>发布机构：未提供 AES、ITU、ETSI 或 3GPP 的新增发布信息</li><li>核心结论：暂无可核实的新标准条文、编解码规范或音频网络互操作要求</li><li>对产品设计的影响：暂不应依据本期资料修改接口、编解码、空间音频或网络音频设计</li><li>原文链接：资料未提供可靠原文链接</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：开源单功能瞬态处理插件的跨格式分发</li><li>背景：<code>montagem-punch</code> 以 C++、JUCE 和 CMake 为基础，面向 VST3 与 Audio Unit 插件格式。</li><li>技术方案：采用单一控制参数呈现瞬态塑形功能，具体检测器、滤波器、增益曲线和过采样方案未公开或未在资料中说明。</li><li>结果：项目已公开在 GitHub，当前显示 2 Stars、0 Forks；实际音质、实时性能和宿主稳定性尚无独立测试结果。</li><li>可借鉴点：单功能插件可以降低用户学习成本，但正式产品仍需补充自动化测试、实时线程约束、异常输入处理、参数平滑和多宿主验证。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | montagem-punch | 单旋钮瞬态塑形；C++、JUCE、CMake；MIT | 资料未确认 | VST3、Audio Unit；操作系统未确认 | 免费开源 | <a href="https://github.com/sturdy-genova223/montagem-punch">GitHub</a> | | ZorakAudio Experimental Plugins | 开源实验性音频插件集合；项目描述涉及感知与心理声学 DSP | 资料未确认 | 具体插件格式和平台未确认 | 资料未确认 | <a href="https://github.com/ZorakAudio/ZorakAudio-Experimental-Plugins">GitHub</a> | | teenage engineering 合成器业务 | 公司战略表态；产品范围和调整时间表未确认 | 不适用 | 硬件音乐制作设备 | 资料未确认 | <a href="https://cdm.link/end-of-teenage-synths/">CDM</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开源音频插件继续出现面向单一任务的轻量化 DSP 工具；VST3、Audio Unit、JUCE 和 CMake 仍是跨平台插件开发的重要组合。音乐科技硬件厂商的业务重心可能出现变化，但目前只有个别管理层表态作为信号。</li><li>工程风险：早期插件项目可能存在宿主扫描失败、实时线程阻塞、参数自动化异常、过载处理不足、采样率适配不完整和跨平台构建失败等问题。</li><li>版权/合规风险：开源项目虽然标注 MIT，但仍需核查依赖库、第三方素材、品牌名称及分发包中的许可证文件。音频 AI、语音和音乐生成方面本期没有新增授权信息。</li><li>商业化风险：低门槛单功能插件面临同类产品多、差异化有限和用户验证不足的问题；teenage engineering 的业务表态尚未转化为正式公告，相关市场判断存在较高不确定性。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 teenage engineering 是否发布正式业务调整、产品停产、研发方向或软件支持公告。</li><li>观察 <code>montagem-punch</code> 是否新增发行包、宿主兼容性说明、性能测试、版本标签或 Stars 明显增长。</li><li>关注 ZorakAudio Experimental Plugins 是否发布具体插件、参数文档和可复现实验结果。</li><li>继续核查 AES、ITU、ETSI、3GPP 及主流音频平台是否出现新的音频 AI、空间音频、编解码器或音频网络更新。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM｜teenage engineering might quit synths, but parody can’t quit them｜2026-10-09 15:02 UTC｜<a href="https://cdm.link/end-of-teenage-synths/">原文</a></li><li>GitHub｜sturdy-genova223/montagem-punch｜最近推送：2026-10-10 01:08 UTC｜<a href="https://github.com/sturdy-genova223/montagem-punch">原文</a></li><li>GitHub｜ZorakAudio/ZorakAudio-Experimental-Plugins｜资料显示近期有更新；具体更新时间未提供｜<a href="https://github.com/ZorakAudio/ZorakAudio-Experimental-Plugins">原文</a></li></ol>
+  </main>
+</body>
+</html>
