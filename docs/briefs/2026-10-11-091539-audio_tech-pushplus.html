@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-11</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-11</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：近期可确认的新动态集中在开源音频开发工作流、跨平台合成器软件和音乐控制硬件，音频 AI、编解码器、空间音频及标准领域暂未见资料中的可靠新增事实。</li><li>今日关键词：StudioHub、Linux 音频开发、VST3 构建、Aalto 2、FLpad、跨平台、开源工具链</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：StudioHub 建立面向 Linux 的 Codex 辅助音频插件开发工作区 ★</h3>
+<ul><li>发生了什么：GitHub 用户 <code>zmardanian</code> 于 2026 年 10 月 10 日创建并推送 StudioHub。项目定位为原生 Linux 音频工作区，覆盖 Codex 辅助的音频插件开发、可复现 VST3 构建、验证和 DSP 测量。</li><li>涉及技术：C++、VST3、Linux 原生开发、DSP 测量、自动化构建、插件验证。</li><li>关键参数：仓库语言为 C++；项目创建时间为 2026-10-10 20:48:42 UTC；Stars、Forks 均为 0；具体构建系统、支持的发行版、测量指标和插件宿主兼容性，资料未确认。</li><li>为什么重要：它把插件开发从单纯编写 DSP 扩展到构建复现、验证和测量，有助于降低 Linux 音频插件开发中的环境差异和交付风险。</li><li>对产品研发的影响：Linux 音频团队可将其作为早期工程验证对象，重点检查 VST3 SDK 兼容性、CI 可复现性、实时线程约束和 DSP 测量结果是否能稳定复现。由于项目尚处早期，暂不宜作为生产工具链的唯一基础。</li><li>来源/时间：<a href="https://github.com/zmardanian/StudioHub">GitHub 仓库</a>；2026-10-10 20:48 UTC（仓库创建与首次推送时间，以 GitHub 搜索资料为准）。</li></ul>
+<h3>事件二：Madrona Labs 预告 Aalto 2 将支持 Linux</h3>
+<ul><li>发生了什么：CDM 报道 Madrona Labs 的模块化 West Coast 合成器 Aalto 2 计划于 2026 年秋季推出 macOS、Windows 和 Linux 版本；其混响伴侣工具已提供 Linux 免费演示版测试。</li><li>涉及技术：模块化合成、West Coast 合成、软件乐器、Linux 音频应用、混响处理。</li><li>关键参数：目标平台为 macOS、Windows 和 Linux；正式发布日期、采样率、位深、插件格式、CPU 占用、售价和具体 Linux 支持范围，资料未确认。</li><li>为什么重要：如果按计划发布，Aalto 2 将扩大高端模块化软件乐器在 Linux 创作环境中的可用性，并推动 Linux DAW 对商业音频插件的支持需求。</li><li>对产品研发的影响：Linux 音频软件和硬件厂商应关注插件格式、图形界面框架、音频服务器兼容性及发行版打包方式；采购或集成项目应等待正式版本、授权条款和宿主兼容性信息。</li><li>来源/时间：<a href="https://cdm.link/">CDM：Madrona Labs Aalto 2</a>；2026-10-04，具体文章链接和发布时间资料未完整提供。</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：StudioHub 将 DSP 测量纳入 Linux 音频插件开发工作区；Aalto 2 延续可调制的模块化合成路线。</li><li>工程应用：可用于插件构建验证、实时处理性能评估、模块化音色设计和混响算法测试。</li><li>成熟度：StudioHub 为新建开源项目，成熟度待验证；Aalto 2 为厂商预告产品，正式能力待发布。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中没有 AES、ITU、ETSI、3GPP 或厂商关于新编解码器、版本或兼容性的重要更新。</li><li>性能与兼容性：没有新增可靠参数，资料未确认。</li><li>工程应用：暂不建议据此调整编码格式、码率策略或终端兼容矩阵。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中没有新的空间音频格式、双耳渲染器、对象音频工具或终端支持更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：暂不形成新的渲染链路选型结论。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：StudioHub 的项目描述提及 Codex 辅助开发，但没有公布专用音频 AI 模型、推理指标或音频生成能力。</li><li>能力与限制：可确认的是开发辅助定位；代码生成质量、DSP 测量自动化程度和生产可用性均未验证。</li><li>工程应用：可观察其在插件脚手架、构建配置、验证脚本和测量报告生成方面的实际价值。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中没有新的 Dante、AES67、AVB、Milan、RAVENNA 或其他音频网络协议更新。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：现有网络音频设备和系统的协议选型暂不需要因本期资料调整。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：StudioHub</li><li>类型：开源 Linux 音频插件开发工作区</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：Linux；具体发行版、编译器和宿主兼容性资料未确认</li><li>价格：资料未确认；GitHub 仓库公开</li><li>与上一代或竞品差异：项目定位同时覆盖 Codex 辅助开发、可复现 VST3 构建、验证和 DSP 测量；尚无可确认的竞品性能对比</li><li>来源/时间：<a href="https://github.com/zmardanian/StudioHub">GitHub</a>；2026-10-10</li></ul>
+<ul><li>产品：Aalto 2</li><li>类型：模块化 West Coast 软件合成器</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：计划支持 macOS、Windows、Linux</li><li>价格：资料未确认</li><li>与上一代或竞品差异：资料仅确认新版本计划扩大到 Linux；具体新增模块、音色、性能和授权变化未确认</li><li>来源/时间：<a href="https://cdm.link/">CDM</a>；2026-10-04</li></ul>
+<ul><li>产品：FLpad</li><li>类型：面向 FL Studio 用户的网格控制器</li><li>采样率/位深/时延：不适用或资料未确认</li><li>兼容平台：面向 FL Studio 工作流；具体系统和 MIDI/USB 兼容性资料未确认</li><li>价格：资料未确认</li><li>与上一代或竞品差异：资料显示有标准版和 FLpad mini 两种型号，标准版具备力度感应；详细按键数量、连接方式和延迟未确认</li><li>来源/时间：<a href="https://cdm.link/">CDM</a>；2026-10-01</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本期资料未提供新的 AES、ITU、ETSI 或 3GPP 标准、修订版、技术报告或论文。</li><li>发布机构：资料未确认。</li><li>核心结论：没有可靠新增事实，不能据此更新音频编码、空间音频、实时传输或设备互操作标准判断。</li><li>对产品设计的影响：继续使用现有标准基线；涉及正式标准变更的项目应等待相关机构原文或公告。</li><li>原文链接：资料未提供新的标准或论文原文链接。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：Linux 原生音频插件研发工作区</li><li>背景：Linux 音频插件研发通常同时面对编译环境、VST3 构建、实时处理和测量验证等问题。</li><li>技术方案：StudioHub 将 Codex 辅助开发、可复现 VST3 构建、插件验证和 DSP 测量放在同一项目中。</li><li>结果：项目已公开创建并推送；实际构建成功率、测量覆盖率、插件宿主兼容性和长期维护能力尚未验证。</li><li>可借鉴点：音频插件项目应把构建复现、实时性能测量和宿主验证纳入开发流程，而不应只验收音频算法是否能运行。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | StudioHub | C++；VST3 构建、验证、DSP 测量；Stars 0 | 资料未确认 | Linux；具体接口未确认 | 资料未确认 | <a href="https://github.com/zmardanian/StudioHub">GitHub</a>，2026-10-10 | | Aalto 2 | West Coast 模块化软件合成器；厂商计划支持三类桌面系统 | 资料未确认 | macOS、Windows、Linux；插件格式未确认 | 资料未确认 | <a href="https://cdm.link/">CDM</a>，2026-10-04 | | FLpad | 标准版力度感应；另有 mini 版 | 资料未确认 | 面向 FL Studio；连接接口未确认 | 资料未确认 | <a href="https://cdm.link/">CDM</a>，2026-10-01 |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：音频软件开发正在把 AI 辅助、可复现构建、DSP 测量和跨平台交付放在同一工作流中；Linux 作为音频创作和插件运行平台的关注度可能继续提升。</li><li>工程风险：StudioHub 和 Aalto 2 的关键信息仍不完整，尤其是插件格式、发行版支持、实时线程表现、宿主兼容性和构建稳定性；FLpad 的连接协议与延迟数据也未确认。</li><li>版权/合规风险：本期资料没有新的训练数据、音频生成版权或采样授权事件；采用 AI 辅助代码时仍需审查生成代码的许可证来源和第三方依赖。</li><li>商业化风险：开源项目尚无维护规模和商业支持证据；预告产品的发布时间、价格和 Linux 版本支持范围可能变化；新控制器能否形成稳定生态取决于 DAW 集成深度。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 StudioHub 是否发布首个可用版本、构建说明、许可证、CI 配置和 DSP 测量结果。</li><li>跟踪 Aalto 2 的正式发布日期、插件格式、Linux 发行版支持、价格和宿主兼容性。</li><li>跟踪 FLpad 的标准版与 mini 版详细规格、连接方式、驱动支持、延迟和零售价格。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜StudioHub｜2026-10-10｜<a href="https://github.com/zmardanian/StudioHub">原文链接</a></li><li>CDM Create Digital Music｜Madrona Labs 的 Aalto 2 将支持 macOS、Windows 和 Linux｜2026-10-04｜<a href="https://cdm.link/">原文入口</a></li><li>CDM Create Digital Music｜FLpad 面向 FL Studio 的网格控制器｜2026-10-01｜<a href="https://cdm.link/">原文入口</a></li></ol>
+  </main>
+</body>
+</html>
