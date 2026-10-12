@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-12</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-12</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可核实的新动态集中在开源音频插件开发：ClassicFlanger-RE01 于 2026-10-12 更新，尝试以 GPL-3.0 许可重写经典镶边器，并同时面向 VST、VST3 与 CLAP 生态；资料中未发现音频 AI、空间音频、编解码器、标准或专业硬件的可靠新增发布。</li><li>今日关键词：开源插件、反向工程、CLAP、VST3、GPL-3.0、兼容性验证、资料不足</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：ClassicFlanger-RE01 更新开源经典镶边器重写项目 ★</h3>
+<ul><li>发生了什么：GitHub 项目 ClassicFlanger-RE01 于 2026-10-12 01:07 UTC 更新，项目定位为对 Kjaerhus Audio Classic Flanger 的反向工程重写，采用 GPL-3.0 许可证。</li><li>涉及技术：数字镶边效果、DSP 音频插件、VST、VST3、CLAP。</li><li>关键参数：仓库标注支持或涉及 VST、VST3 与 CLAP；GitHub 显示项目使用 C++，当前 Stars 为 2，具体采样率、位深、处理延迟、CPU 占用与音色一致性资料未确认。</li><li>为什么重要：开源重写项目可为插件开发者提供效果器算法研究、格式适配和宿主兼容性验证样本，同时也反映 CLAP 与传统 VST/VST3 并行适配的趋势。</li><li>对产品研发的影响：研发团队可以关注其 DSP 结构、插件参数组织和多格式构建方式，但在引用原始产品行为、音色或算法前，应完成许可、反向工程合规性和听感一致性审查。该项目尚不足以证明其已达到商业插件的稳定性或兼容性水平。</li><li>来源/时间：<a href="https://github.com/AnClark/ClassicFlanger-RE01">GitHub：AnClark/ClassicFlanger-RE01</a>｜仓库更新时间：2026-10-12 01:07 UTC</li></ul>
+<h3>事件二：资料范围内暂无其他可核实的近期重大新增</h3>
+<ul><li>发生了什么：所提供资料未包含 2026-10-12 当日或近期 14 天内，音频 AI、语音/音乐生成、空间音频、沉浸式音频、编解码器、音频网络、DAW、专业硬件、耳机声学器件、音乐科技公司融资或标准 API 的可靠新事件。</li><li>涉及技术：音频 AI、生成式音频、空间渲染、网络音频、标准与 API。</li><li>关键参数：资料未确认。</li><li>为什么重要：避免将 2026-10-08 至 2026-10-11 已使用的 HyperWarp、Pure Data 0.57、montagem-punch、StudioHub、Aalto 2 预告及 teenage engineering 表态重复计入本期简报。</li><li>对产品研发的影响：相关团队应继续等待厂商公告、版本记录、标准组织发布页或可复核的论文与仓库变更，再据此调整技术路线。</li><li>来源/时间：<a href="https://cdm.link/">本期提供的 GitHub 与 CDM 资料汇总</a>｜资料截点：2026-10-12；未提供可核实的新标准或论文原文链接</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：ClassicFlanger-RE01 开源重写项目更新，涉及经典镶边效果的 DSP 实现。</li><li>工程应用：可用于研究延迟调制、反馈、混合比例和插件参数自动化等镶边器实现问题；具体算法结构需查看源代码后确认。</li><li>成熟度：早期或小规模开源项目。当前 Stars 为 2，尚无资料证明其经过广泛宿主、实时性能和听感一致性验证。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料中未发现近期可靠的新编解码器或版本更新。</li><li>性能与兼容性：资料未确认。</li><li>工程应用：暂无可据此调整的新增工程方案。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料中未发现近期可靠的空间音频或沉浸式渲染更新。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：暂无可核实新增案例。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料中未发现近期可靠的语音生成、音乐生成、音频编辑模型或 API 更新。</li><li>能力与限制：资料未确认。</li><li>工程应用：暂无可核实新增应用。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料中未发现近期可靠的 AES、ITU、ETSI、3GPP 或其他音频网络协议新增发布。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：暂无可核实新增方案。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：ClassicFlanger-RE01</li><li>类型：开源音频效果插件项目，目标为重写 Kjaerhus Audio Classic Flanger</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：仓库主题标签涉及 VST、VST3、CLAP；操作系统和具体宿主兼容性资料未确认</li><li>价格：免费开源；许可证为 GPL-3.0</li><li>与上一代或竞品差异：项目目标是开源重写，当前资料不足以确认其与原始 Classic Flanger 在算法、音色、界面或性能上的差异</li><li>来源/时间：<a href="https://github.com/AnClark/ClassicFlanger-RE01">GitHub 项目主页</a>｜更新时间：2026-10-12 01:07 UTC</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：资料中未提供 2026-10-12 及近期 14 天内 AES、ITU、ETSI、3GPP 的可靠新增标准、修订版或论文。</li><li>发布机构：资料未确认。</li><li>核心结论：暂无可核实的新结论。</li><li>对产品设计的影响：暂不应基于本期资料修改编解码、空间音频、音频网络或 API 兼容策略。</li><li>原文链接：资料未提供可靠原文链接。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：ClassicFlanger-RE01 多插件格式开源重写</li><li>背景：项目尝试对经典商业镶边器进行开源重写，并在仓库主题标签中同时列出 VST、VST3 与 CLAP。</li><li>技术方案：使用 C++ 开发音频插件，采用 GPL-3.0 许可证；具体构建系统、DSP 拓扑、参数平滑、测试宿主和自动化验证流程资料未确认。</li><li>结果：截至 2026-10-12，GitHub 显示项目更新，Stars 为 2；暂无足够数据证明其已达到生产环境稳定性。</li><li>可借鉴点：多插件格式适配应与算法实现、参数自动化、状态保存、实时线程安全和宿主兼容性测试同步推进；开源反向重写项目还需单独进行知识产权审查。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---:|---|---|---| | ClassicFlanger-RE01 | C++；GPL-3.0；仓库标签涉及 VST、VST3、CLAP；Stars 2 | 资料未确认 | 具体平台未确认；VST/VST3/CLAP | 免费开源 | <a href="https://github.com/AnClark/ClassicFlanger-RE01">GitHub</a> | | HyperWarp | 近期 14 天已使用内容，本期不重复 | 资料未确认 | 资料未确认 | 资料未确认 | <a href="https://cdm.link/hyperwarp-hands-on-free-soundpack/">CDM</a> | | Pure Data 0.57 | 近期 14 天已使用内容，本期不重复 | 资料未确认 | Pd、libpd、plugdata 相关生态 | 开源 | <a href="https://cdm.link/">CDM</a> | | StudioHub | 近期 14 天已使用内容，本期不重复 | 资料未确认 | Linux；VST3 构建与测量工作流 | 开源仓库 | <a href="https://github.com/zmardanian/StudioHub">GitHub</a> |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：开源音频插件继续向 VST、VST3 与 CLAP 多格式并行适配发展；经典效果器的开源重写可能成为 DSP 学习、兼容性验证和社区协作的入口。</li><li>工程风险：ClassicFlanger-RE01 的采样率支持、实时线程安全、状态保存、宿主兼容性、CPU 占用和生产稳定性尚未确认；早期项目不宜直接用于关键商业交付。</li><li>版权/合规风险：反向工程重写涉及原始产品的代码、算法表达、预设、界面和商标边界。GPL-3.0 可能影响闭源产品集成方式，商业采用前需完成许可证和知识产权审查。</li><li>商业化风险：项目 Stars 较少，缺少商业支持、长期维护和版本承诺；其与原始产品或竞品的听感和性能差异也没有独立测试数据支持。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>跟踪 ClassicFlanger-RE01 的 Release、提交记录、构建说明和宿主兼容性测试。</li><li>核查项目是否公开具体采样率、位深、处理延迟、CPU 占用与 DSP 测量结果。</li><li>关注 CLAP、VST3 在开源插件项目中的参数自动化、状态保存和跨平台构建实践。</li><li>等待 AES、ITU、ETSI、3GPP 官方页面出现可核实的新标准、修订版或论文。</li><li>继续筛选近期 14 天内未出现的音频 AI、语音/音乐生成、空间音频、沉浸式音频、专业硬件与音乐科技公司动态。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜AnClark/ClassicFlanger-RE01｜仓库更新时间：2026-10-12 01:07 UTC｜<a href="https://github.com/AnClark/ClassicFlanger-RE01">原文链接</a></li><li>CDM Create Digital Music｜HyperWarp hands-on and free soundpack｜2026-10-06；本期因历史去重不展开｜<a href="https://cdm.link/hyperwarp-hands-on-free-soundpack/">原文链接</a></li><li>GitHub｜zmardanian/StudioHub｜本期因历史去重不展开｜<a href="https://github.com/zmardanian/StudioHub">原文链接</a></li><li>CDM Create Digital Music｜站点及 Feed 资料｜资料截点：2026-10-12｜<a href="https://cdm.link/">原文链接</a></li></ol>
+  </main>
+</body>
+</html>
