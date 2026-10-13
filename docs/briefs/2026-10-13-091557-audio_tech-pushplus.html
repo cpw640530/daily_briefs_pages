@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-13</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-13</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：今日可核实的新增集中在开源侧——Mutable Instruments 的颗粒模块 Beads 完成开源，标志该品牌 Eurorack 模块全线进入自由许可；同时出现面向 FMOD 的 C++ DSP 插件 CMake 工程模板，游戏音频的插件开发门槛被进一步拉低。</li><li>今日关键词：Beads 开源、Mutable Instruments 全线开源、FMOD DSP 插件、CMake 工程模板、颗粒合成</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：Beads 开源，Mutable Instruments 模块线完成最后一块拼图 ★</h3>
+<ul><li>发生了什么：CDM 报道称，Emilie Gillet 在 Clouds 之后推出的颗粒“纹理合成器”Beads 现已完全开源，补齐 Mutable Instruments 经典 Eurorack 模块在开源代码与自由许可上的最后缺口（2026-10-12）。</li><li>涉及技术：颗粒（granular）合成 / 纹理合成、Eurorack 模块固件与硬件开源许可。</li><li>关键参数：具体开源仓库地址、许可证类型、固件版本号与 DSP 参数，资料未确认；报道仅确认“完全开源”与“完成系列最后一块”。</li><li>为什么重要：Mutable Instruments 的 Clouds、Beads 一直是颗粒处理与实验性声音设计的事实参考实现。全线开源意味着此前只能靠“复刻”“反向工程”或纯听感复现的算法，现在有了可合法研读与再分发的源头，第三方固件、模块复刻与软件端移植的合规成本显著下降。</li><li>对产品研发的影响：颗粒类算法（时间拉伸、颗粒云、纹理冻结）可作为参考实现进入 DSP 与插件研发流程；但落地前必须核对具体许可证条款与硬件商标使用边界，这两点资料未确认，不能默认可商用。</li><li>来源/时间：CDM Create Digital Music｜《Beads, last of the Mutable Instruments modules, is now open source》｜2026-10-12｜https://cdm.link/beads-is-now-open-source/</li></ul>
+<h3>事件二：FMODCMake_Plugins 提供 FMOD 自研 DSP 插件的 CMake 模板</h3>
+<ul><li>发生了什么：GitHub 仓库 horacv/FMODCMake_Plugins 持续更新，最近一次推送为 2026-10-13，定位是“用 C++ 开发自定义 FMOD DSP 插件的 CMake 模板工程”。仓库创建于 2026-09-14，当前 12 Stars、0 Fork。</li><li>涉及技术：FMOD / FMOD Studio 的 DSP 插件 API、C++、CMake 跨平台构建；主题标签覆盖 audio、dsp、fmod-api、gameaudio。</li><li>关键参数：Stars 12；Fork 0；语言 C++；最近推送 2026-10-13T00:54:37Z；许可证未标注（GitHub 字段为 null），因此可复用范围资料未确认。</li><li>为什么重要：游戏音频 DSP 插件长期缺少“开箱即用”的工程脚手架，接入 FMOD 通常需要手工拼构建系统。模板化后，算法团队可以把精力放在 DSP 本身而非工程配置，这对把音频算法从原型推向游戏运行时的团队是直接的效率收益。</li><li>对产品研发的影响：适合作为游戏内实时效果器（动态、空间化前处理、程序化音效）的工程起点；但许可证未标注是明确的采用前置风险，商用前需与作者确认授权，且实际音频时延与性能未在任何基准中验证，不得作为确定结论引用。</li><li>来源/时间：GitHub｜horacv/FMODCMake_Plugins｜最近推送 2026-10-13｜https://github.com/horacv/FMODCMake_Plugins</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：FMOD 自研 DSP 插件的 CMake 模板工程（FMODCMake_Plugins）。</li><li>工程应用：用于构建游戏内实时音频效果插件，把 C++ DSP 代码接入 FMOD 的插件机制；适合作为多平台构建的起点。</li><li>成熟度：早期（创建于 2026-09-14，12 Stars，无 Fork，无许可证标注），资料不足以判断稳定性。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料范围内本次未发现可核实的编解码器新增（无新版本、无官方表态）。</li><li>性能与兼容性：不适用。</li><li>工程应用：不适用。本日不做旧标准复述。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料范围内本次未发现可核实的空间音频新增；针对 spatial audio / audio-ai 的 Python 仓库检索返回 0 条结果（检索条件：pushed &gt; 2026-10-06）。</li><li>渲染链路或终端支持：资料未确认。</li><li>工程应用：不适用。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料范围内本次未发现可核实的新模型或新产品发布；相关 GitHub 检索为空。</li><li>能力与限制：资料未确认。</li><li>工程应用：不适用。注意：Beads 属于颗粒合成 DSP，不应归类为 AI 音频。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：资料范围内本次未发现可核实的协议或实现更新（无 AES67、Dante、AVB、RTP 相关新动态）。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：不适用。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Beads（Mutable Instruments）</li><li>类型：Eurorack 颗粒“纹理合成器”模块，本次变化为完全开源</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：Eurorack 硬件；开源后是否附带软件移植，资料未确认</li><li>价格：资料未确认（模块原零售信息与当前渠道状态均未在资料中给出）</li><li>与上一代或竞品差异：Beads 为 Clouds 之后的后续作品，定位于颗粒纹理合成；具体算法与规格差异资料未确认</li><li>来源/时间：CDM｜2026-10-12｜https://cdm.link/beads-is-now-open-source/</li></ul>
+<ul><li>产品：FMODCMake_Plugins</li><li>类型：开源工程模板（C++ / CMake），用于开发 FMOD 自定义 DSP 插件</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：依托 FMOD 的插件机制，具体平台矩阵资料未确认</li><li>价格：免费（开源仓库），许可证未标注</li><li>与上一代或竞品差异：资料未给出同类模板对比，无法判定</li><li>来源/时间：GitHub｜最近推送 2026-10-13｜https://github.com/horacv/FMODCMake_Plugins</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：本次资料中未包含 AES、ITU、ETSI、3GPP 的任何更新或新论文。</li><li>发布机构：不适用。</li><li>核心结论：资料范围内无可靠标准动态，按规则不补写旧标准冒充新动态。</li><li>对产品设计的影响：不适用；建议下一期定向核查 AES 与 3GPP 官方发布页。</li><li>原文链接：无。</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：以 CMake 模板承载 FMOD 自定义 DSP 插件</li><li>背景：游戏音频团队常需把自研 DSP 作为插件挂入 FMOD，构建配置与接口适配是重复成本。</li><li>技术方案：使用 C++ 编写 DSP，借助 CMake 模板统一工程结构与构建流程，再通过 FMOD 插件机制挂载。</li><li>结果：仓库处于早期（12 Stars、0 Fork），未提供基准数据，实际时延与音质表现资料未确认。</li><li>可借鉴点：把“算法”与“构建/接口适配”解耦，是音频算法工程化的通用做法；采用前先确认许可证与目标平台支持。</li></ul>
+<ul><li>案例名称：颗粒合成算法的开源参考实现（Beads）</li><li>背景：颗粒处理的可复现实现长期稀缺，团队多依赖听感复刻。</li><li>技术方案：以 Mutable Instruments 公开的开源模块作为算法与实现参考，用于软件端颗粒引擎设计。</li><li>结果：开源本身已确认；算法细节与移植效果资料未确认。</li><li>可借鉴点：先读许可、再读代码；硬件开源不等于软件商用授权，需逐项核对。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Mutable Instruments Beads | 颗粒纹理合成模块；完全开源；许可证与版本资料未确认 | 资料未确认 | Eurorack 硬件 | 资料未确认 | https://cdm.link/beads-is-now-open-source/ ｜2026-10-12 | | FMODCMake_Plugins | C++ / CMake 模板；12 Stars；0 Fork；许可证未标注 | 资料未确认 | FMOD / FMOD Studio 插件机制 | 免费（许可证未标注） | https://github.com/horacv/FMODCMake_Plugins ｜最近推送 2026-10-13 |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：经典硬件模块的开源化正在把“老牌声音资产”转化为可研读的算法资料，颗粒/纹理合成这一类难复现的处理尤其受益；另一端，游戏音频的插件开发正在被工程模板标准化，自研 DSP 进入运行时的路径变短。</li><li>工程风险：Beads 的具体许可证类型与仓库位置未确认，直接移植存在授权与合规不确定性；FMODCMake_Plugins 未标注许可证、无 Fork、无基准数据，工程稳定性与长期维护无保证。两者都不可在未经核实的情况下写入产品技术选型结论。</li><li>版权/合规风险：硬件开源常与商标、外观设计、商号使用分离，复刻与衍生品的命名与宣传需另行评估；音频算法若源于第三方开源实现，需做许可证传染性与署名义务审查。</li><li>商业化风险：颗粒合成、游戏音频中间件均为成熟红海，开源参考实现降低门槛的同时也压缩差异化空间；单靠“复刻某经典模块”难以构成产品壁垒。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Beads 的开源仓库地址、许可证类型与是否包含完整硬件文件，需一手核实后再评估商用可行性。</li><li>FMODCMake_Plugins 的许可证与目标平台支持矩阵是否补全；是否出现可对标的 JUCE/Wwise 同类模板。</li><li>AES、ITU、ETSI、3GPP 官方发布页的下一轮更新；本期标准板块为空，属覆盖缺口而非“无动态”。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜Beads, last of the Mutable Instruments modules, is now open source｜2026-10-12｜https://cdm.link/beads-is-now-open-source/</li><li>GitHub｜horacv/FMODCMake_Plugins（描述：A CMake template project for developing custom FMOD DSP plugins in C++）｜最近推送 2026-10-13｜https://github.com/horacv/FMODCMake_Plugins</li><li>检索记录｜GitHub search：audio dsp plugin language:C++ pushed:&gt;2026-10-06（total_count 11；本篇仅采用其中未在近 14 天出现过的条目）｜检索时间 2026-10-13</li><li>检索记录｜GitHub search：spatial audio audio-ai language:Python pushed:&gt;2026-10-06（total_count 0）｜检索时间 2026-10-13</li><li>抓取失败记录｜Sound on Sound RSS/新闻页 HTTP 403；MusicTech RSS/新闻页 SSL 证书校验失败｜检索时间 2026-10-13（本期欧美专业音频媒体覆盖不完整，读者需注意信息缺口）</li></ol>
+  </main>
+</body>
+</html>
