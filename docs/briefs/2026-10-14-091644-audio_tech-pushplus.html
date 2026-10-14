@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-14</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-14</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：本期最重要的变化是硬件侧——Universal Audio 更新 Volt 系列 USB 音频接口，把前级音色与动态处理直接做进设备，并用 149 美元起的价格压住入门到中端区间；开源侧，AnClark 的“RE01 逆向重写”系列补上限幅器一环，继续以 CLAP+VST3 双格式输出。</li><li>今日关键词：UA Volt Gen 2、内置动态处理、ADAT 光输入、ClassicMasterLimiter-RE01、CLAP/VST3、FLpad</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：UA Volt Gen 2 / Volt Max 把前级音色与动态处理塞进接口 ★</h3>
+<ul><li>发生了什么：Universal Audio 更新 Volt 系列 USB 音频接口，新增内置的前级音色（preamp tone）与动态处理；高阶型号加入“智能”显示屏，以及 ADAT 输入等扩展接口。起价 149 美元。</li><li>涉及技术：硬件内嵌 DSP 前级建模与动态处理；USB 音频接口 I/O 架构；ADAT 光纤数字输入。</li><li>关键参数：起价 149 美元（CDM 报道口径）；内置处理的具体算法、内部处理位深、最高采样率与 ADAT 通道数——资料未确认。</li><li>为什么重要：这是“软件订阅化”背景下硬件反向加固自身价值的典型动作。把前级音色与动态处理固化进接口，等于把过去需要宿主插件或外置硬件才能获得的声音特征，变成设备的默认能力，直接抬高入门与中端接口的产品定义门槛。</li><li>对产品研发的影响：做接口/话放类产品的团队需要重新评估“裸转换 + 送插件”的路线是否还有价格竞争力；如果跟进，难点不在 DAC/ADC，而在于固件内 DSP 的算力预算、旁路/监听链路切换的时延一致性，以及后续固件能否持续更新。</li><li>来源/时间：CDM Create Digital Music，2026-10-13｜https://cdm.link/ua-volt-gen-2-max/</li></ul>
+<h3>事件二：ClassicMasterLimiter-RE01——Kjaerhus 经典限幅器的逆向重写（持续更新）</h3>
+<ul><li>发生了什么：AnClark 发布 ClassicMasterLimiter-RE01，对 Kjaerhus Audio 的 Classic Master Limiter（轻量复古风格限幅器）做逆向工程重写，以 GPL-3.0 开源，输出 CLAP 与 VST3，使用 C++ 实现。</li><li>相对上次新增的事实：本系列此前在 10-12 简报中出现的是 ClassicFlanger-RE01（镶边器）；本次是<strong>同一作者、同一重写系列的新仓库</strong>，主体、格式与许可证均不同。新增可核实事实：GPL-3.0 许可、topics 含 clap/vst3/vst3-plugin、6 stars / 0 forks / 0 open issues、默认分支 develop、最近推送 2026-10-13T12:55:17Z。</li><li>涉及技术：C++ 音频插件开发；CLAP 与 VST3 双格式封装；限幅器 DSP（复古风格）。</li><li>关键参数：采样率、位深、look-ahead 时延、增益范围——资料未确认。</li><li>为什么重要：老牌免费插件因宿主与系统演进逐渐失效，社区用现代插件格式重写，是当前开源音频生态一条持续在走的路径。CLAP 与 VST3 同时输出正在成为这类项目的默认做法。</li><li>对产品研发的影响：若你要在自己的产品中集成，注意 GPL-3.0 的传染性对闭源插件链不友好；若要自研复古限幅器，“逆向精确复刻音频行为”比“重写界面”难得多，验证成本主要在听感一致性与不同采样率下的行为稳定性。</li><li>来源/时间：GitHub，最近推送 2026-10-13｜https://github.com/AnClark/ClassicMasterLimiter-RE01</li></ul>
+<h3>事件三：Bana Haffar《Ancient Future》用采样与电压做模块化解构</h3>
+<ul><li>发生了什么：Bana Haffar（Los Angeles 的 Modular on the Spot、黎巴嫩 Beirut Synthesizer Center 联合创始人）本月发行专辑《Ancient Future》，以采样与电压碎片进行模块化解构式创作。</li><li>涉及技术：模块合成器、采样处理。</li><li>关键参数：不适用。</li><li>为什么重要：这条不是产品新闻，但它说明模块合成器的使用重心持续向“艺术实践与素材再处理”偏移，而非单纯音色生成，对采样器/颗粒工具的界面设计有间接指向。</li><li>对产品研发的影响：间接。可作为采样与调制工具的用户场景参考。</li><li>来源/时间：CDM Create Digital Music，2026-10-13｜https://cdm.link/bana-haffar-ancient-future/</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：USB 音频接口内嵌前级音色与动态处理（UA Volt Gen 2 / Volt Max）。厂商宣称可在硬件内完成前级音色与动态处理，具体算法、内部处理位深与采样率资料未确认。</li><li>工程应用：接口自带处理可减少对宿主插件的依赖，便于移动录音与直播等无宿主场景。</li><li>成熟度：已量产上市（2026-10-13 报道）。独立实测数据资料未确认。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：资料范围内暂无新增编解码器动态。</li><li>性能与兼容性：不适用。</li><li>工程应用：—</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：资料范围内无新增。GitHub 以 “spatial audio + audio-ai” 检索 Python 项目（2026-10-07 之后推送）返回 0 条结果。</li><li>渲染链路或终端支持：无新增信息。</li><li>工程应用：—</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：资料范围内无可靠新增。</li><li>能力与限制：—</li><li>工程应用：—</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：无 AES67 / Dante / AVB / NDI 等协议层更新进入本期资料。</li><li>时延与互操作性：资料未确认。</li><li>工程应用：UA Volt Gen 2 高阶型号提供 ADAT 光输入（CDM 报道口径），可用于对接外置话放、调音台或 Eurorack 相关设备；通道数与最高采样率资料未确认。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：UA Volt Gen 2 / Volt Max</li><li>类型：USB 音频接口（硬件）</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：资料未确认（USB 接口，具体 OS 支持未在资料中说明）</li><li>价格：149 美元起</li><li>与上一代或竞品差异：新增内置前级音色与动态处理；高阶型号新增“智能”显示屏与 ADAT 输入。厂商宣称，未独立验证。</li><li>来源/时间：CDM，2026-10-13｜https://cdm.link/ua-volt-gen-2-max/</li></ul>
+<ul><li>产品：ClassicMasterLimiter-RE01</li><li>类型：开源音频插件（限幅器）</li><li>采样率/位深/时延：资料未确认</li><li>兼容平台：CLAP、VST3（topics 标注；具体 OS 与架构资料未确认）</li><li>价格：免费开源（GPL-3.0）</li><li>与上一代或竞品差异：对 Kjaerhus Audio Classic Master Limiter 的逆向重写，而非全新设计</li><li>来源/时间：GitHub，2026-10-13 推送｜https://github.com/AnClark/ClassicMasterLimiter-RE01</li></ul>
+<ul><li>产品：Novation FLpad / FLpad mini</li><li>类型：打击垫控制器硬件</li><li>采样率/位深/时延：不适用/资料未确认</li><li>兼容平台：FL Studio（与 Novation Launchpad 血统一致，但针对 FL 生态）</li><li>价格：资料未确认</li><li>与上一代或竞品差异：标准版为力度感应型号，另有 mini 版本；面向 FL Studio 用户群</li><li>来源/时间：CDM 首页条目，2026-10-01（无独立文章链接）｜https://cdm.link/</li><li>备注：本条发布时间早于本期 14 天窗口边缘，且此前简报未使用，故补录。</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：资料范围内无 AES、ITU、ETSI、3GPP 相关音频标准或论文的新发布信息。</li><li>发布机构：—</li><li>核心结论：为避免以旧标准冒充新动态，本期不作任何标准内容补写。</li><li>对产品设计的影响：—</li><li>原文链接：—</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：ClassicMasterLimiter-RE01——老插件逆向重写的工程路径</li><li>背景：Kjaerhus Audio 的 Classic Master Limiter 是一款轻量复古风格限幅器，原作者未以现代插件格式维护。</li><li>技术方案：以 C++ 重写，同时输出 CLAP 与 VST3 两种格式；采用 GPL-3.0 许可；仓库以 develop 为默认分支，保持持续推送。</li><li>结果：最近推送 2026-10-13T12:55:17Z，6 stars、0 forks、0 open issues。音频行为还原度、时延与增益规格资料未确认，无法评价其与原件的一致性。</li><li>可借鉴点：一是“一次实现、多格式输出”已是开源插件的事实标准做法，架构上应把 DSP 内核与格式封装解耦；二是重写历史插件时，许可证与产品命名的合规评估必须前置，而非上线后补救；三是低 star 数的活跃项目同样值得关注，其代码结构往往比热门项目更直接可读。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | UA Volt Gen 2 / Volt Max | 内置前级音色与动态处理；高阶型号含智能显示屏；规格资料未确认 | 资料未确认 | USB；高阶型号含 ADAT 光输入 | 149 美元起 | https://cdm.link/ua-volt-gen-2-max/ | | ClassicMasterLimiter-RE01 | C++，GPL-3.0，6 stars / 0 forks / 0 issues | 资料未确认 | CLAP、VST3 | 免费开源 | https://github.com/AnClark/ClassicMasterLimiter-RE01 | | Novation FLpad / FLpad mini | 标准版力度感应；参数资料未确认 | 资料未确认 | FL Studio | 资料未确认 | https://cdm.link/ |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：入门与中端音频硬件用“内置 DSP 处理 + 扩展接口 + 显示屏”重新定义产品价值，对抗纯软件方案；开源插件侧，CLAP 与 VST3 双格式输出、以及对停产老插件的现代重写，都在稳定增长。</li><li>工程风险：硬件内嵌 DSP 的长期价值取决于固件更新能力与算力余量，一旦固件停更，功能即被冻结；逆向重写类项目的核心风险是“音频行为一致性”，不同采样率、不同宿主缓冲下的行为差异需要系统性测试，不能只靠听感抽查。</li><li>版权/合规风险：ClassicMasterLimiter-RE01 使用原产品名并对其进行逆向重写，即使代码以 GPL-3.0 发布，产品命名与音色复刻在部分司法辖区仍可能触及商标或不正当竞争问题，商用前需自行评估。GPL-3.0 的传染性也意味着不宜静态链接进闭源商业插件链。</li><li>商业化风险：149 美元起的价格带竞争极为激烈，若内置处理的可感知差异不足，用户会退回到“便宜的裸转换 + 免费插件”方案；资料的报道方为行业媒体，非独立实验室测试，厂商宣称的听感优势尚未被第三方验证。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>UA Volt Gen 2 / Volt Max 的第三方实测是否公布：ADAT 通道数与最高采样率、内置处理的旁路方式、监听链路时延。</li><li>AnClark 的 RE01 系列是否会继续补齐 Kjaerhus 其他插件，是否扩展到 Linux 或独立应用形态。</li><li>AES / ITU / ETSI / 3GPP 音频相关标准的下一次更新；本期资料范围内无可用新内容。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>CDM Create Digital Music｜UA Volt Gen 2, Max: built-in dynamics and preamp tone, displays, more｜2026-10-13｜https://cdm.link/ua-volt-gen-2-max/</li><li>CDM Create Digital Music｜Bana Haffar&#x27;s Ancient Future mutates memory and meaning in machines｜2026-10-13｜https://cdm.link/bana-haffar-ancient-future/</li><li>GitHub｜AnClark/ClassicMasterLimiter-RE01（最近推送 2026-10-13T12:55:17Z）｜https://github.com/AnClark/ClassicMasterLimiter-RE01</li><li>CDM Create Digital Music｜首页聚合条目（Novation FLpad，无独立链接）｜2026-10-01｜https://cdm.link/</li><li>GitHub Search API｜检索式 “audio dsp plugin language:C++ pushed:&gt;2026-10-07”，total_count 11，返回条目在给定资料中被截断，除上述仓库与已于 10-10 简报覆盖的 montagem-punch 外无法核验其余结果｜检索时间 2026-10-14｜https://github.com/search</li><li>不可用信源：Sound On Sound RSS（HTTP 403）、MusicTech 站点与 Feed（SSL 证书域名不匹配）——本期无法核验其内容，相关厂商动态可能因此缺失。</li></ol>
+  </main>
+</body>
+</html>
