@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-10-14</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-10-14</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天推荐 <strong>grok-build-vscode</strong>（想在 VS Code/Cursor 里统一调度 Grok Build / Codex / Claude Code 的开发者）和 <strong>hermes-agent-awesome-plugins</strong>（用 Hermes 桌面端或 CLI、需要额度与工具调用管控的 AI 重度用户）；第三个名额今日资料不足，不做填充推荐。</p>
+<blockquote><p>说明：本次资料中，<code>vibe coding editor plugin pushed:&gt;2026-10-07</code> 的 GitHub 搜索结果为 0 条，&quot;cursor/claude code/codex extension&quot; 仅返回 2 个可用条目，其余条目在资料中被截断，无法核实 Stars、更新时间与协议。按&quot;不得估算或编造&quot;的要求，今日只推荐 2 个可溯源工具，第 3 项标注为资料不足。</p></blockquote>
+<h2>2. 推荐工具</h2>
+<h3>工具一：grok-build-vscode（新项目）</h3>
+<ul><li>一句话介绍：把 Grok Build CLI 的编码 Agent 能力包上图形界面，并做成 VS Code / Cursor 扩展，同时声称可对接 Codex 与 Claude Code。</li><li>分类：Vibe Coding / 编程插件</li><li>适合谁：已经在用或想试 Grok Build CLI 的开发者；希望在一个编辑器界面里切换多个 CLI 编码 Agent 的人；需要在 Windows/macOS 桌面端用 GUI 而非纯命令行操作的人。</li><li>典型场景：在 VS Code 内直接发起代码生成与重构；把一个项目同时交给 Grok、Codex、Claude Code 会话处理并对比结果；把原本只在终端跑的构建流程搬到桌面 GUI。</li><li>核心功能：Grok Build Desktop（Windows、macOS）；Grok Build CLI 的 GUI 封装；面向 VS Code、Cursor 等编辑器的扩展；仓库描述中明确标注&quot;New: Talks to Codex and Claude Code, too&quot;。</li><li>GitHub Stars：231</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-10-14（pushed_at 2026-10-14T00:11:59Z）</li><li>最新版本：资料未确认</li><li>开源协议：Other / NOASSERTION（非标准 OSI 协议标识，商用或二次分发前需自行核对条款）</li><li>支持平台：VS Code、Cursor（描述中为&quot;and more&quot;，未逐一列明）；桌面端 Windows、macOS</li><li>使用成本：资料未确认（Grok API 的计费方式与额度资料未确认）</li><li>上手步骤：1）打开仓库 github.com/phuryn/grok-build-vscode 阅读 README；2）按说明安装桌面端或编辑器扩展；3）配置 Grok API 凭据；4）在 VS Code/Cursor 中打开目标项目并启动会话；5）如需联动 Codex / Claude Code，按仓库内说明单独配置对应 CLI。</li><li>推荐理由：它是本次资料里唯一一个同时覆盖&quot;编辑器扩展 + 桌面 GUI + 多 Agent 互通&quot;的项目，且今日仍在推送更新（2026-10-14）。对有多个 CLI 编码 Agent 的团队来说，把入口收敛到一个界面，能明显减少在终端与编辑器之间来回切换的摩擦。</li><li>局限与风险：Stars 仅 231，未达到 1,000 的优选门槛，属&quot;新项目&quot;补位；协议为非标准标识，商用前须确认；仓库有 15 个 open issues，成熟度存疑；&quot;支持 Cursor 及更多编辑器&quot;的具体范围未逐一确认；Grok、Codex、Claude Code 三方混用时，密钥与代码上下文的暴露面会扩大，需自行评估数据合规。</li><li>官网/仓库链接：https://github.com/phuryn/grok-build-vscode （主页：https://www.productcompass.pm ）</li></ul>
+<h3>工具二：hermes-agent-awesome-plugins（新项目）</h3>
+<ul><li>一句话介绍：一个可安装的 Hermes Agent 插件包，用来集中管理多家模型提供商的额度、工具卡死控制、推理与迭代预算、会话外观和 RSS 阅读等。</li><li>分类：自动化 / Agent 效率工具</li><li>适合谁：Hermes Agent 桌面端或 CLI 的重度使用者；同时接多家模型、需要盯住配额与迭代预算的人；希望把额度、内存回顾、会话管理等琐事插件化的人。</li><li>典型场景：跨 OpenAI / Anthropic 等提供商的额度统一查看；Agent 调用工具卡住时自动止损；为长任务设定推理与迭代上限避免跑飞；在会话内直接读 RSS。</li><li>核心功能：统一的多提供商配额视图；stalled-tool 控制；推理与迭代预算；会话外观与置顶、滚动；opaque composition；memory review；内置 RSS Reader；插件以 SHA 固定，便于复现。</li><li>GitHub Stars：27</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-10-14（pushed_at 2026-10-14T01:09:57Z）</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：Hermes 桌面端与 CLI 工作流（JavaScript 实现，具体宿主环境资料未确认）</li><li>使用成本：插件本身为 MIT 开源；底层模型 API 费用资料未确认</li><li>上手步骤：1）打开 github.com/apoapostolov/hermes-agent-awesome-plugins ；2）确认本地已安装 Hermes Agent 桌面端或 CLI；3）按 README 安装插件包（仓库强调 SHA 固定安装）；4）在 Hermes 中按需启用配额、预算、RSS 等单项插件；5）先用一个非关键会话验证卡死控制与预算上限是否按预期触发。</li><li>推荐理由：它解决的是 Agent 使用者最痛的两件事——&quot;额度看不见&quot;和&quot;任务跑飞停不下来&quot;。MIT 协议、当天仍在推送、且把预算与止损做成可插拔模块，思路比再写一个 wrapper 更可持续。</li><li>局限与风险：Stars 仅 27，社区验证极少，属&quot;新项目&quot;补位；强绑定 Hermes 生态，不用 Hermes 的人无法受益；27.8 MB 仓库体积对插件包偏大；多提供商 OAuth 与配额读取意味着插件会接触各平台凭据，需审查权限范围；实际可用性未在资料中给出任何用户反馈。</li><li>官网/仓库链接：https://github.com/apoapostolov/hermes-agent-awesome-plugins</li></ul>
+<h3>工具三：本期暂缺</h3>
+<ul><li>一句话介绍：本期可靠资料不足，未找到第 3 个可溯源、可核实 Stars 与更新时间的候选工具。</li><li>分类：—</li><li>适合谁：—</li><li>典型场景：—</li><li>核心功能：—</li><li>GitHub Stars：—</li><li>近期新增 Stars：—</li><li>最近更新时间：—</li><li>最新版本：—</li><li>开源协议：—</li><li>支持平台：—</li><li>使用成本：—</li><li>上手步骤：—</li><li>推荐理由：不填充。本期 <code>vibe coding editor plugin</code> 搜索返回 0 条，<code>ai agent productivity tool</code> 的 48 条结果中仅 2 条在资料中完整可见（其中 agent-canvas-ai-model 已于 2026-10-11 推荐过），ClaudeCodeExtension 已于 2026-10-13 使用且本次资料中其 pushed_at 字段被截断，无法确认是否有&quot;新版本/明显 Stars 增长&quot;等可持续更新事实。</li><li>局限与风险：改用低质量或已重复项目凑数会违反去重与真实性要求，故留空。</li><li>官网/仓库链接：—</li></ul>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | grok-build-vscode | 在 VS Code/Cursor 内统一调度 Grok Build / Codex / Claude Code | 231 | 2026-10-14 有推送，15 个 open issues | 资料未确认 | ★★★☆☆ | | hermes-agent-awesome-plugins | Hermes Agent 的额度、预算与止损插件包 | 27 | 2026-10-14 有推送，1 个 open issue | 插件 MIT 免费，模型 API 费用资料未确认 | ★★☆☆☆ | | 本期暂缺 | — | — | — | — | — |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：本期资料来源中未出现任何可溯源的国内 AI 领域人物直接引语、时间与原始链接，不做推测性转述。</li><li>为什么重要：—</li><li>可能影响：—</li><li>来源/时间：—</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：本期资料未提供可引用的人物直接言论（Anthropic Newsroom、GitHub Blog 等来源中抓取到的均为机构公告与产品说明，不构成人物观点）。</li><li>为什么重要：—</li><li>可能影响：—</li><li>来源/时间：—</li></ul>
+<blockquote><p>仅供后续跟踪的可核实线索（非人物言论，不作观点引用）：Anthropic 于 2026-10-07 发布 Claude Haiku 5.5（自述为&quot;最快、最便宜、能力最强的小模型&quot;），2026-10-06 扩展 Cyber Verification Program；GitHub Blog 于 2026-10-13 发布基于上下文的密钥检测模型说明，称加权接受率提升 11.5%、扫描中位耗时下降 86%。来源：https://www.anthropic.com/news 、https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/</p></blockquote>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：如果你已经在用 Grok Build CLI，或手上有多个 CLI 编码 Agent 想收敛入口，先试 grok-build-vscode；先在个人仓库验证扩展稳定性与密钥配置方式，再考虑团队推广。若团队已在用 Hermes 且 Agent 经常跑飞或额度超支，先上 hermes-agent-awesome-plugins 的配额视图与迭代预算两项，验证后再启用 RSS 等旁支功能。</li><li>办公场景：今天没有新增的通用办公类工具可推荐——两个候选都偏开发者工作流。办公场景建议维持现有栈不变，不为了凑数引入未经社区验证的插件。</li><li>创作场景：本期无新增创作类工具。若需要视觉化梳理 Agent 工作流，可回看 2026-10-11 已推荐的 agent-canvas-ai-model（本次不重复推荐）。</li></ul>
+  </main>
+</body>
+</html>
