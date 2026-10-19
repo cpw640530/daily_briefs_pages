@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI工具日报｜2026-10-19</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>AI工具日报｜2026-10-19</h1>
+<h2>1. 今日推荐结论</h2>
+<p>今天推荐 <code>artspo</code>、<code>ClaudeCodeExtension（持续更新）</code> 和 <code>Politohh（新项目）</code>：分别适合设计复刻与前端开发、Visual Studio 中使用多种代码 Agent，以及 Unreal/COD 视频制作工具开发者。</p>
+<h2>2. 推荐工具</h2>
+<h3>工具一：artspo</h3>
+<ul><li>一句话介绍：一个 Chrome 扩展与 Agent Skill，可将网页的配色、字体、动效等设计信息提取为普通文件，供 Claude Code、Codex 或 Cursor 使用。</li><li>分类：设计 / Vibe Coding</li><li>适合谁：前端开发者、设计工程师、独立开发者和需要快速复刻网页风格的团队。</li><li>典型场景：分析参考网站的视觉规范，并将提取结果交给代码 Agent 生成相近的页面。</li><li>核心功能：网页剪藏、调色板提取、字体信息提取、动效信息记录、生成可被代码 Agent 读取的文件；无需服务器和账号。</li><li>GitHub Stars：资料未确认</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：资料未确认</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：Chrome；可配合 Claude Code、Codex、Cursor 使用，其他平台资料未确认。</li><li>使用成本：资料未确认；项目说明称无需账号和服务器。</li><li>上手步骤：</li><li>推荐理由：把“凭感觉复刻设计”转化为可供 Agent 使用的结构化设计输入，适合提升 Vibe Coding 的视觉还原效率。</li><li>局限与风险：资料未确认项目维护频率、协议和安全审计情况；从网页提取并复用设计元素时，应注意版权、商标和网站条款。</li><li>官网/仓库链接：<a href="https://github.com/bryfeng/artspo">GitHub 仓库</a></li></ul>
+<ol><li>打开仓库并安装 Chrome 扩展。</li><li>在目标网页中执行剪藏或设计信息提取。</li><li>将生成的文件放入项目目录。</li><li>在 Claude Code、Codex 或 Cursor 中引用这些文件，要求 Agent 按提取结果实现页面。</li></ol>
+<h3>工具二：ClaudeCodeExtension（持续更新）</h3>
+<ul><li>一句话介绍：Visual Studio .NET 扩展，为 Claude Code、Codex、Cursor Agent、Open Code、Devin、PI、Antigravity 和 Reasonix 等 Agent 提供统一的交互界面。</li><li>分类：编程插件 / Vibe Coding</li><li>适合谁：使用 Visual Studio 或 .NET 技术栈，并希望集中管理多个代码 Agent 的开发者。</li><li>典型场景：在 Visual Studio 内完成 AI 对话、查看代码差异、粘贴图片或文件，并在 Agent 完成工作后触发后续动作。</li><li>核心功能：图片和文件粘贴、Diff 查看器、Agent 完成后的动作、用量跟踪、会话历史，以及对多个代码 Agent 的界面集成。</li><li>GitHub Stars：75</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-10-18</li><li>最新版本：资料未确认</li><li>开源协议：MIT</li><li>支持平台：Visual Studio；具体 Visual Studio 版本要求资料未确认。</li><li>使用成本：开源项目本身无付费信息；所接入的 Claude Code、Codex 等服务可能另行收费。</li><li>上手步骤：</li><li>推荐理由：相对上次使用记录，仓库在 2026-10-18 仍有更新，新增事实是项目持续维护，并继续覆盖 Claude Code、Codex、Cursor Agent 等多种工具；适合已有 Visual Studio 工作流的开发者。</li><li>局限与风险：Stars 较低，生态成熟度仍需验证；同时接入多个 Agent 时，权限、代码上传、凭据管理和生成代码质量需要单独审查。</li><li>官网/仓库链接：<a href="https://github.com/dliedke/ClaudeCodeExtension">GitHub 仓库</a>；<a href="https://marketplace.visualstudio.com/items?itemName=dliedke.ClaudeCodeExtension">Visual Studio Marketplace</a></li></ul>
+<ol><li>从 Visual Studio Marketplace 安装扩展。</li><li>按项目说明配置目标 Agent 的命令行或 API 环境。</li><li>在 Visual Studio 中打开扩展面板。</li><li>使用会话历史、Diff 和完成后动作管理开发任务。</li></ol>
+<h3>工具三：Politohh（新项目）</h3>
+<ul><li>一句话介绍：一个面向视频编辑、COD 电影化内容、Unreal 插件和资产流水线的 Vibe Coding 项目。</li><li>分类：新项目 / Vibe Coding / 开发者工具</li><li>适合谁：游戏视频创作者、Unreal Engine 工具开发者、视频后期人员和需要自动化资产处理的个人开发者。</li><li>典型场景：通过代码快速制作 COD 视频内容相关工具、Unreal 插件或资产处理流程。</li><li>核心功能：项目说明聚焦 COD cinematics、Unreal plugins 和 asset pipelines；具体功能清单资料未确认。</li><li>GitHub Stars：0</li><li>近期新增 Stars：资料未确认</li><li>最近更新时间：2026-10-15</li><li>最新版本：资料未确认</li><li>开源协议：资料未确认</li><li>支持平台：资料未确认；项目描述涉及 Unreal Engine 工作流。</li><li>使用成本：资料未确认。</li><li>上手步骤：</li><li>推荐理由：这是近期出现、明确围绕创作型 Vibe Coding 和游戏视频生产的项目；虽然尚未形成 Stars 规模，但可能为 Unreal 工具和视频资产自动化提供早期实践样本。</li><li>局限与风险：目前只有 0 Stars，项目成熟度、文档完整性、维护连续性和安全性均未验证；不建议直接用于生产环境。</li><li>官网/仓库链接：<a href="https://github.com/Politohh/Politohh">GitHub 仓库</a></li></ul>
+<ol><li>查看仓库 README 和目录结构。</li><li>确认 Unreal Engine、视频工具链及运行环境要求。</li><li>按项目说明安装依赖。</li><li>从一个小型插件或资产处理任务开始验证。</li></ol>
+<h2>3. 三款工具横向对比</h2>
+<p>| 工具 | 核心用途 | Stars | 活跃度 | 成本 | 推荐指数 | |---|---|---:|---|---|---| | artspo | 提取网页设计信息并交给代码 Agent | 资料未确认 | 近期活跃度资料未确认 | 资料未确认 | ★★★★☆ | | ClaudeCodeExtension | 在 Visual Studio 中管理多个代码 Agent | 75 | 2026-10-18 有更新 | 扩展成本资料未确认，Agent 服务可能收费 | ★★★★☆ | | Politohh | Unreal 插件、视频工具和资产流水线的 Vibe Coding | 0 | 2026-10-15 有更新 | 资料未确认 | ★★☆☆☆ |</p>
+<h2>4. AI 行业人物重要观点</h2>
+<h3>国内</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：本期可靠资料不足，待确认。</li><li>说了什么：提供的资料未包含 2026-10-19 前后中国 AI 公司创始人、研究者或产业人物的可核验原始言论。</li><li>为什么重要：缺少原始来源和时间，无法判断言论是否为近期正式表态，也无法区分个人观点、公司立场和媒体转述。</li><li>可能影响：待可靠来源确认后再评估对模型产品、算力、开源生态或监管方向的影响。</li><li>来源/时间：本期可靠资料不足，待确认。</li></ul>
+<h3>国外</h3>
+<ul><li>人物：本期可靠资料不足，待确认。</li><li>身份/公司：Anthropic 官方新闻页提供了公司公告，包括 Claude Haiku 5.5 和 Cyber Verification Program，但未提供可核验的个人直接引述。</li><li>说了什么：资料显示，Anthropic 于 2026-10-06 宣布扩大 Cyber Verification Program，并于 2026-10-07 发布 Claude Haiku 5.5；这属于公司官方公告，不应改写为某位高管个人言论。</li><li>为什么重要：可确认的公司动作表明，低成本、高吞吐模型和面向安全专业人员的高阶网络能力仍是产品重点。</li><li>可能影响：企业可能进一步采用小型模型处理高频任务，同时网络安全领域对模型权限、验证机制和使用边界的要求会提高。</li><li>来源/时间：<a href="https://www.anthropic.com/news">Anthropic 新闻页</a>，2026-10-06 至 2026-10-07；个人言论原始来源资料未提供。</li></ul>
+<h2>5. 今日选择建议</h2>
+<ul><li>编程场景：使用 <code>ClaudeCodeExtension</code> 在 Visual Studio 中集中管理 Claude Code、Codex 或 Cursor Agent；涉及前端视觉复刻时，将 <code>artspo</code> 生成的设计信息作为 Agent 输入。</li><li>办公场景：本期可靠资料未提供达到核验要求的新增办公效率或自动化工具，建议暂不据此推荐。</li><li>创作场景：Unreal、COD 电影化视频和资产流水线开发者可试用 <code>Politohh</code>，但应先在隔离环境中验证依赖、插件兼容性和代码安全性。</li></ul>
+  </main>
+</body>
+</html>
