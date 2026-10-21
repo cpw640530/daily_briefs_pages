@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频技术简报｜2026-10-21</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dee8;
+      --accent: #1d6f7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    .brief-page {
+      width: min(880px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--accent);
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    p, li {
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    p {
+      margin: 8px 0 12px;
+    }
+    ul, ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    blockquote {
+      margin: 12px 0 18px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: #eef7f8;
+      color: #263f45;
+    }
+    blockquote p {
+      margin: 0;
+    }
+    figure {
+      margin: 18px 0 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 8px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #edf2f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    @media (max-width: 640px) {
+      .brief-page {
+        width: min(100vw - 20px, 880px);
+        padding-top: 18px;
+      }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+      p, li { font-size: 15px; }
+    }
+</style>
+</head>
+<body>
+  <main class="brief-page">
+    <h1>音频技术简报｜2026-10-21</h1>
+<h2>1. 今日核心变化</h2>
+<ul><li>一句话结论：本期可核实的新事实集中在“硬件新品”和“一个开源插件”两端。开源失真器 Distortion 将 NAM 神经建模配置引入 GPL 插件；Arturia 与 Roland 同日在硬件侧主打触感交互与复音数。空间音频、编解码、音频网络以及 AES/ITU/ETSI/3GPP 标准层面，资料范围内没有可引用的新增事实。</li><li>今日关键词：NAM 神经建模、GPL 插件、复音数、触感交互</li><li>本期未复用近 14 天已覆盖主题，无“持续更新”条目。</li></ul>
+<h2>2. 音频技术重点事件</h2>
+<h3>事件一：开源失真插件 Distortion 支持 NAM 配置，并在示波器上直接画 EQ 曲线 ★</h3>
+<ul><li>发生了什么：GitHub 项目 elarmuzik1993/Distortion 于 2026-10-20 有推送。项目自述为免费、GPL 授权的失真插件，覆盖 Windows、macOS、Linux，提供 VST3 + AU + Standalone 三种形态，基于 JUCE 构建；支持“把 EQ 曲线直接画在示波器上”，并支持 NAM（Neural Amp Modeler）配置文件。</li><li>涉及技术：失真与音色塑形 DSP、曲线绘制式参数交互、神经放大器模型（NAM）推理、JUCE 跨格式与跨平台封装。</li><li>关键参数：GPL-3.0；4 stars / 1 fork / 7 个未关闭 issue（截至检索时）；采样率、位深、内部过采样倍数与延迟均<strong>资料未确认</strong>；NAM 支持的实现深度（仅加载、是否含训练）<strong>资料未确认</strong>。</li><li>为什么重要：它把通常需要付费或独立宿主才能运行的神经建模流程，放进了一个 GPL 插件；同时“在示波器上画曲线”意味着交互层与 DSP 层强耦合——这是插件差异化的实际落点，而不是又一个换皮失真器。</li><li>对产品研发的影响：如果团队在评估 NAM 类模型的端侧部署成本，这是一个可读源码的参考实现；但 GPL-3.0 会传染到闭源商业插件，<strong>只适合做技术验证，不适合直接并入商业产品</strong>。此外，星星数极低，说明尚未经过大规模实机验证。</li><li>来源/时间：GitHub｜elarmuzik1993/Distortion｜最近推送 2026-10-20 13:37 UTC｜https://github.com/elarmuzik1993/Distortion</li></ul>
+<h3>事件二：Arturia MiniFreak 49 与 Roland Boutique JUPITER-08 / n/vision 同日发布</h3>
+<ul><li>发生了什么：CDM 于 2026-10-20 同日发布两条新品信息。Arturia 推出 MiniFreak 49 并给出上手评测，评测认为变化“不只是多加几个键或小幅功能调整”，而是把该系列推向“靠演奏而非编程来探索”的方向。Roland 复活 Boutique 迷你系列外观，推出 JUPITER-08 复刻（复音扩展到最多 32 声部），并新增波表合成器 n/vision。</li><li>涉及技术：合成器交互设计（宏控制、演奏导向的调制分配）、复音声部管理、波表合成引擎。</li><li>关键参数：JUPITER-08 最多 32 voices（来源明确）；MiniFreak 49 键数由产品名体现；三者的引擎架构、价格、上市时间、延迟<strong>资料未确认</strong>（CDM 摘要未列出）。</li><li>为什么重要：两家主流厂商在同一周把卖点放在“演奏手感”和“复音数”，而不是参数深度——这说明硬件合成器的竞争重心正从功能表转向可玩性；对软件合成器而言，这是一个交互设计层面的竞争信号。</li><li>对产品研发的影响：复音数堆到 32 声部，对嵌入式 DSP 的算力预算和声部窃取策略提出了要求；如果软件端要对标，“少层级、强即时反馈”的参数映射比增加调制矩阵更值得优先做。评测结论属媒体主观判断，厂商性能宣称未独立验证。</li><li>来源/时间：CDM｜Arturia&#x27;s new MiniFreak 49 synth is tactile, exploration-friendly: tested｜2026-10-20 16:04 UTC｜https://cdm.link/arturia-minifreak-49-review/ ；CDM｜Baby Roland is back: Boutique JUPITER-08, n/vision wavetable synths｜2026-10-20 09:06 UTC｜https://cdm.link/roland-boutique-jupiter-nvision/</li></ul>
+<h2>3. 技术研发动态</h2>
+<h3>DSP</h3>
+<ul><li>技术名称/变化：曲线绘制式 EQ 控制（在示波器视图上直接画曲线）与失真处理链结合；NAM 配置加载。</li><li>工程应用：JUCE 单套代码产出 VST3 / AU / Standalone，覆盖三平台，属于典型的小团队跨格式发布路径。</li><li>成熟度：早期。4 stars、7 个未关闭 issue，资料中无正式 release 记录；实际音质与 CPU 占用<strong>资料未确认</strong>。</li></ul>
+<h3>编解码</h3>
+<ul><li>技术名称/变化：本期资料未确认。检索源（CDM、GitHub 指定查询）中无编解码器、容器或码率相关新增。</li><li>性能与兼容性：不适用。</li><li>工程应用：无新增可引用信息；不建议依据本期做编解码选型。</li></ul>
+<h3>空间音频</h3>
+<ul><li>技术名称/变化：本期资料未确认。针对 <code>spatial audio / audio-ai</code> 的 Python 仓库检索在 2026-10-14 之后返回 0 条结果，未发现新的渲染器、HRTF 或双耳工具链项目。</li><li>渲染链路或终端支持：无新增可核实信息。</li><li>工程应用：维持既有方案；op-xy 多声道音频已于 2026-10-16 期覆盖，本期不重复。</li></ul>
+<h3>AI 音频</h3>
+<ul><li>模型/产品：NAM（神经放大器建模）以“配置文件加载”的形式出现在免费 GPL 插件中。</li><li>能力与限制：可确认的仅是“支持 NAM profiles”这一表述；模型精度、推理延迟、是否支持自定义训练均<strong>资料未确认</strong>。</li><li>工程应用：若要产品化，需先厘清模型文件与训练数据的授权链——插件是 GPL，不代表模型权重可商用。</li></ul>
+<h3>音频网络</h3>
+<ul><li>协议/技术：本期资料未确认。AES67 / Dante / AVB / Milan 在给定来源中无更新。</li><li>时延与互操作性：无新增数据。</li><li>工程应用：无。</li></ul>
+<h2>4. 新产品与软件</h2>
+<ul><li>产品：Arturia MiniFreak 49</li><li>类型：硬件合成器（49 键）</li><li>采样率/位深/时延：<strong>资料未确认</strong></li><li>兼容平台：独立硬件；与 DAW 的集成方式<strong>资料未确认</strong></li><li>价格：<strong>资料未确认</strong></li><li>与上一代或竞品差异：评测强调其定位从“编程”转向“演奏探索”，并非简单加键（媒体判断）</li><li>来源/时间：https://cdm.link/arturia-minifreak-49-review/ ｜2026-10-20</li></ul>
+<ul><li>产品：Roland Boutique JUPITER-08</li><li>类型：Boutique 系列复刻合成器</li><li>采样率/位深/时延：<strong>资料未确认</strong></li><li>兼容平台：独立硬件</li><li>价格：<strong>资料未确认</strong></li><li>与上一代或竞品差异：复音扩展至最多 32 voices，为该系列此前的短板补强</li><li>来源/时间：https://cdm.link/roland-boutique-jupiter-nvision/ ｜2026-10-20</li></ul>
+<ul><li>产品：Roland n/vision</li><li>类型：波表合成器（Boutique 系列新成员）</li><li>采样率/位深/时延：<strong>资料未确认</strong></li><li>兼容平台：独立硬件</li><li>价格：<strong>资料未确认</strong></li><li>与上一代或竞品差异：新品类而非复刻，波表引擎细节未披露</li><li>来源/时间：同上</li></ul>
+<ul><li>产品：Distortion（elarmuzik1993）</li><li>类型：开源失真插件 + 独立程序</li><li>采样率/位深/时延：<strong>资料未确认</strong></li><li>兼容平台：Windows / macOS / Linux；VST3、AU、Standalone</li><li>价格：免费（GPL-3.0）</li><li>与上一代或竞品差异：支持 NAM 配置；EQ 曲线可在示波器视图上直接绘制</li><li>来源/时间：https://github.com/elarmuzik1993/Distortion ｜2026-10-20</li></ul>
+<h2>5. 标准与论文</h2>
+<ul><li>标准/论文：无。给定资料中未出现 AES、ITU、ETSI、3GPP 的任何新增发布、草案或会议结论。</li><li>发布机构：不适用</li><li>核心结论：本期不做标准层解读，避免以旧标准冒充新动态。</li><li>对产品设计的影响：暂无新增约束；合规与互操作性判断请沿用既有版本。</li><li>原文链接：无</li></ul>
+<h2>6. 工程案例</h2>
+<ul><li>案例名称：单人维护的 GPL 失真插件如何同时覆盖三平台三格式</li><li>背景：独立开发者需要在不维护多套工程的前提下，同时向 Windows / macOS / Linux 与 VST3 / AU / Standalone 发布。</li><li>技术方案：JUCE 统一封装；以“示波器上直接绘制 EQ 曲线”作为核心交互，将可视化组件与 DSP 参数直接绑定；通过 NAM 配置文件引入外部神经模型，而非自研建模训练链。</li><li>结果：已形成可运行的三格式发布形态；社区规模极小（4 stars、7 个未关闭 issue），稳定性与音质表现缺乏第三方验证。</li><li>可借鉴点：①用“可视化即控制”降低失真类插件的学习成本，是可复用的交互思路；②把神经模型做成“可加载资源”而非内置，能规避模型与代码的许可纠缠；③GPL 选型应在上游就与商业发行路径一并决策，后期难以回退。</li></ul>
+<h2>7. 参数对比表</h2>
+<p>| 产品/技术 | 关键参数 | 时延 | 平台/接口 | 价格 | 来源 | |---|---|---|---|---|---| | Distortion（开源插件） | GPL-3.0；示波器绘制 EQ；支持 NAM profiles；4 stars | 资料未确认 | Win/macOS/Linux；VST3/AU/Standalone | 免费 | github.com/elarmuzik1993/Distortion（2026-10-20） | | Arturia MiniFreak 49 | 49 键；引擎细节未披露 | 资料未确认 | 独立硬件 | 资料未确认 | cdm.link/arturia-minifreak-49-review/（2026-10-20） | | Roland JUPITER-08 | 最多 32 voices | 资料未确认 | 独立硬件 | 资料未确认 | cdm.link/roland-boutique-jupiter-nvision/（2026-10-20） | | Roland n/vision | 波表合成；复音数未披露 | 资料未确认 | 独立硬件 | 资料未确认 | 同上（2026-10-20） |</p>
+<h2>8. 技术趋势与风险</h2>
+<ul><li>技术趋势：硬件端以“可玩性 + 复音数”作为差异化，而非功能清单；软件端则把神经模型（NAM 类）当作可替换资源接入通用插件框架，“模型与插件解耦”正在成为小团队的现实做法。</li><li>工程风险：NAM 推理在低配置机器上的 CPU 占用与延迟没有公开数据；示波器绘制类交互对 UI 刷新与音频线程的线程安全设计要求较高，7 个未关闭 issue 说明该实现仍在收敛。</li><li>版权/合规风险：GPL-3.0 插件若并入闭源产品会触发开源义务；NAM 模型权重与其训练数据的授权链独立于代码许可，商用前需单独核实（<strong>资料未确认</strong>该项目的模型来源）。JUPITER-08 作为复刻机型，其商标与音色还原的边界由厂商承担，二次开发不可默认可用。</li><li>商业化风险：免费 GPL 插件对同类付费失真/箱模产品构成价格压力，但缺乏验证的早期项目难以直接替代；硬件侧 32 复音与“触感”卖点同质化后，竞争会回到音色与生态。</li></ul>
+<h2>9. 后续关注</h2>
+<ul><li>Distortion 项目是否发布正式版本、补齐延迟与过采样参数说明，以及 NAM 支持的实现方式（自研推理还是调用参考实现）。</li><li>JUPITER-08 与 n/vision 的官方规格与定价页上线情况，用于核实复音数、引擎与上市时间。</li><li>下一周期内 AES / ITU / ETSI / 3GPP 是否有音频相关公开文档更新；本期各检索源均无新增。</li></ul>
+<h2>10. 信源清单</h2>
+<ol><li>GitHub｜elarmuzik1993/Distortion（仓库元数据与项目自述）｜最近推送 2026-10-20 13:37 UTC｜https://github.com/elarmuzik1993/Distortion</li><li>CDM Create Digital Music｜Arturia&#x27;s new MiniFreak 49 synth is tactile, exploration-friendly: tested｜2026-10-20 16:04 UTC｜https://cdm.link/arturia-minifreak-49-review/</li><li>CDM Create Digital Music｜Baby Roland is back: Boutique JUPITER-08, n/vision wavetable synths｜2026-10-20 09:06 UTC｜https://cdm.link/roland-boutique-jupiter-nvision/</li><li>CDM Create Digital Music｜站点首页时间线（用于交叉核对上述条目发布日期）｜2026-10-20｜https://cdm.link/</li></ol>
+<p>信源可用性备注：Sound on Sound RSS 与新闻页返回超时/403，MusicTech 返回 SSL 证书主机名不匹配，故本期未能覆盖这两家来源；相关主题一律标注“资料未确认”，未做推测补写。</p>
+  </main>
+</body>
+</html>
